@@ -49,7 +49,7 @@ function AdminDashboardPage() {
 
   async function fetchResources(): Promise<void> {
     const request = await axios.get(
-      "https://keep-memories-rest-api.onrender.com/resources",
+      "https://keep-memories-com-api.onrender.com/resources",
       {
         headers: {
           Authorization: admin.token,
@@ -78,7 +78,7 @@ function AdminDashboardPage() {
 
   async function fetchAdminPostedResources(): Promise<void> {
     const request = await axios.get(
-      "https://keep-memories-rest-api.onrender.com/admin/uploaded/resources",
+      "https://keep-memories-com-api.onrender.com/admin/uploaded/resources",
       {
         headers: {
           Authorization: admin.token,

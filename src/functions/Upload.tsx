@@ -7,7 +7,7 @@ async function Upload(
   token: string
 ): Promise<void> {
   const request = await fetch(
-    "https://keep-memories-rest-api.onrender.com/admin/uploaded/resources",
+    "https://keep-memories-com-api.onrender.com/admin/uploaded/resources",
     {
       method: "POST",
       headers: {

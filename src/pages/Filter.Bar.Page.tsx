@@ -38,7 +38,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -78,7 +78,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -127,7 +127,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -157,7 +157,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -187,7 +187,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -217,7 +217,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -247,7 +247,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -277,7 +277,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -307,7 +307,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -337,7 +337,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",
@@ -367,7 +367,7 @@ function FilterBar() {
               event.stopPropagation();
               try {
                 const request = await axios.get(
-                  "https://keep-memories-rest-api.onrender.com/resources",
+                  "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
                       Authorization: "",

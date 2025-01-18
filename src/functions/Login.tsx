@@ -1,6 +1,6 @@
 async function Login(email: string, password: string) {
   const request = await fetch(
-    "https://keep-memories-rest-api.onrender.com/login",
+    "https://keep-memories-com-api.onrender.com/login",
     {
       method: "POST",
       headers: {

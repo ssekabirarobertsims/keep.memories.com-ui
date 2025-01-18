@@ -6,7 +6,7 @@ function NewsletterComponent() {
 
   async function HandleButtonClick() {
     const request = await axios.post(
-      "https://keep-memories-rest-api.onrender.com/newsletter/account/subscription",
+      "https://keep-memories-com-api.onrender.com/newsletter/account/subscription",
       {
         email: email,
       }

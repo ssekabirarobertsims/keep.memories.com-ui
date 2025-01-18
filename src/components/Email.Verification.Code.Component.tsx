@@ -15,7 +15,7 @@ function CodeValidationForm() {
   async function sendCode() {
     try {
       const request = await fetch(
-        "https://keep-memories-rest-api.onrender.com/account/verification",
+        "https://keep-memories-com-api.onrender.com/account/verification",
         {
           method: "POST",
           headers: {
