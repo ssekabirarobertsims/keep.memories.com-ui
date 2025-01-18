@@ -1,17 +1,13 @@
 import NavigationBarComponent from "../components/Navigation.Bar.Component";
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 import FooterComponent from "../components/Footer.Component";
 import LogoutAlertBox from "../components/Logout.Alert.Box.Component";
-import adminContext from "../context/adminContext";
 import HeaderComponent from "../components/Header.Component";
 import PublicPagePhotoCollection from "../components/Public.Photo.Collection.Component";
 
 function PublicPage() {
-  const context: string = React.useContext(adminContext) as string;
-  const admin = JSON.parse(context);
-
   const [value, setValue] = useState([
     {
       id: String(uuid()),
