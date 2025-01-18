@@ -22,7 +22,7 @@ async function Login(email: string, password: string) {
     ).textContent = response.message;
     window.setTimeout(() => {
       window.localStorage.setItem("admin", JSON.stringify(response));
-      window.location.href = "/admin/dashboard";
+      window.location.href = "/";
     }, 3000 as number);
   } else {
     (
