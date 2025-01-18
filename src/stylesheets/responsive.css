@@ -1,0 +1,146 @@
+/* Medium devices (portrait tablets and large phones, 600px to 768px) */
+@media all and (min-width: 320px) and (max-width: 768px) {
+  header {
+    /* border: 1px solid red; */
+      min-height: 150vh;
+    }
+    header > article {
+      min-height: 45em; 
+      gap: 0em;
+      text-align: center;
+      /* border: 1px solid red; */
+    }
+    header > article :is(div) {
+      align-items: center;
+    }
+    header > article :is(div) h1 {
+      font-size: 2em;
+    }
+    header > article :is(div) p {
+      font-size: .8em;
+  }
+  
+  section[class="about-us-page"] {
+    min-height: 130vh;
+  }
+  section[class="about-us-page"] > article :is(div) > h1 {
+    font-size: 2em;
+  }
+  section[class="about-us-page"] > article :is(div) > p {
+    font-size: 0.8em;
+  }
+  section[class="contact-us-page"] > article :is(div) > h1 {
+    font-size: 1.7em;
+  } 
+  section[class="contact-us-page"] > article :is(div) > p {
+    font-size: 0.8em;
+  }
+
+  /*  */
+  section[class="contact-us-page"] {
+    min-height: 130vh;
+  }
+
+  /*  */
+    .login-section-page {
+      gap: .0em;
+    }
+    .login-section-page > div {
+      height: 13em;
+    }
+    .login-section-page > form {
+      height: 15em;
+    }
+
+    .signup-section-page {
+      gap: .0em
+    }
+    .signup-section-page > div {
+      height: 13em;
+    }
+    .signup-section-page > form {
+      height: 17em;
+    }
+
+    footer {
+      min-height: 25em;
+      gap: 1em;
+    }
+}
+
+/* Large devices (landscape tablets, 768px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  header {
+    /* border: 1px solid red; */
+      min-height: 150vh;
+  }
+  header > article {
+    min-height: 45em; 
+    gap: 0em;
+    text-align: center;
+    /* border: 1px solid red; */
+  }
+  header > article :is(div) {
+    align-items: center;
+  }
+  header > article :is(div) h1 {
+    font-size: 2.5em;
+  }
+  header > article :is(div) p {
+    font-size: .9em;
+}
+  
+  section[class="about-us-page"] {
+    min-height: 180vh;
+  }
+  section[class="about-us-page"] > article :is(div) > h1 {
+    font-size: 2.5em;
+  }
+  section[class="about-us-page"] > article :is(div) > p {
+    font-size: 0.8em;
+  }
+  section[class="contact-us-page"] > article :is(div) > h1 {
+    font-size: 1.7em;
+  } 
+  section[class="contact-us-page"] > article :is(div) > p {
+    font-size: 0.8em;
+  }
+
+  /*  */
+  section[class="contact-us-page"] {
+    min-height: 180vh;
+  }
+
+  /*  */
+  .login-section-page {
+    gap: .0em;
+  }
+  .login-section-page > div {
+    height: 13em;
+  }
+  .login-section-page > form {
+    height: 15em;
+  }
+
+  .signup-section-page {
+    gap: .0em
+  }
+  .signup-section-page > div {
+    height: 13em;
+  }
+  .signup-section-page > form {
+    height: 17em;
+  }
+
+  footer {
+    min-height: 25em;
+    gap: 1em;
+  }
+}
+
+/* Extra large devices (laptops and desktops, 1024px and up) */
+/* @media only screen and (min-width: 1025px) {
+    body {
+        background-color: lightgoldenrodyellow;
+    }
+} */

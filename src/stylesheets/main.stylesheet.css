@@ -1,0 +1,658 @@
+* {
+    padding: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    margin: 0px 0px 0px 0px;
+    transition: all 500ms;
+    scroll-behavior: smooth;
+}
+*::after,
+*::before {
+    padding: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+body {
+    min-height: 100vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: "Work Sans", serif; */
+    font-family: var(--primary-font-family);
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    flex-direction: column;
+    gap: 0px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+main {
+    min-height: 50vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+    flex-direction: column;
+}
+
+
+:root {
+    --primary-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --primary-darker-font-color: hsl(0, 0%, 20%);
+    --primary-light-font-color: hsl(0, 0%, 50%);
+    --primary-color: #0066ff;
+    --primary-lighter-color: hsl(270, 50%, 96%);
+    --primary-light-color: hsl(270, 50%, 80%);
+    --primary-dark-color: hsl(270, 50%, 35%);
+}
+
+#root {
+    min-height: 100vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: .4em;
+}
+::-webkit-scrollbar-thumb {
+    width: 1em;
+    background-color: var(--primary-light-font-color);
+    border-radius: 10em;
+}
+
+a:hover {
+    color: var(--primary-color)
+}
+button:active {
+    scale: .8;
+}
+input {
+    outline-style: none;
+}
+
+nav {
+    min-height: 5em;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 0em;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+nav > div {
+    min-height: 5em;
+    width: min(100%, 37em);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column wrap;
+    flex-grow: 1;
+}
+nav > div[class="xtz"] {
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 1em;
+}
+nav > div :is(button) {
+    height: 3em;
+    width: 10em;
+    border-radius: 5em;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+nav > div :is(ul) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+nav > div :is(ul) > a {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: var(--primary-darker-font-color);
+    font-size: .9em;
+    font-weight: normal;
+}
+nav > div :is(ul) > a :where(li) {
+    list-style-type: none;
+    list-style: none;
+}
+nav > div :is(a) {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: var(--primary-darker-font-color);
+    font-size: .9em;
+    font-weight: normal;
+}
+nav > div :is(h1) > a {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: hsl(0, 0%, 30%);
+    font-size: 1.1em;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav > div :is(h1) > a:where(:hover) {
+    color: var(--primary-color);
+}
+nav > div :is(h1) > a img {
+    height: 1.5em;
+    width: 1.5em;
+}
+nav > div :is(ul) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em
+}
+nav > div :is(ul) > li {
+    list-style: none;
+    list-style-type: none;
+}
+nav > div :is(ul) > li :where(a) {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: var(--primary-darker-font-color);
+    font-size: .9em;
+    font-weight: normal;
+}
+
+header {
+    min-height: 40vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header > article {
+    min-height: 5em;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .0em;
+    text-align: center;
+}
+header > article h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+    text-align: center;
+}
+header > article p {
+    font-size: .9em;
+    font-weight: normal;
+    color: hsl(0, 0%, 20%);
+    text-align: center;
+    max-width: 60em;
+}
+header > article button {
+    height: 3em;
+    width: min(100%, 20em);
+    border: none;
+    border-radius: .5em;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+article[class="categories"] {
+    min-height: 4em;
+    width: min(90%, 90%);
+    display: flex;
+    /* border: 1px solid red; */
+}
+article[class="categories"] > div {
+    min-height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em;
+    /* border: 1px solid red */
+}
+article[class="categories"] > div > a {
+    font-weight: normal;
+    font-size: 1em;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: var(--primary-darker-font-color);
+}
+
+main > h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+    text-align: center;
+}
+main > a {
+    font-size: .9em;
+    font-weight: normal;
+    color: hsl(0, 0%, 20%);
+    text-align: center;
+    max-width: 60em;
+    text-decoration-color: none;
+}
+main > p {
+    font-size: .9em;
+    font-weight: normal;
+    color: hsl(0, 0%, 20%);
+    text-align: center;
+    max-width: 60em;
+}
+main > div {
+    min-height: 5vh;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em;
+    font-size: 1em;
+    color: hsl(0, 0%, 30%);
+    font-weight: bold;
+}
+main > section[class="photos-categories"] {
+    min-height: 15vh;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 2em;
+    background-color: transparent;
+    border-radius: .0em;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+    border-top: 1px solid hsl(0, 0%, 90%);
+}
+/* 
+main > section[class="photos-categories"] :is(.Food) {
+    width: 13em;
+}
+main > section[class="photos-categories"] :is(.Nature) {
+    width: 15em;
+}
+main > section[class="photos-categories"] :is(.Animals) {
+    width: 25em;
+}
+main > section[class="photos-categories"] :is(.dark-photos) {
+    width: 35em;
+} */
+
+main > section[class="photos-categories"] > a {
+    text-decoration: none;
+    color: hsl(0, 0%, 10%);
+    font-size: .9em;
+}
+main > section[class="photos-categories"] > a :is(img) {
+    height: 3.5em;
+    width: 3.5em;
+    border: none;
+}
+main > section[class="photos-categories"] > a:is(:hover)::before {
+    background-color: rgba(0, 0, 0, .0);
+}
+main > aside[class="public-page-photo-collection"] {
+    min-height: 80vh;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em;
+    /* border: 1px solid red; */
+    cursor: not-allowed
+}
+main > aside[class="public-page-photo-collection"] div {
+    aspect-ratio: 9/9;
+    width: min(100%, 20em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    flex-grow: 1;
+    overflow: hidden;
+    cursor: not-allowed;
+    border-radius: .4em;
+}
+main > aside[class="public-page-photo-collection"] :nth-child(even) {
+    height: 30em;
+    width: 20em;
+    /* border: 2px solid red */
+  }
+main > aside[class="public-page-photo-collection"] div > img {
+    aspect-ratio: 12/9;
+    height: 100%;
+    width: min(100%, 100%);
+}
+main > aside[class="public-page-photo-collection"] div:is(:hover) > img {
+   scale: 1.1
+}
+
+/*  */
+article[class="photo_resource"] {
+    height: 19em;
+    width: min(95%, 18.5em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    flex-direction: column;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1);
+    border-radius: .4em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    flex-grow: 1
+}
+article[class="photo_resource"] > img {
+    height: 100%;
+    width: min(100%, 100%);
+}
+article[class="photo_resource"] > img:is(:hover) {
+    scale: 1.2;
+}
+article[class="photo_resource"] > div {
+    height: 5em;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: transparent;
+    position: absolute; 
+    bottom: 0px;
+    left: 0px;
+    gap: 0em;
+    background-color: transparent;
+}
+article[class="photo_resource"] > div :where(section) {
+    height: 2em;
+    width: min(90%, 90%);
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: #fff;
+}
+article[class="photo_resource"] > div :where(section) > p {
+    font-size: .8em;
+    font-weight: normal;
+}
+article[class="photo_resource"] > div :where(section) > aside {
+    height: 2em;
+}
+article[class="photo_resource"] > div :where(section) > aside :where(button) {
+    height: 3em;
+    width: 2em;
+    background-color: transparent;
+    border: none;
+    color: hsl(0, 0%, 80%);
+    cursor: pointer;
+    font-size: 1em;
+}
+article[class="photo_resource"] > div :where(section) > aside :where(a) > button {
+    height: 3em;
+    width: 2em;
+    background-color: transparent;
+    border: none;
+    color: hsl(0, 0%, 80%);
+    cursor: pointer;
+    font-size: 1em;
+}
+
+section[class="public-section-page"] {
+    min-height: 100vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column wrap;
+    gap: 1em;
+    border: 1px solid rgb(0, 255, 42);
+
+}
+section[class="public-section-page"] > div[class="collection"] {
+    min-height: 100vh;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column wrap;
+    gap: 1em;
+    /* border: 1px solid red; */
+}
+
+/*  */
+section[class="logout-alert-box"] {
+    min-height: 100vh;
+    width: min(100%, 100%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    flex-flow: column wrap;
+    gap: .5em;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(255,255,255,0.2);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    z-index: 5;
+}
+section[class="logout-alert-box"] > div {
+    min-height: 15em;
+    width: min(90%, 30em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column wrap;
+    gap: .8em;
+    background: #fff;
+    border-radius: 1em;
+    color: #000;
+    border-top: 5px solid var(--primary-color);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .3);
+}
+section[class="logout-alert-box"] > div :is(h1) {
+    font-weight: normal;
+    font-size: 1.4em;
+    text-align: center;
+}
+section[class="logout-alert-box"] > div :is(p) {
+    font-weight: normal;
+    text-align: center;
+    font-size: .9em;
+}
+section[class="logout-alert-box"] > div :is(div) {
+    height: 4em;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em;
+}
+section[class="logout-alert-box"] > div :is(div) > button {
+    height: 3em;
+    width: min(90%, 8em);
+    cursor: pointer;
+    border-radius: .2em;
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+}
+section[class="logout-alert-box"] > div :is(div) :last-child {
+    background-color: hsl(24, 100%, 50%);
+}
+
+footer {
+    min-height: 15em;
+    width: min(100%, 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 5%);
+    gap: .0em;
+}
+footer > div[class="__footer-information-wrapper"] {
+    min-height: 12em;
+    width: min(100%, 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    /* border: 1px solid red; */
+    color: hsl(0, 0%, 90%);
+    /* background-color: hsl(0, 0%, 10%); */
+    text-align: center;
+}
+footer > div[class="__footer-information-wrapper"] h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+footer > div[class="__footer-information-wrapper"] p {
+    font-size: .9em;
+    font-weight: normal;
+    max-width: 30em;
+}
+footer > div[class="__footer-information-wrapper"] ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+footer > div[class="__footer-information-wrapper"] ul > li {
+    font-size: 1.2em;
+    list-style: none;
+    cursor: pointer;
+}
+footer > div[class="__footer-information-wrapper"] ul > li :where(a) {
+    color: hsl(0, 0%, 70%);
+    font-size: 1em;
+    text-decoration-color: none;
+    text-decoration-line: none;
+}
+footer > div[class="__footer-information-wrapper"] ul > li :where(a):is(:hover) {
+    color: hsl(0, 0%, 100%);
+}
+footer > div[class="copyright-wrapper"] {
+    min-height: 3em;
+    width: min(100%, 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    color: hsl(0, 0%, 70%);
+    background-color: hsl(0, 0%, 0%);
+}
+footer > div[class="copyright-wrapper"] span {
+    font-size: .8em;
+    font-weight: normal;
+}
+footer > div[class="copyright-wrapper"] span :where(a) {
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--primary-color)
+}
+footer :is(h1) {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer :is(h1) > a {
+    text-decoration-color: none;
+    text-decoration-line: none;
+    color: var(--primary-darker-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .1em;
+}
+footer :is(h1) > a img {
+    height: 1.5em;
+    width: 1.5em;
+}
+footer > aside {
+    min-height: 3em;
+    width: min(90%, 90%); 
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column wrap;
+    gap: 1em;
+}
+footer > aside :is(span) {
+    font-size: .9em;
+    font-weight: normal;
+    color: hsl(0, 0%, 70%);
+}
+footer > aside :is(ul) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+footer > aside :is(ul) li {
+    list-style-type: none;
+}
+footer > aside :is(ul) li :where(a) {
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: .9em;
+    color: hsl(0, 0%, 70%);
+}
+footer > aside :is(span) > a {
+    color: hsl(0, 0%, 70%);
+    text-decoration-color: none;
+    text-decoration-line: underline;
+}

@@ -1,0 +1,189 @@
+section[class="email-validation"] {
+    height: 100vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    gap: 3em
+}
+section[class="email-validation"] > article {
+    height: 20em;
+    width: min(90%, 30em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 1em;
+    gap: 3em;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+section[class="email-validation"] > article :is(form) {
+    height: 15em;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    gap: 1em;
+    text-align: center;
+}
+section[class="email-validation"] > article :is(form) > h1 {
+    font-size: 2em;
+    font-weight: normal;
+    color: #101010;
+}
+section[class="email-validation"] > article :is(form) > span[class="request-response"] {
+    font-size: .9em;
+    font-weight: normal;
+    color: var(--primary-color);
+}
+section[class="email-validation"] > article :is(form) > aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em
+}
+section[class="email-validation"] > article :is(form) > aside input {
+    height: 4em;
+    width: min(100%, 4em);
+    border: 1px solid hsl(0, 0%, 50%);
+    border-radius: .3em;
+}
+section[class="email-validation"] > article :is(form) > aside input:is(:hover, :active) {
+    border: 1px solid var(--primary-color);
+}
+section[class="email-validation"] > article :is(form) > p {
+    font-size: .9em;
+    font-weight: normal;
+    color: #101010;
+}
+section[class="email-validation"] > article :is(form) > p > a {
+    color: #101010;
+}
+section[class="email-validation"] > article :is(form) > input {
+    height: 3em;
+    width: min(100%, 100%);
+    border: 1px solid hsl(0, 0%, 50%);
+    border-radius: .3em;
+}
+section[class="email-validation"] > article :is(form) > button {
+    height: 3em;
+    width: 10em;
+    border: none;
+    border-radius: 3em;
+    color: #fff;
+    background-color: #101010;
+    cursor: pointer;
+}
+
+/*  */
+section[class="email-verification-status-blank-page"] {
+    height: 100vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    gap: .2em;
+    flex-direction: column;
+    text-align: center;
+}
+section[class="email-verification-status-blank-page"] > h1 {
+    font-size: 1.8em;
+    font-weight: normal;
+    color: #fff;
+}
+section[class="email-verification-status-blank-page"] > p {
+    font-size: .9em;
+    font-weight: normal;
+    color: #fff;
+}
+section[class="email-verification-status-blank-page"] > p a {
+    color: #fff;
+}
+
+/*  */
+section[class="newsletter-verification-status-blank-page"] {
+    height: 100vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    gap: .2em;
+    flex-direction: column;
+    text-align: center;
+}
+section[class="newsletter-verification-status-blank-page"] > h1 {
+    font-size: 1.8em;
+    font-weight: normal;
+    color: #fff;
+}
+section[class="newsletter-verification-status-blank-page"] > p {
+    font-size: .9em;
+    font-weight: normal;
+    color: #fff;
+}
+section[class="newsletter-verification-status-blank-page"] > p a {
+    color: #fff;
+}
+
+/*  */
+aside[class="newsletter-section-component"] {
+    min-height: 40vh;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] {
+    min-height: 40vh;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    gap: .7em;
+    color: hsl(0, 00%, 70%);
+    text-align: center;
+    border-radius: .4em;
+}
+aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] > h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] > p {
+    font-size: .9em;
+    font-weight: normal;
+    max-width: 40em;
+    color:hsl(0, 00%, 70%)
+}
+aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] > input[type="email"] {
+    height: 3em;
+    width: min(100%, 60em);
+    border-radius: .2em;
+    background-color: transparent;
+    border: 1px solid hsl(0, 00%, 70%);
+    caret-color: auto;
+    outline-style: none;
+    color: #fff;
+}
+aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] > button[type="button"] {
+    height: 3em;
+    width: min(100%, 10em);
+    border-radius: .3em;
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    caret-color: auto;
+    color: #000;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.newsletter-response-message {
+    color: #ffff;
+}
