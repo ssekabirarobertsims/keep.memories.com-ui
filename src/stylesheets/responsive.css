@@ -2,10 +2,10 @@
 @media all and (min-width: 320px) and (max-width: 768px) {
   header {
     /* border: 1px solid red; */
-      min-height: 150vh;
+      min-height: 70vh;
     }
     header > article {
-      min-height: 45em; 
+      min-height: 20em; 
       gap: 0em;
       text-align: center;
       /* border: 1px solid red; */
@@ -20,6 +20,20 @@
       font-size: .8em;
   }
   
+  aside[class="photo-view"] {
+    overflow: scroll;
+    background-color: #fff;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] {
+    overflow: scroll;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
+    min-height: 50vh;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
+    height: 130vh;
+  }
+
   section[class="about-us-page"] {
     min-height: 130vh;
   }
@@ -72,10 +86,10 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   header {
     /* border: 1px solid red; */
-      min-height: 150vh;
+      min-height: 60vh;
   }
   header > article {
-    min-height: 45em; 
+    min-height: 20em; 
     gap: 0em;
     text-align: center;
     /* border: 1px solid red; */
@@ -88,6 +102,20 @@
   }
   header > article :is(div) p {
     font-size: .9em;
+}
+
+aside[class="photo-view"] {
+  overflow: scroll;
+  background-color: #fff;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] {
+  overflow: scroll;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
+  min-height: 50vh;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
+  height: 130vh;
 }
   
   section[class="about-us-page"] {

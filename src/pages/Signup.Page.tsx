@@ -8,6 +8,13 @@ function SignupPage() {
         <aside className="__wrapper">
           <form action="" method="post">
             <h1>Signup</h1>
+            <br />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+              sint blanditiis voluptatibus quae et necessitatibus ratione rem
+              vero odio voluptatem!
+            </p>
+            <br />
             <span className="signup-alert-message"></span>
             <br />
             <input
@@ -64,6 +71,7 @@ function SignupPage() {
               />
               <label htmlFor="show-password">show password</label>
             </article>
+            <br />
             <br />
             <div>
               <button

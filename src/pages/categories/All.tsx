@@ -19,7 +19,8 @@ function All() {
   async function FetchResources() {
     try {
       const request = await axios.get(
-        "https://keep-memories-com-api.onrender.com/resources",
+        // "https://keep-memories-com-api.onrender.com/resources",
+        "http://localhost:3500/resources",
         {
           headers: {
             Authorization: "",

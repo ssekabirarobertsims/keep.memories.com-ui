@@ -8,6 +8,13 @@ function LoginPage() {
         <aside className="__wrapper">
           <form action="" method="post">
             <h1>Login</h1>
+            <br />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
+              saepe eveniet enim? Dolor est facilis qui amet? Animi, laborum
+              tenetur!
+            </p>
+            <br />
             <span className="login-alert-message"></span>
             <br />
             <input
@@ -54,6 +61,8 @@ function LoginPage() {
               />
               <label htmlFor="show-password">show password</label>
             </article>
+            <br />
+            <br />
             <br />
             <div>
               <button
