@@ -346,7 +346,7 @@ main > aside[class="public-page-photo-collection"] div {
 }
 main > aside[class="public-page-photo-collection"] :nth-child(even) {
     height: 30em;
-    width: 20em;
+    width: min(100%, 20em);
     /* border: 2px solid red */
   }
 main > aside[class="public-page-photo-collection"] div > img {
@@ -522,11 +522,11 @@ section[class="logout-alert-box"] > div :is(div) > button {
     color: #fff;
 }
 section[class="logout-alert-box"] > div :is(div) :last-child {
-    background-color: hsl(24, 100%, 50%);
+    background-color: hsl(0, 0%, 10%);
 }
 
 footer {
-    min-height: 15em;
+    min-height: 17em;
     width: min(100%, 100%); 
     display: flex;
     align-items: center;

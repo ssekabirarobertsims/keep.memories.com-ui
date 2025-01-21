@@ -10,6 +10,7 @@ import "./stylesheets/main.stylesheet.css";
 import "./stylesheets/main.stylesheet-2.css";
 import "./stylesheets/main.stylesheet-3.css";
 import "./stylesheets/main.stylesheet-4.css";
+import "./stylesheets/main.stylesheet-5.css";
 import "./stylesheets/responsive.css";
 
 createRoot(document.getElementById("root")!).render(

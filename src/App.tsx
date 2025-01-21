@@ -24,6 +24,16 @@ function App() {
     LogoutAdmin();
   });
 
+  (window.document.querySelector("body") as HTMLBodyElement).addEventListener(
+    "click",
+    (event) => {
+      event.stopPropagation();
+      (
+        window.document.querySelector(".account-view-component") as HTMLElement
+      ).style.display = "none";
+    }
+  );
+
   return (
     <Routes>
       <Route index element={<PublicPage />}></Route>

@@ -5,6 +5,8 @@ import adminContext from "../context/adminContext";
 import { AiOutlineSearch } from "react-icons/ai";
 import LogoutAlertBox from "./Logout.Alert.Box.Component";
 type Admin = string;
+import AccountViewComponent from "./Account.View.Component";
+import { MdAccountCircle } from "react-icons/md";
 
 function NavigationBarComponent() {
   const context: Admin = React.useContext(adminContext) as Admin;
@@ -23,15 +25,6 @@ function NavigationBarComponent() {
               <img src="/photos/camera.jpg" alt="" /> Free Photos Gallery
             </Link>
           </h1>
-          <Link
-            to={{
-              pathname: admin ? "/" : "/login",
-            }}
-          >
-            {admin
-              ? `Logged in as ${admin.email as string}`
-              : "Click here to login"}
-          </Link>
         </div>
         <div className="xtz">
           <ul>
@@ -55,7 +48,34 @@ function NavigationBarComponent() {
             )}
           </ul>
           {admin ? (
-            <button
+            <span
+              className="account-view-button"
+              onClick={(event) => {
+                event.stopPropagation();
+                (
+                  window.document.querySelector(
+                    ".account-view-component"
+                  ) as HTMLElement
+                ).style.display = "flex";
+              }}
+              title={`logged in as ${JSON.parse(context).username}`}
+            >
+              <MdAccountCircle />{" "}
+            </span>
+          ) : (
+            ""
+          )}
+        </div>
+      </nav>
+      <AccountViewComponent />
+      <LogoutAlertBox />
+    </>
+  );
+}
+
+export default NavigationBarComponent;
+
+/**<button
               type="button"
               onClick={(event) => {
                 event.stopPropagation();
@@ -67,15 +87,4 @@ function NavigationBarComponent() {
               }}
             >
               log out
-            </button>
-          ) : (
-            ""
-          )}
-        </div>
-      </nav>
-      <LogoutAlertBox />
-    </>
-  );
-}
-
-export default NavigationBarComponent;
+            </button> */

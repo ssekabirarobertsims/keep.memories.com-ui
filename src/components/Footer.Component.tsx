@@ -22,9 +22,9 @@ function FooterComponent() {
         <div className="__footer-information-wrapper">
           <h1>Free Photos Gallery</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            quas deserunt saepe distinctio reprehenderit maxime facilis
-            dignissimos debitis repellat ducimus!
+            A free photo gallery for all your needs. Download and save photos
+            for free and use them for anything you like without any
+            restrictions, conditions or limitations.
           </p>
           <ul>
             <li>

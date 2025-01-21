@@ -1,0 +1,142 @@
+aside[class="account-view-component"] {
+    height: 15em;
+    width: min(100%, 25em);
+    border-radius: .2em;
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 18.5px -2px #bdbdbd;
+    -moz-box-shadow: 0 5px 18.5px -2px #bdbdbd;
+    box-shadow: 0 5px 18.5px -2px #bdbdbd;
+    position: absolute;
+    right: 1em;
+    top: 6em;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+aside[class="account-view-component"] div {
+    min-height: 14em;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+aside[class="account-view-component"] div :is(article[class="logo"]) > span {
+    font-size: 3em;
+    color: hsl(0, 0%, 20%)
+}
+aside[class="account-view-component"] div :is(article[class="account-description"]) {
+    min-height: 13em;
+    width: 15em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: .0em;
+    /* border: 1px solid red; */
+    flex-grow: 1;
+    color: hsl(0, 0%, 40%);
+    font-weight: calc(300 + 190);
+}
+aside[class="account-view-component"] div :is(article[class="account-description"]) span {
+    font-size: .9em;
+}
+aside[class="account-view-component"] div :is(article[class="account-description"]) button {
+    height: 2.5em;
+    width: 100%;
+    border-radius: .2em;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.account-view-button {
+    font-size: 1.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 10%);
+    cursor: pointer;
+}
+
+.amount {
+    font-weight: normal;
+    font-size: .9em;
+}
+
+/* loader styles for spinner */
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 9px solid #474bff;
+    animation: spinner-bulqg1 0.8s infinite linear alternate,
+         spinner-oaa3wk 1.6s infinite linear;
+ }
+ 
+ @keyframes spinner-bulqg1 {
+    0% {
+       clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+    }
+ 
+    12.5% {
+       clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+    }
+ 
+    25% {
+       clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+    }
+ 
+    50% {
+       clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+    }
+ 
+    62.5% {
+       clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+    }
+ 
+    75% {
+       clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+    }
+ 
+    100% {
+       clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+    }
+ }
+ 
+ @keyframes spinner-oaa3wk {
+    0% {
+       transform: scaleY(1) rotate(0deg);
+    }
+ 
+    49.99% {
+       transform: scaleY(1) rotate(135deg);
+    }
+ 
+    50% {
+       transform: scaleY(-1) rotate(0deg);
+    }
+ 
+    100% {
+       transform: scaleY(-1) rotate(-135deg);
+    }
+ }
+
+/*  */
+.loader-component {
+   min-height: 100vh;
+   width: min(100%, 100%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgba(255,255,255,0.5);
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   border: 1px solid rgba(255,255,255,0.25);
+   position: fixed;
+   top: 0;
+   left: 0;
+   flex-direction: column;
+   gap: 1em;
+}

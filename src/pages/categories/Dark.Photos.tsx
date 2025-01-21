@@ -2,6 +2,7 @@ import NavigationBarComponent from "../../components/Navigation.Bar.Component";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
+import LoaderComponent from "../../components/Loader.Component";
 
 interface Resource {
   id: string;
@@ -28,11 +29,16 @@ function DarkPhotos() {
       );
 
       const response = await request.data;
-      setResources(
-        response.filter((index: Resource) => {
-          return index.category === "dark";
-        })
-      );
+      window.setTimeout(async () => {
+        (
+          window.document.querySelector(".loader-component") as HTMLElement
+        ).style.display = "none";
+        await setResources(
+          response.filter((index: Resource) => {
+            return index.category === "dark";
+          })
+        );
+      }, 6000 as number);
     } catch (error) {
       console.log(error);
       console.warn("Connection to server was lost...");
@@ -89,6 +95,7 @@ function DarkPhotos() {
           </div>
           <PhotoViewComponent />
         </section>
+        <LoaderComponent />
       </>
     ) : (
       <>
@@ -97,6 +104,7 @@ function DarkPhotos() {
           <img src="/photos/3363936.webp" alt="" />
           <p>No photos were found, try reloading the page!</p>
         </div>
+        <LoaderComponent />
       </>
     );
   } catch (error) {

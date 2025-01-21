@@ -130,13 +130,7 @@ function PhotoViewComponent() {
                   ) as unknown as HTMLImageElement
                 )?.src
               }
-              download={
-                (
-                  window.document.querySelector(
-                    ".img-placeholder"
-                  ) as unknown as HTMLImageElement
-                )?.src
-              }
+              download
             >
               <button type="button">
                 <IoMdDownload /> Download

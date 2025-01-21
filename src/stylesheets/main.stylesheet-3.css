@@ -498,20 +498,27 @@ section[class="filter-bar"] {
   /* border: 1px solid red; */
 }
 section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] {
-  min-height: 5em;
+  min-height: 3.1em;
   width: min(90%, 90%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   flex-flow: row nowrap;
-  gap: 1em;
+  gap: 0em;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: .2em;
+  overflow: hidden;
+  border: 1px solid hsl(0, 0%, 90%);
 }
 section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] :is(input) {
   height: 3.5em;
   width: min(90%, 90%);
-  border: 1px solid hsl(0, 0%, 70%);
+  border: none;
   border-radius: 0.3em;
+  background-color: transparent;
+  outline-style: none;
+  flex-grow: 1;
 }
 section[class="filter-bar"]
   > div[class="filter-bar-input-wrapper"]
@@ -522,7 +529,8 @@ section[class="filter-bar"]
   color: #fff;
   background-color: var(--primary-color);
   border: none;
-  border-radius: 0.3em;
+  border-radius: .0em;
+  font-weight: bolder;
 }
 section[class="filter-bar"] > h1 {
   font-size: 2em;

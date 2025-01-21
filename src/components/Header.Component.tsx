@@ -7,9 +7,10 @@ function HeaderComponent() {
         <article>
           <h1>Download and save your favorite photos.</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam non
-            asperiores vel aspernatur, distinctio voluptatum soluta esse ab vero
-            corrupti a eligendi eos id dolorum.
+            Free and simple application that allows you to download and save
+            photos from the internet. You can search for photos by category or
+            by searching for a specific photo using the search bar to search and
+            find your favorite photos.
           </p>
           <br />
           <button

@@ -21,13 +21,10 @@ function FilterBar() {
   const [searches, setSearches] = useState([] as Resource[]);
   const [inputValue, setInputValue] = useState("" as string);
 
-  function handleClick(): void {
-    window.location.href = "/";
-  }
-
   return (
     <>
       <NavigationBarComponent />
+      <br />
       <section className={String("filter-bar")}>
         <div className="filter-bar-input-wrapper">
           <input
@@ -288,36 +285,6 @@ function FilterBar() {
                 const response = await request.data;
                 setSearches(
                   response.filter((index: Resource) => {
-                    return index.category === "food";
-                  })
-                );
-              } catch (error) {
-                console.log(error);
-                console.warn("Connection to server was lost...");
-                console.warn("Reconnecting to server...");
-                console.warn("Connecting...");
-              }
-            }}
-          >
-            Food
-          </button>
-          <button
-            type="button"
-            onClick={async (event) => {
-              event.stopPropagation();
-              try {
-                const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
-                  {
-                    headers: {
-                      Authorization: "",
-                    },
-                  }
-                );
-
-                const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
                     return index.category === "illustrations";
                   })
                 );
@@ -391,15 +358,12 @@ function FilterBar() {
           >
             Animals
           </button>
-          <button type="button" onClick={handleClick}>
-            categories
-          </button>
         </div>
         <h1>Photos from your searches: {inputValue as string}</h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque optio
-          rem quidem fugiat voluptatum facere deleniti commodi! Debitis nesciunt
-          eveniet eius voluptatem illo illum quam.
+          Try to make your search more specific to get the best results. For
+          example, if you are looking for a photo of a dog, you can search for
+          "dog" or "dogs" to get the best results for your search.
         </p>
         <br />
         <article>
@@ -431,7 +395,7 @@ function FilterBar() {
           ) : (
             <div className="warning-results-message">
               <img
-                src="/photos/search_webp.jpg"
+                src="/photos/curious-concept-illustration_114360-2185.jpg"
                 alt="photo"
                 className="search_webp"
               />

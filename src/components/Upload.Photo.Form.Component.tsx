@@ -17,7 +17,6 @@ function UploadPhotoForm() {
     <section className={String("upload-form")}>
       <form
         action="https://keep-memories-com-api.onrender.com/admin/uploaded/resources"
-        // action="http://localhost:3500/admin/uploaded/resources"
         method="post"
         encType="multipart/form-data"
       >

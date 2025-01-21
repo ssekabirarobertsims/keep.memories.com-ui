@@ -1,6 +1,7 @@
 import NavigationBarComponent from "../../components/Navigation.Bar.Component";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import LoaderComponent from "../../components/Loader.Component";
 import PhotoViewComponent from "../../components/Photo.View.Component";
 
 interface Resource {
@@ -28,11 +29,16 @@ function Technology() {
       );
 
       const response = await request.data;
-      setResources(
-        response.filter((index: Resource) => {
-          return index.category === "technology";
-        })
-      );
+      window.setTimeout(async () => {
+        (
+          window.document.querySelector(".loader-component") as HTMLElement
+        ).style.display = "none";
+        await setResources(
+          response.filter((index: Resource) => {
+            return index.category === "technology";
+          })
+        );
+      }, 6000 as number);
     } catch (error) {
       console.log(error);
       console.warn("Connection to server was lost...");
@@ -86,6 +92,7 @@ function Technology() {
         </div>
         <PhotoViewComponent />
       </section>
+      <LoaderComponent />
     </>
   ) : (
     <>
@@ -94,6 +101,7 @@ function Technology() {
         <img src="/photos/3363936.webp" alt="" />
         <p>No photos were found, try reloading the page!</p>
       </div>
+      <LoaderComponent />
     </>
   );
 }

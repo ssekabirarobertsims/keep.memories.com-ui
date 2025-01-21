@@ -2,7 +2,7 @@ import NavigationBarComponent from "../../components/Navigation.Bar.Component";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
-
+import LoaderComponent from "../../components/Loader.Component";
 interface Resource {
   id: string;
   resource: string;
@@ -19,8 +19,8 @@ function All() {
   async function FetchResources() {
     try {
       const request = await axios.get(
-        // "https://keep-memories-com-api.onrender.com/resources",
-        "http://localhost:3500/resources",
+        "https://keep-memories-com-api.onrender.com/resources",
+        // "https://api-jsonresources-restapi.onrender.com/resources/users",
         {
           headers: {
             Authorization: "",
@@ -29,7 +29,13 @@ function All() {
       );
 
       const response = await request.data;
-      setResources(response);
+
+      window.setTimeout(async () => {
+        (
+          window.document.querySelector(".loader-component") as HTMLElement
+        ).style.display = "none";
+        await setResources(response);
+      }, 6000 as number);
     } catch (error) {
       console.log(error);
       console.warn("Connection to server was lost...");
@@ -40,7 +46,7 @@ function All() {
 
   useEffect(() => {
     FetchResources();
-  }, [resources]);
+  });
 
   try {
     return resources.length > 0 ? (
@@ -110,6 +116,7 @@ function All() {
           <br />
           <br />
         </section>
+        <LoaderComponent />
       </>
     ) : (
       <>
@@ -118,6 +125,7 @@ function All() {
           <img src="/photos/3363936.webp" alt="" />
           <p>No photos were found, try reloading the page!</p>
         </div>
+        <LoaderComponent />
       </>
     );
   } catch (error) {
