@@ -21,14 +21,21 @@ function AccountViewComponent() {
           <h2>Logged in user</h2>
           <br />
           <span>
-            {adminObject?.userId
+            {adminObject?.userId || typeof adminObject?.userId !== "undefined"
               ? `user${adminObject?.userId}`
               : "user23927101"}
           </span>
           <span>
-            {adminObject.username ? adminObject.username : "no-username"}
+            {adminObject?.username ||
+            typeof adminObject?.username !== "undefined"
+              ? adminObject?.username
+              : "no-username"}
           </span>
-          <span>{adminObject.email ? adminObject.email : "no-email"}</span>
+          <span>
+            {adminObject?.email || typeof adminObject?.email !== "undefined"
+              ? adminObject?.email
+              : "no-email"}
+          </span>
           <br />
           <button
             type="button"

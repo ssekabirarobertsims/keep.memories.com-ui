@@ -3,22 +3,31 @@ function PublicPagePhotoCollection() {
     <>
       <aside className="public-page-photo-collection">
         <div>
-          <img src="/uploads/woman.jpg" alt="" />
+          <img
+            src="/uploads\old-black-african-smiling-womman-in-red.jpg"
+            alt=""
+          />
         </div>
         <div>
-          <img src="/uploads/ill-1.jpg" alt="" />
+          <img src="/uploads\illutrations-of-a-smoking-woman.webp" alt="" />
         </div>
         <div>
           <img src="/uploads/man.jpg" alt="" />
         </div>
         <div>
-          <img src="/uploads/old-woman-2.jpg" alt="" />
+          <img
+            src="/uploads\old-black-african-smiling-womman-in-yellow.jpg"
+            alt=""
+          />
         </div>
         <div>
-          <img src="/uploads/tech-3.jpg" alt="" />
+          <img src="/uploads\tech-gadgets-with-white-background.jpg" alt="" />
         </div>
         <div>
-          <img src="/uploads/ill-4.webp" alt="" />
+          <img
+            src="/uploads\illustration-of-a-man-with-a-pc-on-beach.jpg"
+            alt=""
+          />
         </div>
         <div>
           <img
@@ -27,10 +36,13 @@ function PublicPagePhotoCollection() {
           />
         </div>
         <div>
-          <img src="/uploads/kid.jpg" alt="" />
+          <img
+            src="/uploads\black-pretty-girl-points-left-copy-space-some-text-little-black-girl-pointing-side_432566-7396.jpg"
+            alt=""
+          />
         </div>
         <div>
-          <img src="/uploads/old-woman.jpg" alt="" />
+          <img src="/uploads\closeup-giraffe-zoo_53876-42891.jpg" alt="" />
         </div>
         <div>
           <img
@@ -40,7 +52,7 @@ function PublicPagePhotoCollection() {
         </div>
         <div>
           <img
-            src="/uploads/beautiful-woman-headphones-enjoying-music-purple-background-charming-girl-gray-tee-white-skirt-listening-her-favourite-songs_197531-28973.jpg"
+            src="/uploads\beautiful-woman-headphones-enjoying-music-purple-background-charming-girl-gray-28973.jpg"
             alt=""
           />
         </div>
