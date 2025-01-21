@@ -21,7 +21,9 @@ function AccountViewComponent() {
           <h2>Logged in user</h2>
           <br />
           <span>
-            {adminObject.userId ? `user${adminObject.userId}` : "user23927101"}
+            {adminObject?.userId
+              ? `user${adminObject?.userId}`
+              : "user23927101"}
           </span>
           <span>
             {adminObject.username ? adminObject.username : "no-username"}

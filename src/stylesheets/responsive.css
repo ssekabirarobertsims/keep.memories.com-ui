@@ -39,9 +39,10 @@
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
     min-height: 50vh;
+    /* border: 1px solid red; */
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-    height: 130vh;
+    height: 80vh;
   }
 
   section[class="about-us-page"] {

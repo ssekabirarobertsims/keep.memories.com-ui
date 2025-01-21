@@ -1,4 +1,5 @@
 import { FaSearch } from "react-icons/fa";
+import PhotoViewComponent from "./Photo.View.Component";
 
 function HeaderComponent() {
   return (
@@ -25,6 +26,7 @@ function HeaderComponent() {
             <FaSearch /> Find in searches
           </button>
         </article>
+        <PhotoViewComponent />
       </header>
     </>
   );

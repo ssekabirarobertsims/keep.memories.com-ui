@@ -296,6 +296,7 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] {
   justify-content: center;
   flex-direction: row;
   flex-flow: row wrap;
+  /* border: 1px solid red; */
   gap: 0em
 }
 aside[class="photo-view"] > div[class="photo-view-wrapper"] div {
@@ -366,7 +367,7 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class=
   height: 4em;
   width: min(100%, 100%);
   border: none;
-  border-radius: 10em;
+  border-radius: .2em;
   background-color: var(--primary-color);
   color: #fff;
   cursor: pointer;

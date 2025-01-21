@@ -71,7 +71,7 @@ function PhotoViewComponent() {
     <aside className={String("photo-view")}>
       <div className="photo-view-wrapper">
         <div className="photo">
-          <img src={""} alt="" className="img-placeholder" />
+          <img src={"/uploads/ill-4.webp"} alt="" className="img-placeholder" />
         </div>
         <aside>
           <div className="wrapper">
@@ -82,11 +82,7 @@ function PhotoViewComponent() {
               Download & Save Photos From{" "}
               {(resource?.category as string)?.toLocaleUpperCase()}
             </h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              explicabo accusantium quidem corrupti ipsam fugiat officiis dicta
-              quibusdam voluptates quo?
-            </p>
+
             <ul>
               <li>
                 File:{" "}
@@ -120,8 +116,8 @@ function PhotoViewComponent() {
                   : ("unknown" as unknown as string)}
               </li>
               <li>Dimensions: 12033 * 1022</li>
+              <li>Source: Keep Memories Photo Gallery</li>
             </ul>
-            <br />
             <a
               href={
                 (
