@@ -246,7 +246,7 @@ header > article button:is(:hover, :focus) {
     bottom: -15em;
     background-color: #fff;
     /* border: 1px solid red; */
-    z-index: 2;
+    /* z-index: -1; */
     gap: 0em;
     -webkit-box-shadow: 0 5px 18.5px -2px #bdbdbd;
     -moz-box-shadow: 0 5px 18.5px -2px #bdbdbd;

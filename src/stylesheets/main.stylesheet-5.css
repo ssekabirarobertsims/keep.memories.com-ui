@@ -12,6 +12,7 @@ aside[class="account-view-component"] {
     display: none;
     align-items: center;
     justify-content: center;
+    z-index: 4;
 }
 aside[class="account-view-component"] div {
     min-height: 14em;
