@@ -8,7 +8,7 @@ section[class="email-validation"] {
     gap: 3em
 }
 section[class="email-validation"] > article {
-    height: 20em;
+    height: 17em;
     width: min(90%, 30em);
     display: flex;
     align-items: center;
@@ -41,13 +41,14 @@ section[class="email-validation"] > article :is(form) > span[class="request-resp
 }
 section[class="email-validation"] > article :is(form) > aside {
     display: flex;
+    width: min(100%, 100%);
     align-items: center;
     justify-content: center;
     gap: 1em
 }
 section[class="email-validation"] > article :is(form) > aside input {
-    height: 4em;
-    width: min(100%, 4em);
+    height: 3em;
+    width: min(100%, 20em);
     border: 1px solid hsl(0, 0%, 50%);
     border-radius: .3em;
 }

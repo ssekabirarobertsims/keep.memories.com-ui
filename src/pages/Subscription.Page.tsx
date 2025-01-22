@@ -9,7 +9,10 @@ const SubscribingPage: React.FC = () => {
     <>
       <NavigationBarComponent />
       <section className="subscription-page">
-        <form action="" method="post">
+        <form
+          action="https://keep-memories-com-api.onrender.com/newsletter/account/subscription"
+          method="post"
+        >
           <h1>
             <MdOutlineUnsubscribe />
           </h1>

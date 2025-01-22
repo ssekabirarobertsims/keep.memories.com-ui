@@ -64,7 +64,7 @@ function App() {
       <Route path="/filter/searches" element={<FilterBar />}></Route>
       <Route
         path="/newsletter/subscriptions"
-        element={<SubscribingPage />}
+        element={!admin ? <LoginPage /> : <SubscribingPage />}
       ></Route>
     </Routes>
   );

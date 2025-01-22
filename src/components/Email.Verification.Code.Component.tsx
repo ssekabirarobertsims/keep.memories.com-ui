@@ -7,10 +7,7 @@ interface Message {
 }
 
 const CodeValidationForm: React.FC = () => {
-  const [digit1, setDigit1] = useState("" as number | string);
-  const [digit2, setDigit2] = useState("" as number | string);
-  const [digit3, setDigit3] = useState("" as number | string);
-  const [digit4, setDigit4] = useState("" as number | string);
+  const [code, setCode] = useState("" as number | string);
 
   async function sendCode() {
     try {
@@ -22,10 +19,7 @@ const CodeValidationForm: React.FC = () => {
             "Content-Type": "Application/json",
           },
           body: JSON.stringify({
-            a: digit1 as string | number,
-            b: digit2 as string | number,
-            c: digit3 as string | number,
-            d: digit4 as string | number,
+            code: code as string | number,
           }),
         }
       );
@@ -59,52 +53,18 @@ const CodeValidationForm: React.FC = () => {
           <span className="request-response"></span>
           <aside>
             <input
-              type="text"
-              name="digit_1"
-              id="digit_1"
+              type="number"
+              name="code"
+              id="code"
               onChange={(event) => {
-                setDigit1((event.target as HTMLInputElement).value);
+                setCode((event.target as HTMLInputElement).value);
               }}
-              value={digit1}
-              maxLength={1 as number}
+              value={code}
+              maxLength={100 as number}
               required
               aria-required
-            />
-            <input
-              type="text"
-              name="digit_2"
-              id="digit_2"
-              onChange={(event) => {
-                setDigit2((event.target as HTMLInputElement).value);
-              }}
-              value={digit2}
-              maxLength={1 as number}
-              required
-              aria-required
-            />
-            <input
-              type="text"
-              name="digit_3"
-              id="digit_3"
-              onChange={(event) => {
-                setDigit3((event.target as HTMLInputElement).value);
-              }}
-              value={digit3}
-              maxLength={1 as number}
-              required
-              aria-required
-            />
-            <input
-              type="text"
-              name="digit_4"
-              id="digit_4"
-              onChange={(event) => {
-                setDigit4((event.target as HTMLInputElement).value);
-              }}
-              value={digit4}
-              maxLength={1 as number}
-              required
-              aria-required
+              placeholder="Enter code"
+              aria-placeholder="Enter code"
             />
           </aside>
           <p>
