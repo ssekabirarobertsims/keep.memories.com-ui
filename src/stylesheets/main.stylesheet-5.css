@@ -216,6 +216,7 @@ section[class="subscription-page"] form {
    border-radius: 1em;
    background-color: var(--primary-color);
    color: #fff;
+   text-align: center;
 }
 section[class="subscription-page"] form > h1 {
    font-size: 2.5em;
@@ -238,7 +239,7 @@ section[class="subscription-page"] form > p {
 }
 section[class="subscription-page"] form > input {
    height: 3em;
-   width: min(100%, 50em);
+   width: min(90%, 50em);
    border: none;
    border-bottom: 1px solid hsl(0, 0%, 10%);
    background-color: transparent;

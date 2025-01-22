@@ -6,7 +6,7 @@ function PublicPagePhotoCollection() {
   return (
     <>
       <aside className="public-page-photo-collection">
-        <div>
+        <div className="__even">
           <img
             src="/uploads/old-black-african-smiling-womman-in-red.jpg"
             alt="photo from keep memories photos gallery"
@@ -64,7 +64,7 @@ function PublicPagePhotoCollection() {
             </aside>
           </article>
         </div>
-        <div>
+        <div className="__even">
           <img
             src="/uploads/man.jpg"
             alt="photo from keep memories photos gallery"
@@ -122,7 +122,7 @@ function PublicPagePhotoCollection() {
             </aside>
           </article>
         </div>
-        <div>
+        <div className="__even">
           <img
             src="/uploads/tech-gadgets-with-white-background.jpg"
             alt="photo from keep memories photos gallery"
@@ -180,7 +180,7 @@ function PublicPagePhotoCollection() {
             </aside>
           </article>
         </div>
-        <div>
+        <div className="__even">
           <img
             src="/uploads/tech-entrepreneur-machine-learning-engineer-illustration_1297153-24209.jpg"
             alt="photo from keep memories photos gallery"
@@ -238,7 +238,7 @@ function PublicPagePhotoCollection() {
             </aside>
           </article>
         </div>
-        <div>
+        <div className="__even">
           <img
             src="/uploads/closeup-giraffe-zoo_53876-42891.jpg"
             alt="photo from keep memories photos gallery"
@@ -296,7 +296,7 @@ function PublicPagePhotoCollection() {
             </aside>
           </article>
         </div>
-        <div>
+        <div className="__even">
           <img
             src="/uploads/beautiful-woman-headphones-enjoying-music-purple-background-charming-girl-gray-28973.jpg"
             alt="photo from keep memories photos gallery"

@@ -62,8 +62,8 @@ function Animals() {
         <section className="animals">
           <h1>Beautiful photos from animals</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
-            optio rem quidem fugiat voluptatum facere deleniti commodi! Debitis
+            Get all your favorite photos and downloads from one place to your
+            local machine. Fugiat voluptatum facere deleniti commodi! Debitis
             nesciunt eveniet eius voluptatem illo illum quam.
           </p>
           <br />

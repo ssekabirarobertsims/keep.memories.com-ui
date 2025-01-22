@@ -11,7 +11,7 @@
     }
     header > article {
       min-height: 20em; 
-      gap: 0em;
+      gap: 1.5em;
       text-align: center;
       /* border: 1px solid red; */
     }
@@ -23,6 +23,10 @@
     }
     header > article :is(div) p {
       font-size: .8em;
+  }
+
+  .search-list {
+    bottom: -10em;
   }
 
   main > section[class="photos-categories"] {
@@ -67,16 +71,28 @@
   }
 
   /*  */
-  main > aside[class="public-page-photo-collection"] div {
-    height: 19em;
-    width: min(100%, 20em);
-    /* border: 2px solid red */
+  section[class="subscription-page"] form {
+   min-height: 70vh;
   }
-  main > aside[class="public-page-photo-collection"] :nth-child(even) {
+
+
+  /*  */
+  main > aside[class="public-page-photo-collection"] div {
+    /* border: 2px solid red */
+    flex-grow: 0;
+  }
+  main > aside[class="public-page-photo-collection"] div > article {
+    /* border: 1px solid red; */
+    height: 100%;
+    /* flex-grow: 1; */
+  }
+
+  main > aside[class="public-page-photo-collection"] :is(div[class="__even"]) {
     height: 23em;
     width: min(100%, 20em);
-    /* border: 2px solid red */
   }
+  
+
 
   /*  */
     .login-section-page {
@@ -97,7 +113,7 @@
 
     .signup-section-page {
       gap: .0em;
-      min-height: 180vh;
+      min-height: 140vh;
     }
     .signup-section-page > div {
       height: 13em;

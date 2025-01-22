@@ -58,9 +58,9 @@ function People() {
       <section className="people">
         <h1>Beautiful photos from people</h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque optio
-          rem quidem fugiat voluptatum facere deleniti commodi! Debitis nesciunt
-          eveniet eius voluptatem illo illum quam.
+          Get all your favorite photos and downloads from one place to your
+          local machine. Fugiat voluptatum facere deleniti commodi! Debitis
+          nesciunt eveniet eius voluptatem illo illum quam.
         </p>
         <br />
         <div className="photos">
