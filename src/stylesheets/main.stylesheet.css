@@ -181,11 +181,12 @@ nav > div :is(ul) > li :where(a) {
 }
 
 header {
-    min-height: 40vh;
+    min-height: 35vh;
     width: min(100%, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 header > article {
     min-height: 5em;
@@ -193,8 +194,9 @@ header > article {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     flex-direction: column;
-    gap: .0em;
+    gap: 1em;
     text-align: center;
 }
 header > article h1 {
@@ -210,14 +212,69 @@ header > article p {
     text-align: center;
     max-width: 60em;
 }
-header > article button {
+header > article input {
     height: 3em;
-    width: min(100%, 20em);
+    width: min(100%, 40em);
+    border: 1px solid hsl(0, 0%, 50%);
+    border-radius: 5em;
+    background-color: transparent;
+}
+header > article button {
+    height: 4em;
+    width: 4em;
     border: none;
-    border-radius: .5em;
+    border-radius: 100%;
     background-color: var(--primary-color);
     color: #fff;
     cursor: pointer;
+}
+header > article button:is(:hover, :focus) {
+    transform: scale(1.1);
+}
+
+/*  */
+.search-list {
+    height: 15em;
+    width: min(100%, 50em);
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* grid-template-columns: auto; */
+    overflow: scroll;
+    position: absolute;
+    bottom: -15em;
+    background-color: #fff;
+    /* border: 1px solid red; */
+    z-index: 2;
+    gap: 0em;
+    -webkit-box-shadow: 0 5px 18.5px -2px #bdbdbd;
+    -moz-box-shadow: 0 5px 18.5px -2px #bdbdbd;
+    box-shadow: 0 5px 18.5px -2px #bdbdbd;
+}
+.search-list a {
+    height: 4em;
+    width: min(100%, 100%);
+    display: flex;
+    border: 1px solid hsl(0, 0%, 90%);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+.search-list a :is(li) {
+    height: 4em;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+    color: #000;
+    font-size: .9em;
+    font-weight: calc(300 + 200);
+}
+.search-list a:is(:hover, :focus) {
+    background-color: hsl(0, 0%, 96%);
 }
 
 
@@ -320,11 +377,13 @@ main > section[class="photos-categories"] > a :is(img) {
 main > section[class="photos-categories"] > a:is(:hover)::before {
     background-color: rgba(0, 0, 0, .0);
 }
+
+/*  */
 main > aside[class="public-page-photo-collection"] {
     min-height: 80vh;
     width: min(90%, 90%);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: row;
     flex-flow: row wrap;
@@ -333,30 +392,98 @@ main > aside[class="public-page-photo-collection"] {
     cursor: not-allowed
 }
 main > aside[class="public-page-photo-collection"] div {
-    aspect-ratio: 9/9;
+    min-height: 20em;
     width: min(100%, 20em);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em;
     /* border: 1px solid red; */
-    flex-grow: 1;
-    overflow: hidden;
     cursor: not-allowed;
     border-radius: .4em;
+    overflow: hidden;
+    position: relative;
+}
+main > aside[class="public-page-photo-collection"] div {
+    min-height: 20em;
+    width: min(100%, 20em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em;
+    /* border: 1px solid red; */
+    cursor: not-allowed;
+    border-radius: .4em;
+    /* overflow: hidden; */
+    position: relative;
+    flex-grow: 1;
 }
 main > aside[class="public-page-photo-collection"] :nth-child(even) {
     height: 30em;
-    width: min(100%, 20em);
-    /* border: 2px solid red */
-  }
+}
 main > aside[class="public-page-photo-collection"] div > img {
-    aspect-ratio: 12/9;
-    height: 100%;
+    min-height: 100%;
+    aspect-ratio: 1/1;
     width: min(100%, 100%);
 }
-main > aside[class="public-page-photo-collection"] div:is(:hover) > img {
-   scale: 1.1
+main > aside[class="public-page-photo-collection"] div > article {
+    min-height: 100%;
+    width: min(100%, 100%);
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .3);
 }
+main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) {
+    height: 90%;
+    width: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) a {
+    height: 4em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) a button {
+    height: 3em;
+    width: 3em;
+    border-radius: .2em;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    color:hsl(0, 0%, 20%);
+    cursor: pointer;
+}
+main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) button {
+    height: 3em;
+    width: 3em;
+    border-radius: .2em;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    color:hsl(0, 0%, 20%);
+    cursor: pointer;
+    font-weight: bold;
+}
+main > aside[class="public-page-photo-collection"] div:is(:hover, :focus) article {
+    display: flex;
+    transition: all 1000ms;
+}
+
 
 /*  */
 article[class="photo_resource"] {

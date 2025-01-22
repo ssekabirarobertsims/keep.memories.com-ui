@@ -8,7 +8,7 @@ type Admin = string;
 import AccountViewComponent from "./Account.View.Component";
 import { MdAccountCircle } from "react-icons/md";
 
-function NavigationBarComponent() {
+const NavigationBarComponent: React.FC = () => {
   const context: Admin = React.useContext(adminContext) as Admin;
   const admin = JSON.parse(context);
 
@@ -33,17 +33,21 @@ function NavigationBarComponent() {
                 <AiOutlineSearch />
               </li>
             </Link>
-            <Link to={{ pathname: "/about-us" }}>
-              <li>About</li>
-            </Link>
-            <Link to={{ pathname: "/contact-us" }}>
-              <li>Contact</li>
+            <Link to={{ pathname: "/newsletter/subscriptions" }}>
+              <li>subscribe</li>
             </Link>
             {admin ? (
               ""
             ) : (
+              <Link to={{ pathname: "/login" }}>
+                <li>login</li>
+              </Link>
+            )}
+            {admin ? (
+              ""
+            ) : (
               <Link to={{ pathname: "/signup" }}>
-                <li>Signup</li>
+                <li>signup</li>
               </Link>
             )}
           </ul>
@@ -71,20 +75,6 @@ function NavigationBarComponent() {
       <LogoutAlertBox />
     </>
   );
-}
+};
 
 export default NavigationBarComponent;
-
-/**<button
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                (
-                  window.document.querySelector(
-                    ".logout-alert-box"
-                  ) as HTMLElement
-                ).style.display = "flex";
-              }}
-            >
-              log out
-            </button> */

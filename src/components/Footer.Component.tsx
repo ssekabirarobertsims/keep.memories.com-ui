@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 type Date = string;
 
-function FooterComponent() {
+const FooterComponent: React.FC = () => {
   const date: Partial<Readonly<Date>> = React.useContext(
     dateContext
   ) as Partial<Readonly<Date>>;
@@ -52,6 +52,6 @@ function FooterComponent() {
       </footer>
     </>
   );
-}
+};
 
 export default FooterComponent;

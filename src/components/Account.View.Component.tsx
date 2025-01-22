@@ -10,7 +10,7 @@ interface AdminObject {
 
 type Admin = string;
 
-function AccountViewComponent() {
+const AccountViewComponent: React.FC = () => {
   const context: Admin = React.useContext(adminContext) as Admin;
   const adminObject: AdminObject = JSON.parse(context);
 
@@ -54,6 +54,6 @@ function AccountViewComponent() {
       </div>
     </aside>
   );
-}
+};
 
 export default AccountViewComponent;

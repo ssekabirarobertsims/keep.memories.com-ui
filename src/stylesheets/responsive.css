@@ -82,6 +82,12 @@
     .login-section-page {
       gap: .0em;
     }
+    .login-section-page aside[class="__wrapper"] {
+      gap: 0em;
+    }
+    .login-section-page aside[class="__wrapper"] > div {
+      min-height: 20em;
+    }
     .login-section-page > div {
       height: 13em;
     }
@@ -90,7 +96,8 @@
     }
 
     .signup-section-page {
-      gap: .0em
+      gap: .0em;
+      min-height: 180vh;
     }
     .signup-section-page > div {
       height: 13em;
@@ -98,6 +105,22 @@
     .signup-section-page > form {
       height: 17em;
     }
+
+    /*  */
+    /*  */
+  aside[class="advert-component"] {
+    min-height: 25em;
+  }
+  aside[class="advert-component"] div {
+    min-height: 15em;
+  }
+  aside[class="advert-component"] div > h1 {
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+  aside[class="advert-component"] div > p, a {
+    font-size: .9em;
+  }
 
     footer {
       min-height: 20em;
@@ -174,7 +197,11 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
   }
 
   .signup-section-page {
-    gap: .0em
+    gap: .0em;
+    min-height: 180vh;
+  }
+  .signup-section-page aside[class="__wrapper"] {
+    gap: 7em;
   }
   .signup-section-page > div {
     height: 13em;

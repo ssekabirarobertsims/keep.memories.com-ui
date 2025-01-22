@@ -1,12 +1,12 @@
 // import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 interface Message {
   message: string;
 }
 
-function CodeValidationForm() {
+const CodeValidationForm: React.FC = () => {
   const [digit1, setDigit1] = useState("" as number | string);
   const [digit2, setDigit2] = useState("" as number | string);
   const [digit3, setDigit3] = useState("" as number | string);
@@ -130,6 +130,6 @@ function CodeValidationForm() {
       </article>
     </section>
   );
-}
+};
 
 export default CodeValidationForm;

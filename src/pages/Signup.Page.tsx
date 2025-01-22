@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
 import Signup from "../functions/Signup";
+import Lottie from "lottie-react";
+import animation from "../assets/Animation - 1737525455942.json";
 
 function SignupPage() {
   return (
     <>
       <section className={String("signup-section-page")}>
+        {/* <div>
+          <img src="/photos/wallpaper-1.jpg" alt="" />
+        </div> */}
         <aside className="__wrapper">
+          <div>
+            <Lottie animationData={animation} />
+          </div>
           <form action="" method="post">
-            <h1>Signup</h1>
+            <h1>Create an account</h1>
             <br />
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-              sint blanditiis voluptatibus quae et necessitatibus ratione rem
-              vero odio voluptatem!
+              Sign up to get access to our collection of photos and get inspired
+              by the beauty of nature and the world at large.
             </p>
             <br />
             <span className="signup-alert-message"></span>
@@ -72,74 +79,72 @@ function SignupPage() {
               <label htmlFor="show-password">show password</label>
             </article>
             <br />
-            <br />
-            <div>
-              <button
-                type="button"
-                onClick={(event) => {
-                  event.stopPropagation();
-
-                  const loginAlertMessage: HTMLElement =
-                    window.document.querySelector(
-                      ".signup-alert-message"
-                    ) as HTMLElement;
-
-                  if (
-                    (
-                      window.document.querySelector(
-                        "#username"
-                      ) as HTMLInputElement
-                    ).value === ""
-                  ) {
-                    loginAlertMessage.textContent = "All fields are required";
-                  } else if (
-                    (
-                      window.document.querySelector(
-                        "#password"
-                      ) as HTMLInputElement
-                    ).value === ""
-                  ) {
-                    loginAlertMessage.textContent = "All fields are required";
-                  } else if (
-                    (
-                      window.document.querySelector(
-                        "#email"
-                      ) as HTMLInputElement
-                    ).value === ""
-                  ) {
-                    loginAlertMessage.textContent = "All fields are required";
-                  } else {
-                    // no worries about this, its warning buh wont cause any trouble loading the app
-                    Signup(
-                      (
-                        window.document.querySelector(
-                          "#username"
-                        ) as HTMLInputElement
-                      ).value,
-                      (
-                        window.document.querySelector(
-                          "#email"
-                        ) as HTMLInputElement
-                      ).value,
-                      (
-                        window.document.querySelector(
-                          "#password"
-                        ) as HTMLInputElement
-                      ).value
-                    );
-                  }
-                }}
-              >
-                Signup
-              </button>
+            <p>
+              Already have an account?{" "}
               <Link
                 to={{
                   pathname: "/login",
                 }}
               >
-                <button type="button">Login</button>
+                login
               </Link>
-            </div>
+            </p>
+            <br />
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+
+                const loginAlertMessage: HTMLElement =
+                  window.document.querySelector(
+                    ".signup-alert-message"
+                  ) as HTMLElement;
+
+                if (
+                  (
+                    window.document.querySelector(
+                      "#username"
+                    ) as HTMLInputElement
+                  ).value === ""
+                ) {
+                  loginAlertMessage.textContent = "All fields are required";
+                } else if (
+                  (
+                    window.document.querySelector(
+                      "#password"
+                    ) as HTMLInputElement
+                  ).value === ""
+                ) {
+                  loginAlertMessage.textContent = "All fields are required";
+                } else if (
+                  (window.document.querySelector("#email") as HTMLInputElement)
+                    .value === ""
+                ) {
+                  loginAlertMessage.textContent = "All fields are required";
+                } else {
+                  // no worries about this, its warning buh wont cause any trouble loading the app
+                  Signup(
+                    (
+                      window.document.querySelector(
+                        "#username"
+                      ) as HTMLInputElement
+                    ).value,
+                    (
+                      window.document.querySelector(
+                        "#email"
+                      ) as HTMLInputElement
+                    ).value,
+                    (
+                      window.document.querySelector(
+                        "#password"
+                      ) as HTMLInputElement
+                    ).value
+                  );
+                }
+              }}
+            >
+              Signup
+            </button>
           </form>
         </aside>
       </section>

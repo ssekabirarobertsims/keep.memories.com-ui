@@ -54,7 +54,9 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.resource.includes(
-                        (event.target as HTMLInputElement).value
+                        (
+                          event.target as HTMLInputElement
+                        ).value.toLocaleLowerCase()
                       );
                     })
                   );

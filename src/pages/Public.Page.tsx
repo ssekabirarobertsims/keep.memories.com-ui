@@ -6,6 +6,7 @@ import FooterComponent from "../components/Footer.Component";
 import LogoutAlertBox from "../components/Logout.Alert.Box.Component";
 import HeaderComponent from "../components/Header.Component";
 import PublicPagePhotoCollection from "../components/Public.Photo.Collection.Component";
+import AdvertComponent from "../components/Advert.Component";
 
 function PublicPage() {
   const [value, setValue] = useState([
@@ -46,24 +47,10 @@ function PublicPage() {
     },
     {
       id: String(uuid()),
-      title: "click to view food categories of photos",
-      bg_photo: <img src="/photos/fruit.png" alt="" />,
-      href: "/photos/categories/food",
-      value: "Food",
-    },
-    {
-      id: String(uuid()),
       title: "click to view dark categories of photos",
       bg_photo: <img src="/photos/dark.png" alt="" />,
       href: "/photos/categories/dark-photos",
       value: "Dark",
-    },
-    {
-      id: String(uuid()),
-      title: "click to view sports categories of photos",
-      bg_photo: <img src="/photos/running.png" alt="" />,
-      href: "/photos/categories/sports",
-      value: "Sports",
     },
     {
       id: String(uuid()),
@@ -100,6 +87,10 @@ function PublicPage() {
         <LogoutAlertBox />
         <br />
         <br />
+        <h1>Get inspired by our selected content</h1>
+        <br />
+        <br />
+        <br />
         <PublicPagePhotoCollection />
         <br />
         <br />
@@ -110,6 +101,9 @@ function PublicPage() {
         >
           view more photos
         </Link>
+        <br />
+        <br />
+        <AdvertComponent />
         <br />
         <br />
       </main>

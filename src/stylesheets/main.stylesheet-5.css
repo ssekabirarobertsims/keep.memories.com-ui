@@ -70,9 +70,9 @@ aside[class="account-view-component"] div :is(article[class="account-description
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    border: 9px solid #474bff;
+    border: 10px solid #474bff;
     animation: spinner-bulqg1 0.8s infinite linear alternate,
-         spinner-oaa3wk 1.6s infinite linear;
+   spinner-oaa3wk 1.6s infinite linear;
  }
  
  @keyframes spinner-bulqg1 {
@@ -138,5 +138,125 @@ aside[class="account-view-component"] div :is(article[class="account-description
    top: 0;
    left: 0;
    flex-direction: column;
+   gap: 1.6em;
+   font-size: .9em;
+}
+.loader-component a {
+   text-decoration-color: none;
+   color: var(--primary-color);
+   font-size: .9em;
+}
+
+/*  */
+aside[class="advert-component"] {
+   min-height: 17em;
+   width: min(90%, 90%);
+   background-color: hsl(216, 100%, 90%);
+   border-radius: .5em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+aside[class="advert-component"] div {
+   min-height: 13em;
+   width: min(90%, 90%);
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   gap: .5em;
+}
+aside[class="advert-component"] div > h1 {
+   font-size: 2.5em;
+   font-weight: bold;
+   color: hsl(0, 0%, 10%);
+   max-width: fit-content;
+}
+aside[class="advert-component"] div > p {
+   font-size: 1em;
+   font-weight: normal;
+   color: hsl(0, 0%, 10%);
+   max-width: 40em;
+}
+aside[class="advert-component"] div > a {
+   min-height: 2em;
+   width: 10em;
+}
+aside[class="advert-component"] div > a :where(button) {
+   min-height: 3em;
+   width: 10em;
+   border-radius: .2em;
+   border: none;
+   background-color: #101010;
+   color: #fff;
+   cursor: pointer;
+}
+
+/*  */
+section[class="subscription-page"] {
+   min-height: 85vh;
+   width: min(100%, 100%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
    gap: 1em;
+   /* border: 1px solid red; */
+}
+section[class="subscription-page"] form {
+   min-height: 60vh;
+   width: min(90%, 60em);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 1em;
+   /* border: 1px solid red; */
+   border-radius: 1em;
+   background-color: var(--primary-color);
+   color: #fff;
+}
+section[class="subscription-page"] form > h1 {
+   font-size: 2.5em;
+   font-weight: bold;
+   /* color: hsl(0, 0%, 10%); */
+   max-width: fit-content;
+   line-height: .7em;
+}
+section[class="subscription-page"] form > h2 {
+   font-size: 1.7em;
+   font-weight: calc(300 + 220);
+   /* color: hsl(0, 0%, 15%); */
+}
+section[class="subscription-page"] form > p {
+   font-size: 1em;
+   font-weight: normal;
+   /* color: hsl(0, 0%, 10%); */
+   max-width: 30em;
+   text-align: center;
+}
+section[class="subscription-page"] form > input {
+   height: 3em;
+   width: min(100%, 50em);
+   border: none;
+   border-bottom: 1px solid hsl(0, 0%, 10%);
+   background-color: transparent;
+   outline-style: none;
+}
+section[class="subscription-page"] form > input::placeholder {
+   color: #101010;
+}
+section[class="subscription-page"] form > button {
+   height: 3em;
+   width: min(100%, 20em);
+   border: none;
+   background-color: #101010;
+   outline-style: none;
+   border-radius: 20em;
+   color: #fff;
+   cursor: pointer;
+}
+section[class="subscription-page"] form > button:is(:hover, :focus) {
+   transform: scale(1.1);
+   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 }

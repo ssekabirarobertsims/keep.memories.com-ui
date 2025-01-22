@@ -8,7 +8,7 @@ interface Admin {
   username: string;
 }
 
-function UploadPhotoForm() {
+const UploadPhotoForm: React.FC = () => {
   const context: string = React.useContext(adminContext) as string;
   const admin: Admin = JSON.parse(context) as Admin;
   console.log(admin);
@@ -94,6 +94,6 @@ function UploadPhotoForm() {
       </form>
     </section>
   );
-}
+};
 
 export default UploadPhotoForm;

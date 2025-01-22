@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
 import Login from "../functions/Login";
+import Lottie from "lottie-react";
+import animation from "../assets/Animation - 1737525455942.json";
 
 function LoginPage() {
   return (
     <>
       <section className="login-section-page">
         <aside className="__wrapper">
+          <div>
+            <Lottie animationData={animation} />
+          </div>
           <form action="" method="post">
-            <h1>Login</h1>
+            <h1>Log into an account</h1>
             <br />
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
-              saepe eveniet enim? Dolor est facilis qui amet? Animi, laborum
-              tenetur!
+              Login to get access to our collection of photos and get inspired
+              by the beauty of nature and the world at large.
             </p>
             <br />
             <span className="login-alert-message"></span>
@@ -62,7 +66,16 @@ function LoginPage() {
               <label htmlFor="show-password">show password</label>
             </article>
             <br />
-            <br />
+            <p>
+              Do not have an account?{" "}
+              <Link
+                to={{
+                  pathname: "/signup",
+                }}
+              >
+                signup
+              </Link>
+            </p>
             <br />
             <div>
               <button
@@ -109,13 +122,6 @@ function LoginPage() {
               >
                 Login
               </button>
-              <Link
-                to={{
-                  pathname: "/signup",
-                }}
-              >
-                <button type="button">signup</button>
-              </Link>
             </div>
           </form>
         </aside>
