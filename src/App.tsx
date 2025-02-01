@@ -39,7 +39,7 @@ function App() {
 
   return (
     <Routes>
-      <Route index element={<SubscribingPage />}></Route>
+      <Route index element={<PublicPage />}></Route>
       <Route
         path="/login"
         element={admin ? <BlankAuthStatusPage /> : <LoginPage />}
