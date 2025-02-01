@@ -88,7 +88,7 @@ aside[class="account-view-component"] div :is(article[class="account-description
 .loader-component {
    min-height: 100vh;
    width: min(100%, 100%);
-   display: none;
+   display: flex;
    align-items: center;
    justify-content: center;
    background: rgba(0 ,0 ,0 ,.1);
