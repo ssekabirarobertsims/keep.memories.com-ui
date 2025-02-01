@@ -34,21 +34,33 @@
     gap: 1.5em;
   }
   
-  aside[class="photo-view"] {
-    overflow: scroll;
-    background-color: #fff;
-  }
+  /*  */
   aside[class="photo-view"] > div[class="photo-view-wrapper"] {
-    overflow: scroll;
-  }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
-    min-height: 50vh;
-    /* border: 1px solid red; */
+    height: 90vh;
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-    height: 80vh;
+    min-height: 20vh;
+    justify-content: center;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
+    height: 10vh;
+    justify-content: center;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
+    font-size: 1.1em;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
+    width: 10em;
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
+    height: 10vh;
+    /* border: 1px solid red; */
+  }
+  aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+    height: 17em;
   }
 
+  /*  */
   section[class="about-us-page"] {
     min-height: 130vh;
   }
@@ -165,20 +177,32 @@
   header > article :is(div) p {
     font-size: .9em;
 }
-
-aside[class="photo-view"] {
-  overflow: scroll;
-  background-color: #fff;
-}
+/*  */
 aside[class="photo-view"] > div[class="photo-view-wrapper"] {
-  overflow: scroll;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
-  min-height: 50vh;
+  height: 90vh;
 }
 aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-  height: 130vh;
+  min-height: 20vh;
+  justify-content: flex-start;
 }
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
+  height: 10vh;
+  justify-content: flex-end;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
+  font-size: 1.1em;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
+  width: 10em;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
+  height: 10vh;
+  /* border: 1px solid red; */
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+  height: 17em;
+}
+/*  */ 
   
   section[class="about-us-page"] {
     min-height: 180vh;

@@ -6,6 +6,8 @@ import axios from "axios";
 // import { FaHeart } from "react-icons/fa";
 import PhotoViewComponent from "../components/Photo.View.Component";
 import { AiOutlineSearch } from "react-icons/ai";
+import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
+import LoaderComponent from "../components/Loader.Component";
 
 interface Resource {
   id: string;
@@ -75,6 +77,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -96,17 +104,25 @@ function FilterBar() {
                 ) {
                   setSearches([]);
                 } else {
-                  setSearches(
-                    response.filter((index: Resource) => {
-                      return index.resource_title.includes(
-                        (
-                          window.document.querySelector(
-                            "#filter-bar-input"
-                          ) as HTMLInputElement
-                        ).value
-                      );
-                    })
-                  );
+                  window.setTimeout(() => {
+                    (
+                      window.document.querySelector(
+                        ".loader-component"
+                      ) as HTMLElement
+                    ).style.display = "none";
+
+                    setSearches(
+                      response.filter((index: Resource) => {
+                        return index.resource_title.includes(
+                          (
+                            window.document.querySelector(
+                              "#filter-bar-input"
+                            ) as HTMLInputElement
+                          ).value
+                        );
+                      })
+                    );
+                  }, 6000 as number);
                 }
               } catch (error) {
                 console.log(error);
@@ -124,6 +140,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -135,7 +157,16 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(response);
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(response);
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -148,12 +179,18 @@ function FilterBar() {
               backgroundColor: "hsl(0, 0%, 20%)",
             }}
           >
-            All
+            Collection
           </button>
           <button
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -165,11 +202,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "dark";
-                  })
-                );
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "dark";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -184,6 +230,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -195,11 +247,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "people";
-                  })
-                );
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "people";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -214,6 +275,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -225,11 +292,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "sports";
-                  })
-                );
+
+                window.setInterval(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "sports";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -244,6 +320,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -255,11 +337,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "nature";
-                  })
-                );
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "nature";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -274,6 +365,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -285,11 +382,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "illustrations";
-                  })
-                );
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "illustrations";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -304,6 +410,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -315,11 +427,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "technology";
-                  })
-                );
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "technology";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -334,6 +455,12 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".loader-component"
+                ) as HTMLElement
+              ).style.display = "flex";
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
@@ -345,11 +472,20 @@ function FilterBar() {
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "animals";
-                  })
-                );
+
+                window.setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".loader-component"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "animals";
+                    })
+                  );
+                }, 6000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
@@ -407,8 +543,8 @@ function FilterBar() {
           <PhotoViewComponent />
         </article>
       </section>
-      <br />
-      <br />
+      <LoaderComponent />
+      <ScrollGalleryComponent />
       <FooterComponent />
     </>
   );

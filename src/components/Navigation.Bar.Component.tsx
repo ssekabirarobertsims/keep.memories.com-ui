@@ -33,6 +33,9 @@ const NavigationBarComponent: React.FC = () => {
                 <AiOutlineSearch />
               </li>
             </Link>
+            <Link to={{ pathname: "/photos/categories/all" }}>
+              <li>Explore</li>
+            </Link>
             <Link to={{ pathname: "/newsletter/subscriptions" }}>
               <li>subscribe</li>
             </Link>

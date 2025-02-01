@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LoaderComponent from "../../components/Loader.Component";
 import PhotoViewComponent from "../../components/Photo.View.Component";
+import FooterComponent from "../../components/Footer.Component";
+import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
 
 interface Resource {
   id: string;
@@ -48,6 +50,9 @@ function Illustrations() {
   }
 
   useEffect(() => {
+    (
+      window.document.querySelector(".loader-component") as HTMLElement
+    ).style.display = "flex";
     FetchResources();
   }, [resources]);
 
@@ -94,17 +99,40 @@ function Illustrations() {
             ))}
           </div>
           <PhotoViewComponent />
+          <br />
+          <span>
+            Get Inspired By Our Collection Of{" "}
+            {(resources as Resource[])?.length} photos
+          </span>
+          <br />
+          <br />
         </section>
+        <ScrollGalleryComponent />
         <LoaderComponent />
+        <FooterComponent />
       </>
     ) : (
       <>
         <NavigationBarComponent />
-        <div className="img-wrapper">
-          <img src="/photos/3363936.webp" alt="" />
-          <p>No photos were found, try reloading the page!</p>
+        <div className="not-results-wrapper">
+          <strong>Sorry, no results found!</strong>
+          <p>
+            Please check your searches wether they match correctly or try
+            reloading the page again to try to find your results again.
+          </p>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              window.location.reload();
+            }}
+          >
+            Try Again
+          </button>
         </div>
+        <ScrollGalleryComponent />
         <LoaderComponent />
+        <FooterComponent />
       </>
     );
   } catch (error) {

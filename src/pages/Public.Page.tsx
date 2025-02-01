@@ -7,6 +7,8 @@ import LogoutAlertBox from "../components/Logout.Alert.Box.Component";
 import HeaderComponent from "../components/Header.Component";
 import PublicPagePhotoCollection from "../components/Public.Photo.Collection.Component";
 import AdvertComponent from "../components/Advert.Component";
+import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
+// import PhotoViewComponent from "../components/Photo.View.Component";
 
 function PublicPage() {
   const [value, setValue] = useState([
@@ -15,7 +17,7 @@ function PublicPage() {
       title: "click to view all categories of photos",
       bg_photo: <img src="/photos/select-all.png" alt="" />,
       href: "/photos/categories/all",
-      value: "All",
+      value: "Collection",
     },
     {
       id: String(uuid()),
@@ -94,15 +96,7 @@ function PublicPage() {
         <PublicPagePhotoCollection />
         <br />
         <br />
-        <Link
-          to={{
-            pathname: "/photos/categories/all",
-          }}
-        >
-          view more photos
-        </Link>
-        <br />
-        <br />
+        <ScrollGalleryComponent />
         <AdvertComponent />
         <br />
         <br />

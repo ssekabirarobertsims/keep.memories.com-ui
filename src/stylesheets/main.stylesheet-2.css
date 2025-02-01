@@ -278,92 +278,94 @@ aside[class="photo-view"] {
   top: 0px;
   left: 0px;
   z-index: 5;
+  /* border: 1px solid red; */
   gap: 1em;
 }
 aside[class="photo-view"] > div[class="photo-view-wrapper"] {
-  height: 100%;
-  width: min(100%, 100%);
+  height: 90vh;
+  width: min(90%, 90%);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  flex-flow: row wrap;
-  /* border: 1px solid red; */
-  gap: 0em
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] div {
-  min-height: 100vh;
-  /* border: 1px solid red; */
-  width: min(90%, 50em);
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: center;
-  flex-direction: row;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] div :is(img) {
-  aspect-ratio: 19/16;
-  width: min(90%, 40em);
+  border-radius: .5em;
+  flex-direction: column;
+  gap: 0em;
+  background-color: #fff;
+  /* overflow: hidden; */
 }
 aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-  height: 100vh;
-  width: min(100%, 25em);
-  background-color: #fff;
+  min-height: 15vh;
+  width: min(100%, 100%);
   display: flex;
   align-items: center;
-  /* border: 1px solid red; */
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
-  flex-grow: 1;
+  flex-flow: row wrap;
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+  gap: 0em;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) {
-  height: 100%;
-  width: min(90%, 90%);
-  /* border: 1px solid red; */
-  flex-grow: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.5em
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) ul {
-  display: flex;
-  flex-direction: column;
-  gap: .5em;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) h1 {
-  font-size: 2em;
-  color: hsl(0, 0%, 10%);
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) p {
-  font-size: .9em;
-  color: hsl(0, 0%, 10%);
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) ul > li {
-  list-style-type: none;
-  list-style: none;
-  font-size: .9em;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) a {
-  min-height: 1em;
-  width: min(100%, 100%);
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
+  height: 15vh;
+  width: min(90%, 60em);
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-decoration: none;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 0em;
+  /* border: 1px solid red; */
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside :is(div[class="wrapper"]) a > button {
-  height: 4em;
-  width: min(100%, 100%);
-  border: none;
-  border-radius: .2em;
-  background-color: var(--primary-color);
-  color: #fff;
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 1em;
+  list-style: none;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
+  font-weight: bold;
+  font-size: 1.2em;
   cursor: pointer;
 }
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 10%);
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
+  height: 3em;
+  width: 12em;
+  border: none;
+  border-radius: .4em;
+  color: #fff;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  font-weight: bold;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
+  height: 15vh;
+  width: min(100%, 5em);
+  border: none;
+  border: none;
+  background-color: transparent;
+  color: hsl(0, 0%, 20%);
+  font-weight: bolder;
+  cursor: pointer;
+  /* border: 1px solid red; */
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
+  height: 75vh;
+  width: min(100%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0em;
+}
+aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+  height: 27em;
+  width: min(90%, 27em);
+}
+
 
 
 /*  */
@@ -660,23 +662,34 @@ section[class="upload-form"] > form :is(div) {
 
 
 /*  */
-.img-wrapper {
-  min-height: 90vh;
+.not-results-wrapper {
+  min-height: 80vh;
   width: min(100%, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   /* border: 1px solid red; */
-  gap: .0em;
+  gap: 1em;
 }
-.img-wrapper > img {
-  aspect-ratio: 10/10;
-  width: min(100%, 20em);
+.not-results-wrapper > strong {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: hsl(0, 0%, 20%);
+  text-align: center;
 }
-.img-wrapper > p {
+.not-results-wrapper > p {
   font-size: .9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
+}
+.not-results-wrapper > button {
+  height: 3em;
+  width: 10em;
+  border: none;
+  border-radius: .3em;
+  color: #fff;
+  background-color: var(--primary-color);
+  cursor: pointer;
 }

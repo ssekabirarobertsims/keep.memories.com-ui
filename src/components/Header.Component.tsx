@@ -1,5 +1,6 @@
 // import { FaSearch } from "react-icons/fa";
 import React from "react";
+import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 
@@ -96,51 +97,56 @@ const HeaderComponent: React.FC = () => {
             by searching for a specific photo using the search bar to search and
             find your favorite photos.
           </p>
-          <input
-            type="search"
-            name="search-bar"
-            id="search-bar"
-            placeholder="search by categories"
-            aria-placeholder="search by categories"
-            onInput={(event) => {
-              event.stopPropagation();
-              setValue((event.target as HTMLInputElement).value as string);
-              (
-                window.document.querySelector(
-                  ".search-list"
-                ) as HTMLUListElement
-              ).style.display = "flex";
+          <div className="search-input-wrapper">
+            <span>
+              <BiSearch />
+            </span>
+            <input
+              type="search"
+              name="search-bar"
+              id="search-bar"
+              placeholder="search by categories"
+              aria-placeholder="search by categories"
+              onInput={(event) => {
+                event.stopPropagation();
+                setValue((event.target as HTMLInputElement).value as string);
+                (
+                  window.document.querySelector(
+                    ".search-list"
+                  ) as HTMLUListElement
+                ).style.display = "flex";
 
-              setList(list);
+                setList(list);
 
-              if (
-                list.length < 1 ||
-                (event.target as HTMLInputElement).value === "" ||
-                filteredList.length < 1
-              ) {
-                setFilteredList([
-                  {
-                    id: uuid() as string,
-                    value: `No Search Results Found For '${
-                      (event.target as HTMLInputElement).value
-                    }'`,
-                    link: "",
-                  },
-                ]);
-              } else {
-                setFilteredList(
-                  list.filter((index: ListItem) => {
-                    return index.value
-                      .toLowerCase()
-                      .includes(
-                        (event.target as HTMLInputElement).value.toLowerCase()
-                      );
-                  })
-                );
-              }
-            }}
-            value={value}
-          />
+                if (
+                  list.length < 1 ||
+                  (event.target as HTMLInputElement).value === "" ||
+                  filteredList.length < 1
+                ) {
+                  setFilteredList([
+                    {
+                      id: uuid() as string,
+                      value: `No Search Results Found For '${
+                        (event.target as HTMLInputElement).value
+                      }'`,
+                      link: "",
+                    },
+                  ]);
+                } else {
+                  setFilteredList(
+                    list.filter((index: ListItem) => {
+                      return index.value
+                        .toLowerCase()
+                        .includes(
+                          (event.target as HTMLInputElement).value.toLowerCase()
+                        );
+                    })
+                  );
+                }
+              }}
+              value={value}
+            />
+          </div>
         </article>
         <ul className="search-list">
           {filteredList.length > 0

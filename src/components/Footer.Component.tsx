@@ -40,11 +40,31 @@ const FooterComponent: React.FC = () => {
               <FaGooglePlus />
             </li>
           </ul>
+          <ul className="outer-links">
+            <a href="" target="_blank">
+              <li>sponsor</li>
+            </a>
+            <a href="https://robertsims.netlify.app/" target="_blank">
+              <li>developer</li>
+            </a>
+            <a href="" target="_blank">
+              <li>terms</li>
+            </a>
+            <a href="" target="_blank">
+              <li>services</li>
+            </a>
+            <a
+              href="https://keep-memories-com-api.onrender.com/"
+              target="_blank"
+            >
+              <li>api</li>
+            </a>
+          </ul>
         </div>
         <div className="copyright-wrapper">
           <span>
-            &copy;right all rights reserved {date as string}{" "}
-            <a href="https://www.robertsims.netlify.app" target="_blank">
+            keep memories photo gallery &copy;right {date as string}{" "}
+            <a href="https://robertsims.netlify.app/" target="_blank">
               developer
             </a>
           </span>

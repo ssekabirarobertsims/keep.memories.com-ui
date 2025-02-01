@@ -3,6 +3,12 @@ import { IoMdClose, IoMdDownload } from "react-icons/io";
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BiHeart } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import { LuDownload } from "react-icons/lu";
+// import { MdOutlineContentCopy } from "react-icons/md";
+
 interface Resource {
   id: string;
   resource: string;
@@ -49,6 +55,8 @@ function PhotoViewComponent() {
     }
   }
 
+  console.log(resource ? resource : "");
+
   useEffect(() => {
     FetchResources();
   }, [resources]);
@@ -61,79 +69,68 @@ function PhotoViewComponent() {
     view.style.display = "none";
   }
 
-  // console.log(
-  //   (
-  //     window.document.querySelector(".img-placeholder") as HTMLImageElement
-  //   ).src.slice(30)
-  // );
-
   return (
     <aside className={String("photo-view")}>
       <div className="photo-view-wrapper">
-        <div className="photo">
-          <img src={"/uploads/ill-4.webp"} alt="" className="img-placeholder" />
-        </div>
         <aside>
-          <div className="wrapper">
-            <span onClick={handleButtonClick}>
-              <IoMdClose />
-            </span>
-            <h1>
-              Download & Save Photos From{" "}
-              {(resource?.category as string)?.toLocaleUpperCase()}
-            </h1>
-
+          <button type="button" className="close" onClick={handleButtonClick}>
+            <IoMdClose />
+          </button>
+          <div className="_wrapper">
             <ul>
               <li>
-                File:{" "}
-                {(resource?.resource as string)
-                  ? (resource?.resource as string)
-                  : "unknown"}
+                <a
+                  href={
+                    (
+                      window.document.querySelector(
+                        ".img-placeholder"
+                      ) as unknown as HTMLImageElement
+                    )?.src
+                  }
+                  download
+                >
+                  <IoMdDownload />
+                </a>
               </li>
               <li>
-                Filename:{" "}
-                {(resource?.resource as string)
-                  ? (resource?.resource as string)
-                  : ("unknown" as unknown as string)}
-              </li>
-              <li>Size: 29304</li>
-              <li>
-                Upload Date:{" "}
-                {resource?.upload_date
-                  ? resource?.upload_date
-                  : ("unknown" as unknown as string)}
+                <BiHeart />
               </li>
               <li>
-                Uploaded By:{" "}
-                {resource?.resource_admin
-                  ? resource?.resource_admin
-                  : ("unknown" as unknown as string)}
+                <Link
+                  to={{
+                    pathname: "/filter/searches",
+                  }}
+                >
+                  <AiOutlineSearch />
+                </Link>
               </li>
               <li>
-                Category:{" "}
-                {resource?.category
-                  ? resource?.category
-                  : ("unknown" as unknown as string)}
+                <a
+                  href={
+                    (
+                      window.document.querySelector(
+                        ".img-placeholder"
+                      ) as unknown as HTMLImageElement
+                    )?.src
+                  }
+                  download
+                >
+                  <button type="button">
+                    <LuDownload /> Download
+                  </button>
+                </a>
               </li>
-              <li>Dimensions: 12033 * 1022</li>
-              <li>Source: Keep Memories Photo Gallery</li>
             </ul>
-            <a
-              href={
-                (
-                  window.document.querySelector(
-                    ".img-placeholder"
-                  ) as unknown as HTMLImageElement
-                )?.src
-              }
-              download
-            >
-              <button type="button">
-                <IoMdDownload /> Download
-              </button>
-            </a>
           </div>
         </aside>
+        <br />
+        <div className="photo">
+          <img
+            src={"/uploads/old-black-african-smiling-womman-in-red.jpg"}
+            alt=""
+            className="img-placeholder"
+          />
+        </div>
       </div>
     </aside>
   );

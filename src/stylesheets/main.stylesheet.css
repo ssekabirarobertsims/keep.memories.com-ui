@@ -212,12 +212,27 @@ header > article p {
     text-align: center;
     max-width: 60em;
 }
-header > article input {
+header > article :is(div[class="search-input-wrapper"]) {
     height: 3em;
     width: min(100%, 40em);
-    border: 1px solid hsl(0, 0%, 50%);
+    border-radius: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8em;
+    background-color: hsl(0, 0%, 85%);
+}
+header > article :is(div[class="search-input-wrapper"]) > span {
+   font-size: 1em;
+   color: hsl(0, 0%, 50%);
+}
+header > article :is(div[class="search-input-wrapper"]) > input {
+    height: 3em;
+    width: min(90%, 46em);
+    border: none;
     border-radius: 5em;
     background-color: transparent;
+    /* border: 1px solid red; */
 }
 header > article button {
     height: 4em;
@@ -251,6 +266,8 @@ header > article button:is(:hover, :focus) {
     -webkit-box-shadow: 0 5px 18.5px -2px #bdbdbd;
     -moz-box-shadow: 0 5px 18.5px -2px #bdbdbd;
     box-shadow: 0 5px 18.5px -2px #bdbdbd;
+    border-radius: .5em;
+    overflow: hidden;
 }
 .search-list a {
     height: 4em;
@@ -641,8 +658,9 @@ section[class="logout-alert-box"] > div :is(div) :last-child {
     background-color: hsl(0, 0%, 10%);
 }
 
+/*  */
 footer {
-    min-height: 17em;
+    min-height: 20em;
     width: min(100%, 100%); 
     display: flex;
     align-items: center;
@@ -652,7 +670,7 @@ footer {
     gap: .0em;
 }
 footer > div[class="__footer-information-wrapper"] {
-    min-height: 12em;
+    min-height: 15em;
     width: min(100%, 100%); 
     display: flex;
     align-items: center;
@@ -693,6 +711,25 @@ footer > div[class="__footer-information-wrapper"] ul > li :where(a) {
 footer > div[class="__footer-information-wrapper"] ul > li :where(a):is(:hover) {
     color: hsl(0, 0%, 100%);
 }
+footer > div[class="__footer-information-wrapper"] ul[class="outer-links"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6em;
+}
+footer > div[class="__footer-information-wrapper"] ul[class="outer-links"] > a {
+    font-size: .9em;
+    text-decoration-color: none;
+    text-decoration-line: none;
+    color:hsl(0, 0%, 70%)
+}
+footer > div[class="__footer-information-wrapper"] ul[class="outer-links"] > a :where(li) {
+    list-style: none;
+    cursor: pointer;
+}
+footer > div[class="__footer-information-wrapper"] ul[class="outer-links"] > li :where(a):is(:hover) {
+    color: hsl(0, 0%, 100%);
+}
 footer > div[class="copyright-wrapper"] {
     min-height: 3em;
     width: min(100%, 100%); 
@@ -705,70 +742,11 @@ footer > div[class="copyright-wrapper"] {
     background-color: hsl(0, 0%, 0%);
 }
 footer > div[class="copyright-wrapper"] span {
-    font-size: .8em;
+    font-size: .7em;
     font-weight: normal;
 }
 footer > div[class="copyright-wrapper"] span :where(a) {
     font-weight: normal;
     text-decoration: none;
     color: var(--primary-color)
-}
-footer :is(h1) {
-    font-size: 1.4em;
-    font-weight: bold;
-    font-style: normal;
-    font-variant: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-footer :is(h1) > a {
-    text-decoration-color: none;
-    text-decoration-line: none;
-    color: var(--primary-darker-font-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .1em;
-}
-footer :is(h1) > a img {
-    height: 1.5em;
-    width: 1.5em;
-}
-footer > aside {
-    min-height: 3em;
-    width: min(90%, 90%); 
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-flow: column wrap;
-    gap: 1em;
-}
-footer > aside :is(span) {
-    font-size: .9em;
-    font-weight: normal;
-    color: hsl(0, 0%, 70%);
-}
-footer > aside :is(ul) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1em;
-}
-footer > aside :is(ul) li {
-    list-style-type: none;
-}
-footer > aside :is(ul) li :where(a) {
-    list-style-type: none;
-    text-decoration: none;
-    font-weight: normal;
-    font-size: .9em;
-    color: hsl(0, 0%, 70%);
-}
-footer > aside :is(span) > a {
-    color: hsl(0, 0%, 70%);
-    text-decoration-color: none;
-    text-decoration-line: underline;
 }
