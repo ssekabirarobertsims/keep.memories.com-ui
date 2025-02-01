@@ -31,6 +31,11 @@ function DarkPhotos() {
       );
 
       const response = await request.data;
+
+      (
+        window.document.querySelector(".loader-component") as HTMLElement
+      ).style.display = "flex";
+
       window.setTimeout(async () => {
         (
           window.document.querySelector(".loader-component") as HTMLElement
@@ -50,9 +55,6 @@ function DarkPhotos() {
   }
 
   useEffect(() => {
-    (
-      window.document.querySelector(".loader-component") as HTMLElement
-    ).style.display = "flex";
     FetchResources();
   }, [resources]);
 

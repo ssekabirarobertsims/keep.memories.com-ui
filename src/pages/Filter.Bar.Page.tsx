@@ -544,6 +544,8 @@ function FilterBar() {
         </article>
       </section>
       <LoaderComponent />
+      <br />
+      <br />
       <ScrollGalleryComponent />
       <FooterComponent />
     </>

@@ -32,6 +32,10 @@ function Animals() {
 
       const response = await request.data;
 
+      (
+        window.document.querySelector(".loader-component") as HTMLElement
+      ).style.display = "flex";
+
       window.setTimeout(async () => {
         (
           window.document.querySelector(".loader-component") as HTMLElement
@@ -51,9 +55,6 @@ function Animals() {
   }
 
   useEffect(() => {
-    (
-      window.document.querySelector(".loader-component") as HTMLElement
-    ).style.display = "flex";
     FetchResources();
   }, [resources]);
 

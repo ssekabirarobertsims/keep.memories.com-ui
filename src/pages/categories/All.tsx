@@ -32,7 +32,10 @@ function All() {
       );
 
       const response = await request.data;
-      console.log(response);
+
+      (
+        window.document.querySelector(".loader-component") as HTMLElement
+      ).style.display = "flex";
 
       window.setTimeout(async () => {
         (
@@ -49,9 +52,6 @@ function All() {
   }
 
   useEffect(() => {
-    (
-      window.document.querySelector(".loader-component") as HTMLElement
-    ).style.display = "flex";
     FetchResources();
   });
 
