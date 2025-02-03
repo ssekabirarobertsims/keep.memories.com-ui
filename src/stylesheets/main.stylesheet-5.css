@@ -1,50 +1,76 @@
 aside[class="account-view-component"] {
-    height: 15em;
-    width: min(100%, 25em);
+    height: 100vh;
+    width: min(100%, 20em);
     border-radius: .2em;
     background-color: #fff;
     -webkit-box-shadow: 0 5px 18.5px -2px #bdbdbd;
     -moz-box-shadow: 0 5px 18.5px -2px #bdbdbd;
     box-shadow: 0 5px 18.5px -2px #bdbdbd;
-    position: absolute;
-    right: 1em;
-    top: 6em;
+    position: fixed;
+    right: 0em;
+    top: 0em;
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 4;
+    z-index: 5;
+    overflow: hidden;
 }
 aside[class="account-view-component"] div {
-    min-height: 14em;
-    width: min(90%, 90%);
+    min-height: 85vh;
+    width: min(85%, 85%);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid red; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 aside[class="account-view-component"] div :is(article[class="logo"]) > span {
     font-size: 3em;
     color: hsl(0, 0%, 20%)
 }
 aside[class="account-view-component"] div :is(article[class="account-description"]) {
-    min-height: 13em;
-    width: 15em;
+    min-height: 100%;
+    width: min(100%, 100%);
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    gap: .0em;
+    gap: .6em;
     /* border: 1px solid red; */
     flex-grow: 1;
-    color: hsl(0, 0%, 40%);
+    color: hsl(0, 0%, 20%);
     font-weight: calc(300 + 190);
 }
-aside[class="account-view-component"] div :is(article[class="account-description"]) span {
-    font-size: .9em;
-}
-aside[class="account-view-component"] div :is(article[class="account-description"]) button {
-    height: 2.5em;
+aside[class="account-view-component"] div :is(article[class="account-description"]) img {
+    height: 11em;
     width: 100%;
+    border-radius: 0%;
+    cursor: not-allowed;
+    border: 1px solid #eee;
+}
+aside[class="account-view-component"] div :is(article[class="account-description"]) span {
+   min-height: 3em;
+   width: min(100%, 100%);
+    font-size: .9em;
+    /* border-bottom: 1px solid hsl(0, 0%, 80%); */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+aside[class="account-view-component"] div :is(article[class="account-description"]) aside {
+   min-height: 7em;
+   width: min(100%, 100%);
+   font-size: .9em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   border: 1px solid hsl(0, 0%, 80%);
+   border-radius: .3em;
+}
+aside[class="account-view-component"] div :is(article[class="account-description"]) aside :is(button) {
+    height: 3em;
+    width: min(90%, 90%);
     border-radius: .2em;
     border: none;
     background-color: var(--primary-color);
@@ -146,7 +172,7 @@ aside[class="advert-component"] div > a {
 }
 aside[class="advert-component"] div > a :where(button) {
    min-height: 3em;
-   width: 10em;
+   width: min(100%, 15em);
    border-radius: .2em;
    border: none;
    background-color: #101010;
@@ -173,11 +199,11 @@ section[class="subscription-page"] form {
    justify-content: center;
    flex-direction: column;
    gap: 1em;
-   /* border: 1px solid red; */
-   border-radius: 1em;
-   background-color: var(--primary-color);
-   color: #fff;
+   border-radius: .5em;
+   background-color: #fff;
+   color: hsl(0, 0%, 20%);
    text-align: center;
+   border: 1px solid hsl(0, 0%, 80%);
 }
 section[class="subscription-page"] form > h1 {
    font-size: 2.5em;
@@ -200,7 +226,7 @@ section[class="subscription-page"] form > p {
 }
 section[class="subscription-page"] form > input {
    height: 3em;
-   width: min(90%, 50em);
+   width: min(90%, 60em);
    border: none;
    border-bottom: 1px solid hsl(0, 0%, 10%);
    background-color: transparent;
@@ -210,7 +236,7 @@ section[class="subscription-page"] form > input::placeholder {
    color: #101010;
 }
 section[class="subscription-page"] form > button {
-   height: 3em;
+   height: 3.5em;
    width: min(100%, 20em);
    border: none;
    background-color: #101010;
@@ -220,6 +246,5 @@ section[class="subscription-page"] form > button {
    cursor: pointer;
 }
 section[class="subscription-page"] form > button:is(:hover, :focus) {
-   transform: scale(1.1);
    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 }

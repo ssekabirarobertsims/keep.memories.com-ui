@@ -573,11 +573,14 @@ section[class="filter-bar"] > article {
   width: min(90%, 90%);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   flex-flow: row wrap;
-  gap: 0.3em;
+  gap: 0.5em;
   /* border: 1px solid red; */
+}
+section[class="filter-bar"] > article .photo_resource {
+  flex-grow: 0;
 }
 section[class="filter-bar"]
   > article
@@ -586,6 +589,7 @@ section[class="filter-bar"]
   width: min(90%, 90%);
   display: flex;
   align-items: center;
+  /* border: 1px solid red; */
   justify-content: center;
 }
 section[class="filter-bar"]
@@ -632,6 +636,59 @@ section[class="filter-bar"]
   }
 }
 
+/*  */
+  
+.login-section-page > .login-spinner-wrapper {
+  min-height: 100vh;
+  width: min(100%, 100%);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .1);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/*  */
+  
+.signup-section-page > .signup-spinner-wrapper {
+  min-height: 100vh;
+  width: min(100%, 100%);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .1);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/*  */
+.search-bar-spinner-wrapper {
+  min-height: 100vh;
+  width: min(100%, 100%);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .1);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 4;
+}
+
+
+/*  */
 .search_webp {
   height: 22em;
   width: 28em;

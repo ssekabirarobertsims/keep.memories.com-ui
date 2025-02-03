@@ -1,5 +1,5 @@
 import NavigationBarComponent from "../../components/Navigation.Bar.Component";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
 import LoaderComponent from "../../components/Loader.Component";
@@ -16,7 +16,24 @@ interface Resource {
   upload_date: string | number;
 }
 
+import adminContext from "../../context/adminContext";
+
+interface AdminObject {
+  login_id: string;
+  username: string;
+  email: string;
+  token: string;
+  message: string;
+  status: string;
+  signedUp: boolean | string;
+  date: string;
+}
+
+type Admin = string;
+
 function People() {
+  const context: Admin = useContext(adminContext) as Admin;
+  const adminObject: AdminObject = JSON.parse(context);
   const [resources, setResources] = useState<Resource[]>([]);
 
   async function fetchResources() {
@@ -25,7 +42,7 @@ function People() {
         "https://keep-memories-com-api.onrender.com/resources",
         {
           headers: {
-            Authorization: "",
+            Authorization: `Bearer ${adminObject?.token}`,
           },
         }
       );
@@ -47,6 +64,12 @@ function People() {
       console.warn("Connection to server was lost...");
       console.warn("Reconnecting to server...");
       console.warn("Connecting...");
+
+      window.setTimeout(async () => {
+        (
+          window.document.querySelector(".loader-component") as HTMLElement
+        ).style.display = "none";
+      }, 6000 as number);
     }
   }
 

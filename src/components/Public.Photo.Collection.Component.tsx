@@ -327,13 +327,13 @@ function PublicPagePhotoCollection() {
         </div>
         <div>
           <img
-            src="/uploads/black-pretty-girl-points-left-copy-space-some-text-little-black-girl-pointing-side_432566-7396.jpg"
+            src="/uploads/hand-drawn-black-man-illustration_23-2149429508.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="wrapper">
               <a
-                href="/uploads/black-pretty-girl-points-left-copy-space-some-text-little-black-girl-pointing-side_432566-7396.jpg"
+                href="/uploads/hand-drawn-black-man-illustration_23-2149429508.jpg"
                 download
                 title="download photo to your machine"
               >

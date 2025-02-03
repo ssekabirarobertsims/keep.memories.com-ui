@@ -6,6 +6,7 @@ interface AdminObject {
   email: string;
   username: string;
   userId: string | number;
+  login_id: string | number;
 }
 
 type Admin = string;
@@ -18,38 +19,53 @@ const AccountViewComponent: React.FC = () => {
     <aside className="account-view-component">
       <div className="account-view-component-wrapper">
         <article className="account-description">
-          <h2>Logged in user</h2>
+          <img src="/photos/placeholder.jpg" alt="" />
           <br />
           <span>
-            {adminObject?.userId || typeof adminObject?.userId !== "undefined"
-              ? `user${adminObject?.userId}`
-              : "user23927101"}
+            Login Id:{" "}
+            <strong>
+              {adminObject?.login_id ||
+              typeof adminObject?.login_id !== "undefined"
+                ? `login${adminObject?.login_id}`
+                : "login23927101"}
+            </strong>
           </span>
           <span>
-            {adminObject?.username ||
-            typeof adminObject?.username !== "undefined"
-              ? adminObject?.username
-              : "no-username"}
+            Username:{" "}
+            <strong>
+              {adminObject?.username ||
+              typeof adminObject?.username !== "undefined"
+                ? adminObject?.username
+                : "no-username"}
+            </strong>
           </span>
           <span>
-            {adminObject?.email || typeof adminObject?.email !== "undefined"
-              ? adminObject?.email
-              : "no-email"}
+            Email:{" "}
+            <strong>
+              {adminObject?.email || typeof adminObject?.email !== "undefined"
+                ? adminObject?.email
+                : "no-email"}
+            </strong>
+          </span>
+          <span>
+            Premium User: <strong>Not Premium</strong>
           </span>
           <br />
-          <button
-            type="button"
-            onClick={(event) => {
-              event.stopPropagation();
-              (
-                window.document.querySelector(
-                  ".logout-alert-box"
-                ) as HTMLElement
-              ).style.display = "flex";
-            }}
-          >
-            log out
-          </button>
+          <aside>
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                (
+                  window.document.querySelector(
+                    ".logout-alert-box"
+                  ) as HTMLElement
+                ).style.display = "flex";
+              }}
+            >
+              log out
+            </button>
+          </aside>
         </article>
       </div>
     </aside>

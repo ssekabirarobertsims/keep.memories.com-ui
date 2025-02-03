@@ -72,12 +72,20 @@ function PhotoViewComponent() {
   return (
     <aside className={String("photo-view")}>
       <div className="photo-view-wrapper">
+        <div className="photo">
+          <img
+            src={"/uploads/old-black-african-smiling-womman-in-red.jpg"}
+            alt=""
+            className="img-placeholder"
+          />
+        </div>
+        <br />
         <aside>
-          <button type="button" className="close" onClick={handleButtonClick}>
-            <IoMdClose />
-          </button>
           <div className="_wrapper">
             <ul>
+              <li onClick={handleButtonClick}>
+                <IoMdClose />
+              </li>
               <li>
                 <a
                   href={
@@ -122,15 +130,10 @@ function PhotoViewComponent() {
               </li>
             </ul>
           </div>
+          {/* <button type="button" className="close" onClick={handleButtonClick}>
+            <IoMdClose />
+          </button> */}
         </aside>
-        <br />
-        <div className="photo">
-          <img
-            src={"/uploads/old-black-african-smiling-womman-in-red.jpg"}
-            alt=""
-            className="img-placeholder"
-          />
-        </div>
       </div>
     </aside>
   );

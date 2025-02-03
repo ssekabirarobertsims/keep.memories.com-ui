@@ -74,6 +74,7 @@ function PublicPage() {
       <HeaderComponent />
       <main className={String("public-page")}>
         <br />
+        <h1>Explore Categories</h1>
         <section className={String("photos-categories")}>
           {ref.current.map((index) => (
             <Link
@@ -94,6 +95,7 @@ function PublicPage() {
         <br />
         <br />
         <PublicPagePhotoCollection />
+        <br />
         <br />
         <br />
         <ScrollGalleryComponent />

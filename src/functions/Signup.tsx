@@ -1,33 +1,72 @@
 async function Signup(username: string, email: string, password: string) {
-  const request = await fetch(
-    "https://keep-memories-com-api.onrender.com/signup",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-        Authorization: "",
-      },
-      body: JSON.stringify({
-        username: username,
-        email: email,
-        password: password,
-      }),
+  try {
+    const request = await fetch(
+      "https://keep-memories-com-api.onrender.com/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: "",
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password,
+        }),
+      }
+    );
+
+    const response = await request.json();
+
+    if (request.ok) {
+      (
+        window.document.querySelector(".signup-alert-message") as HTMLElement
+      ).style.display = "flex";
+
+      (
+        window.document.querySelector(".signup-alert-message") as HTMLElement
+      ).textContent = response.message;
+
+      window.setTimeout(() => {
+        (
+          window.document.querySelector(
+            ".login-spinner-wrapper"
+          ) as HTMLDivElement
+        ).style.display = "none";
+
+        window.location.href = "/signup/account/verification/code";
+      }, 3000 as number);
+    } else {
+      (
+        window.document.querySelector(".signup-alert-message") as HTMLElement
+      ).textContent = response.message;
+
+      (
+        window.document.querySelector(".signup-alert-message") as HTMLElement
+      ).style.display = "flex";
     }
-  );
+  } catch (error) {
+    console.log(error);
 
-  const response = await request.json();
+    (
+      window.document.querySelector(".signup-spinner-wrapper") as HTMLDivElement
+    ).style.display = "flex";
 
-  if (request.ok) {
-    (
-      window.document.querySelector(".signup-alert-message") as HTMLElement
-    ).textContent = response.message;
-    window.setTimeout(() => {
-      window.location.href = "/signup/account/verification/code";
-    }, 3000 as number);
-  } else {
-    (
-      window.document.querySelector(".signup-alert-message") as HTMLElement
-    ).textContent = response.message;
+    setTimeout(() => {
+      (
+        window.document.querySelector(
+          ".signup-spinner-wrapper"
+        ) as HTMLDivElement
+      ).style.display = "none";
+
+      (
+        window.document.querySelector(".signup-alert-message") as HTMLElement
+      ).style.display = "flex";
+
+      (
+        window.document.querySelector(".signup-alert-message") as HTMLElement
+      ).textContent = "Please check your network!";
+    }, 4000 as number);
   }
 }
 

@@ -1,10 +1,11 @@
 import NavigationBarComponent from "../../components/Navigation.Bar.Component";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
 import LoaderComponent from "../../components/Loader.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
+import adminContext from "../../context/adminContext";
 
 interface Resource {
   id: string;
@@ -16,7 +17,23 @@ interface Resource {
   upload_date: string | number;
 }
 
+interface AdminObject {
+  login_id: string;
+  username: string;
+  email: string;
+  token: string;
+  message: string;
+  status: string;
+  signedUp: boolean | string;
+  date: string;
+}
+
+type Admin = string;
+
 function All() {
+  const context: Admin = useContext(adminContext) as Admin;
+  const adminObject: AdminObject = JSON.parse(context);
+
   const [resources, setResources] = useState<Resource[]>([]);
 
   async function FetchResources() {
@@ -26,7 +43,7 @@ function All() {
         // "https://api-jsonresources-restapi.onrender.com/resources/users",
         {
           headers: {
-            Authorization: "",
+            Authorization: `Bearer ${adminObject?.token}`,
           },
         }
       );
@@ -44,6 +61,12 @@ function All() {
       console.warn("Connection to server was lost...");
       console.warn("Reconnecting to server...");
       console.warn("Connecting...");
+
+      window.setTimeout(async () => {
+        (
+          window.document.querySelector(".loader-component") as HTMLElement
+        ).style.display = "none";
+      }, 6000 as number);
     }
   }
 

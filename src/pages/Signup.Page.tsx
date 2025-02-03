@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Signup from "../functions/Signup";
 import Lottie from "lottie-react";
 import animation from "../assets/Animation - 1737525455942.json";
+import FooterComponent from "../components/Footer.Component";
 
 function SignupPage() {
   return (
@@ -107,7 +108,8 @@ function SignupPage() {
                     ) as HTMLInputElement
                   ).value === ""
                 ) {
-                  loginAlertMessage.textContent = "All fields are required";
+                  loginAlertMessage.textContent = "All fields are required!";
+                  loginAlertMessage.style.display = "flex";
                 } else if (
                   (
                     window.document.querySelector(
@@ -115,14 +117,22 @@ function SignupPage() {
                     ) as HTMLInputElement
                   ).value === ""
                 ) {
-                  loginAlertMessage.textContent = "All fields are required";
+                  loginAlertMessage.textContent = "All fields are required!";
+                  loginAlertMessage.style.display = "flex";
                 } else if (
                   (window.document.querySelector("#email") as HTMLInputElement)
                     .value === ""
                 ) {
-                  loginAlertMessage.textContent = "All fields are required";
+                  loginAlertMessage.textContent = "All fields are required!";
+                  loginAlertMessage.style.display = "flex";
                 } else {
                   // no worries about this, its warning buh wont cause any trouble loading the app
+                  (
+                    window.document.querySelector(
+                      ".signup-spinner-wrapper"
+                    ) as HTMLDivElement
+                  ).style.display = "flex";
+
                   Signup(
                     (
                       window.document.querySelector(
@@ -147,7 +157,12 @@ function SignupPage() {
             </button>
           </form>
         </aside>
+        <div className="signup-spinner-wrapper">
+          <div className="spinner"></div>
+        </div>
       </section>
+      <br />
+      <FooterComponent />
     </>
   );
 }

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Login from "../functions/Login";
 import Lottie from "lottie-react";
 import animation from "../assets/Animation - 1737525455942.json";
+import FooterComponent from "../components/Footer.Component";
 
 function LoginPage() {
   return (
@@ -94,7 +95,8 @@ function LoginPage() {
                       ) as HTMLInputElement
                     ).value === ""
                   ) {
-                    loginAlertMessage.textContent = "All fields are required";
+                    loginAlertMessage.textContent = "All fields are required!";
+                    loginAlertMessage.style.display = "flex";
                   } else if (
                     (
                       window.document.querySelector(
@@ -102,9 +104,16 @@ function LoginPage() {
                       ) as HTMLInputElement
                     ).value === ""
                   ) {
-                    loginAlertMessage.textContent = "All fields are required";
+                    loginAlertMessage.textContent = "All fields are required!";
+                    loginAlertMessage.style.display = "flex";
                   } else {
                     // no worries about this, its warning buh wont cause any trouble loading the app
+                    (
+                      window.document.querySelector(
+                        ".login-spinner-wrapper"
+                      ) as HTMLDivElement
+                    ).style.display = "flex";
+
                     Login(
                       (
                         window.document.querySelector(
@@ -125,7 +134,12 @@ function LoginPage() {
             </div>
           </form>
         </aside>
+        <div className="login-spinner-wrapper">
+          <div className="spinner"></div>
+        </div>
       </section>
+      <br />
+      <FooterComponent />
     </>
   );
 }

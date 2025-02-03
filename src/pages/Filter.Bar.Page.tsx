@@ -1,12 +1,13 @@
 import NavigationBarComponent from "../components/Navigation.Bar.Component";
 import FooterComponent from "../components/Footer.Component";
-import { useState } from "react";
+import { useState, useContext, useRef } from "react";
 import axios from "axios";
 // import { FaDownload } from "react-icons/fa";
 // import { FaHeart } from "react-icons/fa";
 import PhotoViewComponent from "../components/Photo.View.Component";
 import { AiOutlineSearch } from "react-icons/ai";
 import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
+import adminContext from "../context/adminContext";
 
 interface Resource {
   id: string;
@@ -18,33 +19,72 @@ interface Resource {
   upload_date: string | number;
 }
 
+interface AdminObject {
+  login_id: string;
+  username: string;
+  email: string;
+  token: string;
+  message: string;
+  status: string;
+  signedUp: boolean | string;
+  date: string;
+}
+
+type Admin = string;
+
 function FilterBar() {
+  const context: Admin = useContext(adminContext) as Admin;
+  const adminObject: AdminObject = JSON.parse(context);
+
   const [searches, setSearches] = useState([] as Resource[]);
   const [inputValue, setInputValue] = useState("" as string);
+  const searchInputRef = useRef(null);
 
   return (
     <>
       <NavigationBarComponent />
+      <div className="alert-message">
+        <p>
+          Updates for this site are still going on in order to create the best
+          for the clients. For more info, reach out to{" "}
+          <a href="https://robertsims.netlify.app/" target="_blank">
+            robert sims
+          </a>
+        </p>
+      </div>
       <br />
       <section className={String("filter-bar")}>
         <div className="filter-bar-input-wrapper">
           <input
+            ref={searchInputRef}
             type="search"
             name=""
             id="filter-bar-input"
             onInput={async (event) => {
+              // add debounce for the input search
+
               event.stopPropagation();
+
+              setTimeout(() => {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+              }, 1000 as number);
+
               try {
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
+
                 setInputValue(
                   (event.target as HTMLInputElement).value as string
                 );
@@ -52,21 +92,37 @@ function FilterBar() {
                 if ((event.target as HTMLInputElement).value === "") {
                   setSearches([]);
                 } else {
-                  setSearches(
-                    response.filter((index: Resource) => {
-                      return index.resource.includes(
-                        (
-                          event.target as HTMLInputElement
-                        ).value.toLocaleLowerCase()
-                      );
-                    })
-                  );
+                  setTimeout(() => {
+                    (
+                      window.document.querySelector(
+                        ".search-bar-spinner-wrapper"
+                      ) as HTMLElement
+                    ).style.display = "none";
+
+                    setSearches(
+                      response.filter((index: Resource) => {
+                        return index.resource.includes(
+                          (
+                            event.target as HTMLInputElement
+                          ).value.toLocaleLowerCase()
+                        );
+                      })
+                    );
+                  }, 1500 as number);
                 }
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+                }, 1500 as number);
               }
             }}
             placeholder="search photos here..."
@@ -76,12 +132,22 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
@@ -97,23 +163,53 @@ function FilterBar() {
                 ) {
                   setSearches([]);
                 } else {
-                  setSearches(
-                    response.filter((index: Resource) => {
-                      return index.resource_title.includes(
-                        (
-                          window.document.querySelector(
-                            "#filter-bar-input"
-                          ) as HTMLInputElement
-                        ).value
-                      );
-                    })
-                  );
+                  setTimeout(() => {
+                    (
+                      window.document.querySelector(
+                        ".search-bar-spinner-wrapper"
+                      ) as HTMLElement
+                    ).style.display = "none";
+
+                    (event.target as HTMLButtonElement).disabled = Boolean(
+                      false
+                    ) as boolean;
+
+                    setSearches(
+                      response.filter((index: Resource) => {
+                        return index.resource_title.includes(
+                          (
+                            window.document.querySelector(
+                              "#filter-bar-input"
+                            ) as HTMLInputElement
+                          ).value
+                        );
+                      })
+                    );
+                  }, 5000 as number);
                 }
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -125,23 +221,64 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(response);
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  setSearches(response);
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
             style={{
@@ -155,27 +292,69 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "dark";
-                  })
-                );
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "dark";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -185,27 +364,68 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "people";
-                  })
-                );
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "people";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -215,27 +435,69 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "sports";
-                  })
-                );
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "sports";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -245,27 +507,69 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "nature";
-                  })
-                );
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "nature";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -275,27 +579,69 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "illustrations";
-                  })
-                );
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "illustrations";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -305,27 +651,69 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "technology";
-                  })
-                );
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "technology";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -335,27 +723,69 @@ function FilterBar() {
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
+
+              (event.target as HTMLButtonElement).disabled = Boolean(
+                true
+              ) as boolean;
+
               try {
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
                 const request = await axios.get(
                   "https://keep-memories-com-api.onrender.com/resources",
                   {
                     headers: {
-                      Authorization: "",
+                      Authorization: `Bearer ${adminObject?.token}`,
                     },
                   }
                 );
 
                 const response = await request.data;
-                setSearches(
-                  response.filter((index: Resource) => {
-                    return index.category === "animals";
-                  })
-                );
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+
+                  setSearches(
+                    response.filter((index: Resource) => {
+                      return index.category === "animals";
+                    })
+                  );
+                }, 5000 as number);
               } catch (error) {
                 console.log(error);
                 console.warn("Connection to server was lost...");
                 console.warn("Reconnecting to server...");
                 console.warn("Connecting...");
+
+                (
+                  window.document.querySelector(
+                    ".search-bar-spinner-wrapper"
+                  ) as HTMLElement
+                ).style.display = "flex";
+
+                setTimeout(() => {
+                  (
+                    window.document.querySelector(
+                      ".search-bar-spinner-wrapper"
+                    ) as HTMLElement
+                  ).style.display = "none";
+
+                  (event.target as HTMLButtonElement).disabled = Boolean(
+                    false
+                  ) as boolean;
+                }, 5000 as number);
               }
             }}
           >
@@ -402,12 +832,16 @@ function FilterBar() {
                 alt="photo"
                 className="search_webp"
               />
-              {/* <p className="search-results-message">There are no search results!</p> */}
             </div>
           )}
           <PhotoViewComponent />
         </article>
+        <div className="search-bar-spinner-wrapper">
+          <div className="spinner"></div>
+        </div>
       </section>
+      <br />
+      <br />
       <ScrollGalleryComponent />
       <FooterComponent />
     </>

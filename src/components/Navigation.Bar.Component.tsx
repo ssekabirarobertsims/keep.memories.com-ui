@@ -6,7 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import LogoutAlertBox from "./Logout.Alert.Box.Component";
 type Admin = string;
 import AccountViewComponent from "./Account.View.Component";
-import { MdAccountCircle } from "react-icons/md";
+// import { MdAccountCircle } from "react-icons/md";
 
 const NavigationBarComponent: React.FC = () => {
   const context: Admin = React.useContext(adminContext) as Admin;
@@ -15,17 +15,17 @@ const NavigationBarComponent: React.FC = () => {
   return (
     <>
       <nav className={String("navigation-bar")}>
-        <div>
+        {/* <div>
           <h1>
             <Link
               to={{
                 pathname: "/",
               }}
             >
-              <img src="/photos/camera.jpg" alt="" /> Free Photos Gallery
+              <img src="/photos/camera.jpg" alt="" />
             </Link>
           </h1>
-        </div>
+        </div> */}
         <div className="xtz">
           <ul>
             <Link to={{ pathname: "/filter/searches" }}>
@@ -39,13 +39,9 @@ const NavigationBarComponent: React.FC = () => {
             <Link to={{ pathname: "/newsletter/subscriptions" }}>
               <li>subscribe</li>
             </Link>
-            {admin ? (
-              ""
-            ) : (
-              <Link to={{ pathname: "/login" }}>
-                <li>login</li>
-              </Link>
-            )}
+            <Link to={{ pathname: admin ? "/" : "/login" }}>
+              <li>login</li>
+            </Link>
             {admin ? (
               ""
             ) : (
@@ -55,7 +51,9 @@ const NavigationBarComponent: React.FC = () => {
             )}
           </ul>
           {admin ? (
-            <span
+            <img
+              src="/photos/placeholder.jpg"
+              alt=""
               className="account-view-button"
               onClick={(event) => {
                 event.stopPropagation();
@@ -66,9 +64,7 @@ const NavigationBarComponent: React.FC = () => {
                 ).style.display = "flex";
               }}
               title={`logged in as ${JSON.parse(context).username}`}
-            >
-              <MdAccountCircle />{" "}
-            </span>
+            />
           ) : (
             ""
           )}

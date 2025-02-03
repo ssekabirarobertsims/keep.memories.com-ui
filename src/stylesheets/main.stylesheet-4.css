@@ -152,6 +152,7 @@ aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] {
     color: hsl(0, 00%, 70%);
     text-align: center;
     border-radius: .4em;
+    border: 1px solid red
 }
 aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] > h2 {
     font-size: 1.5em;
@@ -274,4 +275,24 @@ aside[class="scroll-gallery-component"] > div[class="_wrapper"] :is(article[clas
 }
 aside[class="scroll-gallery-component"] > div[class="_wrapper"] :is(article[class="photo-wrapper"]):is(:hover, :focus) img {
     transform: scale(1.1);
+}
+.pagination-wrapper {
+    height: 2em;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    color: hsl(0, 0%, 20%);
+}
+.pagination-wrapper > a {
+    height: .5em;
+    width: .5em;
+    color:hsl(0, 0%, 20%);
+    border-radius: 100%;
+    border: 1px solid hsl(0, 0%, 20%)
+}
+.pagination-wrapper > a:is(:hover, :focus) {
+    background-color: hsl(0, 0%, 20%);
 }

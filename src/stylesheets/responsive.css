@@ -1,13 +1,15 @@
 /* Medium devices (portrait tablets and large phones, 600px to 768px) */
 @media all and (min-width: 320px) and (max-width: 768px) {
-  aside[class="account-view-component"] {
-    width: min(90%, 90%);
-    right: 1em;
-    top: 6em;
-}
+  /* aside[class="account-view-component"] {
+    min-height: 90vh;
+} */
+  nav > div :is(ul) > a {
+    font-size: .9em;
+  }
+
   header {
     /* border: 1px solid red; */
-      min-height: 70vh;
+      min-height: 100vh;
     }
     header > article {
       min-height: 20em; 
@@ -30,16 +32,16 @@
   }
 
   main > section[class="photos-categories"] {
-    min-height: 20vh;
+    min-height: 40vh;
     gap: 1.5em;
   }
+  
   
   /*  */
   aside[class="photo-view"] > div[class="photo-view-wrapper"] {
     height: 90vh;
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-    min-height: 20vh;
     justify-content: center;
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
@@ -50,14 +52,14 @@
     font-size: 1.1em;
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
-    width: 10em;
+    width: 9em;
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
     height: 10vh;
     /* border: 1px solid red; */
   }
   aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
-    height: 17em;
+    height: 23em;
   }
 
   /*  */
@@ -164,7 +166,7 @@
   }
   header > article {
     min-height: 20em; 
-    gap: 0em;
+    gap: .8em;
     text-align: center;
     /* border: 1px solid red; */
   }
@@ -178,30 +180,30 @@
     font-size: .9em;
 }
 /*  */
-aside[class="photo-view"] > div[class="photo-view-wrapper"] {
-  height: 90vh;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-  min-height: 20vh;
-  justify-content: flex-start;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
-  height: 10vh;
-  justify-content: flex-end;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
-  font-size: 1.1em;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
-  width: 10em;
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
-  height: 10vh;
-  /* border: 1px solid red; */
-}
-aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
-  height: 17em;
-}
+    /*  */
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] {
+      height: 90vh;
+    }
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
+      justify-content: center;
+    }
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
+      height: 10vh;
+      justify-content: center;
+    }
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
+      font-size: 1.1em;
+    }
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
+      width: 9em;
+    }
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
+      height: 10vh;
+      /* border: 1px solid red; */
+    }
+    aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+      height: 23em;
+    }
 /*  */ 
   
   section[class="about-us-page"] {

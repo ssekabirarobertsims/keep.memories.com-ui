@@ -9,9 +9,8 @@ const ScrollGalleryComponent: React.FC = () => {
     <aside className="scroll-gallery-component">
       <h1>Best Reviews Of The Month!</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
-        totam. Libero reiciendis itaque veniam quasi laboriosam id molestias ut
-        eveniet.
+        Explore and download the best beautiful and inspiring photo reviews of
+        the month from our latest and updated gallery photos collection.
       </p>
       <br />
       <div className="_wrapper">
@@ -112,6 +111,36 @@ const ScrollGalleryComponent: React.FC = () => {
         </article>
       </div>
       <br />
+      <div className="pagination-wrapper">
+        <Link
+          to={{
+            pathname: "/photos/categories/technology",
+          }}
+        >
+          {" "}
+        </Link>
+        <Link
+          to={{
+            pathname: "/photos/categories/people",
+          }}
+        >
+          {" "}
+        </Link>
+        <Link
+          to={{
+            pathname: "/photos/categories/dark-photos",
+          }}
+        >
+          {" "}
+        </Link>
+        <Link
+          to={{
+            pathname: "/photos/categories/illustrations",
+          }}
+        >
+          {" "}
+        </Link>
+      </div>
       <Link
         to={{
           pathname: "/photos/categories/all",
