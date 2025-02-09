@@ -24,7 +24,7 @@ function LogoutAlertBox() {
               event.stopPropagation();
               window.setTimeout(() => {
                 window.localStorage.removeItem("admin");
-                window.location.href = "/login";
+                window.location.href = "/account/login";
               }, 10);
             }}
           >
