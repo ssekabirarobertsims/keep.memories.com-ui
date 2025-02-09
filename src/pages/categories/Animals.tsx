@@ -5,6 +5,7 @@ import PhotoViewComponent from "../../components/Photo.View.Component";
 import LoaderComponent from "../../components/Loader.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
+import WelcomeCookieAlertMessage from "../../components/Welcome.Cookie.Alert.Message.Component";
 
 interface Resource {
   id: string;
@@ -17,6 +18,7 @@ interface Resource {
 }
 
 import adminContext from "../../context/adminContext";
+import AdvertComponent from "../../components/Advert.Component";
 
 interface AdminObject {
   login_id: string;
@@ -125,13 +127,13 @@ function Animals() {
           <PhotoViewComponent />
           <br />
           <span>
-            Get Inspired By Our Collection Of{" "}
-            {(resources as Resource[])?.length} photos
+            Found {(resources as Resource[])?.length} photos from this category.
           </span>
           <br />
           <br />
         </section>
         <ScrollGalleryComponent />
+        <WelcomeCookieAlertMessage />
         <LoaderComponent />
         <FooterComponent />
       </>
@@ -156,6 +158,8 @@ function Animals() {
         </div>
         <ScrollGalleryComponent />
         <LoaderComponent />
+        <WelcomeCookieAlertMessage />
+        <AdvertComponent />
         <FooterComponent />
       </>
     );

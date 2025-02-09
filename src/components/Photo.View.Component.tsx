@@ -72,14 +72,6 @@ function PhotoViewComponent() {
   return (
     <aside className={String("photo-view")}>
       <div className="photo-view-wrapper">
-        <div className="photo">
-          <img
-            src={"/uploads/old-black-african-smiling-womman-in-red.jpg"}
-            alt=""
-            className="img-placeholder"
-          />
-        </div>
-        <br />
         <aside>
           <div className="_wrapper">
             <ul>
@@ -134,6 +126,13 @@ function PhotoViewComponent() {
             <IoMdClose />
           </button> */}
         </aside>
+        <div className="photo">
+          <img
+            src={"/uploads/old-black-african-smiling-womman-in-red.jpg"}
+            alt=""
+            className="img-placeholder"
+          />
+        </div>
       </div>
     </aside>
   );

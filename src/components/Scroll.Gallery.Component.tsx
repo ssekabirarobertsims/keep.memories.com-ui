@@ -1,13 +1,13 @@
 import React from "react";
 import { LuDownload } from "react-icons/lu";
-// import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const ScrollGalleryComponent: React.FC = () => {
   return (
     <aside className="scroll-gallery-component">
-      <h1>Best Reviews Of The Month!</h1>
+      <h1>Best Reviews From Our Collection!</h1>
       <p>
         Explore and download the best beautiful and inspiring photo reviews of
         the month from our latest and updated gallery photos collection.
@@ -15,11 +15,14 @@ const ScrollGalleryComponent: React.FC = () => {
       <br />
       <div className="_wrapper">
         <article className="photo-wrapper">
-          <img src="/uploads/tech-gadgets-with-white-background.jpg" alt="" />
+          <img
+            src="/uploads/woman-optique-glasses-with-blue-shadow-warm-knit-jacket_114579-9297.jpg"
+            alt=""
+          />
           <div className="blur">
             <Link
               to={{
-                pathname: "/photos/categories/technology",
+                pathname: "/photos/categories/dark-photos",
               }}
             >
               <button type="button">
@@ -27,7 +30,7 @@ const ScrollGalleryComponent: React.FC = () => {
               </button>
             </Link>
             <a
-              href="/uploads/tech-gadgets-with-white-background.jpg"
+              href="/uploads/woman-optique-glasses-with-blue-shadow-warm-knit-jacket_114579-9297.jpg"
               download
               title="download best review of the month!"
             >
@@ -35,14 +38,19 @@ const ScrollGalleryComponent: React.FC = () => {
                 <LuDownload />
               </button>
             </a>
+            <a href="/filter/searches" title="find in searches...">
+              <button type="button">
+                <FaSearch />
+              </button>
+            </a>
           </div>
         </article>
         <article className="photo-wrapper">
-          <img src="/uploads/66d72ede8ff1d34e34d7943c_withmeta.jpg" alt="" />
+          <img src="/uploads/horses-field_1048944-10315598.jpg" alt="" />
           <div className="blur">
             <Link
               to={{
-                pathname: "/photos/categories/people",
+                pathname: "/photos/categories/nature",
               }}
             >
               <button type="button">
@@ -50,12 +58,17 @@ const ScrollGalleryComponent: React.FC = () => {
               </button>
             </Link>
             <a
-              href="/uploads/66d72ede8ff1d34e34d7943c_withmeta.jpg"
+              href="/uploads/horses-field_1048944-10315598.jpg"
               download
               title="download best review of the month!"
             >
               <button type="button">
                 <LuDownload />
+              </button>
+            </a>
+            <a href="/filter/searches" title="find in searches...">
+              <button type="button">
+                <FaSearch />
               </button>
             </a>
           </div>
@@ -79,6 +92,11 @@ const ScrollGalleryComponent: React.FC = () => {
             >
               <button type="button">
                 <LuDownload />
+              </button>
+            </a>
+            <a href="/filter/searches" title="find in searches...">
+              <button type="button">
+                <FaSearch />
               </button>
             </a>
           </div>
@@ -105,6 +123,11 @@ const ScrollGalleryComponent: React.FC = () => {
             >
               <button type="button">
                 <LuDownload />
+              </button>
+            </a>
+            <a href="/filter/searches" title="find in searches...">
+              <button type="button">
+                <FaSearch />
               </button>
             </a>
           </div>

@@ -41,11 +41,11 @@ function App() {
     <Routes>
       <Route index element={<PublicPage />}></Route>
       <Route
-        path="/login"
+        path="/account/login"
         element={admin ? <BlankAuthStatusPage /> : <LoginPage />}
       ></Route>
       <Route
-        path="/signup"
+        path="/account/signup"
         element={admin ? <BlankAuthStatusPage /> : <SignupPage />}
       ></Route>
       <Route

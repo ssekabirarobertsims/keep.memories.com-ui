@@ -1,3 +1,4 @@
+/*  */
 .login-section-page {
   min-height: 100vh;
   width: min(100%, 100%);
@@ -7,47 +8,74 @@
   background: #fff;
   gap: 3em;
   flex-flow: row wrap;
-  position: relative;
+  /* border: 1px solid red; */
 }
 .login-section-page aside[class="__wrapper"] {
   min-height: 100vh;
-  width: min(90%, 90%);
+  width: min(100%, 50em);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #fff;
-  gap: 4em;
+  gap: 3em;
   flex-flow: row wrap;
-  /* border: 1px solid red; */
+  /* border: 1px solid red;  */
   border-radius: .0em;
+  flex-grow: 1;
   /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); */
 }
 .login-section-page aside[class="__wrapper"] > div {
-  min-height: 30em;
-  width: min(90%, 25em);
+  height: 100vh;
+  width: min(100%, 100%);
   display: flex; 
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
+  overflow: hidden;
+  flex-flow: 1;
+  position: relative;
 }
-.login-section-page aside[class="__wrapper"] > form {
-  height: 30em;
+.login-section-page aside[class="__wrapper"] > div::before {
+  content: "Keep Memories @ copyright 2025";
+  height: 100%;
+  width: min(100%, 100%);
+  display: flex; 
+  align-items: flex-start;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  color: hsl(0, 0%, 80%);
+  font-size: .8em;
+  cursor: not-allowed;
+}
+.login-section-page aside[class="__wrapper"] > div img {
+  height: 100%;
+  width: 100%;
+}
+.login-section-page > form {
+  min-height: 90vh;
   width: min(90%, 25em);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
+  /* flex-grow: 1; */
 }
-.login-section-page aside[class="__wrapper"] > form :is(h1) {
+.login-section-page > form :is(h1) {
   font-size: 1.7em;
   font-weight: calc(300 + 220);
   color: hsl(0, 0%, 15%);
 }
-.login-section-page aside[class="__wrapper"] > form :is(span[class="login-alert-message"]) {
+.login-section-page > form :is(span[class="login-alert-message"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 28em);
   border: 1px solid hsl(0, 0%, 80%);
   font-size: .8em;
   font-weight: normal;
@@ -58,46 +86,46 @@
   background-color: hsl(216, 100%, 95%);
   border-radius: .3em;
 }
-.login-section-page aside[class="__wrapper"] > form :is(p) {
+.login-section-page > form :is(p) {
   font-size: .8em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
+  max-width: 26em;
 }
-.login-section-page aside[class="__wrapper"] > div :is(h1) img {
-  height: 1.3em;
-  width: 1.3em;
-}
-.login-section-page aside[class="__wrapper"] > form :is(input[type="text"]) {
+.login-section-page > form :is(input[type="text"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
 }
-.login-section-page aside[class="__wrapper"] > form :is(input[type="email"])::placeholder {
-  font-size: 1.1em;
-}
-.login-section-page aside[class="__wrapper"] > form :is(input[type="password"])::placeholder {
-  font-size: 1.1em;
-}
-.login-section-page aside[class="__wrapper"] > form :is(input[type="password"]) {
+.login-section-page > form :is(input[type="password"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
-  border-bottom: 1px solid hsl(0, 0%, 60%);
+  border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
 }
-.login-section-page aside[class="__wrapper"] > form :is(input[type="email"]) {
+.login-section-page > form :is(input[type="email"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
-  border-bottom: 1px solid hsl(0, 0%, 60%);
+  border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
 }
-.login-section-page aside[class="__wrapper"] > form :is(span) {
+.login-section-page > form :is(input[type="email"])::placeholder {
+  font-size: 1em;
+}
+.login-section-page > form :is(input[type="text"])::placeholder {
+  font-size: 1em;
+}
+.login-section-page > form :is(input[type="password"])::placeholder {
+  font-size: 1em;
+}
+.login-section-page > form :is(span) {
   font-weight: normal;
   font-size: 0.9em;
 }
@@ -112,7 +140,7 @@
 .login-section-page aside[class="__wrapper"] > div :is(span) > a {
   color: #101010;
 }
-.login-section-page aside[class="__wrapper"] > form :is(article) {
+.login-section-page > form :is(article) {
   min-height: 1em;
   width: min(90%, 90%);
   display: flex;
@@ -121,23 +149,24 @@
   font-weight: normal;
   cursor: pointer;
 }
-.login-section-page aside[class="__wrapper"] > form :is(div) {
+.login-section-page > form :is(div) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: min(100%, 100%);
   gap: 1em;
 }
-.login-section-page aside[class="__wrapper"] > form :is(button) {
+.login-section-page > form :is(a) {
+  width: 10em;
+  flex-grow: 1;
+}
+.login-section-page > form :is(button) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
   background-color: var(--primary-color);
-  border-radius: 0.3em;
   color: #fff;
+  border-radius: .3em;
   cursor: pointer;
-  padding: 10px;
-  flex-grow: 1;
 }
 
 /*  */
@@ -154,43 +183,69 @@
 }
 .signup-section-page aside[class="__wrapper"] {
   min-height: 100vh;
-  width: min(90%, 90%);
+  width: min(100%, 55em);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #fff;
-  gap: 4em;
+  gap: 3em;
   flex-flow: row wrap;
   /* border: 1px solid red;  */
   border-radius: .0em;
+  flex-grow: 1;
   /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); */
 }
 .signup-section-page aside[class="__wrapper"] > div {
-  height: 20em;
-  width: min(90%, 25em);
+  height: 100vh;
+  width: min(100%, 100%);
   display: flex; 
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
+  overflow: hidden;
+  flex-flow: 1;
+  position: relative;
 }
-.signup-section-page aside[class="__wrapper"] > form {
-  min-height: 20em;
-  width: min(90%, 30em);
+.signup-section-page aside[class="__wrapper"] > div::before {
+  content: "Keep Memories @ copyright 2025";
+  height: 100%;
+  width: min(100%, 100%);
+  display: flex; 
+  align-items: flex-start;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  color: hsl(0, 0%, 80%);
+  font-size: .8em;
+  cursor: not-allowed;
+}
+.signup-section-page aside[class="__wrapper"] > div img {
+  height: 100%;
+  width: 100%;
+}
+.signup-section-page > form {
+  min-height: 90vh;
+  width: min(90%, 25em);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(h1) {
+.signup-section-page > form :is(h1) {
   font-size: 1.7em;
   font-weight: calc(300 + 220);
   color: hsl(0, 0%, 15%);
 }
-.signup-section-page aside[class="__wrapper"] > form :is(span[class="signup-alert-message"]) {
+.signup-section-page > form :is(span[class="signup-alert-message"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 28em);
   border: 1px solid hsl(0, 0%, 80%);
   font-size: .8em;
   font-weight: normal;
@@ -201,49 +256,46 @@
   background-color: hsl(216, 100%, 95%);
   border-radius: .3em;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(p) {
+.signup-section-page > form :is(p) {
   font-size: .8em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
+  max-width: 29em;
 }
-.signup-section-page aside[class="__wrapper"] > div :is(h1) img {
-  height: 1.3em;
-  width: 1.3em;
-}
-.signup-section-page aside[class="__wrapper"] > form :is(input[type="text"]) {
+.signup-section-page > form :is(input[type="text"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(input[type="password"]) {
+.signup-section-page > form :is(input[type="password"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(input[type="email"]) {
+.signup-section-page > form :is(input[type="email"]) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(input[type="email"])::placeholder {
-  font-size: 1.1em;
+.signup-section-page > form :is(input[type="email"])::placeholder {
+  font-size: 1em;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(input[type="text"])::placeholder {
-  font-size: 1.1em;
+.signup-section-page > form :is(input[type="text"])::placeholder {
+  font-size: 1em;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(input[type="password"])::placeholder {
-  font-size: 1.1em;
+.signup-section-page > form :is(input[type="password"])::placeholder {
+  font-size: 1em;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(span) {
+.signup-section-page > form :is(span) {
   font-weight: normal;
   font-size: 0.9em;
 }
@@ -258,7 +310,7 @@
 .signup-section-page aside[class="__wrapper"] > div :is(span) > a {
   color: #101010;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(article) {
+.signup-section-page > form :is(article) {
   min-height: 1em;
   width: min(90%, 90%);
   display: flex;
@@ -267,26 +319,25 @@
   font-weight: normal;
   cursor: pointer;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(div) {
+.signup-section-page > form :is(div) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(a) {
+.signup-section-page > form :is(a) {
   width: 10em;
   flex-grow: 1;
 }
-.signup-section-page aside[class="__wrapper"] > form :is(button) {
+.signup-section-page > form :is(button) {
   height: 3em;
-  width: min(100%, 100%);
+  width: min(100%, 27em);
   border: none;
   background-color: var(--primary-color);
   border-radius: 0.3em;
   color: #fff;
   cursor: pointer;
   padding: 10px;
-  flex-grow: 1;
 }
 
 
@@ -314,7 +365,7 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: .5em;
+  border-radius: .1em;
   flex-direction: column;
   gap: 0em;
   background-color: #fff;
@@ -329,7 +380,7 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
   justify-content: center;
   flex-direction: row;
   flex-flow: row wrap;
-  border-top: 1px solid hsl(0, 0%, 85%);
+  border-bottom: 1px solid hsl(0, 0%, 85%);
   gap: 0em;
   /* position: relative; */
 }
@@ -338,7 +389,7 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_
   width: min(95%, 95%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   /* border: 1px solid red; */
   flex-direction: row;
   gap: 0em;

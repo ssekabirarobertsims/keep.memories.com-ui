@@ -7,6 +7,7 @@ import UploadPhotoForm from "../components/Upload.Photo.Form.Component";
 import { useEffect, useState } from "react";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 // import Delete from "../functions/Delete";
+import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 
 interface Resource {
   id: number;
@@ -219,6 +220,7 @@ function AdminDashboardPage() {
           >
             {<MdOutlineAddPhotoAlternate />}
           </button>
+          <WelcomeCookieAlertMessage />
         </section>
         <br />
         <FooterComponent />

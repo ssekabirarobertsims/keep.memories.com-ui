@@ -15,17 +15,17 @@ const NavigationBarComponent: React.FC = () => {
   return (
     <>
       <nav className={String("navigation-bar")}>
-        {/* <div>
+        <div className="logo">
           <h1>
             <Link
               to={{
                 pathname: "/",
               }}
             >
-              <img src="/photos/camera.jpg" alt="" />
+              KeepMemories
             </Link>
           </h1>
-        </div> */}
+        </div>
         <div className="xtz">
           <ul>
             <Link to={{ pathname: "/filter/searches" }}>
@@ -33,19 +33,19 @@ const NavigationBarComponent: React.FC = () => {
                 <AiOutlineSearch />
               </li>
             </Link>
-            <Link to={{ pathname: "/photos/categories/all" }}>
+            <Link to={{ pathname: "/photos/categories/collection" }}>
               <li>Explore</li>
             </Link>
             <Link to={{ pathname: "/newsletter/subscriptions" }}>
               <li>subscribe</li>
             </Link>
-            <Link to={{ pathname: admin ? "/" : "/login" }}>
+            <Link to={{ pathname: admin ? "/" : "/account/login" }}>
               <li>login</li>
             </Link>
             {admin ? (
               ""
             ) : (
-              <Link to={{ pathname: "/signup" }}>
+              <Link to={{ pathname: "/account/signup" }}>
                 <li>signup</li>
               </Link>
             )}

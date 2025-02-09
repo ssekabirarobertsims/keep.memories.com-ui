@@ -9,6 +9,7 @@ import PublicPagePhotoCollection from "../components/Public.Photo.Collection.Com
 import AdvertComponent from "../components/Advert.Component";
 import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
 // import PhotoViewComponent from "../components/Photo.View.Component";
+import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 
 function PublicPage() {
   const [value, setValue] = useState([
@@ -16,7 +17,7 @@ function PublicPage() {
       id: String(uuid()),
       title: "click to view all categories of photos",
       bg_photo: <img src="/photos/select-all.png" alt="" />,
-      href: "/photos/categories/all",
+      href: "/photos/categories/collection",
       value: "Collection",
     },
     {
@@ -88,10 +89,17 @@ function PublicPage() {
           ))}
         </section>
         <LogoutAlertBox />
+        <WelcomeCookieAlertMessage />
         <br />
         <br />
-        <h1>Get inspired by our selected content</h1>
+        <h1>Get inspired by our selected collection of photos</h1>
         <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          obcaecati nostrum, quia itaque enim laboriosam dolorem impedit esse
+          debitis illum cupiditate voluptate praesentium optio sequi. Eaque
+          praesentium laborum reprehenderit officiis?
+        </p>
         <br />
         <br />
         <PublicPagePhotoCollection />

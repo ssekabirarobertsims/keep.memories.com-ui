@@ -10,7 +10,7 @@ import DarkPhotos from "./categories/Dark.Photos";
 function Categories() {
   return (
     <Routes>
-      <Route path="/categories/all" element={<All />}></Route>
+      <Route path="/categories/collection" element={<All />}></Route>
       <Route path="/categories/nature" element={<Nature />}></Route>
       <Route path="/categories/animals" element={<Animals />}></Route>
       <Route

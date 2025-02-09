@@ -192,8 +192,9 @@ aside[class="newsletter-section-component"] div[class="__newsletter-wrapper"] > 
 
 /*  */
 aside[class="scroll-gallery-component"] {
-    min-height: 80vh;
+    min-height: 90vh;
     width: min(100%, 100%);
+    border-top: 1px solid #eee;
     /* border: 1px solid red; */
     display: flex;
     align-items: center;
@@ -241,6 +242,7 @@ aside[class="scroll-gallery-component"] > div[class="_wrapper"] :is(article[clas
     border-radius: .3em;
     cursor: pointer;
     position: relative;
+    flex-grow: 1;
 }
 aside[class="scroll-gallery-component"] > div[class="_wrapper"] :is(article[class="photo-wrapper"]) img {
     height: 40vh;

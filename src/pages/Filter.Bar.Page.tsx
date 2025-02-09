@@ -8,6 +8,8 @@ import PhotoViewComponent from "../components/Photo.View.Component";
 import { AiOutlineSearch } from "react-icons/ai";
 import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
 import adminContext from "../context/adminContext";
+import AdvertComponent from "../components/Advert.Component";
+import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 
 interface Resource {
   id: string;
@@ -56,7 +58,7 @@ function FilterBar() {
       <section className={String("filter-bar")}>
         <div className="filter-bar-input-wrapper">
           <input
-            ref={searchInputRef}
+            ref={searchInputRef.current}
             type="search"
             name=""
             id="filter-bar-input"
@@ -64,6 +66,12 @@ function FilterBar() {
               // add debounce for the input search
 
               event.stopPropagation();
+              (
+                window.document.querySelector(
+                  ".search-bar-input-value"
+                ) as HTMLSpanElement
+              ).textContent =
+                inputValue || (event.target as HTMLInputElement).value;
 
               setTimeout(() => {
                 (
@@ -792,7 +800,10 @@ function FilterBar() {
             Animals
           </button>
         </div>
-        <h1>Photos from your searches: {inputValue as string}</h1>
+        <h1>
+          Photos from your searches:{" "}
+          <strong className="search-bar-input-value"></strong>
+        </h1>
         <p>
           Try to make your search more specific to get the best results. For
           example, if you are looking for a photo of a dog, you can search for
@@ -843,6 +854,8 @@ function FilterBar() {
       <br />
       <br />
       <ScrollGalleryComponent />
+      <AdvertComponent />
+      <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>
   );

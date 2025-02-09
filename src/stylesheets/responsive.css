@@ -113,10 +113,11 @@
       gap: .0em;
     }
     .login-section-page aside[class="__wrapper"] {
+      min-height: 80vh;
       gap: 0em;
     }
     .login-section-page aside[class="__wrapper"] > div {
-      min-height: 20em;
+      height: 80vh;
     }
     .login-section-page > div {
       height: 13em;
@@ -125,16 +126,18 @@
       height: 15em;
     }
 
+    /*  */
     .signup-section-page {
       gap: .0em;
-      min-height: 140vh;
     }
-    .signup-section-page > div {
-      height: 13em;
+    .signup-section-page aside[class="__wrapper"] {
+      min-height: 80vh;
+      gap: 0em;
     }
-    .signup-section-page > form {
-      height: 17em;
+    .signup-section-page aside[class="__wrapper"] > div {
+      min-height: 50vh;
     }
+    
 
     /*  */
     /*  */
@@ -152,10 +155,14 @@
     font-size: .9em;
   }
 
-    footer {
-      min-height: 20em;
-      gap: 1em;
-    }
+  /*  */
+  footer > aside[class="__footer-wrapper"] {
+    min-height: 30em;
+  }
+  footer > aside[class="__footer-wrapper"] > div[class="section"] {
+    min-height: 15em;
+    justify-content: center;
+  }
 }
 
 /* Large devices (landscape tablets, 768px to 1024px) */
@@ -252,9 +259,13 @@
     height: 17em;
   }
 
-  footer {
-      min-height: 20em;
-    gap: 1em;
+  /*  */
+  footer > aside[class="__footer-wrapper"] {
+    min-height: 30em;
+  }
+  footer > aside[class="__footer-wrapper"] > div[class="section"] {
+    min-height: 15em;
+    justify-content: center;
   }
 }
 

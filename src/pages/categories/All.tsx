@@ -6,6 +6,8 @@ import LoaderComponent from "../../components/Loader.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
 import adminContext from "../../context/adminContext";
+import AdvertComponent from "../../components/Advert.Component";
+import WelcomeCookieAlertMessage from "../../components/Welcome.Cookie.Alert.Message.Component";
 
 interface Resource {
   id: string;
@@ -136,13 +138,13 @@ function All() {
           <PhotoViewComponent />
           <br />
           <span>
-            Get Inspired By Our Collection Of{" "}
-            {(resources as Resource[])?.length} photos
+            Found {(resources as Resource[])?.length} photos from this category.
           </span>
           <br />
           <br />
         </section>
         <ScrollGalleryComponent />
+        <WelcomeCookieAlertMessage />
         <LoaderComponent />
         <FooterComponent />
       </>
@@ -167,6 +169,8 @@ function All() {
         </div>
         <ScrollGalleryComponent />
         <LoaderComponent />
+        <WelcomeCookieAlertMessage />
+        <AdvertComponent />
         <FooterComponent />
       </>
     );

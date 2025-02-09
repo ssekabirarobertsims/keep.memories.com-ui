@@ -5,6 +5,8 @@ import LoaderComponent from "../../components/Loader.Component";
 import PhotoViewComponent from "../../components/Photo.View.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
+import AdvertComponent from "../../components/Advert.Component";
+import WelcomeCookieAlertMessage from "../../components/Welcome.Cookie.Alert.Message.Component";
 
 interface Resource {
   id: string;
@@ -119,7 +121,7 @@ function Technology() {
         <PhotoViewComponent />
         <br />
         <span>
-          Get Inspired By Our Collection Of {(resources as Resource[])?.length}{" "}
+          Found {(resources as Resource[])?.length} photos from this category.
           photos
         </span>
         <br />
@@ -127,6 +129,7 @@ function Technology() {
       </section>
       <ScrollGalleryComponent />
       <LoaderComponent />
+      <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>
   ) : (
@@ -150,6 +153,8 @@ function Technology() {
       </div>
       <ScrollGalleryComponent />
       <LoaderComponent />
+      <WelcomeCookieAlertMessage />
+      <AdvertComponent />
       <FooterComponent />
     </>
   );

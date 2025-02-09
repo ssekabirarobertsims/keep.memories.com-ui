@@ -147,21 +147,21 @@ const HeaderComponent: React.FC = () => {
               value={value}
             />
           </div>
+          <ul className="search-list">
+            {filteredList.length > 0
+              ? filteredList.map((index: ListItem) => (
+                  <Link
+                    to={{
+                      pathname: index.link,
+                    }}
+                    key={index.id as string}
+                  >
+                    <li>{index.value}</li>
+                  </Link>
+                ))
+              : ""}
+          </ul>
         </article>
-        <ul className="search-list">
-          {filteredList.length > 0
-            ? filteredList.map((index: ListItem) => (
-                <Link
-                  to={{
-                    pathname: index.link,
-                  }}
-                  key={index.id as string}
-                >
-                  <li>{index.value}</li>
-                </Link>
-              ))
-            : ""}
-        </ul>
       </header>
     </>
   );
