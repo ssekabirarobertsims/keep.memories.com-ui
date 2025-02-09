@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import LoaderComponent from "../../components/Loader.Component";
 import PhotoViewComponent from "../../components/Photo.View.Component";
+import { LuDownload } from "react-icons/lu";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
 import AdvertComponent from "../../components/Advert.Component";
@@ -99,10 +100,19 @@ function Illustrations() {
                 key={index.id}
                 title={`photo uploaded by ${index.resource_admin}`}
               >
+                <div className="before_wrapper">
+                  <a href={`/uploads/${index.resource}`} download>
+                    <button type="button">
+                      <LuDownload />
+                    </button>
+                  </a>
+                </div>
                 <img
                   src={`/uploads/${index.resource}`}
                   alt={`photo from ${index.category}`}
                   onClick={(event) => {
+                    event.stopPropagation();
+
                     (
                       window.document.querySelector(
                         ".photo-view"

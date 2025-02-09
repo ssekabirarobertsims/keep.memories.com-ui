@@ -4,6 +4,7 @@ import { useState, useContext, useRef } from "react";
 import axios from "axios";
 // import { FaDownload } from "react-icons/fa";
 // import { FaHeart } from "react-icons/fa";
+import { LuDownload } from "react-icons/lu";
 import PhotoViewComponent from "../components/Photo.View.Component";
 import { AiOutlineSearch } from "react-icons/ai";
 import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
@@ -818,10 +819,19 @@ function FilterBar() {
                 key={result.id}
                 title={`Photo uploaded by ${result.resource_admin}`}
               >
+                <div className="before_wrapper">
+                  <a href={`/uploads/${result.resource}`} download>
+                    <button type="button">
+                      <LuDownload />
+                    </button>
+                  </a>
+                </div>
                 <img
                   src={`/uploads/${result.resource}`}
                   alt={`photo from ${result.category}`}
                   onClick={(event) => {
+                    event.stopPropagation();
+
                     (
                       window.document.querySelector(
                         ".photo-view"

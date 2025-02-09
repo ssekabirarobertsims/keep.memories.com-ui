@@ -25,8 +25,7 @@ function App() {
 
   (window.document.querySelector("body") as HTMLBodyElement).addEventListener(
     "click",
-    (event) => {
-      event.stopPropagation();
+    () => {
       (
         window.document.querySelector(".account-view-component") as HTMLElement
       ).style.display = "none";

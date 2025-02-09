@@ -8,6 +8,7 @@ import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
 import adminContext from "../../context/adminContext";
 import AdvertComponent from "../../components/Advert.Component";
 import WelcomeCookieAlertMessage from "../../components/Welcome.Cookie.Alert.Message.Component";
+import { LuDownload } from "react-icons/lu";
 
 interface Resource {
   id: string;
@@ -96,10 +97,19 @@ function All() {
                 key={resource.id}
                 title={`photo uploaded by ${resource.resource_admin} on ${resource.upload_date}`}
               >
+                <div className="before_wrapper">
+                  <a href={`/uploads/${resource.resource}`} download>
+                    <button type="button">
+                      <LuDownload />
+                    </button>
+                  </a>
+                </div>
                 <img
                   src={`/uploads/${resource.resource}`}
                   alt={`photo from ${resource.category}`}
                   onClick={(event) => {
+                    event.stopPropagation();
+
                     const photoView = document.querySelector(
                       ".photo-view"
                     ) as HTMLElement;
