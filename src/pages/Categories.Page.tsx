@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import All from "./categories/All";
+import All from "./categories/All.Collection";
 import Nature from "./categories/Nature";
 import Animals from "./categories/Animals";
 import Technology from "./categories/Technology";

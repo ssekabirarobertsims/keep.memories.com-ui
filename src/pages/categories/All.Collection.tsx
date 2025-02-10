@@ -82,7 +82,7 @@ function All() {
       <>
         <NavigationBarComponent />
         <br />
-        <section className="all">
+        <section className="all-collection">
           <h1>Photos in our gallery to get you inspired</h1>
           <p>
             Get all your favorite photos and downloads from one place to your
@@ -155,7 +155,6 @@ function All() {
         </section>
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
-        <LoaderComponent />
         <FooterComponent />
       </>
     ) : (
@@ -178,8 +177,8 @@ function All() {
           </button>
         </div>
         <ScrollGalleryComponent />
-        <LoaderComponent />
         <WelcomeCookieAlertMessage />
+        <LoaderComponent />
         <AdvertComponent />
         <FooterComponent />
       </>

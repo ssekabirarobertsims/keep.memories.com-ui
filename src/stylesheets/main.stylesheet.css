@@ -677,7 +677,7 @@ footer {
     display: flex;
     align-items: center;
     /* border: 1px solid red; */
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     background-color: transparent;
     background-color: hsl(0, 0%, 5%);

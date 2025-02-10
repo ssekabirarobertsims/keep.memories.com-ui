@@ -95,10 +95,9 @@ function PublicPage() {
         <h1>Get inspired by our selected collection of photos</h1>
         <br />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-          obcaecati nostrum, quia itaque enim laboriosam dolorem impedit esse
-          debitis illum cupiditate voluptate praesentium optio sequi. Eaque
-          praesentium laborum reprehenderit officiis?
+          Get inspired by our selected content from our different photo gallery
+          collections of beautiful, inspiring and astonishing photos for your
+          interests and desires from different choices by us.
         </p>
         <br />
         <br />
