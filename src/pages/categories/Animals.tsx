@@ -134,7 +134,6 @@ function Animals() {
               </article>
             ))}
           </div>
-          <PhotoViewComponent />
           <br />
           <span>
             Found {(resources as Resource[])?.length} photos from this category.
@@ -144,13 +143,14 @@ function Animals() {
         </section>
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
+        <PhotoViewComponent />
         <LoaderComponent />
         <FooterComponent />
       </>
     ) : (
       <>
         <NavigationBarComponent />
-        <div className="not-results-wrapper">
+        <div className="no-results-found">
           <strong>Sorry, no results found!</strong>
           <p>
             Please check your searches wether they match correctly or try

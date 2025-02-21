@@ -10,7 +10,6 @@ import { AiOutlineSearch } from "react-icons/ai";
 import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
 import adminContext from "../context/adminContext";
 import AdvertComponent from "../components/Advert.Component";
-import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 
 interface Resource {
   id: string;
@@ -35,29 +34,55 @@ interface AdminObject {
 
 type Admin = string;
 
+import FilterBarSimilarSearchesComponent from "../components/Filter.Bar.Similar.Searches.Component";
+import { v4 as uuid } from "uuid";
+import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
+import { BsArrowUp } from "react-icons/bs";
+
 function FilterBar() {
   const context: Admin = useContext(adminContext) as Admin;
   const adminObject: AdminObject = JSON.parse(context);
 
-  const [searches, setSearches] = useState([] as Resource[]);
+  const [searches, setSearches] = useState([
+    {
+      id: uuid() as string,
+      resource: "tech-gadgets-with-white-background.jpg",
+      category: "",
+      resource_admin: "",
+      resource_id: uuid() as string,
+      resource_title: "",
+      upload_date: "",
+    },
+    {
+      id: uuid() as string,
+      resource: "tech-gadgets-with-yellow-background.jpg",
+      category: "",
+      resource_admin: "",
+      resource_id: uuid() as string,
+      resource_title: "",
+      upload_date: "",
+    },
+    {
+      id: uuid() as string,
+      resource:
+        "tech-entrepreneur-machine-learning-engineer-illustration_1297153-24209.jpg",
+      category: "",
+      resource_admin: "",
+      resource_id: uuid() as string,
+      resource_title: "",
+      upload_date: "",
+    },
+  ] as Resource[]);
   const [inputValue, setInputValue] = useState("" as string);
   const searchInputRef = useRef(null);
+  const buttonRef = useRef(null);
 
   return (
     <>
       <NavigationBarComponent />
-      <div className="alert-message">
-        <p>
-          Updates for this site are still going on in order to create the best
-          for the clients. For more info, reach out to{" "}
-          <a href="https://robertsims.netlify.app/" target="_blank">
-            robert sims
-          </a>
-        </p>
-      </div>
-      <br />
       <section className={String("filter-bar")}>
         <div className="filter-bar-input-wrapper">
+          <AiOutlineSearch />
           <input
             ref={searchInputRef.current}
             type="search"
@@ -225,6 +250,7 @@ function FilterBar() {
             <AiOutlineSearch /> search
           </button>
         </div>
+        <FilterBarSimilarSearchesComponent />
         <div className="filter-categories">
           <button
             type="button"
@@ -295,7 +321,7 @@ function FilterBar() {
               backgroundColor: "hsl(0, 0%, 20%)",
             }}
           >
-            All
+            All Photos
           </button>
           <button
             type="button"
@@ -367,7 +393,7 @@ function FilterBar() {
               }
             }}
           >
-            Dark
+            Dark Photos
           </button>
           <button
             type="button"
@@ -438,7 +464,7 @@ function FilterBar() {
               }
             }}
           >
-            People
+            People Photos
           </button>
           <button
             type="button"
@@ -510,7 +536,7 @@ function FilterBar() {
               }
             }}
           >
-            Sports
+            Sports Photos
           </button>
           <button
             type="button"
@@ -582,7 +608,7 @@ function FilterBar() {
               }
             }}
           >
-            Nature
+            Nature Photos
           </button>
           <button
             type="button"
@@ -654,7 +680,7 @@ function FilterBar() {
               }
             }}
           >
-            Illustrations
+            Illustration Photos
           </button>
           <button
             type="button"
@@ -726,7 +752,7 @@ function FilterBar() {
               }
             }}
           >
-            Technology
+            Tech Photos
           </button>
           <button
             type="button"
@@ -798,11 +824,11 @@ function FilterBar() {
               }
             }}
           >
-            Animals
+            Wildlife Photos
           </button>
         </div>
         <h1>
-          Photos from your searches:{" "}
+          Showing results for:{" "}
           <strong className="search-bar-input-value"></strong>
         </h1>
         <p>
@@ -855,15 +881,33 @@ function FilterBar() {
               />
             </div>
           )}
-          <PhotoViewComponent />
         </article>
         <div className="search-bar-spinner-wrapper">
           <div className="spinner"></div>
         </div>
       </section>
       <br />
+      {searches.length > 0 ? (
+        <span className="found-searches-content-length">
+          Found {searches?.length ? searches?.length : (0 as unknown as number)}{" "}
+          photos from searches
+        </span>
+      ) : (
+        ""
+      )}
       <br />
+      <br />
+      <a href="/filter/searches#">
+        <button
+          type="button"
+          className="navigation-upper-scroll-button"
+          ref={buttonRef}
+        >
+          <BsArrowUp />
+        </button>
+      </a>
       <ScrollGalleryComponent />
+      <PhotoViewComponent />
       <AdvertComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />

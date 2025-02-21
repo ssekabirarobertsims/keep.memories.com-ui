@@ -3,16 +3,24 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-
+import adminContext from "../context/adminContext";
+import { AiOutlineSearch } from "react-icons/ai";
+import LogoutAlertBox from "./Logout.Alert.Box.Component";
+type Admin = string;
+import AccountViewComponent from "./Account.View.Component";
 interface ListItem {
   id: string;
   value: string;
   link: string;
 }
+import { TiThMenu } from "react-icons/ti";
 
 const HeaderComponent: React.FC = () => {
+  const context: Admin = React.useContext(adminContext) as Admin;
+  const admin = JSON.parse(context);
   const [value, setValue] = React.useState<string>("" as string);
   const [filteredList, setFilteredList] = React.useState([] as ListItem[]);
+
   const [list, setList] = React.useState([
     {
       id: uuid() as string,
@@ -89,13 +97,117 @@ const HeaderComponent: React.FC = () => {
   return (
     <>
       <header className="application-header">
+        <nav className={String("navigation-bar")}>
+          <div className="logo">
+            <h1>
+              <Link
+                to={{
+                  pathname: "/",
+                }}
+              >
+                KeepMemories
+              </Link>
+            </h1>
+          </div>
+          <div className="xtz">
+            <ul>
+              <Link to={{ pathname: "/filter/searches" }}>
+                <li>
+                  <AiOutlineSearch />
+                </li>
+              </Link>
+              <Link to={{ pathname: "/photos/categories/collection" }}>
+                <li>Explore</li>
+              </Link>
+              <Link to={{ pathname: "/newsletter/subscriptions" }}>
+                <li>subscribe</li>
+              </Link>
+              <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                <li>login</li>
+              </Link>
+              {admin ? (
+                ""
+              ) : (
+                <Link to={{ pathname: "/account/signup" }}>
+                  <li>signup</li>
+                </Link>
+              )}
+            </ul>
+            {admin ? (
+              <img
+                src="/photos/placeholder.jpg"
+                alt=""
+                className="account-view-button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  (
+                    window.document.querySelector(
+                      ".account-view-component"
+                    ) as HTMLElement
+                  ).style.display = "flex";
+                }}
+                title={`logged in as ${JSON.parse(context).username}`}
+              />
+            ) : (
+              ""
+            )}
+            <div className="dd-menu">
+              <button
+                type="button"
+                className="dd-menu-button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  (
+                    window.document.querySelector(
+                      ".dd-menu-content"
+                    ) as HTMLElement
+                  ).style.display = "flex";
+                }}
+              >
+                <TiThMenu />
+              </button>
+              <aside className="dd-menu-content">
+                <div>
+                  <article>
+                    <ul>
+                      <Link to={{ pathname: "/filter/searches" }}>
+                        <li>
+                          <AiOutlineSearch />
+                        </li>
+                      </Link>
+                      <Link to={{ pathname: "/photos/categories/collection" }}>
+                        <li>Explore</li>
+                      </Link>
+                      <Link to={{ pathname: "/newsletter/subscriptions" }}>
+                        <li>subscribe</li>
+                      </Link>
+                      <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                        <li>login</li>
+                      </Link>
+                      <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                        <li>Collection</li>
+                      </Link>
+                      {admin ? (
+                        ""
+                      ) : (
+                        <Link to={{ pathname: "/account/signup" }}>
+                          <li>signup</li>
+                        </Link>
+                      )}
+                    </ul>
+                  </article>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </nav>
+        <AccountViewComponent />
+        <LogoutAlertBox />
         <article>
-          <h1>Download and save your favorite photos.</h1>
+          <h1>Inspiring Free Photo Gallery</h1>
           <p>
-            Free and simple application that allows you to download and save
-            photos from the internet. You can search for photos by category or
-            by searching for a specific photo using the search bar to search and
-            find your favorite photos.
+            Every inspiring & favorite photo you need found in just one
+            collection of photos.
           </p>
           <div className="search-input-wrapper">
             <span>
@@ -132,6 +244,12 @@ const HeaderComponent: React.FC = () => {
                       link: "",
                     },
                   ]);
+
+                  (
+                    window.document.querySelector(
+                      ".search-list"
+                    ) as HTMLUListElement
+                  ).style.display = "none";
                 } else {
                   setFilteredList(
                     list.filter((index: ListItem) => {
@@ -147,6 +265,15 @@ const HeaderComponent: React.FC = () => {
               value={value}
             />
           </div>
+          <Link
+            to={{
+              pathname: "/filter/searches",
+            }}
+          >
+            <button type="button">
+              <BiSearch /> Find In Searches
+            </button>
+          </Link>
           <ul className="search-list">
             {filteredList.length > 0
               ? filteredList.map((index: ListItem) => (

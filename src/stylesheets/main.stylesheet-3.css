@@ -27,7 +27,7 @@ section[class="all-collection"] > p {
 }
 section[class="all-collection"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -74,7 +74,7 @@ section[class="people"] > p {
 }
 section[class="people"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -115,7 +115,7 @@ section[class="technology"] > p {
 }
 section[class="technology"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -156,7 +156,7 @@ section[class="nature"] > p {
 }
 section[class="nature"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -197,7 +197,7 @@ section[class="animals"] > p {
 }
 section[class="animals"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -238,7 +238,7 @@ section[class="food"] > p {
 }
 section[class="food"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -279,7 +279,7 @@ section[class="sports"] > p {
 }
 section[class="sports"] > div[class="photos"] {
   min-height: 85vh;
-  width: min(90%, 90%);
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -320,7 +320,7 @@ section[class="illustrations"] {
   }
   section[class="illustrations"] > div[class="photos"] {
     min-height: 85vh;
-    width: min(90%, 90%);
+    width: min(95%, 95%);
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -361,7 +361,7 @@ section[class="dark-photos"] {
   }
   section[class="dark-photos"] > div[class="photos"] {
     min-height: 85vh;
-    width: min(90%, 90%);
+    width: min(95%, 95%);
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -517,13 +517,13 @@ section[class="contact-us-page"] > article :is(div) :is(form) :where(button) {
   color: #fff;
   cursor: pointer;
 }
-
+ 
 /*  */
 section[class="filter-bar"] {
   min-height: 55vh;
-  width: min(100%, 100%);
+  width: min(95%, 95%);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   flex-flow: column nowrap;
@@ -532,55 +532,143 @@ section[class="filter-bar"] {
 }
 section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] {
   min-height: 3.1em;
-  width: min(90%, 90%);
+  width: min(100%, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   flex-flow: row nowrap;
-  gap: 0em;
-  background-color: hsl(0, 0%, 90%);
+  gap: 1em;
+  background-color: hsl(0, 0%, 95%);
   border-radius: .2em;
   overflow: hidden;
-  border: 1px solid hsl(0, 0%, 90%);
+  border: 1px solid hsl(0, 0%, 80%);
 }
 section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] :is(input) {
   height: 3.5em;
-  width: min(90%, 90%);
+  width: min(85%, 85%);
   border: none;
   border-radius: 0.3em;
   background-color: transparent;
   outline-style: none;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 section[class="filter-bar"]
   > div[class="filter-bar-input-wrapper"]
   :is(button) {
-  height: 3.5em;
+  height: 3em;
   width: 8em;
   cursor: pointer;
   color: #fff;
   background-color: var(--primary-color);
   border: none;
-  border-radius: .0em;
+  border-radius: .3em;
   font-weight: bolder;
 }
-section[class="filter-bar"] > h1 {
-  font-size: 2em;
-  font-weight: bold;
+aside[class="filter-bar-similar-searches-component"] {
+  min-height: 16em;
+  width: min(100%, 100%);
+  border-radius: .4em;
+  background-color: hsl(0, 0%, 95%);
+  display: flex;
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+aside[class="filter-bar-similar-searches-component"] > div {
+  min-height: 12em;
+  width: min(95%, 95%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 1em;
+  /* border: 1px solid red; */
+}
+aside[class="filter-bar-similar-searches-component"] > div :where(aside) {
+  height: 11em;
+  width: min(100%, 14em);
+  flex-grow: 1;
+  border-radius: .3em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  position: relative;
+  /* border: 1px solid red; */
+  max-width: 20em;
+}
+aside[class="filter-bar-similar-searches-component"] > div :where(aside)::before {
+  content: "";
+  height: 11em;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, .1);
+}
+aside[class="filter-bar-similar-searches-component"] > div :where(aside):where(:hover, :focus)::before {
+ display: none;
+}
+aside[class="filter-bar-similar-searches-component"] > div :where(aside) img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  flex-grow: 1;
+  border-radius: .3em;
+}
+aside[class="filter-bar-similar-searches-component"] > div :where(aside):where(:hover, :focus) img {
+  transform: scale(1.1);
+ }
+aside[class="filter-bar-similar-searches-component"] > article {
+  min-height: 2em;
+  width: min(95%, 95%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 1em;
+  /* border: 1px solid red; */
+}
+aside[class="filter-bar-similar-searches-component"] > article :is(a) {
+  font-weight: calc(270 + 260);
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: .5em;
+}
+.found-searches-content-length {
+  font-size: .9em;
+  font-weight: normal;
   color: hsl(0, 0%, 20%);
+}
+section[class="filter-bar"] > h1 {
+  font-size: 1.7em;
+  font-weight: normal;
+  color: hsl(0, 0%, 30%);
   text-align: center;
 }
 section[class="filter-bar"] > p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
-  text-align: center;
+  /* text-align: center; */
   max-width: 60em;
 }
 .filter-categories {
   min-height: 3em;
-  width: min(90%, 90%);
+  width: min(100%, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -604,7 +692,7 @@ section[class="filter-bar"] > p {
 }
 section[class="filter-bar"] > article {
   min-height: 30vh;
-  width: min(90%, 90%);
+  width: min(100%, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,7 +702,12 @@ section[class="filter-bar"] > article {
   /* border: 1px solid red; */
 }
 section[class="filter-bar"] > article .photo_resource {
-  flex-grow: 0;
+  max-width: 27em;
+  flex-grow: 1;
+}
+section[class="filter-bar"] > article :nth-child(even) {
+  height: 21em;
+  width: 20em;
 }
 section[class="filter-bar"]
   > article
@@ -681,9 +774,7 @@ section[class="filter-bar"]
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0 ,0 ,0 ,.3);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -698,9 +789,7 @@ section[class="filter-bar"]
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0 ,0 ,0 ,.3);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -714,9 +803,7 @@ section[class="filter-bar"]
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0 ,0 ,0 ,.3);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 4;
 }

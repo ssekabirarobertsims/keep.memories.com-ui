@@ -6,42 +6,29 @@
   align-items: center;
   justify-content: center;
   background: #fff;
-  gap: 3em;
+  gap: 0em;
   flex-flow: row wrap;
   /* border: 1px solid red; */
 }
 .login-section-page aside[class="__wrapper"] {
   min-height: 100vh;
-  width: min(100%, 50em);
+  width: min(100%, 55em);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: #fff;
-  gap: 3em;
+  gap: 1em;
   flex-flow: row wrap;
-  /* border: 1px solid red;  */
   border-radius: .0em;
   flex-grow: 1;
-  /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); */
+  position: relative;
+  /* border: 1px solid red; */
 }
 .login-section-page aside[class="__wrapper"] > div {
-  height: 100vh;
-  width: min(100%, 100%);
-  display: flex; 
-  align-items: flex-start;
-  justify-content: center;
-  /* border: 1px solid red; */
-  flex-direction: column;
-  overflow: hidden;
-  flex-flow: 1;
-  position: relative;
-}
-.login-section-page aside[class="__wrapper"] > div::before {
-  content: "Keep Memories @ copyright 2025";
   height: 100%;
   width: min(100%, 100%);
   display: flex; 
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: flex-end;
   /* border: 1px solid red; */
   flex-direction: column;
@@ -50,32 +37,68 @@
   left: 0px;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 4;
-  color: hsl(0, 0%, 80%);
-  font-size: .8em;
   cursor: not-allowed;
+  flex-grow: 1;
 }
-.login-section-page aside[class="__wrapper"] > div img {
-  height: 100%;
+.login-section-page aside[class="__wrapper"] > div :where(article) {
+  height: 13em;
+  width: min(97%, 97%);
+  display: flex; 
+  align-items: flex-start;
+  justify-content: center;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  gap: .5em
+}
+.login-section-page aside[class="__wrapper"] > div :where(article) > h1 {
+  font-size: 2em;
+  color: #fff;
+  font-weight: calc(250 + 240);
+}
+.login-section-page aside[class="__wrapper"] > div :where(article) > p {
+  font-size: .9em;
+  color: #fff;
+  font-weight: calc(250 + 240);
+  max-width: 40em;
+}
+.login-section-page aside[class="__wrapper"] > div :where(article) > span {
+  font-size: .7em;
+  color: #fff;
+  font-weight: calc(250 + 240);
+  max-width: 40em;
+}
+.login-section-page aside[class="__wrapper"] > img {
+  height: 100vh;
   width: 100%;
+  flex-grow: 1;
 }
 .login-section-page > form {
   min-height: 90vh;
-  width: min(90%, 25em);
+  width: min(100%, 25em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  flex-grow: 1;
+}
+.login-section-page > form > article[class="login-form-wrapper"] {
+  min-height: 85vh;
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
-  /* flex-grow: 1; */
 }
-.login-section-page > form :is(h1) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(h1) {
   font-size: 1.7em;
   font-weight: calc(300 + 220);
   color: hsl(0, 0%, 15%);
 }
-.login-section-page > form :is(span[class="login-alert-message"]) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(span[class="login-alert-message"]) {
   height: 3em;
-  width: min(100%, 28em);
+  width: min(100%, 100%);
   border: 1px solid hsl(0, 0%, 80%);
   font-size: .8em;
   font-weight: normal;
@@ -86,61 +109,64 @@
   background-color: hsl(216, 100%, 95%);
   border-radius: .3em;
 }
-.login-section-page > form :is(p) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(p) {
   font-size: .8em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
-  max-width: 26em;
+  max-width: 29em;
 }
-.login-section-page > form :is(input[type="text"]) {
-  height: 3em;
-  width: min(100%, 27em);
+.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="text"]) {
+  height: 4em;
+  width: min(100%, 100%);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
+  /* flex-grow: 1; */
 }
-.login-section-page > form :is(input[type="password"]) {
-  height: 3em;
-  width: min(100%, 27em);
+.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="password"]) {
+  height: 4em;
+  width: min(100%, 100%);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
+  /* flex-grow: 1; */
 }
-.login-section-page > form :is(input[type="email"]) {
-  height: 3em;
-  width: min(100%, 27em);
+.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="email"]) {
+  height: 4em;
+  width: min(100%, 100%);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
+  /* flex-grow: 1; */
 }
-.login-section-page > form :is(input[type="email"])::placeholder {
+.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="email"])::placeholder {
   font-size: 1em;
 }
-.login-section-page > form :is(input[type="text"])::placeholder {
+.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="text"])::placeholder {
   font-size: 1em;
 }
-.login-section-page > form :is(input[type="password"])::placeholder {
+.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="password"])::placeholder {
   font-size: 1em;
 }
-.login-section-page > form :is(span) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(span) {
   font-weight: normal;
   font-size: 0.9em;
 }
-.login-section-page aside[class="__wrapper"] > div :is(p) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(p) {
   color: #101010;
   font-weight: normal;
   font-size: 0.9em;
 }
-.login-section-page aside[class="__wrapper"] > div :is(span) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(span) {
   font-size: 0.9em;
 }
-.login-section-page aside[class="__wrapper"] > div :is(span) > a {
+.login-section-page > form > article[class="login-form-wrapper"] :is(span) > a {
   color: #101010;
 }
-.login-section-page > form :is(article) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(article) {
   min-height: 1em;
   width: min(90%, 90%);
   display: flex;
@@ -149,24 +175,25 @@
   font-weight: normal;
   cursor: pointer;
 }
-.login-section-page > form :is(div) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(div) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
 }
-.login-section-page > form :is(a) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(a) {
   width: 10em;
   flex-grow: 1;
 }
-.login-section-page > form :is(button) {
+.login-section-page > form > article[class="login-form-wrapper"] :is(button) {
   height: 3em;
   width: min(100%, 27em);
   border: none;
   background-color: var(--primary-color);
+  border-radius: 0.3em;
   color: #fff;
-  border-radius: .3em;
   cursor: pointer;
+  padding: 10px;
 }
 
 /*  */
@@ -177,7 +204,7 @@
   align-items: center;
   justify-content: center;
   background: #fff;
-  gap: 3em;
+  gap: 0em;
   flex-flow: row wrap;
   /* border: 1px solid red; */
 }
@@ -186,33 +213,19 @@
   width: min(100%, 55em);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: #fff;
-  gap: 3em;
+  gap: 1em;
   flex-flow: row wrap;
-  /* border: 1px solid red;  */
   border-radius: .0em;
   flex-grow: 1;
-  /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); */
-}
-.signup-section-page aside[class="__wrapper"] > div {
-  height: 100vh;
-  width: min(100%, 100%);
-  display: flex; 
-  align-items: flex-start;
-  justify-content: center;
-  /* border: 1px solid red; */
-  flex-direction: column;
-  overflow: hidden;
-  flex-flow: 1;
   position: relative;
 }
-.signup-section-page aside[class="__wrapper"] > div::before {
-  content: "Keep Memories @ copyright 2025";
+.signup-section-page aside[class="__wrapper"] > div {
   height: 100%;
   width: min(100%, 100%);
   display: flex; 
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: flex-end;
   /* border: 1px solid red; */
   flex-direction: column;
@@ -221,31 +234,67 @@
   left: 0px;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 4;
-  color: hsl(0, 0%, 80%);
-  font-size: .8em;
   cursor: not-allowed;
 }
-.signup-section-page aside[class="__wrapper"] > div img {
-  height: 100%;
+.signup-section-page aside[class="__wrapper"] > div :where(article) {
+  height: 13em;
+  width: min(97%, 97%);
+  display: flex; 
+  align-items: flex-start;
+  justify-content: center;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  gap: .5em
+}
+.signup-section-page aside[class="__wrapper"] > div :where(article) > h1 {
+  font-size: 2em;
+  color: #fff;
+  font-weight: calc(250 + 240);
+}
+.signup-section-page aside[class="__wrapper"] > div :where(article) > p {
+  font-size: .9em;
+  color: #fff;
+  font-weight: calc(250 + 240);
+  max-width: 40em;
+}
+.signup-section-page aside[class="__wrapper"] > div :where(article) > span {
+  font-size: .7em;
+  color: #fff;
+  font-weight: calc(250 + 240);
+  max-width: 40em;
+}
+.signup-section-page aside[class="__wrapper"] > img {
+  height: 100vh;
   width: 100%;
+  flex-grow: 1;
 }
 .signup-section-page > form {
   min-height: 90vh;
-  width: min(90%, 25em);
+  width: min(100%, 25em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  flex-grow: 1;
+}
+.signup-section-page > form > article[class="signup-form-wrapper"] {
+  min-height: 85vh;
+  width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
 }
-.signup-section-page > form :is(h1) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(h1) {
   font-size: 1.7em;
   font-weight: calc(300 + 220);
   color: hsl(0, 0%, 15%);
 }
-.signup-section-page > form :is(span[class="signup-alert-message"]) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(span[class="signup-alert-message"]) {
   height: 3em;
-  width: min(100%, 28em);
+  width: min(100%, 100%);
   border: 1px solid hsl(0, 0%, 80%);
   font-size: .8em;
   font-weight: normal;
@@ -256,61 +305,64 @@
   background-color: hsl(216, 100%, 95%);
   border-radius: .3em;
 }
-.signup-section-page > form :is(p) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(p) {
   font-size: .8em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   max-width: 29em;
 }
-.signup-section-page > form :is(input[type="text"]) {
-  height: 3em;
-  width: min(100%, 27em);
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="text"]) {
+  height: 4em;
+  width: min(100%, 100%);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
+  /* flex-grow: 1; */
 }
-.signup-section-page > form :is(input[type="password"]) {
-  height: 3em;
-  width: min(100%, 27em);
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="password"]) {
+  height: 4em;
+  width: min(100%, 100%);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
+  /* flex-grow: 1; */
 }
-.signup-section-page > form :is(input[type="email"]) {
-  height: 3em;
-  width: min(100%, 27em);
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="email"]) {
+  height: 4em;
+  width: min(100%, 100%);
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 70%);
   background-color: transparent;
   color: #101010;
+  /* flex-grow: 1; */
 }
-.signup-section-page > form :is(input[type="email"])::placeholder {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="email"])::placeholder {
   font-size: 1em;
 }
-.signup-section-page > form :is(input[type="text"])::placeholder {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="text"])::placeholder {
   font-size: 1em;
 }
-.signup-section-page > form :is(input[type="password"])::placeholder {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="password"])::placeholder {
   font-size: 1em;
 }
-.signup-section-page > form :is(span) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(span) {
   font-weight: normal;
   font-size: 0.9em;
 }
-.signup-section-page aside[class="__wrapper"] > div :is(p) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(p) {
   color: #101010;
   font-weight: normal;
   font-size: 0.9em;
 }
-.signup-section-page aside[class="__wrapper"] > div :is(span) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(span) {
   font-size: 0.9em;
 }
-.signup-section-page aside[class="__wrapper"] > div :is(span) > a {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(span) > a {
   color: #101010;
 }
-.signup-section-page > form :is(article) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(article) {
   min-height: 1em;
   width: min(90%, 90%);
   display: flex;
@@ -319,17 +371,17 @@
   font-weight: normal;
   cursor: pointer;
 }
-.signup-section-page > form :is(div) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(div) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
 }
-.signup-section-page > form :is(a) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(a) {
   width: 10em;
   flex-grow: 1;
 }
-.signup-section-page > form :is(button) {
+.signup-section-page > form > article[class="signup-form-wrapper"] :is(button) {
   height: 3em;
   width: min(100%, 27em);
   border: none;
@@ -744,7 +796,7 @@ section[class="upload-form"] > form :is(div) {
 
 
 /*  */
-.not-results-wrapper {
+.no-results-found {
   min-height: 80vh;
   width: min(100%, 100%);
   display: flex;
@@ -754,19 +806,29 @@ section[class="upload-form"] > form :is(div) {
   /* border: 1px solid red; */
   gap: 1em;
 }
-.not-results-wrapper > strong {
+.no-results-found  {
+  min-height: 80vh;
+  width: min(100%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  gap: 1em;
+}
+.no-results-found > strong {
   font-size: 1.3em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-.not-results-wrapper > p {
+.no-results-found > p {
   font-size: .9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-.not-results-wrapper > button {
+.no-results-found > button {
   height: 3em;
   width: 10em;
   border: none;

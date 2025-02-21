@@ -46,7 +46,7 @@ const ScrollGalleryComponent: React.FC = () => {
           </div>
         </article>
         <article className="photo-wrapper">
-          <img src="/uploads/horses-field_1048944-10315598.jpg" alt="" />
+          <img src="/uploads/beautiful-zebra-wild_23-2151690291.jpg" alt="" />
           <div className="blur">
             <Link
               to={{
@@ -102,14 +102,11 @@ const ScrollGalleryComponent: React.FC = () => {
           </div>
         </article>
         <article className="photo-wrapper">
-          <img
-            src="/uploads/flat-africa-day-illustration_23-2149361411.jpg"
-            alt=""
-          />
+          <img src="/uploads/curly-hair-black-woman-in-red.jpg" alt="" />
           <div className="blur">
             <Link
               to={{
-                pathname: "/photos/categories/illustrations",
+                pathname: "/photos/categories/people",
               }}
             >
               <button type="button">
@@ -117,7 +114,7 @@ const ScrollGalleryComponent: React.FC = () => {
               </button>
             </Link>
             <a
-              href="/uploads/flat-africa-day-illustration_23-2149361411.jpg"
+              href="/uploads/curly-hair-black-woman-in-red.jpg"
               download
               title="download best review of the month!"
             >
@@ -137,14 +134,14 @@ const ScrollGalleryComponent: React.FC = () => {
       <div className="pagination-wrapper">
         <Link
           to={{
-            pathname: "/photos/categories/technology",
+            pathname: "/photos/categories/people",
           }}
         >
           {" "}
         </Link>
         <Link
           to={{
-            pathname: "/photos/categories/people",
+            pathname: "/photos/categories/nature",
           }}
         >
           {" "}
@@ -158,7 +155,7 @@ const ScrollGalleryComponent: React.FC = () => {
         </Link>
         <Link
           to={{
-            pathname: "/photos/categories/illustrations",
+            pathname: "/photos/categories/people",
           }}
         >
           {" "}
@@ -166,7 +163,7 @@ const ScrollGalleryComponent: React.FC = () => {
       </div>
       <Link
         to={{
-          pathname: "/photos/categories/all",
+          pathname: "/photos/categories/collection",
         }}
       >
         View Collection

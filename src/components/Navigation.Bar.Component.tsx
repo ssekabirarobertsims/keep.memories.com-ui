@@ -6,6 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import LogoutAlertBox from "./Logout.Alert.Box.Component";
 type Admin = string;
 import AccountViewComponent from "./Account.View.Component";
+import { TiThMenu } from "react-icons/ti";
 // import { MdAccountCircle } from "react-icons/md";
 
 const NavigationBarComponent: React.FC = () => {
@@ -68,6 +69,54 @@ const NavigationBarComponent: React.FC = () => {
           ) : (
             ""
           )}
+          <div className="dd-menu">
+            <button
+              type="button"
+              className="dd-menu-button"
+              onClick={(event) => {
+                event.stopPropagation();
+                (
+                  window.document.querySelector(
+                    ".dd-menu-content"
+                  ) as HTMLElement
+                ).style.display = "flex";
+              }}
+            >
+              <TiThMenu />
+            </button>
+            <aside className="dd-menu-content">
+              <div>
+                <article>
+                  <ul>
+                    <Link to={{ pathname: "/filter/searches" }}>
+                      <li>
+                        <AiOutlineSearch />
+                      </li>
+                    </Link>
+                    <Link to={{ pathname: "/photos/categories/collection" }}>
+                      <li>Explore</li>
+                    </Link>
+                    <Link to={{ pathname: "/newsletter/subscriptions" }}>
+                      <li>subscribe</li>
+                    </Link>
+                    <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                      <li>login</li>
+                    </Link>
+                    <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                      <li>Collection</li>
+                    </Link>
+                    {admin ? (
+                      ""
+                    ) : (
+                      <Link to={{ pathname: "/account/signup" }}>
+                        <li>signup</li>
+                      </Link>
+                    )}
+                  </ul>
+                </article>
+              </div>
+            </aside>
+          </div>
         </div>
       </nav>
       <AccountViewComponent />

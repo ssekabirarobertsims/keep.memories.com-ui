@@ -8,20 +8,19 @@ function PublicPagePhotoCollection() {
       <aside className="public-page-photo-collection">
         <div className="__even">
           <img
-            src="/uploads/old-black-african-smiling-womman-in-red.jpg"
+            src="/uploads/medium-shot-women-wearing-red-dresses_23-2149020029.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Old black african smiling woman in red top sweater shirt ipsum
-                dolor sit amet consectetur adipisicing elit. Est ut rerum facere
-                adipisci.
+                Medium shot women wearing a red dress ipsum dolor sit amet
+                consectetur adipisicing elit. Est ut rerum facere adipisci.
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/old-black-african-smiling-womman-in-red.jpg"
+                href="/uploads/medium-shot-women-wearing-red-dresses_23-2149020029.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -44,20 +43,20 @@ function PublicPagePhotoCollection() {
         </div>
         <div>
           <img
-            src="/uploads/illutrations-of-a-smoking-woman.webp"
+            src="/uploads/shallow-focus-shot-orange-butterfly-yellow-flower_181624-40605.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Illustration of a smoking woman ipsum dolor sit amet consectetur
-                adipisicing elit. Est ut rerum facere adipisci dolor quisquam
-                tenetur!
+                Shallow focus shot orange butterfly yellow flower ipsum dolor
+                sit amet consectetur adipisicing elit. Est ut rerum facere
+                adipisci dolor quisquam tenetur!
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/illutrations-of-a-smoking-woman.webp"
+                href="/uploads/shallow-focus-shot-orange-butterfly-yellow-flower_181624-40605.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -80,20 +79,20 @@ function PublicPagePhotoCollection() {
         </div>
         <div className="__even">
           <img
-            src="/uploads/black-man-in-white-wondering-and-smiling.jpg"
+            src="/uploads/game-designer-it-project-manager-wallpaper_1297153-16076.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Black man in white shirt wondering and smiling ipsum dolor sit
-                amet consectetur adipisicing elit. Est ut rerum facere adipisci
-                dolor quisquam tenetur ad vel.
+                Game designer IT project manager wallpaper ipsum dolor sit amet
+                consectetur adipisicing elit. Est ut rerum facere adipisci dolor
+                quisquam tenetur ad vel!
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/black-man-in-white-wondering-and-smiling.jpg"
+                href="/uploads/game-designer-it-project-manager-wallpaper_1297153-16076.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -188,20 +187,20 @@ function PublicPagePhotoCollection() {
         </div>
         <div>
           <img
-            src="/uploads/illustration-of-a-man-with-a-pc-on-beach.jpg"
+            src="/uploads/black-man-in-white-wondering-and-smiling.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Illustration of a man with black pc on beach ipsum dolor sit
+                Black man in white shirt wondering and smiling ipsum dolor sit
                 amet consectetur adipisicing elit. Est ut rerum facere adipisci
-                dolor quisquam tenetur ad vel!
+                dolor quisquam tenetur ad vel.
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/illustration-of-a-man-with-a-pc-on-beach.jpg"
+                href="/uploads/black-man-in-white-wondering-and-smiling.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -260,20 +259,20 @@ function PublicPagePhotoCollection() {
         </div>
         <div>
           <img
-            src="/uploads/black-pretty-girl-points-left-copy-space-some-text-little-black-girl-pointing-side_432566-7396.jpg"
+            src="/uploads/misty-forest_1048944-26769805.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Black pretty girl points left copy ipsum dolor sit amet
-                consectetur adipisicing elit. Est ut rerum facere adipisci dolor
-                quisquam tenetur ad!
+                Misty dark scarey forest ipsum dolor sit amet consectetur
+                adipisicing elit. Est ut rerum facere adipisci dolor quisquam
+                tenetur ad!
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/black-pretty-girl-points-left-copy-space-some-text-little-black-girl-pointing-side_432566-7396.jpg"
+                href="/uploads/misty-forest_1048944-26769805.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -511,20 +510,20 @@ function PublicPagePhotoCollection() {
         </div>
         <div className="__even">
           <img
-            src="/uploads/high-angle-couple-taking-selfie_23-2150329558.jpg"
+            src="/uploads/beautiful-girls-white-shirts-thoughtfully-looking-aside-leaning-heads-each-other-isoalted_574295-1135.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                High angle couple taking selfie ipsum dolor sit amet consectetur
-                adipisicing elit. Est ut rerum facere adipisci dolor quisquam
-                tenetur.
+                Beautiful girls in white shirts thoughtfully looking aside
+                leaning hands on each other isoalted. Est ut rerum facere
+                adipisci dolor quisquam tenetur.
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/high-angle-couple-taking-selfie_23-2150329558.jpg"
+                href="/uploads/beautiful-girls-white-shirts-thoughtfully-looking-aside-leaning-heads-each-other-isoalted_574295-1135.jpg"
                 download
                 title="download photo to your machine"
               >

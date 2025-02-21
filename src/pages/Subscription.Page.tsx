@@ -2,7 +2,6 @@ import React from "react";
 import NavigationBarComponent from "../components/Navigation.Bar.Component";
 import FooterComponent from "../components/Footer.Component";
 import { MdOutlineUnsubscribe } from "react-icons/md";
-import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 
 const SubscribingPage: React.FC = () => {
@@ -37,7 +36,6 @@ const SubscribingPage: React.FC = () => {
           <button type="submit">Subscribe</button>
         </form>
       </section>
-      <ScrollGalleryComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>

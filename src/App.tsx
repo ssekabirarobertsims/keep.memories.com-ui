@@ -26,13 +26,27 @@ function App() {
   (window.document.querySelector("body") as HTMLBodyElement).addEventListener(
     "click",
     () => {
-      (
-        window.document.querySelector(".account-view-component") as HTMLElement
-      ).style.display = "none";
+      if (window.document.querySelector(".search-list") as HTMLUListElement) {
+        (
+          window.document.querySelector(".search-list") as HTMLUListElement
+        ).style.display = "none";
+      }
 
-      (
-        window.document.querySelector(".search-list") as HTMLUListElement
-      ).style.display = "none";
+      if (window.document.querySelector(".dd-menu-content") as HTMLElement) {
+        (
+          window.document.querySelector(".dd-menu-content") as HTMLElement
+        ).style.display = "none";
+      }
+
+      if (
+        window.document.querySelector(".account-view-component") as HTMLElement
+      ) {
+        (
+          window.document.querySelector(
+            ".account-view-component"
+          ) as HTMLElement
+        ).style.display = "none";
+      }
     }
   );
 

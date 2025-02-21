@@ -81,20 +81,25 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     gap: 0em;
-    background-color: #000;
+    background-color: #fff;
+    /* border-bottom: 1px solid red; */
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
 }
 nav > div {
     min-height: 5em;
-    width: min(90%, 38em);
+    width: min(47%, 40em);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: row;
-    flex-flow: row wrap;
-    gap: 1em;
-    color: #fff;
+    flex-flow: row nowrap;
+    gap: 1.2em;
+    color: #000;
     /* border: 1px solid red; */
 }
 nav > div[class="logo"] {
@@ -107,24 +112,25 @@ nav > div :is(img) {
 }
 nav > div :is(button) {
     height: 3em;
-    width: 10em;
-    border-radius: 5em;
+    width: 2em;
     border: none;
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     cursor: pointer;
+    font-size: 1em;
 }
 nav > div :is(ul) {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
+    /* flex-grow: 1; */
 }
 nav > div :is(ul) > a {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
-    color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 20%);
     font-size: 1em;
     font-weight: calc(250 + 250);
 }
@@ -146,7 +152,7 @@ nav > div :is(h1) > a {
     text-decoration-color: none;
     color: var(--primary-color);
     font-size: 1.1em;
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
     font-variant: normal;
     display: flex;
@@ -177,20 +183,188 @@ nav > div :is(ul) > li :where(a) {
     font-size: .9em;
     font-weight: normal;
 }
+.dd-menu {
+    height: 3em;
+    width: 2em;
+    /* border: 1px solid red; */
+    background-color: transparent;
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.dd-menu:is(:hover, :focus) .dd-menu-content {
+    display: flex;
+}
+.dd-menu-content {
+    min-height: 17em;
+    width: min(100%, 100%);
+    background-color: transparent;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 5.1em;
+    left: 0vh;
+    z-index: 2;
+}
+.dd-menu-content > div {
+    min-height: 17em;
+    width: min(95%, 95%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 2px 6px -2px hsl(0, 0%, 10%);
+    -moz-box-shadow: 0 2px 6px -2px hsl(0, 0%, 10%);
+    box-shadow: 0 2px 6px -2px hsl(0, 0%, 10%);
+    background-color: #000;
+}
+.dd-menu-content > div article {
+    min-height: 15em;
+    width: min(90%, 90%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+.dd-menu-content > div article :where(ul) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: .8em;
+}
+.dd-menu-content > div article :where(ul) > a li {
+    color: hsl(0, 0%, 80%)
+}
 
+/*  */
 header {
-    min-height: 50vh;
+    min-height: 60vh;
     width: min(100%, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background:  linear-gradient(to bottom, rgb(0, 0, 0), #fff);
+    /* background:  linear-gradient(to bottom, rgb(0, 0, 0), #fff); */
     color: #fff;
+    background-image: url(../../public/photos/blue-light-portrait-background_23-2149594611.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    flex-direction: column;
+}
+header nav {
+    min-height: 5em;
+    width: min(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row nowrap;
+    gap: 0em;
+    border-bottom: none;
+    background-color: rgba(0, 0, 0, .5);
+    position: relative;
+}
+header nav > div {
+    min-height: 5em;
+    width: min(47%, 38em);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-flow: row nowrap;
+    gap: 1em;
+    color: #fff;
+    /* border: 1px solid red; */
+}
+header nav > div[class="logo"] {
+    justify-content: flex-start;
+}
+header nav > div :is(img) {
+    height: 1.1em;
+    width: 1.1em;
+    border-radius: 100%;
+}
+header nav > div :is(button) {
+    height: 3em;
+    width: 2em;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+}
+header nav > div :is(ul) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+header nav > div :is(ul) > a {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 1em;
+    font-weight: calc(250 + 250);
+}
+header nav > div :is(ul) > a :where(li) {
+    list-style-type: none;
+    list-style: none;
+}
+header nav > div :is(a) {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: hsl(0, 0%, 90%);
+    font-size: .9em;
+    font-weight: normal;
+}
+header nav > div :is(h1) > a {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: calc(270 + 270);
+    font-style: normal;
+    font-variant: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header nav > div :is(h1) > a img {
+    height: 1.5em;
+    width: 1.5em;
+}
+header nav > div :is(ul) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1em
+}
+header nav > div :is(ul) > li {
+    list-style: none;
+    list-style-type: none;
+}
+header nav > div :is(ul) > li :where(a) {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color: hsl(0, 0%, 90%);
+    font-size: .9em;
+    font-weight: normal;
 }
 header > article {
     min-height: 30vh;
-    width: min(90%, 90%);
+    width: min(100%, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,24 +372,27 @@ header > article {
     flex-direction: column;
     gap: 1em;
     text-align: center;
+    /* border: 1px solid red; */
+    background-color: rgba(0, 0, 0, .5);
+    flex-grow: 1;
 }
 header > article h1 {
     font-size: 2.5em;
-    font-weight: bold;
-    color: hsl(0, 0%, 97%);
+    font-weight: calc(280 + 280);
+    color: hsl(0, 0%, 100%);
     text-align: center;
 }
 header > article p {
-    font-size: .9em;
-    font-weight: normal;
-    color: hsl(0, 0%, 97%);
+    font-size: 1em;
+    font-weight: calc(280 + 280);
+    color: hsl(0, 0%, 100%);
     text-align: center;
     max-width: 60em;
 }
 header > article :is(div[class="search-input-wrapper"]) {
-    height: 3em;
-    width: min(100%, 50em);
-    border-radius: 5em;
+    height: 3.5em;
+    width: min(90%, 50em);
+    border-radius: .2em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,32 +401,32 @@ header > article :is(div[class="search-input-wrapper"]) {
 }
 header > article :is(div[class="search-input-wrapper"]) > span {
    font-size: 1em;
-   color: hsl(0, 0%, 50%);
+   color: hsl(0, 0%, 10%);
 }
 header > article :is(div[class="search-input-wrapper"]) > input {
     height: 3em;
-    width: min(90%, 52em);
+    width: min(90%, 57em);
     border: none;
-    border-radius: 5em;
     background-color: transparent;
     /* border: 1px solid red; */
 }
-header > article button {
-    height: 4em;
-    width: 4em;
-    border: none;
-    border-radius: 100%;
-    background-color: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
+header > article :is(a) {
+    width: min(100%, 15em);
 }
-header > article button:is(:hover, :focus) {
-    transform: scale(1.1);
+header > article :is(a) > button {
+    height: 3.5em;
+    width: min(100%, 12em);
+    border: none;
+    border-radius: 100em;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 /*  */
 .search-list {
-    height: 4em;
+    height: 12em;
     width: min(100%, 50em);
     display: none;
     align-items: center;
@@ -258,7 +435,7 @@ header > article button:is(:hover, :focus) {
     /* grid-template-columns: auto; */
     overflow: scroll;
     position: absolute;
-    bottom: -5em;
+    bottom: -6em;
     background-color: #fff;
     /* border: 1px solid red; */
     z-index: 2;
@@ -299,7 +476,7 @@ article[class="categories"] {
     min-height: 4em;
     width: min(90%, 90%);
     display: flex;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 article[class="categories"] > div {
     min-height: 4em;
@@ -309,7 +486,7 @@ article[class="categories"] > div {
     flex-direction: row;
     flex-flow: row wrap;
     gap: 1em;
-    /* border: 1px solid red */
+    border: 1px solid red
 }
 article[class="categories"] > div > a {
     font-weight: normal;
@@ -355,48 +532,46 @@ main > div {
 }
 main > section[class="photos-categories"] {
     min-height: 15vh;
-    width: min(90%, 90%);
+    width: min(100%, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     flex-flow: row wrap;
-    gap: 2em;
+    gap: 1em;
     background-color: transparent;
     border-radius: .0em;
     /* border: 1px solid red; */
     /* border-bottom: 1px solid hsl(0, 0%, 90%); */
     /* border-top: 1px solid hsl(0, 0%, 90%); */
 }
-/* 
-main > section[class="photos-categories"] :is(.Food) {
-    width: 13em;
-}
-main > section[class="photos-categories"] :is(.Nature) {
-    width: 15em;
-}
-main > section[class="photos-categories"] :is(.Animals) {
-    width: 25em;
-}
-main > section[class="photos-categories"] :is(.dark-photos) {
-    width: 35em;
-} */
 
 main > section[class="photos-categories"] > a {
     text-decoration: none;
     color: hsl(0, 0%, 10%);
+    width: min(100%, 8em);
     font-size: .9em;
 }
-main > section[class="photos-categories"] > a :is(img) {
-    height: 3.5em;
-    width: 3.5em;
-    border: none;
+main > section[class="photos-categories"] > a :is(button) {
+    height: 3em;
+    width: min(100%, 8em);
+    border: 1px solid hsl(0, 0%, 80%);
+    background-color: transparent;
+    color: hsl(0, 0%, 10%);
+    border-radius: .3em;
+    cursor: pointer;
+    font-weight: bold;
+    flex-grow: 1;
+    max-width: 8em;
+}
+main > section[class="photos-categories"] > a :is(button):where(:hover, :focus) {
+    background-color: hsl(0, 0%, 90%);
 }
 
 /*  */
 main > aside[class="public-page-photo-collection"] {
-    min-height: 80vh;
-    width: min(90%, 90%);
+    min-height: 350vh;
+    width: min(95%, 95%);
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -408,7 +583,7 @@ main > aside[class="public-page-photo-collection"] {
 }
 main > aside[class="public-page-photo-collection"] div {
     height: 25em;
-    width: min(100%, 20em);
+    width: min(100%, 26em);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -422,6 +597,7 @@ main > aside[class="public-page-photo-collection"] div {
     overflow: hidden;
     position: relative;
     flex-grow: 1;
+    max-width: 27em;
 }
 main > aside[class="public-page-photo-collection"] :is(div[class="__even"]) {
     /* border: 1px solid red; */
@@ -671,8 +847,29 @@ section[class="logout-alert-box"] > div :is(div) :last-child {
 }
 
 /*  */
+button[class="navigation-upper-scroll-button"] {
+    height: 3em;
+    width: 6em;
+    border: none;
+    border-top-left-radius: .2em;
+    border-bottom-left-radius: .2em;
+    color: #fff;
+    background-color: hsl(0, 0%, 15%);
+    position: fixed;
+    right: 0px;
+    bottom: 3em;
+    cursor: pointer;
+    /* -webkit-box-shadow: 0 5px 10px -2px #bdbdbd;
+    -moz-box-shadow: 0 5px 10px -2px #bdbdbd;
+    box-shadow: 0 5px 10px -2px #bdbdbd; */
+    font-weight: bolder;
+    font-size: 1em;
+    z-index: 2;
+}
+
+/*  */
 footer {
-    min-height: 30em;
+    min-height: 27em;
     width: min(100%, 100%); 
     display: flex;
     align-items: center;
@@ -680,12 +877,12 @@ footer {
     justify-content: flex-end;
     flex-direction: column;
     background-color: transparent;
-    background-color: hsl(0, 0%, 5%);
+    background-color: hsl(0, 0%, 0%);
     gap: .0em;
 }
 footer > aside[class="__footer-wrapper"] {
-    min-height: 23em;
-    width: min(90%, 90%); 
+    min-height: 20em;
+    width: min(95%, 95%); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -693,13 +890,11 @@ footer > aside[class="__footer-wrapper"] {
     flex-flow: row wrap;
     gap: 0em;
     /* border: 1px solid red; */
-    border-top-left-radius: .5em;
-    border-top-right-radius: .5em;
     color: hsl(0, 0%, 70%);
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] {
-    min-height: 13em;
-    width: min(90%, 23em); 
+    min-height: 15em;
+    width: min(95%, 23em); 
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -711,33 +906,46 @@ footer > aside[class="__footer-wrapper"] > div[class="section"] {
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] h1 {
     font-size: 1.6em;
-    font-weight: bold;
+    font-weight: calc(250 + 250);
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] p {
     font-size: .9em;
     font-weight: normal;
     max-width: 23em;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul {
+footer > aside[class="__footer-wrapper"] > div[class="section"] p :where(a) {
+    color: var(--primary-color)
+}
+footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="socials"] {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: .6em;
+    flex-direction: row;
+    font-size: 1em;
+}
+footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="socials"] > li {
+    font-size: 1.2em;
+}
+footer > aside[class="__footer-wrapper"] > div[class="section"] ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .4em;
     flex-direction: column;
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li {
-    font-size: 1.2em;
+    font-size: .9em;
     list-style: none;
     cursor: pointer;
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li :where(span) {
-    font-size: .8em;
+    font-size: .9em;
     list-style: none;
     cursor: pointer;
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li :where(a) {
     color: hsl(0, 0%, 70%);
-    font-size: 1em;
     text-decoration-color: none;
     text-decoration-line: none;
 }
@@ -748,10 +956,10 @@ footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="outer-
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: .6em;
+    gap: .4em;
 }
 footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="outer-links"] > a {
-    font-size: 1em;
+    font-size: .9em;
     text-decoration-color: none;
     text-decoration-line: none;
     color:hsl(0, 0%, 70%)
@@ -772,7 +980,8 @@ footer > div[class="copyright-wrapper"] {
     flex-direction: column;
     gap: 1em;
     color: hsl(0, 0%, 70%);
-    background-color: hsl(0, 0%, 0%);
+    background-color: hsl(0, 0%, 2%);
+    border-top: 1px solid hsl(0, 0%, 15%)
 }
 footer > div[class="copyright-wrapper"] span {
     font-size: .8em;

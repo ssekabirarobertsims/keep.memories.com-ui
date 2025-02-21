@@ -131,7 +131,6 @@ function Illustrations() {
               </article>
             ))}
           </div>
-          <PhotoViewComponent />
           <br />
           <span>
             Found {(resources as Resource[])?.length} photos from this category.
@@ -142,12 +141,13 @@ function Illustrations() {
         <ScrollGalleryComponent />
         <LoaderComponent />
         <WelcomeCookieAlertMessage />
+        <PhotoViewComponent />
         <FooterComponent />
       </>
     ) : (
       <>
         <NavigationBarComponent />
-        <div className="not-results-wrapper">
+        <div className="no-results-found">
           <strong>Sorry, no results found!</strong>
           <p>
             Please check your searches wether they match correctly or try

@@ -128,7 +128,6 @@ function Technology() {
             </article>
           ))}
         </div>
-        <PhotoViewComponent />
         <br />
         <span>
           Found {(resources as Resource[])?.length} photos from this category.
@@ -138,6 +137,7 @@ function Technology() {
         <br />
       </section>
       <ScrollGalleryComponent />
+      <PhotoViewComponent />
       <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
@@ -145,7 +145,7 @@ function Technology() {
   ) : (
     <>
       <NavigationBarComponent />
-      <div className="not-results-wrapper">
+      <div className="no-results-found">
         <strong>Sorry, no results found!</strong>
         <p>
           Please check your searches wether they match correctly or try

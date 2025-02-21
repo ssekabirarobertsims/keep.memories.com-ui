@@ -10,6 +10,7 @@ interface AdminObject {
 }
 
 type Admin = string;
+import { FiLogOut } from "react-icons/fi";
 
 const AccountViewComponent: React.FC = () => {
   const context: Admin = React.useContext(adminContext) as Admin;
@@ -63,7 +64,7 @@ const AccountViewComponent: React.FC = () => {
                 ).style.display = "flex";
               }}
             >
-              log out
+              log out <FiLogOut />
             </button>
           </aside>
         </article>

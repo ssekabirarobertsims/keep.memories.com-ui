@@ -145,7 +145,6 @@ function All() {
               </article>
             ))}
           </div>
-          <PhotoViewComponent />
           <br />
           <span>
             Found {(resources as Resource[])?.length} photos from this category.
@@ -153,6 +152,7 @@ function All() {
           <br />
           <br />
         </section>
+        <PhotoViewComponent />
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
         <FooterComponent />
@@ -160,7 +160,7 @@ function All() {
     ) : (
       <>
         <NavigationBarComponent />
-        <div className="not-results-wrapper">
+        <div className="no-results-found">
           <strong>Sorry, no results found!</strong>
           <p>
             Please check your searches wether they match correctly or try

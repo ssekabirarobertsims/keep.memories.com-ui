@@ -220,7 +220,7 @@ aside[class="scroll-gallery-component"] > a {
 }
 aside[class="scroll-gallery-component"] > div[class="_wrapper"] {
     min-height: 40vh;
-    width: min(90%, 90%);
+    width: min(95%, 95%);
     /* border: 1px solid red; */
     display: flex;
     align-items: center;
@@ -243,6 +243,7 @@ aside[class="scroll-gallery-component"] > div[class="_wrapper"] :is(article[clas
     cursor: pointer;
     position: relative;
     flex-grow: 1;
+    max-width: 21em;
 }
 aside[class="scroll-gallery-component"] > div[class="_wrapper"] :is(article[class="photo-wrapper"]) img {
     height: 40vh;
