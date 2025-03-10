@@ -223,7 +223,7 @@ function PublicPagePhotoCollection() {
         </div>
         <div className="__even">
           <img
-            src="/uploads/tech-entrepreneur-machine-learning-engineer-illustration_1297153-24209.jpg"
+            src="/uploads/freelancer-guy-working-laptop_237803-2044.avif"
             alt="photo from keep memories photos gallery"
           />
           <article>
@@ -236,7 +236,7 @@ function PublicPagePhotoCollection() {
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/tech-entrepreneur-machine-learning-engineer-illustration_1297153-24209.jpg"
+                href="/uploads/freelancer-guy-working-laptop_237803-2044.avif"
                 download
                 title="download photo to your machine"
               >
@@ -367,7 +367,7 @@ function PublicPagePhotoCollection() {
         </div>
         <div className="__even">
           <img
-            src="/uploads/beautiful-woman-headphones-enjoying-music-purple-background-charming-girl-gray-28973.jpg"
+            src="/uploads/closeup-smiling-young-african-woman-600nw-2207767193.webp"
             alt="photo from keep memories photos gallery"
           />
           <article>
@@ -380,7 +380,7 @@ function PublicPagePhotoCollection() {
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/beautiful-woman-headphones-enjoying-music-purple-background-charming-girl-gray-28973.jpg"
+                href="/uploads/closeup-smiling-young-african-woman-600nw-2207767193.webp"
                 download
                 title="download photo to your machine"
               >
@@ -439,20 +439,20 @@ function PublicPagePhotoCollection() {
         </div>
         <div className="__even">
           <img
-            src="/uploads/vertical-greyscale-shot-wooden-dock-with-columns-lake-beautiful-storm-clouds_181624-4617.jpg"
+            src="/uploads/pexels-harold-vasquez-853421-2653362.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Vertical grey scale shot wooden dock with columns lake beautiful
-                storm clouds ipsum dolor sit amet consectetur adipisicing elit.
-                Est ut rerum facere.
+                Vertical dark scale picture shot for stunning programming
+                language codes ipsum dolor sit amet consectetur adipisicing
+                elit. Est ut rerum facere.
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/vertical-greyscale-shot-wooden-dock-with-columns-lake-beautiful-storm-clouds_181624-4617.jpg"
+                href="/uploads/pexels-harold-vasquez-853421-2653362.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -465,7 +465,7 @@ function PublicPagePhotoCollection() {
                   <FaSearch />
                 </button>
               </a>
-              <a href="/photos/categories/people">
+              <a href="/photos/categories/dark-photos">
                 <button type="button" title="view category">
                   <BiCategory />
                 </button>
@@ -500,7 +500,7 @@ function PublicPagePhotoCollection() {
                   <FaSearch />
                 </button>
               </a>
-              <a href="/photos/categories/people">
+              <a href="/photos/categories/technology">
                 <button type="button" title="view category">
                   <BiCategory />
                 </button>
@@ -510,20 +510,19 @@ function PublicPagePhotoCollection() {
         </div>
         <div className="__even">
           <img
-            src="/uploads/beautiful-girls-white-shirts-thoughtfully-looking-aside-leaning-heads-each-other-isoalted_574295-1135.jpg"
+            src="/uploads/appealing-curly-woman-posing-sunglasses_197531-16740.avif"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Beautiful girls in white shirts thoughtfully looking aside
-                leaning hands on each other isoalted. Est ut rerum facere
-                adipisci dolor quisquam tenetur.
+                Appealing curly hair woman posing with sunglasses blue
+                background Est ut rerum facere adipisci dolor quisquam tenetur.
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/public\uploads\young-people-posing-side-view_23-2149596272.jpg"
+                href="/uploads/appealing-curly-woman-posing-sunglasses_197531-16740.avif"
                 download
                 title="download photo to your machine"
               >

@@ -134,8 +134,8 @@ function People() {
         <br />
         <br />
         <aside className="loader-component-2">
-            <div className="spinner"></div>
-          </aside>
+          <div className="spinner"></div>
+        </aside>
       </section>
       <PhotoViewComponent />
       <ScrollGalleryComponent />
@@ -162,8 +162,8 @@ function People() {
           Reload
         </button>
         <aside className="loader-component-2">
-            <div className="spinner"></div>
-          </aside>
+          <div className="spinner"></div>
+        </aside>
       </div>
       <ScrollGalleryComponent />
       <WelcomeCookieAlertMessage />

@@ -129,9 +129,6 @@ function PhotoViewComponent() {
               </li>
             </ul>
           </div>
-          {/* <button type="button" className="close" onClick={handleButtonClick}>
-            <IoMdClose />
-          </button> */}
         </aside>
         <div className="photo">
           <img

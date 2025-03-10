@@ -153,8 +153,8 @@ function DarkPhotos() {
         <div className="no-results-found">
           <strong>Opps, no photos found!</strong>
           <p>
-             Looks like no photos were found or reloaded from the database, try
-          reloading the page to refetch the photos from our databases.
+            Looks like no photos were found or reloaded from the database, try
+            reloading the page to refetch the photos from our databases.
           </p>
           <button
             type="button"

@@ -559,6 +559,7 @@ aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="photo"] {
 
 aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
   height: 100%;
+  /* border: 1px solid red; */
   width: min(65%, 65%);
 }
 

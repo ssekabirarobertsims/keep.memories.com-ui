@@ -29,7 +29,7 @@ section[class="all-collection"]>p {
 }
 
 section[class="all-collection"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -81,7 +81,7 @@ section[class="people"]>p {
 }
 
 section[class="people"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -126,7 +126,7 @@ section[class="technology"]>p {
 }
 
 section[class="technology"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -171,7 +171,7 @@ section[class="nature"]>p {
 }
 
 section[class="nature"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -197,7 +197,7 @@ section[class="animals"] {
   flex-direction: column;
   flex-flow: column nowrap;
   gap: 1em;
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(0, 255, 170); */
 }
 
 section[class="animals"]>h1 {
@@ -216,7 +216,7 @@ section[class="animals"]>p {
 }
 
 section[class="animals"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -228,96 +228,6 @@ section[class="animals"]>div[class="photos"] {
 }
 
 section[class="animals"]>div[class="photos"] :nth-child(even) {
-  height: 21em;
-  width: 20em;
-}
-
-/*  */
-section[class="food"] {
-  min-height: 85vh;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  gap: 1em;
-  /* border: 1px solid red; */
-}
-
-section[class="food"]>h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-}
-
-section[class="food"]>p {
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-  max-width: 60em;
-}
-
-section[class="food"]>div[class="photos"] {
-  min-height: 85vh;
-  width: min(95%, 95%);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: row;
-  flex-flow: row wrap;
-  gap: 1em;
-  /* border: 1px solid red; */
-}
-
-section[class="food"]>div[class="photos"] :nth-child(even) {
-  height: 21em;
-  width: 20em;
-}
-
-/*  */
-section[class="sports"] {
-  min-height: 85vh;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  gap: 1em;
-  /* border: 1px solid red; */
-}
-
-section[class="sports"]>h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-}
-
-section[class="sports"]>p {
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-  max-width: 60em;
-}
-
-section[class="sports"]>div[class="photos"] {
-  min-height: 85vh;
-  width: min(95%, 95%);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: row;
-  flex-flow: row wrap;
-  gap: 1em;
-  /* border: 1px solid red; */
-}
-
-section[class="sports"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -351,7 +261,7 @@ section[class="illustrations"]>p {
 }
 
 section[class="illustrations"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -396,7 +306,7 @@ section[class="dark-photos"]>p {
 }
 
 section[class="dark-photos"]>div[class="photos"] {
-  min-height: 85vh;
+  min-height: 60vh;
   width: min(95%, 95%);
   display: flex;
   align-items: flex-start;
@@ -412,163 +322,6 @@ section[class="dark-photos"]>div[class="photos"] :nth-child(even) {
   width: 20em;
 }
 
-/*  */
-section[class="about-us-page"] {
-  min-height: 75vh;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  gap: 1em;
-}
-
-section[class="about-us-page"]>article {
-  min-height: 55vh;
-  width: min(90%, 90%);
-  display: flex;
-  /* border: 1px solid red; */
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-flow: row wrap;
-  gap: 3em;
-}
-
-section[class="about-us-page"]>article :is(img) {
-  aspect-ratio: 16/9;
-  width: min(100%, 30em);
-  flex-grow: 1;
-}
-
-section[class="about-us-page"]>article :is(div) {
-  min-height: 55vh;
-  width: min(100%, 40em);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  flex-grow: 1;
-  gap: 1em;
-}
-
-section[class="about-us-page"]>article :is(div)>h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-}
-
-section[class="about-us-page"]>article :is(div)>p {
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-  max-width: 60em;
-}
-
-/*  */
-section[class="contact-us-page"] {
-  min-height: 55vh;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  gap: 1em;
-  /* border: 1px solid red; */
-}
-
-section[class="contact-us-page"]>article {
-  min-height: 75vh;
-  width: min(90%, 90%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-flow: row wrap;
-  gap: 3em;
-  /* border: 1px solid red; */
-}
-
-section[class="contact-us-page"]>article :is(img) {
-  aspect-ratio: 16/9;
-  width: min(100%, 30em);
-  flex-grow: 1;
-}
-
-section[class="contact-us-page"]>article :is(div) {
-  min-height: 55vh;
-  width: min(100%, 40em);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  flex-grow: 1;
-  gap: 1em;
-  /* border: 1px solid red; */
-}
-
-section[class="contact-us-page"]>article :is(div)>h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-}
-
-section[class="contact-us-page"]>article :is(div)>p {
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-  max-width: 60em;
-}
-
-section[class="contact-us-page"]>article :is(div) :is(ul) {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  flex-flow: column wrap;
-  gap: 0.7em;
-}
-
-section[class="contact-us-page"]>article :is(div) :is(ul)>li {
-  list-style: none;
-  list-style-type: none;
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-}
-
-section[class="contact-us-page"]>article :is(div) :is(form) {
-  min-height: 4em;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  flex-flow: row wrap;
-  gap: 0.5em;
-}
-
-section[class="contact-us-page"]>article :is(div) :is(form) :where(input) {
-  height: 3.5em;
-  width: min(85%, 85%);
-  border: 1px solid hsl(0, 0%, 80%);
-  border-radius: .3em;
-}
-
-section[class="contact-us-page"]>article :is(div) :is(form) :where(button) {
-  height: 3.5em;
-  width: 6em;
-  border: 1px solid hsl(0, 0%, 80%);
-  border-radius: .3em;
-  background-color: var(--primary-color);
-  color: #fff;
-  cursor: pointer;
-}
 
 /*  */
 section[class="filter-bar"] {
