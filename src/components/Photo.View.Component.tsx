@@ -21,6 +21,7 @@ interface Resource {
 function PhotoViewComponent() {
   const [resources, setResources] = useState<Resource[]>([]);
   const [resource, setResource] = useState<Resource>();
+  const [similarContent, setSimilarContent] = useState<Resource[]>([]);
 
   async function FetchResources() {
     try {
@@ -55,12 +56,17 @@ function PhotoViewComponent() {
     }
   }
 
-  console.log(resource ? resource : "");
-
   useEffect(() => {
     FetchResources();
+
+    // set similar content
+    setSimilarContent(
+      resources.filter((arg: Resource) => {
+        return arg.category === resource?.category
+      })
+    );
+
   }, [resources]);
-  // console.log(resources);
 
   function handleButtonClick(): void {
     const view: HTMLElement = window.document.querySelector(
@@ -68,6 +74,7 @@ function PhotoViewComponent() {
     ) as HTMLElement;
     view.style.display = "none";
   }
+
 
   return (
     <aside className={String("photo-view")}>
@@ -132,6 +139,61 @@ function PhotoViewComponent() {
             alt=""
             className="img-placeholder"
           />
+        </div>
+        <div className="more-selected-content">
+          <div>
+            <img src={
+              similarContent[0 as number] ? `/uploads/${similarContent[0 as number]?.resource}` : "/uploads/old-black-african-smiling-womman-in-red.jpg"
+            } alt={
+              similarContent[0 as number] ? `/uploads/${similarContent[0 as number]?.resource}` : "/uploads/old-black-african-smiling-womman-in-red.jpg"
+            }
+             />
+             <a href={similarContent[0 as number] ? `/uploads/${similarContent[0 as number]?.resource}` : "/uploads/old-black-african-smiling-womman-in-red.jpg"} download>
+              <button type="button">
+                <IoMdDownload />
+              </button>
+             </a>
+          </div>
+          <div>
+            <img src={
+              similarContent[1 as number] ? `/uploads/${similarContent[1 as number]?.resource}` : "/uploads/man.jpg"
+            } alt={
+              similarContent[1 as number] ? `/uploads/${similarContent[1 as number]?.resource}` : "/uploads/man.jpg"
+            }
+             />
+             <a href={similarContent[1 as number] ? `/uploads/${similarContent[1 as number]?.resource}` : "/uploads/man.jpg"} download>
+              <button type="button">
+                <IoMdDownload />
+              </button>
+             </a>
+          </div>
+          <div>
+            <img src={
+              similarContent[2 as number] ? `/uploads/${similarContent[2 as number]?.resource}` : "/uploads/little-smiling-curly-hair-kid.jpg"
+            } alt={
+              similarContent[2 as number] ? `/uploads/${similarContent[2 as number]?.resource}` : "/uploads/little-smiling-curly-hair-kid.jpg"
+            }
+             />
+             <a href={similarContent[2 as number] ? `/uploads/${similarContent[2 as number]?.resource}` : "/uploads/little-smiling-curly-hair-kid.jpg"} download>
+              <button type="button">
+                <IoMdDownload />
+              </button>
+             </a>
+          </div>
+          <div>
+            <img src={
+              similarContent[3 as number] ? `/uploads/${similarContent[3 as number]?.resource}` : "/uploads/curly-hair-black-woman-in-red.jpg"
+            } alt={
+              similarContent[3 as number] ? `/uploads/${similarContent[3 as number]?.resource}` : "/uploads/curly-hair-black-woman-in-red.jpg"
+            }
+             />
+             <a href={similarContent[3 as number] ? `/uploads/${similarContent[3 as number]?.resource}` : "/uploads/curly-hair-black-woman-in-red.jpg"} download>
+              <button type="button">
+                <IoMdDownload />
+              </button>
+             </a>
+          </div>
+          
         </div>
       </div>
     </aside>

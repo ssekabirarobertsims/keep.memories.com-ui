@@ -33,6 +33,7 @@ interface AdminObject {
 }
 
 type Admin = string;
+import OfflineMessageComponent from "../../components/Offline.Message.Component";
 
 function People() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -135,6 +136,7 @@ function People() {
       </section>
       <PhotoViewComponent />
       <ScrollGalleryComponent />
+      <OfflineMessageComponent />
       <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
@@ -143,10 +145,10 @@ function People() {
     <>
       <NavigationBarComponent />
       <div className="no-results-found">
-        <strong>Sorry, no results found!</strong>
+        <strong>Opps, no photos found!</strong>
         <p>
-          Please check your searches wether they match correctly or try
-          reloading the page again to try to find your results again.
+          Looks like no photos were found or reloaded from the database, try
+          reloading the page to refetch the photos from our databases.
         </p>
         <button
           type="button"
@@ -155,13 +157,14 @@ function People() {
             window.location.reload();
           }}
         >
-          Try Again
+          Reload
         </button>
       </div>
       <ScrollGalleryComponent />
       <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <AdvertComponent />
+      <OfflineMessageComponent />
       <FooterComponent />
     </>
   );

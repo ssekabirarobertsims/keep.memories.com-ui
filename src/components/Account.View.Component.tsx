@@ -19,55 +19,38 @@ const AccountViewComponent: React.FC = () => {
   return (
     <aside className="account-view-component">
       <div className="account-view-component-wrapper">
-        <article className="account-description">
+          <div className="account-description-content">
           <img src="/photos/placeholder.jpg" alt="" />
-          <br />
-          <span>
-            Login Id:{" "}
-            <strong>
-              {adminObject?.login_id ||
-              typeof adminObject?.login_id !== "undefined"
-                ? `login${adminObject?.login_id}`
-                : "login23927101"}
-            </strong>
-          </span>
-          <span>
-            Username:{" "}
-            <strong>
+          <div>
+          <span className={String("logged-in-username")}>
               {adminObject?.username ||
               typeof adminObject?.username !== "undefined"
                 ? adminObject?.username
-                : "no-username"}
-            </strong>
+                : "username"}
           </span>
-          <span>
-            Email:{" "}
-            <strong>
+          <span className={String("logged-in-user-email")}>
               {adminObject?.email || typeof adminObject?.email !== "undefined"
                 ? adminObject?.email
-                : "no-email"}
-            </strong>
+                : "example123@gmail.com"}
           </span>
-          <span>
-            Premium User: <strong>Not Premium</strong>
-          </span>
+          </div>
+          </div>
+         
           <br />
           <aside>
             <button
               type="button"
               onClick={(event) => {
                 event.stopPropagation();
-                (
-                  window.document.querySelector(
-                    ".logout-alert-box"
-                  ) as HTMLElement
-                ).style.display = "flex";
+                window.setTimeout(() => {
+                  window.localStorage.removeItem("admin");
+                  window.location.href = "/account/login";
+                }, 1500 as unknown as number);
               }}
             >
               log out <FiLogOut />
             </button>
           </aside>
-        </article>
       </div>
     </aside>
   );

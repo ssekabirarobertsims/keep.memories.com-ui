@@ -33,6 +33,7 @@ interface AdminObject {
 }
 
 type Admin = string;
+import OfflineMessageComponent from "../components/Offline.Message.Component";
 
 import FilterBarSimilarSearchesComponent from "../components/Filter.Bar.Similar.Searches.Component";
 import { v4 as uuid } from "uuid";
@@ -46,7 +47,7 @@ function FilterBar() {
   const [searches, setSearches] = useState([
     {
       id: uuid() as string,
-      resource: "tech-gadgets-with-white-background.jpg",
+      resource: "man-walking-toward-light-end-tunnel_1353-49.jpg",
       category: "",
       resource_admin: "",
       resource_id: uuid() as string,
@@ -55,7 +56,7 @@ function FilterBar() {
     },
     {
       id: uuid() as string,
-      resource: "tech-gadgets-with-yellow-background.jpg",
+      resource: "little-boat-dark_181624-474.jpg",
       category: "",
       resource_admin: "",
       resource_id: uuid() as string,
@@ -64,8 +65,7 @@ function FilterBar() {
     },
     {
       id: uuid() as string,
-      resource:
-        "tech-entrepreneur-machine-learning-engineer-illustration_1297153-24209.jpg",
+      resource: "pack-cigarettes-glass-coffee_181624-518.jpg",
       category: "",
       resource_admin: "",
       resource_id: uuid() as string,
@@ -897,17 +897,9 @@ function FilterBar() {
       )}
       <br />
       <br />
-      <a href="/filter/searches#">
-        <button
-          type="button"
-          className="navigation-upper-scroll-button"
-          ref={buttonRef}
-        >
-          <BsArrowUp />
-        </button>
-      </a>
       <ScrollGalleryComponent />
       <PhotoViewComponent />
+      <OfflineMessageComponent />
       <AdvertComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />

@@ -8,19 +8,19 @@ function PublicPagePhotoCollection() {
       <aside className="public-page-photo-collection">
         <div className="__even">
           <img
-            src="/uploads/medium-shot-women-wearing-red-dresses_23-2149020029.jpg"
+            src="/uploads/young-people-posing-side-view_23-2149596272.jpg"
             alt="photo from keep memories photos gallery"
           />
           <article>
             <aside className="content">
               <p>
-                Medium shot women wearing a red dress ipsum dolor sit amet
-                consectetur adipisicing elit. Est ut rerum facere adipisci.
+                Beautiful girl & boy in dark thoughtfully looking and possing
+                isoalted. Est ut rerum facere adipisci dolor quisquam tenetur.
               </p>
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/medium-shot-women-wearing-red-dresses_23-2149020029.jpg"
+                href="/uploads/young-people-posing-side-view_23-2149596272.jpg"
                 download
                 title="download photo to your machine"
               >
@@ -523,7 +523,7 @@ function PublicPagePhotoCollection() {
             </aside>
             <aside className="wrapper">
               <a
-                href="/uploads/beautiful-girls-white-shirts-thoughtfully-looking-aside-leaning-heads-each-other-isoalted_574295-1135.jpg"
+                href="/uploads/public\uploads\young-people-posing-side-view_23-2149596272.jpg"
                 download
                 title="download photo to your machine"
               >

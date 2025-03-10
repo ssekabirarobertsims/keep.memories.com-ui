@@ -3,89 +3,111 @@
   .dd-menu {
     display: flex;
   }
-  nav > div :is(ul) {
+
+  nav>div :is(ul) {
     display: none;
   }
-  header nav > div :is(ul) {
+
+  header nav>div :is(ul) {
     display: none;
+  }
 }
-}
+
 @media all and (min-width: 320px) and (max-width: 768px) {
+
   /* aside[class="account-view-component"] {
     min-height: 90vh;
 } */
-  nav > div :is(ul) > a {
+  nav>div :is(ul)>a {
     font-size: .9em;
   }
 
   header {
     /* border: 1px solid red; */
-      min-height: 100vh;
-    }
-    header > article {
-      min-height: 20em; 
-      gap: 1.5em;
-      text-align: center;
-      /* border: 1px solid red; */
-    }
-    header > article :is(div) {
-      align-items: center;
-    }
-    header > article :is(div) h1 {
-      font-size: 2em;
-    }
-    header > article :is(div) p {
-      font-size: .8em;
+    min-height: 100vh;
+  }
+
+  header>article {
+    min-height: 20em;
+    gap: 1.5em;
+    text-align: center;
+    /* border: 1px solid red; */
+  }
+
+  header>article :is(div) {
+    align-items: center;
+  }
+
+  header>article :is(div) h1 {
+    font-size: 2em;
+  }
+
+  header>article :is(div) p {
+    font-size: .8em;
   }
 
   .search-list {
     bottom: -5em;
   }
 
-  main > section[class="photos-categories"] {
+  main>section[class="photos-categories"] {
     min-height: 40vh;
     gap: 1.5em;
   }
-  
+
   /*  */
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] {
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] {
     height: 90vh;
   }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside {
     justify-content: center;
   }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"] {
     height: 10vh;
     justify-content: center;
   }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li {
     font-size: 1.1em;
   }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li a :where(button) {
     width: 9em;
   }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>button[class="close"] {
     height: 10vh;
     /* border: 1px solid red; */
   }
-  aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
     height: 23em;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"] {
+    display: none;
   }
 
   /*  */
   section[class="about-us-page"] {
     min-height: 130vh;
   }
-  section[class="about-us-page"] > article :is(div) > h1 {
+
+  section[class="about-us-page"]>article :is(div)>h1 {
     font-size: 2em;
   }
-  section[class="about-us-page"] > article :is(div) > p {
+
+  section[class="about-us-page"]>article :is(div)>p {
     font-size: 0.8em;
   }
-  section[class="contact-us-page"] > article :is(div) > h1 {
+
+  section[class="contact-us-page"]>article :is(div)>h1 {
     font-size: 1.7em;
-  } 
-  section[class="contact-us-page"] > article :is(div) > p {
+  }
+
+  section[class="contact-us-page"]>article :is(div)>p {
     font-size: 0.8em;
   }
 
@@ -96,77 +118,87 @@
 
   /*  */
   section[class="subscription-page"] form {
-   min-height: 70vh;
+    min-height: 70vh;
   }
 
 
   /*  */
-  main > aside[class="public-page-photo-collection"] div {
+  main>aside[class="public-page-photo-collection"] div {
     /* border: 2px solid red */
     flex-grow: 0;
   }
-  main > aside[class="public-page-photo-collection"] div > article {
+
+  main>aside[class="public-page-photo-collection"] div>article {
     /* border: 1px solid red; */
     height: 100%;
     /* flex-grow: 1; */
   }
 
-  main > aside[class="public-page-photo-collection"] :is(div[class="__even"]) {
+  main>aside[class="public-page-photo-collection"] :is(div[class="__even"]) {
     height: 23em;
     width: min(100%, 20em);
   }
-  
+
 
 
   /*  */
-    .login-section-page {
-      gap: .0em;
-    }
-    .login-section-page aside[class="__wrapper"] {
-      min-height: 80vh;
-      gap: 0em;
-    }
-    .login-section-page > div {
-      height: 13em;
-    }
-    .login-section-page > form {
-      height: 15em;
-    }
+  .login-section-page {
+    gap: .0em;
+  }
 
-    /*  */
-    .signup-section-page {
-      gap: .0em;
-    }
-    .signup-section-page aside[class="__wrapper"] {
-      min-height: 80vh;
-      gap: 0em;
-    }
-    .signup-section-page aside[class="__wrapper"] > div {
-      min-height: 50vh;
-    }
-    
+  .login-section-page aside[class="__wrapper"] {
+    min-height: 80vh;
+    gap: 0em;
+  }
 
-    /*  */
-    /*  */
+  .login-section-page>div {
+    height: 13em;
+  }
+
+  .login-section-page>form {
+    height: 15em;
+  }
+
+  /*  */
+  .signup-section-page {
+    gap: .0em;
+  }
+
+  .signup-section-page aside[class="__wrapper"] {
+    min-height: 80vh;
+    gap: 0em;
+  }
+
+  .signup-section-page aside[class="__wrapper"]>div {
+    min-height: 50vh;
+  }
+
+
+  /*  */
+  /*  */
   aside[class="advert-component"] {
     min-height: 25em;
   }
+
   aside[class="advert-component"] div {
     min-height: 15em;
   }
-  aside[class="advert-component"] div > h1 {
+
+  aside[class="advert-component"] div>h1 {
     font-size: 2em;
     line-height: 1.2em;
   }
-  aside[class="advert-component"] div > p, a {
+
+  aside[class="advert-component"] div>p, a {
     font-size: .9em;
   }
 
   /*  */
-  footer > aside[class="__footer-wrapper"] {
+  footer>aside[class="__footer-wrapper"] {
     min-height: 30em;
   }
-  footer > aside[class="__footer-wrapper"] > div[class="section"] {
+
+  footer>aside[class="__footer-wrapper"]>div[class="section"] {
     min-height: 15em;
     justify-content: center;
   }
@@ -176,63 +208,83 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   header {
     /* border: 1px solid red; */
-      min-height: 60vh;
+    min-height: 60vh;
   }
-  header > article {
-    min-height: 20em; 
+
+  header>article {
+    min-height: 20em;
     gap: .8em;
     text-align: center;
     /* border: 1px solid red; */
   }
-  header > article :is(div) {
+
+  header>article :is(div) {
     align-items: center;
   }
-  header > article :is(div) h1 {
+
+  header>article :is(div) h1 {
     font-size: 2.5em;
   }
-  header > article :is(div) p {
+
+  header>article :is(div) p {
     font-size: .9em;
-}
-/*  */
-    /*  */
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] {
-      height: 90vh;
-    }
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
-      justify-content: center;
-    }
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
-      height: 10vh;
-      justify-content: center;
-    }
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
-      font-size: 1.1em;
-    }
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
-      width: 9em;
-    }
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
-      height: 10vh;
-      /* border: 1px solid red; */
-    }
-    aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
-      height: 23em;
-    }
-/*  */ 
-  
+  }
+
+  /*  */
+  /*  */
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] {
+    height: 90vh;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside {
+    justify-content: center;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"] {
+    height: 10vh;
+    justify-content: center;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li {
+    font-size: 1.1em;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li a :where(button) {
+    width: 9em;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>button[class="close"] {
+    height: 10vh;
+    /* border: 1px solid red; */
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+    height: 23em;
+  }
+
+  aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"] {
+    display: none;
+  }
+
+  /*  */
+
   section[class="about-us-page"] {
     min-height: 180vh;
   }
-  section[class="about-us-page"] > article :is(div) > h1 {
+
+  section[class="about-us-page"]>article :is(div)>h1 {
     font-size: 2.5em;
   }
-  section[class="about-us-page"] > article :is(div) > p {
+
+  section[class="about-us-page"]>article :is(div)>p {
     font-size: 0.8em;
   }
-  section[class="contact-us-page"] > article :is(div) > h1 {
+
+  section[class="contact-us-page"]>article :is(div)>h1 {
     font-size: 1.7em;
-  } 
-  section[class="contact-us-page"] > article :is(div) > p {
+  }
+
+  section[class="contact-us-page"]>article :is(div)>p {
     font-size: 0.8em;
   }
 
@@ -245,10 +297,12 @@
   .login-section-page {
     gap: .0em;
   }
-  .login-section-page > div {
+
+  .login-section-page>div {
     height: 13em;
   }
-  .login-section-page > form {
+
+  .login-section-page>form {
     height: 15em;
   }
 
@@ -256,21 +310,25 @@
     gap: .0em;
     min-height: 180vh;
   }
+
   .signup-section-page aside[class="__wrapper"] {
     gap: 7em;
   }
-  .signup-section-page > div {
+
+  .signup-section-page>div {
     height: 13em;
   }
-  .signup-section-page > form {
+
+  .signup-section-page>form {
     height: 17em;
   }
 
   /*  */
-  footer > aside[class="__footer-wrapper"] {
+  footer>aside[class="__footer-wrapper"] {
     min-height: 30em;
   }
-  footer > aside[class="__footer-wrapper"] > div[class="section"] {
+
+  footer>aside[class="__footer-wrapper"]>div[class="section"] {
     min-height: 15em;
     justify-content: center;
   }

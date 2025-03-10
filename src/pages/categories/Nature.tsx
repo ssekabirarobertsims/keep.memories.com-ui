@@ -33,6 +33,7 @@ interface AdminObject {
 }
 
 type Admin = string;
+import OfflineMessageComponent from "../../components/Offline.Message.Component";
 
 function Nature() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -138,6 +139,7 @@ function Nature() {
       </section>
       <ScrollGalleryComponent />
       <PhotoViewComponent />
+      <OfflineMessageComponent />
       <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
@@ -163,6 +165,7 @@ function Nature() {
       </div>
       <ScrollGalleryComponent />
       <LoaderComponent />
+      <OfflineMessageComponent />
       <WelcomeCookieAlertMessage />
       <AdvertComponent />
       <FooterComponent />

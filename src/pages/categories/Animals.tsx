@@ -33,6 +33,7 @@ interface AdminObject {
 }
 
 type Admin = string;
+import OfflineMessageComponent from "../../components/Offline.Message.Component";
 
 function Animals() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -143,6 +144,7 @@ function Animals() {
         </section>
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
+        <OfflineMessageComponent />
         <PhotoViewComponent />
         <LoaderComponent />
         <FooterComponent />
@@ -168,6 +170,7 @@ function Animals() {
         </div>
         <ScrollGalleryComponent />
         <LoaderComponent />
+        <OfflineMessageComponent />
         <WelcomeCookieAlertMessage />
         <AdvertComponent />
         <FooterComponent />

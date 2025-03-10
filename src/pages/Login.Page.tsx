@@ -14,9 +14,9 @@ function LoginPage() {
             <article>
               <h1>Login</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                repellat molestias dolor quibusdam voluptatem. Quidem molestiae
-                impedit culpa minima praesentium!
+                Log into your account if you have registered account to continue
+                with the best experience for the sit quibusdam voluptatem.
+                Quidem molestiae impedit culpa minima.
               </p>
               <span>
                 keep memories photo gallery ©right 2024-2025 rights reserved

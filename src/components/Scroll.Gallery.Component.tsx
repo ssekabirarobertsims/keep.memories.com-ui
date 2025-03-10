@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ScrollGalleryComponent: React.FC = () => {
   return (
-    <aside className="scroll-gallery-component">
+    <aside className="scroll-gallery-component"> 
       <h1>Best Reviews From Our Collection!</h1>
       <p>
         Explore and download the best beautiful and inspiring photo reviews of

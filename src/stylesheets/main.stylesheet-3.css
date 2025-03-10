@@ -10,14 +10,16 @@ section[class="all-collection"] {
   /* border: 1px solid red; */
   position: relative;
 }
-section[class="all-collection"] > h1 {
+
+section[class="all-collection"]>h1 {
   font-size: 2em;
   text-align: center;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="all-collection"] > p {
+
+section[class="all-collection"]>p {
   font-size: 0.9em;
   font-weight: normal;
   text-align: center;
@@ -25,7 +27,8 @@ section[class="all-collection"] > p {
   text-align: center;
   max-width: 60em;
 }
-section[class="all-collection"] > div[class="photos"] {
+
+section[class="all-collection"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -36,11 +39,13 @@ section[class="all-collection"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="all-collection"] > span{
+
+section[class="all-collection"]>span {
   font-size: .9em;
   /* border: 1px solid red; */
 }
-section[class="all-collection"] > div[class="photos"] :nth-child(even) {
+
+section[class="all-collection"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -57,14 +62,16 @@ section[class="people"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="people"] > h1 {
+
+section[class="people"]>h1 {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="people"] > p {
+
+section[class="people"]>p {
   font-size: 0.9em;
   text-align: center;
   font-weight: normal;
@@ -72,7 +79,8 @@ section[class="people"] > p {
   text-align: center;
   max-width: 60em;
 }
-section[class="people"] > div[class="photos"] {
+
+section[class="people"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -83,7 +91,8 @@ section[class="people"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="people"] > div[class="photos"] :nth-child(even) {
+
+section[class="people"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -100,20 +109,23 @@ section[class="technology"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="technology"] > h1 {
+
+section[class="technology"]>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="technology"] > p {
+
+section[class="technology"]>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
   max-width: 60em;
 }
-section[class="technology"] > div[class="photos"] {
+
+section[class="technology"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -124,7 +136,8 @@ section[class="technology"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="technology"] > div[class="photos"] :nth-child(even) {
+
+section[class="technology"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -141,20 +154,23 @@ section[class="nature"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="nature"] > h1 {
+
+section[class="nature"]>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="nature"] > p {
+
+section[class="nature"]>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
   max-width: 60em;
 }
-section[class="nature"] > div[class="photos"] {
+
+section[class="nature"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -165,7 +181,8 @@ section[class="nature"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="nature"] > div[class="photos"] :nth-child(even) {
+
+section[class="nature"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -182,20 +199,23 @@ section[class="animals"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="animals"] > h1 {
+
+section[class="animals"]>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="animals"] > p {
+
+section[class="animals"]>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
   max-width: 60em;
 }
-section[class="animals"] > div[class="photos"] {
+
+section[class="animals"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -206,7 +226,8 @@ section[class="animals"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="animals"] > div[class="photos"] :nth-child(even) {
+
+section[class="animals"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -223,20 +244,23 @@ section[class="food"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="food"] > h1 {
+
+section[class="food"]>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="food"] > p {
+
+section[class="food"]>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
   max-width: 60em;
 }
-section[class="food"] > div[class="photos"] {
+
+section[class="food"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -247,7 +271,8 @@ section[class="food"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="food"] > div[class="photos"] :nth-child(even) {
+
+section[class="food"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
@@ -264,20 +289,23 @@ section[class="sports"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="sports"] > h1 {
+
+section[class="sports"]>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="sports"] > p {
+
+section[class="sports"]>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
   max-width: 60em;
 }
-section[class="sports"] > div[class="photos"] {
+
+section[class="sports"]>div[class="photos"] {
   min-height: 85vh;
   width: min(95%, 95%);
   display: flex;
@@ -288,92 +316,101 @@ section[class="sports"] > div[class="photos"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="sports"] > div[class="photos"] :nth-child(even) {
+
+section[class="sports"]>div[class="photos"] :nth-child(even) {
   height: 21em;
   width: 20em;
 }
 
 /*  */
 section[class="illustrations"] {
-    min-height: 85vh;
-    width: min(100%, 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-flow: column nowrap;
-    gap: 1em;
-    /* border: 1px solid red; */
-  }
-  section[class="illustrations"] > h1 {
-    font-size: 2em;
-    font-weight: bold;
-    color: hsl(0, 0%, 20%);
-    text-align: center;
-  }
-  section[class="illustrations"] > p {
-    font-size: 0.9em;
-    font-weight: normal;
-    color: hsl(0, 0%, 20%);
-    text-align: center;
-    max-width: 60em;
-  }
-  section[class="illustrations"] > div[class="photos"] {
-    min-height: 85vh;
-    width: min(95%, 95%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
-    flex-flow: row wrap;
-    gap: 1em;
-    /* border: 1px solid red; */
-  }
-  section[class="illustrations"] > div[class="photos"] :nth-child(even) {
-    height: 21em;
-    width: 20em;
-  }
+  min-height: 85vh;
+  width: min(100%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-flow: column nowrap;
+  gap: 1em;
+  /* border: 1px solid red; */
+}
+
+section[class="illustrations"]>h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: hsl(0, 0%, 20%);
+  text-align: center;
+}
+
+section[class="illustrations"]>p {
+  font-size: 0.9em;
+  font-weight: normal;
+  color: hsl(0, 0%, 20%);
+  text-align: center;
+  max-width: 60em;
+}
+
+section[class="illustrations"]>div[class="photos"] {
+  min-height: 85vh;
+  width: min(95%, 95%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 1em;
+  /* border: 1px solid red; */
+}
+
+section[class="illustrations"]>div[class="photos"] :nth-child(even) {
+  height: 21em;
+  width: 20em;
+}
 
 /*  */
 section[class="dark-photos"] {
-    min-height: 85vh;
-    width: min(100%, 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-flow: column nowrap;
-    gap: 1em;
-    /* border: 1px solid red; */
-  }
-  section[class="dark-photos"] > h1 {
-    font-size: 2em;
-    font-weight: bold;
-    color: hsl(0, 0%, 20%);
-    text-align: center;
-  }
-  section[class="dark-photos"] > p {
-    font-size: 0.9em;
-    font-weight: normal;
-    color: hsl(0, 0%, 20%);
-    text-align: center;
-    max-width: 60em;
-  }
-  section[class="dark-photos"] > div[class="photos"] {
-    min-height: 85vh;
-    width: min(95%, 95%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
-    flex-flow: row wrap;
-    gap: 1em;
-    /* border: 1px solid red; */
-  }
-  section[class="dark-photos"] > div[class="photos"] :nth-child(even) {
-    height: 21em;
-    width: 20em;
-  }
+  min-height: 85vh;
+  width: min(100%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-flow: column nowrap;
+  gap: 1em;
+  /* border: 1px solid red; */
+}
+
+section[class="dark-photos"]>h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: hsl(0, 0%, 20%);
+  text-align: center;
+}
+
+section[class="dark-photos"]>p {
+  font-size: 0.9em;
+  font-weight: normal;
+  color: hsl(0, 0%, 20%);
+  text-align: center;
+  max-width: 60em;
+}
+
+section[class="dark-photos"]>div[class="photos"] {
+  min-height: 85vh;
+  width: min(95%, 95%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 1em;
+  /* border: 1px solid red; */
+}
+
+section[class="dark-photos"]>div[class="photos"] :nth-child(even) {
+  height: 21em;
+  width: 20em;
+}
 
 /*  */
 section[class="about-us-page"] {
@@ -386,7 +423,8 @@ section[class="about-us-page"] {
   flex-flow: column nowrap;
   gap: 1em;
 }
-section[class="about-us-page"] > article {
+
+section[class="about-us-page"]>article {
   min-height: 55vh;
   width: min(90%, 90%);
   display: flex;
@@ -397,12 +435,14 @@ section[class="about-us-page"] > article {
   flex-flow: row wrap;
   gap: 3em;
 }
-section[class="about-us-page"] > article :is(img) {
+
+section[class="about-us-page"]>article :is(img) {
   aspect-ratio: 16/9;
   width: min(100%, 30em);
   flex-grow: 1;
 }
-section[class="about-us-page"] > article :is(div) {
+
+section[class="about-us-page"]>article :is(div) {
   min-height: 55vh;
   width: min(100%, 40em);
   display: flex;
@@ -413,12 +453,14 @@ section[class="about-us-page"] > article :is(div) {
   flex-grow: 1;
   gap: 1em;
 }
-section[class="about-us-page"] > article :is(div) > h1 {
+
+section[class="about-us-page"]>article :is(div)>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
 }
-section[class="about-us-page"] > article :is(div) > p {
+
+section[class="about-us-page"]>article :is(div)>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
@@ -437,7 +479,8 @@ section[class="contact-us-page"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="contact-us-page"] > article {
+
+section[class="contact-us-page"]>article {
   min-height: 75vh;
   width: min(90%, 90%);
   display: flex;
@@ -448,12 +491,14 @@ section[class="contact-us-page"] > article {
   gap: 3em;
   /* border: 1px solid red; */
 }
-section[class="contact-us-page"] > article :is(img) {
+
+section[class="contact-us-page"]>article :is(img) {
   aspect-ratio: 16/9;
   width: min(100%, 30em);
   flex-grow: 1;
 }
-section[class="contact-us-page"] > article :is(div) {
+
+section[class="contact-us-page"]>article :is(div) {
   min-height: 55vh;
   width: min(100%, 40em);
   display: flex;
@@ -465,19 +510,22 @@ section[class="contact-us-page"] > article :is(div) {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="contact-us-page"] > article :is(div) > h1 {
+
+section[class="contact-us-page"]>article :is(div)>h1 {
   font-size: 2em;
   font-weight: bold;
   color: hsl(0, 0%, 20%);
   text-align: center;
 }
-section[class="contact-us-page"] > article :is(div) > p {
+
+section[class="contact-us-page"]>article :is(div)>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   max-width: 60em;
 }
-section[class="contact-us-page"] > article :is(div) :is(ul) {
+
+section[class="contact-us-page"]>article :is(div) :is(ul) {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -485,14 +533,16 @@ section[class="contact-us-page"] > article :is(div) :is(ul) {
   flex-flow: column wrap;
   gap: 0.7em;
 }
-section[class="contact-us-page"] > article :is(div) :is(ul) > li {
+
+section[class="contact-us-page"]>article :is(div) :is(ul)>li {
   list-style: none;
   list-style-type: none;
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
 }
-section[class="contact-us-page"] > article :is(div) :is(form) {
+
+section[class="contact-us-page"]>article :is(div) :is(form) {
   min-height: 4em;
   width: min(100%, 100%);
   display: flex;
@@ -502,13 +552,15 @@ section[class="contact-us-page"] > article :is(div) :is(form) {
   flex-flow: row wrap;
   gap: 0.5em;
 }
-section[class="contact-us-page"] > article :is(div) :is(form) :where(input) {
+
+section[class="contact-us-page"]>article :is(div) :is(form) :where(input) {
   height: 3.5em;
   width: min(85%, 85%);
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: .3em;
 }
-section[class="contact-us-page"] > article :is(div) :is(form) :where(button) {
+
+section[class="contact-us-page"]>article :is(div) :is(form) :where(button) {
   height: 3.5em;
   width: 6em;
   border: 1px solid hsl(0, 0%, 80%);
@@ -517,7 +569,7 @@ section[class="contact-us-page"] > article :is(div) :is(form) :where(button) {
   color: #fff;
   cursor: pointer;
 }
- 
+
 /*  */
 section[class="filter-bar"] {
   min-height: 55vh;
@@ -530,7 +582,8 @@ section[class="filter-bar"] {
   gap: 1em;
   /* border: 1px solid red; */
 }
-section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] {
+
+section[class="filter-bar"]>div[class="filter-bar-input-wrapper"] {
   min-height: 3.1em;
   width: min(100%, 100%);
   display: flex;
@@ -544,7 +597,8 @@ section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] {
   overflow: hidden;
   border: 1px solid hsl(0, 0%, 80%);
 }
-section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] :is(input) {
+
+section[class="filter-bar"]>div[class="filter-bar-input-wrapper"] :is(input) {
   height: 3.5em;
   width: min(85%, 85%);
   border: none;
@@ -553,9 +607,8 @@ section[class="filter-bar"] > div[class="filter-bar-input-wrapper"] :is(input) {
   outline-style: none;
   /* flex-grow: 1; */
 }
-section[class="filter-bar"]
-  > div[class="filter-bar-input-wrapper"]
-  :is(button) {
+
+section[class="filter-bar"]>div[class="filter-bar-input-wrapper"] :is(button) {
   height: 3em;
   width: 8em;
   cursor: pointer;
@@ -565,6 +618,7 @@ section[class="filter-bar"]
   border-radius: .3em;
   font-weight: bolder;
 }
+
 aside[class="filter-bar-similar-searches-component"] {
   min-height: 16em;
   width: min(100%, 100%);
@@ -576,7 +630,8 @@ aside[class="filter-bar-similar-searches-component"] {
   justify-content: center;
   flex-direction: column;
 }
-aside[class="filter-bar-similar-searches-component"] > div {
+
+aside[class="filter-bar-similar-searches-component"]>div {
   min-height: 12em;
   width: min(95%, 95%);
   display: flex;
@@ -587,7 +642,8 @@ aside[class="filter-bar-similar-searches-component"] > div {
   gap: 1em;
   /* border: 1px solid red; */
 }
-aside[class="filter-bar-similar-searches-component"] > div :where(aside) {
+
+aside[class="filter-bar-similar-searches-component"]>div :where(aside) {
   height: 11em;
   width: min(100%, 14em);
   flex-grow: 1;
@@ -601,7 +657,8 @@ aside[class="filter-bar-similar-searches-component"] > div :where(aside) {
   /* border: 1px solid red; */
   max-width: 20em;
 }
-aside[class="filter-bar-similar-searches-component"] > div :where(aside)::before {
+
+aside[class="filter-bar-similar-searches-component"]>div :where(aside)::before {
   content: "";
   height: 11em;
   width: 100%;
@@ -614,20 +671,24 @@ aside[class="filter-bar-similar-searches-component"] > div :where(aside)::before
   left: 0px;
   background-color: rgba(0, 0, 0, .1);
 }
-aside[class="filter-bar-similar-searches-component"] > div :where(aside):where(:hover, :focus)::before {
- display: none;
+
+aside[class="filter-bar-similar-searches-component"]>div :where(aside):where(:hover, :focus)::before {
+  display: none;
 }
-aside[class="filter-bar-similar-searches-component"] > div :where(aside) img {
+
+aside[class="filter-bar-similar-searches-component"]>div :where(aside) img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   flex-grow: 1;
   border-radius: .3em;
 }
-aside[class="filter-bar-similar-searches-component"] > div :where(aside):where(:hover, :focus) img {
+
+aside[class="filter-bar-similar-searches-component"]>div :where(aside):where(:hover, :focus) img {
   transform: scale(1.1);
- }
-aside[class="filter-bar-similar-searches-component"] > article {
+}
+
+aside[class="filter-bar-similar-searches-component"]>article {
   min-height: 2em;
   width: min(95%, 95%);
   display: flex;
@@ -638,7 +699,8 @@ aside[class="filter-bar-similar-searches-component"] > article {
   gap: 1em;
   /* border: 1px solid red; */
 }
-aside[class="filter-bar-similar-searches-component"] > article :is(a) {
+
+aside[class="filter-bar-similar-searches-component"]>article :is(a) {
   font-weight: calc(270 + 260);
   color: var(--primary-color);
   text-decoration: none;
@@ -648,24 +710,28 @@ aside[class="filter-bar-similar-searches-component"] > article :is(a) {
   flex-direction: row;
   gap: .5em;
 }
+
 .found-searches-content-length {
   font-size: .9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
 }
-section[class="filter-bar"] > h1 {
+
+section[class="filter-bar"]>h1 {
   font-size: 1.7em;
   font-weight: normal;
   color: hsl(0, 0%, 30%);
   text-align: center;
 }
-section[class="filter-bar"] > p {
+
+section[class="filter-bar"]>p {
   font-size: 0.9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   /* text-align: center; */
   max-width: 60em;
 }
+
 .filter-categories {
   min-height: 3em;
   width: min(100%, 100%);
@@ -677,7 +743,8 @@ section[class="filter-bar"] > p {
   gap: 1em;
   /* border: 1px solid red; */
 }
-.filter-categories > button {
+
+.filter-categories>button {
   height: 3em;
   width: min(100%, 10em);
   border-radius: .3em;
@@ -687,10 +754,12 @@ section[class="filter-bar"] > p {
   cursor: pointer;
   flex-grow: 1;
 }
-.filter-categories > button:where(:hover) {
+
+.filter-categories>button:where(:hover) {
   background-color: hsl(0, 0%, 95%);
 }
-section[class="filter-bar"] > article {
+
+section[class="filter-bar"]>article {
   min-height: 30vh;
   width: min(100%, 100%);
   display: flex;
@@ -701,17 +770,18 @@ section[class="filter-bar"] > article {
   gap: 0.5em;
   /* border: 1px solid red; */
 }
-section[class="filter-bar"] > article .photo_resource {
+
+section[class="filter-bar"]>article .photo_resource {
   max-width: 27em;
   flex-grow: 1;
 }
-section[class="filter-bar"] > article :nth-child(even) {
+
+section[class="filter-bar"]>article :nth-child(even) {
   height: 21em;
   width: 20em;
 }
-section[class="filter-bar"]
-  > article
-  :is(div[class="warning-results-message"]) {
+
+section[class="filter-bar"]>article :is(div[class="warning-results-message"]) {
   min-height: 10vh;
   width: min(90%, 90%);
   display: flex;
@@ -719,17 +789,14 @@ section[class="filter-bar"]
   /* border: 1px solid red; */
   justify-content: center;
 }
-section[class="filter-bar"]
-  > article
-  :is(div[class="warning-results-message"])
-  > p {
+
+section[class="filter-bar"]>article :is(div[class="warning-results-message"])>p {
   font-size: 1.5em;
   color: hsl(0, 0%, 80%);
   font-weight: normal;
 }
-section[class="filter-bar"]
-  > article
-  :is(div[class="warning-results-message"]) {
+
+section[class="filter-bar"]>article :is(div[class="warning-results-message"]) {
   min-height: 10vh;
   width: min(90%, 90%);
   display: flex;
@@ -737,10 +804,7 @@ section[class="filter-bar"]
   justify-content: center;
 }
 
-section[class="filter-bar"]
-  > article
-  :is(div[class="warning-results-message"])
-  > p {
+section[class="filter-bar"]>article :is(div[class="warning-results-message"])>p {
   font-size: 1.5em;
   color: hsl(0, 0%, 80%);
   font-weight: normal;
@@ -764,8 +828,8 @@ section[class="filter-bar"]
 }
 
 /*  */
-  
-.login-section-page > .login-spinner-wrapper {
+
+.login-section-page>.login-spinner-wrapper {
   min-height: 100vh;
   width: min(100%, 100%);
   position: fixed;
@@ -779,8 +843,8 @@ section[class="filter-bar"]
 }
 
 /*  */
-  
-.signup-section-page > .signup-spinner-wrapper {
+
+.signup-section-page>.signup-spinner-wrapper {
   min-height: 100vh;
   width: min(100%, 100%);
   position: fixed;

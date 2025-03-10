@@ -14,9 +14,9 @@ function SignupPage() {
             <article>
               <h1>Sign Up</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                repellat molestias dolor quibusdam voluptatem. Quidem molestiae
-                impedit culpa minima praesentium!
+                Create a new account if you have no registered account available
+                for you to access more content from our site repellat molestias
+                dolor quibusdam voluptatem.
               </p>
               <span>
                 keep memories photo gallery ©right 2024-2025 rights reserved

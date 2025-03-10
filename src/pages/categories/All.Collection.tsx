@@ -32,6 +32,7 @@ interface AdminObject {
 }
 
 type Admin = string;
+import OfflineMessageComponent from "../../components/Offline.Message.Component";
 
 function All() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -152,13 +153,14 @@ function All() {
           <br />
           <br />
         </section>
+        <OfflineMessageComponent />
         <PhotoViewComponent />
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
         <FooterComponent />
       </>
     ) : (
-      <>
+        <>
         <NavigationBarComponent />
         <div className="no-results-found">
           <strong>Sorry, no results found!</strong>
@@ -179,6 +181,7 @@ function All() {
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
         <LoaderComponent />
+        <OfflineMessageComponent />
         <AdvertComponent />
         <FooterComponent />
       </>
