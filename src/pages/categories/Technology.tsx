@@ -1,7 +1,6 @@
 import NavigationBarComponent from "../../components/Navigation.Bar.Component";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import LoaderComponent from "../../components/Loader.Component";
 import { LuDownload } from "react-icons/lu";
 import PhotoViewComponent from "../../components/Photo.View.Component";
 import FooterComponent from "../../components/Footer.Component";
@@ -55,7 +54,7 @@ function Technology() {
 
       window.setTimeout(async () => {
         (
-          window.document.querySelector(".loader-component") as HTMLElement
+          window.document.querySelector(".loader-component-2") as HTMLElement
         ).style.display = "none";
         await setResources(
           response.filter((index: Resource) => {
@@ -71,7 +70,7 @@ function Technology() {
 
       window.setTimeout(async () => {
         (
-          window.document.querySelector(".loader-component") as HTMLElement
+          window.document.querySelector(".loader-component-2") as HTMLElement
         ).style.display = "none";
       }, 6000 as number);
     }
@@ -136,11 +135,13 @@ function Technology() {
         </span>
         <br />
         <br />
+        <aside className="loader-component-2">
+            <div className="spinner"></div>
+          </aside>
       </section>
       <ScrollGalleryComponent />
       <PhotoViewComponent />
       <OfflineMessageComponent />
-      <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>
@@ -148,10 +149,10 @@ function Technology() {
     <>
       <NavigationBarComponent />
       <div className="no-results-found">
-        <strong>Sorry, no results found!</strong>
+        <strong>Opps, no photos found!</strong>
         <p>
-          Please check your searches wether they match correctly or try
-          reloading the page again to try to find your results again.
+        Looks like no photos were found or reloaded from the database, try
+        reloading the page to refetch the photos from our databases.
         </p>
         <button
           type="button"
@@ -162,9 +163,11 @@ function Technology() {
         >
           Try Again
         </button>
+        <aside className="loader-component-2">
+            <div className="spinner"></div>
+          </aside>
       </div>
       <ScrollGalleryComponent />
-      <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <AdvertComponent />
       <OfflineMessageComponent />

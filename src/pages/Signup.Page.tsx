@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Signup from "../functions/Signup";
+import Signup from "../functions/User.Signup.Function";
 
 function SignupPage() {
   return (

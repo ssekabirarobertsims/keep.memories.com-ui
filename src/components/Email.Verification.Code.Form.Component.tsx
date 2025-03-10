@@ -42,6 +42,10 @@ const CodeValidationForm: React.FC = () => {
       console.log(error);
       console.log("Connection to server lost...");
       console.log("Reconnection to server...");
+      (
+        window.document.querySelector(".request-response") as HTMLSpanElement
+      ).textContent = "Please check your network!" as string;
+      return;
     }
   }
 
@@ -71,10 +75,10 @@ const CodeValidationForm: React.FC = () => {
             Did not get code,{" "}
             <Link
               to={{
-                pathname: "/signup",
+                pathname: "/account/signup",
               }}
             >
-              signup again with a correct email address
+              signup again
             </Link>
           </p>
           <button

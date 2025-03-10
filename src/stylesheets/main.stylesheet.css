@@ -847,6 +847,7 @@ aside[class="offline-message-component"] {
     right: 0px;
     /* border: 1px solid red; */
     background-color: #000;
+    z-index: 4;
 }
 
 aside[class="offline-message-component"]>p {

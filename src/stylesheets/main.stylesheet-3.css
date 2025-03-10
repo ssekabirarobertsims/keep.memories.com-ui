@@ -769,6 +769,7 @@ section[class="filter-bar"]>article {
   flex-flow: row wrap;
   gap: 0.5em;
   /* border: 1px solid red; */
+  position: relative;
 }
 
 section[class="filter-bar"]>article .photo_resource {
@@ -859,17 +860,17 @@ section[class="filter-bar"]>article :is(div[class="warning-results-message"])>p 
 
 /*  */
 .search-bar-spinner-wrapper {
-  min-height: 100vh;
+  height: 100%;
   width: min(100%, 100%);
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   display: none;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  z-index: 4;
+  z-index: 2;
 }
 
 

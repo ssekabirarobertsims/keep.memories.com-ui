@@ -5,23 +5,20 @@ import { Route, Routes } from "react-router-dom";
 import adminContext from "./context/adminContext";
 import React, { useEffect } from "react";
 import FilterBar from "./pages/Filter.Bar.Page";
-import CodeValidationForm from "./components/Email.Verification.Code.Component";
+import CodeValidationForm from "./components/Email.Verification.Code.Form.Component";
 import BlankVerificationPage from "./pages/Blank.Verification.Page";
 import BlankAuthStatusPage from "./pages/Blank.Auth.Status.Page";
 import Categories from "./pages/Categories.Page";
 import NewsLetterSubscriptionBlankPage from "./pages/Blank.Newsletter.Verification.Page";
-import LogoutAdmin from "./functions/LogoutAdmin";
+import LogoutAdmin from "./functions/User.Logout.Function";
 import SubscribingPage from "./pages/Subscription.Page";
+LogoutAdmin();
 
 function App() {
   const context: string | null = React.useContext(adminContext) as
     | string
     | null;
   const admin = JSON.parse(context as string);
-
-  useEffect(() => {
-    LogoutAdmin();
-  });
 
   (window.document.querySelector("body") as HTMLBodyElement).addEventListener(
     "click",
@@ -62,7 +59,7 @@ function App() {
         element={admin ? <BlankAuthStatusPage /> : <SignupPage />}
       ></Route>
       <Route
-        path="/signup/account/verification/code"
+        path="/signup/account/verification/code/form"
         element={admin ? <PublicPage /> : <CodeValidationForm />}
       ></Route>
       <Route

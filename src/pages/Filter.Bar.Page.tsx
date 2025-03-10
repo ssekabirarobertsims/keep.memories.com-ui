@@ -38,7 +38,6 @@ import OfflineMessageComponent from "../components/Offline.Message.Component";
 import FilterBarSimilarSearchesComponent from "../components/Filter.Bar.Similar.Searches.Component";
 import { v4 as uuid } from "uuid";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
-import { BsArrowUp } from "react-icons/bs";
 
 function FilterBar() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -49,7 +48,7 @@ function FilterBar() {
       id: uuid() as string,
       resource: "man-walking-toward-light-end-tunnel_1353-49.jpg",
       category: "",
-      resource_admin: "",
+      resource_admin: "robert sims",
       resource_id: uuid() as string,
       resource_title: "",
       upload_date: "",
@@ -58,7 +57,7 @@ function FilterBar() {
       id: uuid() as string,
       resource: "little-boat-dark_181624-474.jpg",
       category: "",
-      resource_admin: "",
+      resource_admin: "jane parker",
       resource_id: uuid() as string,
       resource_title: "",
       upload_date: "",
@@ -67,7 +66,7 @@ function FilterBar() {
       id: uuid() as string,
       resource: "pack-cigarettes-glass-coffee_181624-518.jpg",
       category: "",
-      resource_admin: "",
+      resource_admin: "rowan kevin",
       resource_id: uuid() as string,
       resource_title: "",
       upload_date: "",
@@ -163,6 +162,7 @@ function FilterBar() {
             aria-placeholder="search photos here..."
           />
           <button
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -253,6 +253,7 @@ function FilterBar() {
         <FilterBarSimilarSearchesComponent />
         <div className="filter-categories">
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -324,6 +325,7 @@ function FilterBar() {
             All Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -396,6 +398,7 @@ function FilterBar() {
             Dark Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -467,6 +470,7 @@ function FilterBar() {
             People Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -539,6 +543,7 @@ function FilterBar() {
             Sports Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -611,6 +616,7 @@ function FilterBar() {
             Nature Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -683,6 +689,7 @@ function FilterBar() {
             Illustration Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -755,6 +762,7 @@ function FilterBar() {
             Tech Photos
           </button>
           <button
+          ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -838,6 +846,9 @@ function FilterBar() {
         </p>
         <br />
         <article>
+        <div className="search-bar-spinner-wrapper">
+          <div className="spinner"></div>
+        </div>
           {searches.length > 0 ? (
             searches.map((result: Resource) => (
               <article
@@ -847,7 +858,7 @@ function FilterBar() {
               >
                 <div className="before_wrapper">
                   <a href={`/uploads/${result.resource}`} download>
-                    <button type="button">
+                    <button type="button" ref={buttonRef.current}>
                       <LuDownload />
                     </button>
                   </a>
@@ -882,9 +893,6 @@ function FilterBar() {
             </div>
           )}
         </article>
-        <div className="search-bar-spinner-wrapper">
-          <div className="spinner"></div>
-        </div>
       </section>
       <br />
       {searches.length > 0 ? (

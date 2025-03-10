@@ -55,7 +55,7 @@ function People() {
 
       window.setTimeout(async () => {
         (
-          window.document.querySelector(".loader-component") as HTMLElement
+          window.document.querySelector(".loader-component-2") as HTMLElement
         ).style.display = "none";
         await setResources(
           response.filter((index: Resource) => {
@@ -71,7 +71,7 @@ function People() {
 
       window.setTimeout(async () => {
         (
-          window.document.querySelector(".loader-component") as HTMLElement
+          window.document.querySelector(".loader-component-2") as HTMLElement
         ).style.display = "none";
       }, 6000 as number);
     }
@@ -133,11 +133,13 @@ function People() {
         </span>
         <br />
         <br />
+        <aside className="loader-component-2">
+            <div className="spinner"></div>
+          </aside>
       </section>
       <PhotoViewComponent />
       <ScrollGalleryComponent />
       <OfflineMessageComponent />
-      <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>
@@ -159,9 +161,11 @@ function People() {
         >
           Reload
         </button>
+        <aside className="loader-component-2">
+            <div className="spinner"></div>
+          </aside>
       </div>
       <ScrollGalleryComponent />
-      <LoaderComponent />
       <WelcomeCookieAlertMessage />
       <AdvertComponent />
       <OfflineMessageComponent />

@@ -9,7 +9,7 @@ const BlankVerificationPage: React.FC = () => {
         You can now{" "}
         <Link
           to={{
-            pathname: "/login",
+            pathname: "/account/login",
           }}
         >
           click here
