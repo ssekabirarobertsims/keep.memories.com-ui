@@ -213,7 +213,7 @@
 
 .login-section-page>form>article[class="login-form-wrapper"] :is(button) {
   height: 3em;
-  width: min(100%, 27em);
+  width: min(100%, 10em);
   border: none;
   background-color: var(--primary-color);
   border-radius: 0.3em;
@@ -435,7 +435,7 @@
 
 .signup-section-page>form>article[class="signup-form-wrapper"] :is(button) {
   height: 3em;
-  width: min(100%, 27em);
+  width: min(100%, 10em);
   border: none;
   background-color: var(--primary-color);
   border-radius: 0.3em;

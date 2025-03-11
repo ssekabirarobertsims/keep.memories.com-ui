@@ -10,6 +10,6 @@ const OfflineMessageComponent: React.FunctionComponent = () => {
       </aside>
     </>
   );
-};
+}; 
 
 export default OfflineMessageComponent;

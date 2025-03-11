@@ -33,6 +33,7 @@ interface AdminObject {
 
 type Admin = string;
 import OfflineMessageComponent from "../../components/Offline.Message.Component";
+import AccountAuthenticationAlertComponent from "../../components/Account.Authentication.Alert.Component";
 
 function DarkPhotos() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -144,6 +145,7 @@ function DarkPhotos() {
         <ScrollGalleryComponent />
         <PhotoViewComponent />
         <WelcomeCookieAlertMessage />
+        <AccountAuthenticationAlertComponent />
         <OfflineMessageComponent />
         <FooterComponent />
       </>
@@ -171,6 +173,7 @@ function DarkPhotos() {
         </div>
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
+        <AccountAuthenticationAlertComponent />
         <AdvertComponent />
         <OfflineMessageComponent />
         <FooterComponent />

@@ -332,3 +332,84 @@ aside[class="scroll-gallery-component"]>div[class="_wrapper"] :is(article[class=
 .pagination-wrapper>a:is(:hover, :focus) {
     background-color: hsl(0, 0%, 20%);
 }
+
+/*  */
+aside[class="account-authentication-alert-component"] {
+    height: 100vh;
+    width: min(100%, 100%);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] {
+    height: 23em;
+    width: min(90%, 40em) !important;
+    background-color: #fff;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    border-radius: .3em .5em;
+    overflow: hidden;
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article {
+    height: 23em;
+    width: min(90%, 20em) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    position: relative;
+    overflow: hidden;
+    gap: .5em;
+    text-align: center;
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article :is(img) {
+    height: 100%;
+    width: min(100%, 100%) !important;
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article[class="photo-authentication-alert-component"]::before {
+    content: "";
+    height: 100%;
+    width: min(100%, 100%) !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .1);
+    z-index: 1;
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article[class="photo-authentication-alert-component"]:is(:hover, :focus) :is(img) {
+    transform: scale(1.1);
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article :is(h1) {
+   font-size: 1.6em;
+   font-weight: calc(200 + 250);
+   color: hsl(0, 0%, 20%);
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article :is(a) {
+   height: 3em;
+   width: min(90%, 90%);
+   font-weight: calc(200 + 250);
+   color: var(--primary-color)
+}
+aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article :is(a) > button {
+   height: 3em;
+   width: min(90%, 90%);
+   border-radius: 10em;
+   color: #fff;
+   background-color: var(--primary-color);
+   border: none;
+   cursor: pointer;
+}

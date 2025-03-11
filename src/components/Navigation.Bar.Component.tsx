@@ -1,4 +1,3 @@
-// import { FaCameraRetro } from "react-icons/fa";
 import React from "react";
 import { Link } from "react-router-dom";
 import adminContext from "../context/adminContext";
@@ -7,7 +6,6 @@ import LogoutAlertBox from "./Logout.Alert.Box.Component";
 type Admin = string;
 import AccountViewComponent from "./Account.View.Component";
 import { TiThMenu } from "react-icons/ti";
-// import { MdAccountCircle } from "react-icons/md";
 
 const NavigationBarComponent: React.FC = () => {
   const context: Admin = React.useContext(adminContext) as Admin;

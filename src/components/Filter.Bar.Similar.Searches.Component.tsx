@@ -9,18 +9,12 @@ const FilterBarSimilarSearchesComponent: React.FC = () => {
       <div>
         <aside>
           <img
-            src="/uploads/mixed-race-beautiful-woman-with-perfect-teeth-hairs-spending-her-leisure-park_273443-1975.jpg"
-            alt=""
+            src="/uploads/s2f86bcxemz21.jpg"
+            alt="" 
           />
         </aside>
         <aside>
-          <img src="/uploads/bright-parrot-branch_1161-178.jpg" alt="" />
-        </aside>
-        <aside>
-          <img
-            src="/uploads/child-with-helmet-his-head-word-go-it_910054-79625.jpg"
-            alt=""
-          />
+          <img src="/uploads/digital-art-style-illustration-graphic-designer_23-2151536966.avif" alt="" />
         </aside>
         <aside>
           <img
@@ -29,7 +23,13 @@ const FilterBarSimilarSearchesComponent: React.FC = () => {
           />
         </aside>
         <aside>
-          <img src="/uploads/closeup-giraffe-zoo_53876-42891.jpg" alt="" />
+          <img
+            src="/uploads/child-with-helmet-his-head-word-go-it_910054-79625.jpg"
+            alt=""
+          />
+        </aside>
+        <aside>
+          <img src="/uploads/226878-animals-kangaroos-closeup.jpg" alt="" />
         </aside>
       </div>
       <article>

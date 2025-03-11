@@ -69,7 +69,7 @@ function PublicPagePhotoCollection() {
                   <FaSearch />
                 </button>
               </a>
-              <a href="/photos/categories/illustrations">
+              <a href="/photos/categories/nature">
                 <button type="button" title="view category">
                   <BiCategory />
                 </button>
@@ -105,7 +105,7 @@ function PublicPagePhotoCollection() {
                   <FaSearch />
                 </button>
               </a>
-              <a href="/photos/categories/people">
+              <a href="/photos/categories/illustrations">
                 <button type="button" title="view category">
                   <BiCategory />
                 </button>
@@ -213,7 +213,7 @@ function PublicPagePhotoCollection() {
                   <FaSearch />
                 </button>
               </a>
-              <a href="/photos/categories/illustrations">
+              <a href="/photos/categories/people">
                 <button type="button" title="view category">
                   <BiCategory />
                 </button>
@@ -285,7 +285,7 @@ function PublicPagePhotoCollection() {
                   <FaSearch />
                 </button>
               </a>
-              <a href="/photos/categories/people">
+              <a href="/photos/categories/dark-photos">
                 <button type="button" title="view category">
                   <BiCategory />
                 </button>
@@ -373,9 +373,8 @@ function PublicPagePhotoCollection() {
           <article>
             <aside className="content">
               <p>
-                Beautiful woman with headphones enjoying music purple background
-                charming girl ipsum dolor sit amet consectetur adipisicing elit.
-                Est ut rerum!
+                Beautiful woman with curly hair and glasses smiling ipsum dolor
+                sit amet consectetur adipisicing elit. Est ut rerum!
               </p>
             </aside>
             <aside className="wrapper">

@@ -2,7 +2,6 @@ import NavigationBarComponent from "../../components/Navigation.Bar.Component";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
-import LoaderComponent from "../../components/Loader.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
 import AdvertComponent from "../../components/Advert.Component";
@@ -34,6 +33,7 @@ interface AdminObject {
 
 type Admin = string;
 import OfflineMessageComponent from "../../components/Offline.Message.Component";
+import AccountAuthenticationAlertComponent from "../../components/Account.Authentication.Alert.Component";
 
 function People() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -140,6 +140,7 @@ function People() {
       <PhotoViewComponent />
       <ScrollGalleryComponent />
       <OfflineMessageComponent />
+      <AccountAuthenticationAlertComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>
@@ -167,6 +168,7 @@ function People() {
       </div>
       <ScrollGalleryComponent />
       <WelcomeCookieAlertMessage />
+      <AccountAuthenticationAlertComponent />
       <AdvertComponent />
       <OfflineMessageComponent />
       <FooterComponent />

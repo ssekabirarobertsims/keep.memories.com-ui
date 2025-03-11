@@ -1,17 +1,14 @@
-// import { Link } from "react-router-dom";
-// import { FaCameraRetro } from "react-icons/fa";
 import { dateContext } from "../main";
 import React from "react";
-// import { FaHeart } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { MdAddCall } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-// import { Link } from "react-router-dom";
 import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 type Date = string;
 import { BiHeart } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const FooterComponent: React.FC = () => {
   const date: Partial<Readonly<Date>> = React.useContext(
@@ -34,7 +31,11 @@ const FooterComponent: React.FC = () => {
               <a href="https://robertsims.netlify.app/" target="_blank">
                 ssekabira robert sims
               </a>{" "}
-              and the team at stack technologies organization.
+              and the team at{" "}
+              <a href="https://stack-technologies.netlify.app/" target="_blank">
+                stack technologies
+              </a>{" "}
+              organization.
             </p>
             <ul className="socials">
               <li>
@@ -54,9 +55,13 @@ const FooterComponent: React.FC = () => {
           <div className="section">
             <h1>Links</h1>
             <ul className="outer-links">
-              <a href="" target="_blank">
-                <li>sponsor</li>
-              </a>
+              <Link
+                to={{
+                  pathname: "/photos/categories/collection",
+                }}
+              >
+                <li>Collection</li>
+              </Link>
               <a href="https://robertsims.netlify.app/" target="_blank">
                 <li>developer</li>
               </a>
@@ -76,7 +81,7 @@ const FooterComponent: React.FC = () => {
                 href="https://keep-memories-com-api.onrender.com/"
                 target="_blank"
               >
-                <li>Policies</li>
+                <li>policies</li>
               </a>
             </ul>
           </div>

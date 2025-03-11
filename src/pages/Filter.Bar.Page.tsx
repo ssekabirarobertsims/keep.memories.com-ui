@@ -38,6 +38,7 @@ import OfflineMessageComponent from "../components/Offline.Message.Component";
 import FilterBarSimilarSearchesComponent from "../components/Filter.Bar.Similar.Searches.Component";
 import { v4 as uuid } from "uuid";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
+import AccountAuthenticationAlertComponent from "../components/Account.Authentication.Alert.Component";
 
 function FilterBar() {
   const context: Admin = useContext(adminContext) as Admin;
@@ -52,7 +53,7 @@ function FilterBar() {
       resource_id: uuid() as string,
       resource_title: "",
       upload_date: "",
-    },
+    }, 
     {
       id: uuid() as string,
       resource: "little-boat-dark_181624-474.jpg",
@@ -909,6 +910,7 @@ function FilterBar() {
       <PhotoViewComponent />
       <OfflineMessageComponent />
       <AdvertComponent />
+      <AccountAuthenticationAlertComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>

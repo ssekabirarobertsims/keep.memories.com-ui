@@ -56,6 +56,11 @@
   }
 
   /*  */
+  aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article[class="photo-authentication-alert-component"] {
+    display: none;
+}
+
+  /*  */
   aside[class="photo-view"]>div[class="photo-view-wrapper"] {
     height: 90vh;
   }

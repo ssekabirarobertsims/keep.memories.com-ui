@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ScrollGalleryComponent: React.FC = () => {
   return (
-    <aside className="scroll-gallery-component"> 
+    <aside className="scroll-gallery-component">  
       <h1>Best Reviews From Our Collection!</h1>
       <p>
         Explore and download the best beautiful and inspiring photo reviews of
@@ -16,7 +16,7 @@ const ScrollGalleryComponent: React.FC = () => {
       <div className="_wrapper">
         <article className="photo-wrapper">
           <img
-            src="/uploads/woman-optique-glasses-with-blue-shadow-warm-knit-jacket_114579-9297.jpg"
+            src="/uploads/OIP.jpg"
             alt=""
           />
           <div className="blur">
@@ -30,7 +30,7 @@ const ScrollGalleryComponent: React.FC = () => {
               </button>
             </Link>
             <a
-              href="/uploads/woman-optique-glasses-with-blue-shadow-warm-knit-jacket_114579-9297.jpg"
+              href="/uploads/OIP.jpg"
               download
               title="download best review of the month!"
             >
