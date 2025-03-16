@@ -62,6 +62,13 @@ const FooterComponent: React.FC = (): any => {
               >
                 <li>collection</li>
               </Link>
+              <Link
+                to={{
+                  pathname: "/newsletter/subscriptions",
+                }}
+              >
+                <li>subscribe</li>
+              </Link>
               <a href="https://robertsims.netlify.app/" target="_blank">
                 <li>developer</li>
               </a>
@@ -70,9 +77,6 @@ const FooterComponent: React.FC = (): any => {
                 target="_blank"
               >
                 <li>terms & privacy</li>
-              </a>
-              <a href="" target="_blank">
-                <li>services</li>
               </a>
               <a
                 href="https://keep-memories-photo-gallery-api-service.onrender.com/"

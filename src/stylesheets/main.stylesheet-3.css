@@ -583,7 +583,7 @@ section[class="filter-bar"]>article :is(div[class="warning-results-message"])>p 
 
 /*  */
 
-.login-section-page>.login-spinner-wrapper {
+.user-account-login-section-page>.login-spinner-wrapper {
   min-height: 100vh;
   width: min(100%, 100%);
   position: fixed;
@@ -598,7 +598,7 @@ section[class="filter-bar"]>article :is(div[class="warning-results-message"])>p 
 
 /*  */
 
-.signup-section-page>.signup-spinner-wrapper {
+.user-account-signup-section-page>.signup-spinner-wrapper {
   min-height: 100vh;
   width: min(100%, 100%);
   position: fixed;

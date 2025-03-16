@@ -1,6 +1,6 @@
 import PublicPage from "./pages/Public.Page";
-import LoginPage from "./pages/Login.Page";
-import SignupPage from "./pages/Signup.Page";
+import LoginPage from "./pages/User.Account.Login.Page";
+import SignupPage from "./pages/User.Account.Signup.Page";
 import { Route, Routes } from "react-router-dom";
 import LoggedInUserInformationObjectContent from "./context/UserContext";
 import React from "react";
@@ -15,9 +15,9 @@ import SubscribingPage from "./pages/Subscription.Page";
 LogoutLoggedInUserAccount();
 
 function App() {
-  const context: string | null = React.useContext(LoggedInUserInformationObjectContent) as
-    | string
-    | null;
+  const context: string | null = React.useContext(
+    LoggedInUserInformationObjectContent
+  ) as string | null;
   const user = JSON.parse(context as string);
 
   (window.document.querySelector("body") as HTMLBodyElement).addEventListener(

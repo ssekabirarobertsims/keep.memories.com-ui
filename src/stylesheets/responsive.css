@@ -56,9 +56,32 @@
   }
 
   /*  */
-  aside[class="account-authentication-alert-component"] > div[class="account-authentication-alert-component-wrapper"] > article[class="photo-authentication-alert-component"] {
+  aside[class="photos-categories-component"] {
+    min-height: 28em;
+  }
+
+  aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] {
+    min-height: 20em;
+    gap: 0em;
+  }
+
+  aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"]>article {
+    min-height: 9em;
+    /* border: 1px solid red; */
+  }
+
+  aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"]>article[id="photo-categories-photo-wrapper"] {
     display: none;
-}
+  }
+
+  aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"]>article :where(img) {
+    display: none;
+  }
+
+  /*  */
+  aside[class="account-authentication-alert-component"]>div[class="account-authentication-alert-component-wrapper"]>article[class="photo-authentication-alert-component"] {
+    display: none;
+  }
 
   /*  */
   aside[class="photo-view"]>div[class="photo-view-wrapper"] {
@@ -147,52 +170,52 @@
 
 
   /*  */
-  .login-section-page {
+  .user-account-login-section-page {
     gap: .0em;
   }
 
-  .login-section-page aside[class="__wrapper"] {
+  .user-account-login-section-page aside[class="__wrapper"] {
     min-height: 70vh;
     gap: 0em;
     flex-grow: 0;
   }
 
-  .login-section-page aside[class="__wrapper"]>div {
+  .user-account-login-section-page aside[class="__wrapper"]>div {
     height: 100%;
     flex-grow: 0;
   }
 
-  .login-section-page aside[class="__wrapper"]>img {
+  .user-account-login-section-page aside[class="__wrapper"]>img {
     height: 70vh;
     width: 100%;
     flex-grow: 1;
   }
 
-  .login-section-page>div {
+  .user-account-login-section-page>div {
     height: 13em;
   }
 
-  .login-section-page>form {
+  .user-account-login-section-page>form {
     height: 15em;
   }
 
   /*  */
-  .signup-section-page {
+  .user-account-signup-section-page {
     gap: .0em;
   }
 
-  .signup-section-page aside[class="__wrapper"] {
+  .user-account-signup-section-page aside[class="__wrapper"] {
     min-height: 70vh;
     gap: 0em;
     flex-grow: 0;
   }
 
-  .signup-section-page aside[class="__wrapper"]>div {
+  .user-account-signup-section-page aside[class="__wrapper"]>div {
     height: 100%;
     flex-grow: 0;
   }
 
-  .signup-section-page aside[class="__wrapper"]>img {
+  .user-account-signup-section-page aside[class="__wrapper"]>img {
     height: 70vh;
     width: 100%;
     flex-grow: 1;
@@ -318,32 +341,32 @@
   }
 
   /*  */
-  .login-section-page {
+  .user-account-login-section-page {
     gap: .0em;
   }
 
-  .login-section-page>div {
+  .user-account-login-section-page>div {
     height: 13em;
   }
 
-  .login-section-page>form {
+  .user-account-login-section-page>form {
     height: 15em;
   }
 
-  .signup-section-page {
+  .user-account-signup-section-page {
     gap: .0em;
     min-height: 180vh;
   }
 
-  .signup-section-page aside[class="__wrapper"] {
+  .user-account-signup-section-page aside[class="__wrapper"] {
     gap: 7em;
   }
 
-  .signup-section-page>div {
+  .user-account-signup-section-page>div {
     height: 13em;
   }
 
-  .signup-section-page>form {
+  .user-account-signup-section-page>form {
     height: 17em;
   }
 

@@ -80,7 +80,7 @@ const PhotosCategoriesComponent: React.FunctionComponent = (): any => {
               </li>
             </ul>
           </article>
-          <article>
+          <article id="photo-categories-photo-wrapper">
             <img
               src="/photos/blue-light-background-portrait_52683-91429.jpg"
               alt=""

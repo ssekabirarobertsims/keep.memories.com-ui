@@ -381,6 +381,7 @@ aside[class="photos-categories-component"]>div[class="photos-categories-componen
    justify-content: center;
    flex-direction: row;
    /* border: 1px solid red; */
+   flex-flow: row wrap;
 }
 
 aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article {
