@@ -1,6 +1,6 @@
 import React from "react";
 
-const OfflineMessageComponent: React.FunctionComponent = () => {
+const OfflineMessageComponent: React.FunctionComponent = (): any => {
   return window.navigator.onLine ? (
     ""
   ) : (
@@ -10,6 +10,6 @@ const OfflineMessageComponent: React.FunctionComponent = () => {
       </aside>
     </>
   );
-}; 
+};
 
 export default OfflineMessageComponent;

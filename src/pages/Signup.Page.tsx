@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Signup from "../functions/User.Signup.Function";
+import React from "react";
 
-function SignupPage() {
+const SignupPage: React.FunctionComponent = (): any => {
   return (
     <>
       <section className={String("signup-section-page")}>
@@ -174,6 +175,6 @@ function SignupPage() {
       </section>
     </>
   );
-}
+};
 
 export default SignupPage;

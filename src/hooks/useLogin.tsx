@@ -21,8 +21,8 @@ async function useLogin(email: string, password: string) {
       window.document.querySelector(".login-alert-message") as HTMLElement
     ).textContent = response.message;
     window.setTimeout(() => {
-      window.localStorage.setItem("admin", JSON.stringify(response));
-      window.location.href = "/admin/dashboard";
+      window.localStorage.setItem("user", JSON.stringify(response));
+      window.location.href = "/user/dashboard";
     }, 3000 as number);
   } else {
     (

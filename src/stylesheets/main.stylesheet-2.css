@@ -32,7 +32,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(0, 255, 157); */
   flex-direction: column;
   position: absolute;
   top: 0px;
@@ -613,140 +613,6 @@ aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-select
   border: none !important;
   color: #101001;
   cursor: pointer;
-}
-
-
-
-/*  */
-section[class="admin-dashboard-section-page"] {
-  min-height: 60vh;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-}
-
-section[class="admin-dashboard-section-page"]>h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-}
-
-section[class="admin-dashboard-section-page"]>p {
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-  max-width: 60em;
-  text-align: center;
-}
-
-section[class="admin-dashboard-section-page"]>button {
-  height: 3em;
-  width: 5em;
-  border-radius: 0.3em;
-  color: hsl(0, 0%, 50%);
-  background-color: hsl(0, 0%, 100%);
-  border: none;
-  cursor: pointer;
-  border: 1px solid hsl(0, 0%, 80%);
-  font-size: 2em;
-}
-
-section[class="admin-dashboard-section-page"]>div {
-  min-height: 40vh;
-  width: min(90%, 90%);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 0.5em;
-  flex-flow: row wrap;
-}
-
-section[class="admin-dashboard-section-page"]>div>.img-wrapper {
-  min-height: 30vh;
-}
-
-section[class="admin-dashboard-section-page"] :is(article) {
-  height: 19em;
-  width: min(95%, 18em);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #eee;
-  flex-direction: column;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 0.4em;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>img {
-  height: 19em;
-  width: min(100%, 100%);
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>img:is(:hover) {
-  scale: 1.2;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>div {
-  height: 5em;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  background-color: transparent;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  gap: 0em;
-  background-color: transparent;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>div :where(section) {
-  height: 2em;
-  width: min(90%, 90%);
-  background-color: transparent;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  flex-direction: column;
-  color: #fff;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>div :where(section)>p {
-  font-size: 0.8em;
-  font-weight: normal;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>div :where(section)>aside {
-  height: 2em;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>div :where(section)>aside :where(button) {
-  height: 3em;
-  width: 2em;
-  background-color: transparent;
-  border: none;
-  color: hsl(0, 0%, 80%);
-  cursor: pointer;
-  font-size: 1em;
-}
-
-section[class="admin-dashboard-section-page"] :is(article)>div :where(section)>aside :where(a)>button {
-  height: 3em;
-  width: 2em;
-  background-color: transparent;
-  border: none;
-  color: hsl(0, 0%, 80%);
-  cursor: pointer;
-  font-size: 1em;
 }
 
 /*  */

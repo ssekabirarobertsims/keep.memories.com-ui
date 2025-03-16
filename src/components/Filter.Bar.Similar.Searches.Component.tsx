@@ -2,19 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-// category searched about should be displayed here
-const FilterBarSimilarSearchesComponent: React.FC = () => {
+const FilterBarSimilarSearchesComponent: React.FC = (): any => {
   return (
     <aside className="filter-bar-similar-searches-component">
       <div>
         <aside>
-          <img
-            src="/uploads/s2f86bcxemz21.jpg"
-            alt="" 
-          />
+          <img src="/uploads/s2f86bcxemz21.jpg" alt="" />
         </aside>
         <aside>
-          <img src="/uploads/digital-art-style-illustration-graphic-designer_23-2151536966.avif" alt="" />
+          <img
+            src="/uploads/digital-art-style-illustration-graphic-designer_23-2151536966.avif"
+            alt=""
+          />
         </aside>
         <aside>
           <img

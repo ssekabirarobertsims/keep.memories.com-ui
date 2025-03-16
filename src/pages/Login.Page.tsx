@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Login from "../functions/User.Login.Function";
+import React from "react";
 
-function LoginPage() {
+const LoginPage: React.FunctionComponent = (): any => {
   return (
     <>
       <section className="login-section-page">
@@ -152,6 +153,6 @@ function LoginPage() {
       </section>
     </>
   );
-}
+};
 
 export default LoginPage;

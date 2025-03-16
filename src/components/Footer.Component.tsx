@@ -10,7 +10,7 @@ type Date = string;
 import { BiHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const FooterComponent: React.FC = () => {
+const FooterComponent: React.FC = (): any => {
   const date: Partial<Readonly<Date>> = React.useContext(
     dateContext
   ) as Partial<Readonly<Date>>;
@@ -60,25 +60,28 @@ const FooterComponent: React.FC = () => {
                   pathname: "/photos/categories/collection",
                 }}
               >
-                <li>Collection</li>
+                <li>collection</li>
               </Link>
               <a href="https://robertsims.netlify.app/" target="_blank">
                 <li>developer</li>
               </a>
-              <a href="" target="_blank">
+              <a
+                href="https://keep-memories-photo-gallery-api-service.onrender.com/api/legal/information/privacy"
+                target="_blank"
+              >
                 <li>terms & privacy</li>
               </a>
               <a href="" target="_blank">
                 <li>services</li>
               </a>
               <a
-                href="https://keep-memories-com-api.onrender.com/"
+                href="https://keep-memories-photo-gallery-api-service.onrender.com/"
                 target="_blank"
               >
                 <li>api</li>
               </a>
               <a
-                href="https://keep-memories-com-api.onrender.com/"
+                href="https://keep-memories-photo-gallery-api-service.onrender.com/api/legal/information/policies"
                 target="_blank"
               >
                 <li>policies</li>

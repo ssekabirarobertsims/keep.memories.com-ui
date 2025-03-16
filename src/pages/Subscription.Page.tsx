@@ -5,14 +5,15 @@ import { MdOutlineUnsubscribe } from "react-icons/md";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 import OfflineMessageComponent from "../components/Offline.Message.Component";
 
-const SubscribingPage: React.FC = () => {
+const SubscribingPage: React.FC = (): any => {
   const [email, setEmail] = React.useState<string>("");
+  
   return (
     <>
       <NavigationBarComponent />
       <section className="subscription-page">
         <form
-          action="https://keep-memories-com-api.onrender.com/newsletter/account/subscription"
+          action="https://keep-memories-photo-gallery-api-service.onrender.com/api/user/account/newsletter/subscription"
           method="post"
         >
           <h1>

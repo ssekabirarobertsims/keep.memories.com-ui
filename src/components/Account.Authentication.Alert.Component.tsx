@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import adminContext from "../context/adminContext";
-type Admin = string;
+import LoggedInUserInformationObjectContent from "../context/UserContext";
+type User = string;
 
 const AccountAuthenticationAlertComponent: React.FunctionComponent =
   (): any => {
-    const context: Admin = React.useContext(adminContext) as Admin;
-    const admin = JSON.parse(context);
+    const context: User = React.useContext(
+      LoggedInUserInformationObjectContent
+    ) as User;
+    const user = JSON.parse(context);
 
-    return admin ? (
+    return user ? (
       ""
     ) : (
       <>

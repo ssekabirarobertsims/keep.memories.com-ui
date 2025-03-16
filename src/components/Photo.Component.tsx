@@ -1,7 +1,8 @@
+import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 
-function Photo() {
+const Photo: React.FunctionComponent = (): any => {
   return (
     <article className={String("photo")}>
       <img
@@ -29,6 +30,6 @@ function Photo() {
       </div>
     </article>
   );
-}
+};
 
 export default Photo;

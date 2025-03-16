@@ -152,8 +152,20 @@
   }
 
   .login-section-page aside[class="__wrapper"] {
-    min-height: 80vh;
+    min-height: 70vh;
     gap: 0em;
+    flex-grow: 0;
+  }
+
+  .login-section-page aside[class="__wrapper"]>div {
+    height: 100%;
+    flex-grow: 0;
+  }
+
+  .login-section-page aside[class="__wrapper"]>img {
+    height: 70vh;
+    width: 100%;
+    flex-grow: 1;
   }
 
   .login-section-page>div {
@@ -170,14 +182,21 @@
   }
 
   .signup-section-page aside[class="__wrapper"] {
-    min-height: 80vh;
+    min-height: 70vh;
     gap: 0em;
+    flex-grow: 0;
   }
 
   .signup-section-page aside[class="__wrapper"]>div {
-    min-height: 50vh;
+    height: 100%;
+    flex-grow: 0;
   }
 
+  .signup-section-page aside[class="__wrapper"]>img {
+    height: 70vh;
+    width: 100%;
+    flex-grow: 1;
+  }
 
   /*  */
   /*  */
