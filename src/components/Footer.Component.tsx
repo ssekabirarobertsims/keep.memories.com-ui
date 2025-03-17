@@ -99,7 +99,7 @@ const FooterComponent: React.FC = (): any => {
                 <IoLocation /> Kampala, Uganda
               </li>
               <li>
-                <MdAddCall /> +256 726 930 366
+                <MdAddCall /> +256 759 714 193
               </li>
               <li>
                 <MdOutlineEmail /> support@gmail.com

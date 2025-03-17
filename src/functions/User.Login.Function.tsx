@@ -24,7 +24,7 @@ async function Login(email: string, password: string) {
 
       (
         window.document.querySelector(".login-alert-message") as HTMLElement
-      ).textContent = response.message;
+      ).textContent = response?.data?.message;
 
       window.setTimeout(() => {
         (
@@ -48,7 +48,7 @@ async function Login(email: string, password: string) {
 
       (
         window.document.querySelector(".login-alert-message") as HTMLElement
-      ).textContent = response.message;
+      ).textContent = response?.data?.message;
     }
   } catch (error) {
     console.log(error);

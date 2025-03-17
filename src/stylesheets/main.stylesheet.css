@@ -472,7 +472,7 @@ header>article :is(a)>button {
 /*  */
 .search-list {
     height: 12em;
-    width: min(100%, 50em);
+    width: min(90%, 50em);
     display: none;
     align-items: center;
     justify-content: flex-start;

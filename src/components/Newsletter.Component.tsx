@@ -17,7 +17,7 @@ const NewsletterComponent: React.FunctionComponent = (): any => {
     try {
       if (request.status) {
         (
-          window.document.querySelector(
+          window.document.querySelector( 
             ".newsletter-response-message"
           ) as HTMLSpanElement
         ).textContent = response.message as string;

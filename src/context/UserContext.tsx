@@ -5,7 +5,7 @@ interface User {
   request_id: string;
   error: any;
   request_status: number;
-  data: {
+  data: { 
     username: string;
     email: string;
     token: string;

@@ -1,6 +1,6 @@
 aside[class="account-view-component"] {
    height: 17em;
-   width: min(100%, 20em);
+   width: min(90%, 20em);
    border-radius: .0em;
    background-color: #fff;
    -webkit-box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
@@ -15,7 +15,7 @@ aside[class="account-view-component"] {
    z-index: 5;
    overflow: hidden;
    /* border: 1px solid red; */
-   border-radius: .6em;
+   border-radius: .6em !important;
    border: 1px solid hsl(0, 0%, 80%) !important;
 }
 

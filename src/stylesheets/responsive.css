@@ -1,4 +1,5 @@
 /* Medium devices (portrait tablets and large phones, 600px to 768px) */
+/* add responsiveness to the home search bar search list */
 @media all and (min-width: 320px) and (max-width: 425px) {
   .dd-menu {
     display: flex;
@@ -47,7 +48,7 @@
   }
 
   .search-list {
-    bottom: -5em;
+    bottom: -3.5em;
   }
 
   main>section[class="photos-categories"] {
