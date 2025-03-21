@@ -44,15 +44,7 @@ const All: React.FunctionComponent = (): any => {
   ) as UserContextType;
   const LoggedInUserInformationObject: User = JSON.parse(context) as User;
 
-  const [resources, setResources] = useState<Resource[]>([
-    {
-      id: 1,
-      resource_id: "sss",
-      resource: "sample",
-      category: "animals",
-      resource_title: "hello world",
-    },
-  ]);
+  const [resources, setResources] = useState<Resource[]>([]);
 
   async function FetchResources() {
     try {
@@ -66,7 +58,7 @@ const All: React.FunctionComponent = (): any => {
         }
       );
 
-      const response = await request.data?.data;
+      const response = await request.data?.resources;
 
       window.setTimeout(async () => {
         (
@@ -91,6 +83,8 @@ const All: React.FunctionComponent = (): any => {
   useEffect(() => {
     FetchResources();
   });
+
+  console.log(resources);
 
   try {
     return resources.length > 0 ? (

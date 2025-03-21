@@ -10,7 +10,7 @@ async function useSearch() {
     }
   );
 
-  const response = await request.data?.data;
+  const response = await request.data?.resources;
   console.log(response);
 }
 

@@ -57,7 +57,7 @@ function Animals() {
         }
       );
 
-      const response = await request.data?.data;
+      const response = await request.data?.resources;
 
       window.setTimeout(async () => {
         (

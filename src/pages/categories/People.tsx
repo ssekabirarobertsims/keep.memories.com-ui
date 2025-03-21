@@ -57,7 +57,7 @@ function People() {
         }
       );
 
-      const response = request.data?.data;
+      const response = request.data?.resources;
 
       window.setTimeout(async () => {
         (

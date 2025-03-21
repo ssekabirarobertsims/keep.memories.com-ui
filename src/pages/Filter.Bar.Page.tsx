@@ -116,7 +116,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 setInputValue(
                   (event.target as HTMLInputElement).value as string
@@ -186,7 +186,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 if (
                   (
@@ -278,7 +278,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
                 setTimeout(() => {
                   (
                     window.document.querySelector(
@@ -350,7 +350,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 setTimeout(() => {
                   (
@@ -423,7 +423,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
                 setTimeout(() => {
                   (
                     window.document.querySelector(
@@ -495,7 +495,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 setTimeout(() => {
                   (
@@ -568,7 +568,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 setTimeout(() => {
                   (
@@ -641,7 +641,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 setTimeout(() => {
                   (
@@ -714,7 +714,7 @@ const FilterBar: React.FunctionComponent = (): any => {
                   }
                 );
 
-                const response = await request.data?.data;
+                const response = await request.data?.resources;
 
                 setTimeout(() => {
                   (

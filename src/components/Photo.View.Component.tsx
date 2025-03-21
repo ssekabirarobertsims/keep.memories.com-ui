@@ -54,7 +54,7 @@ const PhotoViewComponent: React.FunctionComponent = (): any => {
         }
       );
 
-      const response = await request.data?.data?.data;
+      const response = await request.data?.resources;
       setResources(response);
       setResource(
         (response as Resource[]).find((index: Resource) => {
