@@ -2,7 +2,6 @@ import NavigationBarComponent from "../../components/Navigation.Bar.Component";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
-import LoaderComponent from "../../components/Loader.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
 import AdvertComponent from "../../components/Advert.Component";

@@ -3,7 +3,7 @@ import LoginPage from "./pages/Login.Page";
 import SignupPage from "./pages/Signup.Page";
 import { Route, Routes } from "react-router-dom";
 import adminContext from "./context/adminContext";
-import React, { useEffect } from "react";
+import React from "react";
 import FilterBar from "./pages/Filter.Bar.Page";
 import CodeValidationForm from "./components/Email.Verification.Code.Form.Component";
 import BlankVerificationPage from "./pages/Blank.Verification.Page";
