@@ -1,6 +1,6 @@
 import NavigationBarComponent from "../components/Navigation.Bar.Component";
 import FooterComponent from "../components/Footer.Component";
-import { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef } from "react";
 import axios from "axios";
 // import { FaDownload } from "react-icons/fa";
 // import { FaHeart } from "react-icons/fa";
@@ -8,68 +8,68 @@ import { LuDownload } from "react-icons/lu";
 import PhotoViewComponent from "../components/Photo.View.Component";
 import { AiOutlineSearch } from "react-icons/ai";
 import ScrollGalleryComponent from "../components/Scroll.Gallery.Component";
-import adminContext from "../context/adminContext";
-import AdvertComponent from "../components/Advert.Component";
+import LoggedInUserInformationObjectContent from "../context/UserContext";
+import AdvertComponent from "../components/Subscription.Advert.Component";
 
 interface Resource {
-  id: string;
+  id: string | number;
+  resource_id: string;
   resource: string;
   category: string;
-  resource_admin: string;
   resource_title: string;
-  resource_id: string;
-  upload_date: string | number;
 }
 
-interface AdminObject {
+interface User {
   login_id: string;
-  username: string;
-  email: string;
-  token: string;
-  message: string;
-  status: string;
-  signedUp: boolean | string;
   date: string;
+  request_id: string;
+  error: any;
+  request_status: number;
+  data: {
+    username: string;
+    email: string;
+    token: string;
+    message: string;
+    status: string;
+    signedUp: boolean;
+  };
 }
 
-type Admin = string;
+type UserContextType = string;
 import OfflineMessageComponent from "../components/Offline.Message.Component";
 
 import FilterBarSimilarSearchesComponent from "../components/Filter.Bar.Similar.Searches.Component";
 import { v4 as uuid } from "uuid";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
+import AccountAuthenticationAlertComponent from "../components/Account.Authentication.Alert.Component";
 
-function FilterBar() {
-  const context: Admin = useContext(adminContext) as Admin;
-  const adminObject: AdminObject = JSON.parse(context);
+const FilterBar: React.FunctionComponent = (): any => {
+  const context: UserContextType = useContext(
+    LoggedInUserInformationObjectContent
+  ) as UserContextType;
+  const LoggedInUserInformationObject: User = JSON.parse(context);
 
   const [searches, setSearches] = useState([
     {
       id: uuid() as string,
       resource: "man-walking-toward-light-end-tunnel_1353-49.jpg",
-      category: "",
-      resource_admin: "robert sims",
+      category: "dark-photos",
       resource_id: uuid() as string,
       resource_title: "",
-      upload_date: "",
     },
     {
       id: uuid() as string,
       resource: "little-boat-dark_181624-474.jpg",
-      category: "",
-      resource_admin: "jane parker",
+      category: "dark-photos",
       resource_id: uuid() as string,
       resource_title: "",
-      upload_date: "",
     },
     {
       id: uuid() as string,
       resource: "pack-cigarettes-glass-coffee_181624-518.jpg",
-      category: "",
-      resource_admin: "rowan kevin",
+      category: "dark-photos",
       resource_id: uuid() as string,
       resource_title: "",
-      upload_date: "",
     },
   ] as Resource[]);
   const [inputValue, setInputValue] = useState("" as string);
@@ -108,10 +108,10 @@ function FilterBar() {
 
               try {
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -123,7 +123,7 @@ function FilterBar() {
                 );
 
                 if ((event.target as HTMLInputElement).value === "") {
-                  setSearches([]);
+                  setSearches([] as Resource[]);
                 } else {
                   setTimeout(() => {
                     (
@@ -178,10 +178,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -195,7 +195,7 @@ function FilterBar() {
                     ) as HTMLInputElement
                   ).value === ""
                 ) {
-                  setSearches([]);
+                  setSearches([] as Resource[]);
                 } else {
                   setTimeout(() => {
                     (
@@ -253,7 +253,7 @@ function FilterBar() {
         <FilterBarSimilarSearchesComponent />
         <div className="filter-categories">
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -270,10 +270,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -286,7 +286,7 @@ function FilterBar() {
                     ) as HTMLElement
                   ).style.display = "none";
 
-                  setSearches(response);
+                  setSearches(response as Resource[]);
 
                   (event.target as HTMLButtonElement).disabled = Boolean(
                     false
@@ -325,7 +325,7 @@ function FilterBar() {
             All Photos
           </button>
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -342,10 +342,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -366,7 +366,7 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.category === "dark";
-                    })
+                    }) as Resource[]
                   );
                 }, 5000 as number);
               } catch (error) {
@@ -398,7 +398,7 @@ function FilterBar() {
             Dark Photos
           </button>
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -415,10 +415,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -438,7 +438,7 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.category === "people";
-                    })
+                    }) as Resource[]
                   );
                 }, 5000 as number);
               } catch (error) {
@@ -470,7 +470,7 @@ function FilterBar() {
             People Photos
           </button>
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -487,83 +487,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
-                    },
-                  }
-                );
-
-                const response = await request.data;
-
-                setTimeout(() => {
-                  (
-                    window.document.querySelector(
-                      ".search-bar-spinner-wrapper"
-                    ) as HTMLElement
-                  ).style.display = "none";
-
-                  (event.target as HTMLButtonElement).disabled = Boolean(
-                    false
-                  ) as boolean;
-
-                  setSearches(
-                    response.filter((index: Resource) => {
-                      return index.category === "sports";
-                    })
-                  );
-                }, 5000 as number);
-              } catch (error) {
-                console.log(error);
-                console.warn("Connection to server was lost...");
-                console.warn("Reconnecting to server...");
-                console.warn("Connecting...");
-
-                (
-                  window.document.querySelector(
-                    ".search-bar-spinner-wrapper"
-                  ) as HTMLElement
-                ).style.display = "flex";
-
-                setTimeout(() => {
-                  (
-                    window.document.querySelector(
-                      ".search-bar-spinner-wrapper"
-                    ) as HTMLElement
-                  ).style.display = "none";
-
-                  (event.target as HTMLButtonElement).disabled = Boolean(
-                    false
-                  ) as boolean;
-                }, 5000 as number);
-              }
-            }}
-          >
-            Sports Photos
-          </button>
-          <button
-          ref={buttonRef.current}
-            type="button"
-            onClick={async (event) => {
-              event.stopPropagation();
-
-              (event.target as HTMLButtonElement).disabled = Boolean(
-                true
-              ) as boolean;
-
-              try {
-                (
-                  window.document.querySelector(
-                    ".search-bar-spinner-wrapper"
-                  ) as HTMLElement
-                ).style.display = "flex";
-
-                const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
-                  {
-                    headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -584,7 +511,7 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.category === "nature";
-                    })
+                    }) as Resource[]
                   );
                 }, 5000 as number);
               } catch (error) {
@@ -616,7 +543,7 @@ function FilterBar() {
             Nature Photos
           </button>
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -633,10 +560,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -657,7 +584,7 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.category === "illustrations";
-                    })
+                    }) as Resource[]
                   );
                 }, 5000 as number);
               } catch (error) {
@@ -689,7 +616,7 @@ function FilterBar() {
             Illustration Photos
           </button>
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -706,10 +633,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -730,7 +657,7 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.category === "technology";
-                    })
+                    }) as Resource[]
                   );
                 }, 5000 as number);
               } catch (error) {
@@ -762,7 +689,7 @@ function FilterBar() {
             Tech Photos
           </button>
           <button
-          ref={buttonRef.current}
+            ref={buttonRef.current}
             type="button"
             onClick={async (event) => {
               event.stopPropagation();
@@ -779,10 +706,10 @@ function FilterBar() {
                 ).style.display = "flex";
 
                 const request = await axios.get(
-                  "https://keep-memories-com-api.onrender.com/resources",
+                  "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
                   {
                     headers: {
-                      Authorization: `Bearer ${adminObject?.token}`,
+                      Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
                     },
                   }
                 );
@@ -803,7 +730,7 @@ function FilterBar() {
                   setSearches(
                     response.filter((index: Resource) => {
                       return index.category === "animals";
-                    })
+                    }) as Resource[]
                   );
                 }, 5000 as number);
               } catch (error) {
@@ -846,15 +773,15 @@ function FilterBar() {
         </p>
         <br />
         <article>
-        <div className="search-bar-spinner-wrapper">
-          <div className="spinner"></div>
-        </div>
+          <div className="search-bar-spinner-wrapper">
+            <div className="spinner"></div>
+          </div>
           {searches.length > 0 ? (
             searches.map((result: Resource) => (
               <article
                 className={String("photo_resource")}
-                key={result.id}
-                title={`Photo uploaded by ${result.resource_admin}`}
+                key={result.resource_id}
+                title={`Photo from ${result.category}`}
               >
                 <div className="before_wrapper">
                   <a href={`/uploads/${result.resource}`} download>
@@ -879,6 +806,12 @@ function FilterBar() {
                         ".img-placeholder"
                       ) as HTMLImageElement
                     ).src = (event.target as HTMLImageElement).src;
+
+                    const selectedPhotoCollectionURL = document.querySelector(
+                      ".selected-photo-category-collection-link"
+                    ) as HTMLAnchorElement;
+
+                    selectedPhotoCollectionURL.href = `/photos/categories/${result.category}`;
                   }}
                 />
               </article>
@@ -909,10 +842,11 @@ function FilterBar() {
       <PhotoViewComponent />
       <OfflineMessageComponent />
       <AdvertComponent />
+      <AccountAuthenticationAlertComponent />
       <WelcomeCookieAlertMessage />
       <FooterComponent />
     </>
   );
-}
+};
 
 export default FilterBar;

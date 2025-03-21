@@ -1,7 +1,7 @@
 async function Login(email: string, password: string) {
   try {
     const request = await fetch(
-      "https://keep-memories-com-api.onrender.com/login",
+      "https://keep-memories-photo-gallery-api-service.onrender.com/api/user/account/login",
       {
         method: "POST",
         headers: {
@@ -24,7 +24,7 @@ async function Login(email: string, password: string) {
 
       (
         window.document.querySelector(".login-alert-message") as HTMLElement
-      ).textContent = response.message;
+      ).textContent = response?.data?.message;
 
       window.setTimeout(() => {
         (
@@ -32,7 +32,7 @@ async function Login(email: string, password: string) {
             ".login-spinner-wrapper"
           ) as HTMLDivElement
         ).style.display = "none";
-        window.localStorage.setItem("admin", JSON.stringify(response));
+        window.localStorage.setItem("user", JSON.stringify(response));
         window.location.href = "/";
       }, 3000 as number);
     } else {
@@ -48,7 +48,7 @@ async function Login(email: string, password: string) {
 
       (
         window.document.querySelector(".login-alert-message") as HTMLElement
-      ).textContent = response.message;
+      ).textContent = response?.data?.message;
     }
   } catch (error) {
     console.log(error);

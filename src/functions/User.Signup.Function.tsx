@@ -1,7 +1,7 @@
 async function Signup(username: string, email: string, password: string) {
   try {
     const request = await fetch(
-      "https://keep-memories-com-api.onrender.com/signup",
+      "https://keep-memories-photo-gallery-api-service.onrender.com/api/user/account/signup",
       {
         method: "POST",
         headers: {

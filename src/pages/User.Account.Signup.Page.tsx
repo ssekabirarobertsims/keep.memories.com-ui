@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import Signup from "../functions/User.Signup.Function";
+import React from "react";
 
-function SignupPage() {
+const SignupPage: React.FunctionComponent = (): any => {
   return (
     <>
-      <section className={String("signup-section-page")}>
+      <section className={String("user-account-signup-section-page")}>
         <aside className="__wrapper">
           <img
             src="/photos/blue-light-portrait-background_23-2149594607.jpg"
             alt=""
           />
-          <div>
+          <div> 
             <article>
-              <h1>Sign Up</h1>
+              <h1>Create an account</h1>
               <p>
                 Create a new account if you have no registered account available
                 for you to access more content from our site repellat molestias
@@ -27,11 +28,11 @@ function SignupPage() {
 
         <form action="" method="post">
           <article className="signup-form-wrapper">
-            <h1>Create an account</h1>
+            <h1>Account Signup</h1>
             <br />
             <p>
               Sign up to get access to our collection of photos and get inspired
-              by the beauty of nature and the world at large.
+              by the collection.
             </p>
             <br />
             <span className="signup-alert-message"></span>
@@ -174,6 +175,6 @@ function SignupPage() {
       </section>
     </>
   );
-}
+};
 
 export default SignupPage;

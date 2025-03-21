@@ -1,6 +1,6 @@
 import React from "react";
 
-const OfflineMessageComponent: React.FunctionComponent = () => {
+const OfflineMessageComponent: React.FunctionComponent = (): any => {
   return window.navigator.onLine ? (
     ""
   ) : (

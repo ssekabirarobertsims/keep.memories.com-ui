@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "value": "Photos From Nature",
+      "link": "/photos/categories/nature"
+    },
+    {
+      "id": 2,
+      "value": "Dark Photos & Wallpapers",
+      "link": "/photos/categories/dark-photos"
+    },
+    {
+      "id": 3,
+      "value": "Photos From Different Animals",
+      "link": "/photos/categories/animals"
+    },
+    {
+      "id": 4,
+      "value": "Photos From Technology",
+      "link": "/photos/categories/technology"
+    },
+    {
+      "id": 5,
+      "value": "Photos From Beautiful Natural Sceneries",
+      "link": "/photos/categories/nature"
+    },
+    {
+      "id": 6,
+      "value": "All Photos In Gallery",
+      "link": "/photos/categories/all"
+    },
+    {
+      "id": 7,
+      "value": "Technology Photos Of Your Choice",
+      "link": "/photos/categories/technology"
+    },
+    {
+      "id": 8,
+      "value": "Illustrations Photos",
+      "link": "/photos/categories/Illustrations"
+    },
+    {
+      "id": 9,
+      "value": "Beautiful Photos From Different Animal Species",
+      "link": "/photos/categories/animals"
+    },
+    {
+      "id": 10,
+      "value": "Inspiring Dark Photos & Wallpapers In Collection",
+      "link": "/photos/categories/dark-photos"
+    },
+    {
+      "id": 11,
+      "value": "Photos From People",
+      "link": "/photos/categories/people"
+    },
+    {
+      "id": 12,
+      "value": "Photo Collection From Our Gallery",
+      "link": "/photos/categories/all"
+    },
+    {
+      "id": 13,
+      "value": "Photos From Groups Of People",
+      "link": "/photos/categories/people"
+    },
+    {
+      "id": 14,
+      "value": "Photos From Illustrations And Art",
+      "link": "/photos/categories/Illustrations"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function NewsletterComponent() {
+const NewsletterComponent: React.FunctionComponent = (): any => {
   const [email, setEmail] = useState("" as string);
 
   async function HandleButtonClick() {
     const request = await axios.post(
-      "https://keep-memories-com-api.onrender.com/newsletter/account/subscription",
+      "https://keep-memories-photo-gallery-api-service.onrender.com/newsletter/api/user/account/newsletter/subscription",
       {
         email: email,
       }
@@ -17,7 +17,7 @@ function NewsletterComponent() {
     try {
       if (request.status) {
         (
-          window.document.querySelector(
+          window.document.querySelector( 
             ".newsletter-response-message"
           ) as HTMLSpanElement
         ).textContent = response.message as string;
@@ -73,6 +73,6 @@ function NewsletterComponent() {
       </aside>
     </>
   );
-}
+};
 
 export default NewsletterComponent;

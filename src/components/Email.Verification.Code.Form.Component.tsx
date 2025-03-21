@@ -1,4 +1,3 @@
-// import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,13 +5,13 @@ interface Message {
   message: string;
 }
 
-const CodeValidationForm: React.FC = () => {
+const CodeValidationForm: React.FC = (): any => {
   const [code, setCode] = useState("" as number | string);
 
   async function sendCode() {
     try {
       const request = await fetch(
-        "https://keep-memories-com-api.onrender.com/account/verification",
+        "https://keep-memories-photo-gallery-api-service.onrender.com/api/user/account/verification",
         {
           method: "POST",
           headers: {
@@ -27,7 +26,7 @@ const CodeValidationForm: React.FC = () => {
       const response: Required<Pick<Message, "message">> =
         (await request.json()) as Required<Pick<Message, "message">>;
 
-      if (request.ok) {
+      if (request.ok) { 
         (
           window.document.querySelector(".request-response") as HTMLSpanElement
         ).textContent = response.message as string;

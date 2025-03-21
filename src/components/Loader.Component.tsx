@@ -1,7 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 
-const LoaderComponent: React.FC = () => {
+const LoaderComponent: React.FC = (): any => {
   return (
     <aside className="loader-component">
       <div className="spinner"></div>

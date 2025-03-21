@@ -1,9 +1,10 @@
+import React from "react";
 import FooterComponent from "../components/Footer.Component";
 import HeaderComponent from "../components/Header.Component";
 import MainPageComponent from "../components/Main.Component";
 import OfflineMessageComponent from "../components/Offline.Message.Component";
 
-function PublicPage() {
+const PublicPage: React.FunctionComponent = (): any => {
   return (
     <>
       <HeaderComponent />
@@ -12,6 +13,6 @@ function PublicPage() {
       <FooterComponent />
     </>
   );
-}
+};
 
 export default PublicPage;

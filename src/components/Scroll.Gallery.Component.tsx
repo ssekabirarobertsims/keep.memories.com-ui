@@ -4,10 +4,10 @@ import { FaSearch } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const ScrollGalleryComponent: React.FC = () => {
+const ScrollGalleryComponent: React.FC = (): any => {
   return (
-    <aside className="scroll-gallery-component"> 
-      <h1>Best Reviews From Our Collection!</h1>
+    <aside className="scroll-gallery-component">
+      <h1>Popular Photo Collection Reviews</h1>
       <p>
         Explore and download the best beautiful and inspiring photo reviews of
         the month from our latest and updated gallery photos collection.
@@ -15,10 +15,7 @@ const ScrollGalleryComponent: React.FC = () => {
       <br />
       <div className="_wrapper">
         <article className="photo-wrapper">
-          <img
-            src="/uploads/woman-optique-glasses-with-blue-shadow-warm-knit-jacket_114579-9297.jpg"
-            alt=""
-          />
+          <img src="/uploads/OIP.jpg" alt="" />
           <div className="blur">
             <Link
               to={{
@@ -30,7 +27,7 @@ const ScrollGalleryComponent: React.FC = () => {
               </button>
             </Link>
             <a
-              href="/uploads/woman-optique-glasses-with-blue-shadow-warm-knit-jacket_114579-9297.jpg"
+              href="/uploads/OIP.jpg"
               download
               title="download best review of the month!"
             >
@@ -74,11 +71,11 @@ const ScrollGalleryComponent: React.FC = () => {
           </div>
         </article>
         <article className="photo-wrapper">
-          <img src="/uploads/misty-forest_1048944-26769805.jpg" alt="" />
+          <img src="/uploads/illutrations-of-a-smoking-woman.webp" alt="" />
           <div className="blur">
             <Link
               to={{
-                pathname: "/photos/categories/dark-photos",
+                pathname: "/photos/categories/illustrations",
               }}
             >
               <button type="button">
@@ -86,7 +83,7 @@ const ScrollGalleryComponent: React.FC = () => {
               </button>
             </Link>
             <a
-              href="/uploads/misty-forest_1048944-26769805.jpg"
+              href="/uploads/illutrations-of-a-smoking-woman.webp"
               download
               title="download best review of the month!"
             >
@@ -134,7 +131,7 @@ const ScrollGalleryComponent: React.FC = () => {
       <div className="pagination-wrapper">
         <Link
           to={{
-            pathname: "/photos/categories/people",
+            pathname: "/photos/categories/dark-photos",
           }}
         >
           {" "}
@@ -148,7 +145,7 @@ const ScrollGalleryComponent: React.FC = () => {
         </Link>
         <Link
           to={{
-            pathname: "/photos/categories/dark-photos",
+            pathname: "/photos/categories/illustrations",
           }}
         >
           {" "}
