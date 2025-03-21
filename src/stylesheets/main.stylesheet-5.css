@@ -1,63 +1,79 @@
 aside[class="account-view-component"] {
-    height: 100vh;
-    width: min(100%, 20em);
-    border-radius: .0em;
-    background-color: #fff;
-    -webkit-box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
-    -moz-box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
-    box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
-    position: fixed;
-    right: 0em;
-    top: 0em;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    overflow: hidden;
+   height: 17em;
+   width: min(90%, 20em);
+   border-radius: .0em;
+   background-color: #fff;
+   -webkit-box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
+   -moz-box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
+   box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
+   position: fixed;
+   right: .5em;
+   top: 4em;
+   display: none;
+   align-items: center;
+   justify-content: center;
+   z-index: 5;
+   overflow: hidden;
+   /* border: 1px solid red; */
+   border-radius: .6em !important;
+   border: 1px solid hsl(0, 0%, 80%) !important;
 }
-aside[class="account-view-component"] div {
-    min-height: 85vh;
-    width: min(85%, 85%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] {
+   min-height: 15em;
+   width: min(90%, 90%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: .2em;
+   /* border: 1px solid red; */
+   flex-grow: 0;
+   color: hsl(0, 0%, 20%);
+   font-weight: calc(300 + 190);
 }
-aside[class="account-view-component"] div :is(article[class="logo"]) > span {
-    font-size: 3em;
-    color: hsl(0, 0%, 20%)
-}
-aside[class="account-view-component"] div :is(article[class="account-description"]) {
-    min-height: 100%;
-    width: min(100%, 100%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: .6em;
-    /* border: 1px solid red; */
-    flex-grow: 1;
-    color: hsl(0, 0%, 20%);
-    font-weight: calc(300 + 190);
-}
-aside[class="account-view-component"] div :is(article[class="account-description"]) img {
-    height: 12em;
-    width: 100%;
-    border-radius: 0%;
-    cursor: not-allowed;
-    border: 1px solid #eee;
-}
-aside[class="account-view-component"] div :is(article[class="account-description"]) span {
-   min-height: 3em;
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] div[class="account-description-content"] {
+   min-height: 5em;
    width: min(100%, 100%);
-    font-size: .9em;
-    /* border-bottom: 1px solid hsl(0, 0%, 80%); */
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    flex-direction: column;
+   /* border: 1px solid red; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: .5em;
+   flex-direction: row;
 }
-aside[class="account-view-component"] div :is(article[class="account-description"]) aside {
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] div[class="account-description-content"]>div {
+   min-height: 5em;
+   width: 10em;
+   /* border: 1px solid red; */
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   gap: .1em;
+   flex-direction: column;
+   flex-grow: 1;
+}
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] div[class="account-description-content"]>div :is(span[class="logged-in-username"]) {
+   font-weight: calc(250 + 250);
+}
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] div[class="account-description-content"]>div :is(span[class="logged-in-user-email"]) {
+   font-size: .9em;
+   font-weight: normal;
+}
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] img {
+   height: 5em;
+   width: 5em;
+   border-radius: 100%;
+   cursor: not-allowed;
+   /* border: 1px solid #eee; */
+}
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] aside {
    min-height: 7em;
    width: min(100%, 100%);
    font-size: .9em;
@@ -68,28 +84,29 @@ aside[class="account-view-component"] div :is(article[class="account-description
    border: 1px solid hsl(0, 0%, 80%);
    border-radius: .3em;
 }
-aside[class="account-view-component"] div :is(article[class="account-description"]) aside :is(button) {
-    height: 3em;
-    width: min(90%, 90%);
-    border-radius: .2em;
-    border: none;
-    background-color: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
+
+aside[class="account-view-component"] div[class="account-view-component-wrapper"] aside :is(button) {
+   height: 3em;
+   width: min(90%, 90%);
+   border-radius: .2em;
+   border: none;
+   background-color: var(--primary-color);
+   color: #fff;
+   cursor: pointer;
 }
 
 .account-view-button {
-    font-size: 1.7em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: hsl(0, 0%, 10%);
-    cursor: pointer;
+   font-size: 1.7em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: hsl(0, 0%, 10%);
+   cursor: pointer;
 }
 
 .amount {
-    font-weight: normal;
-    font-size: .9em;
+   font-weight: normal;
+   font-size: .9em;
 }
 
 /* loader styles for spinner */
@@ -98,18 +115,19 @@ aside[class="account-view-component"] div :is(article[class="account-description
    width: 50px;
    height: 50px;
    border-radius: 50%;
-   background: radial-gradient(farthest-side,#000000 94%,#0000) top/9px 9px no-repeat,
-          conic-gradient(#0000 30%,#000000);
-   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+   background: radial-gradient(farthest-side, #000000 94%, #0000) top/9px 9px no-repeat,
+      conic-gradient(#0000 30%, #000000);
+   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
    animation: spinner-c7wet2 1s infinite linear;
-  cursor: not-allowed;
- }
- 
- @keyframes spinner-c7wet2 {
+   cursor: not-allowed;
+}
+
+@keyframes spinner-c7wet2 {
    100% {
       transform: rotate(1turn);
    }
- }
+}
+
 /*  */
 .loader-component {
    min-height: 100vh;
@@ -117,7 +135,7 @@ aside[class="account-view-component"] div :is(article[class="account-description
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: rgba(0 ,0 ,0 ,.3);
+   background-color: rgba(0, 0, 0, .3);
    border: 1px solid rgba(255, 255, 255, 0.25);
    position: fixed;
    top: 0;
@@ -127,7 +145,31 @@ aside[class="account-view-component"] div :is(article[class="account-description
    font-size: .9em;
    z-index: 10;
 }
+
 .loader-component a {
+   text-decoration-color: none;
+   color: var(--primary-color);
+   font-size: .9em;
+}
+
+/*  */
+.loader-component-2 {
+   min-height: 80vh;
+   width: min(100%, 100%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #fff;
+   border: 1px solid rgba(255, 255, 255, 0.25);
+   position: absolute;
+   top: 0;
+   left: 0;
+   flex-direction: column;
+   gap: 1.6em;
+   font-size: .9em;
+}
+
+.loader-component-2 a {
    text-decoration-color: none;
    color: var(--primary-color);
    font-size: .9em;
@@ -143,6 +185,7 @@ aside[class="advert-component"] {
    align-items: center;
    justify-content: center;
 }
+
 aside[class="advert-component"] div {
    min-height: 13em;
    width: min(95%, 95%);
@@ -152,23 +195,27 @@ aside[class="advert-component"] div {
    flex-direction: column;
    gap: .5em;
 }
-aside[class="advert-component"] div > h1 {
+
+aside[class="advert-component"] div>h1 {
    font-size: 2.5em;
    font-weight: bold;
    color: hsl(0, 0%, 10%);
    max-width: fit-content;
 }
-aside[class="advert-component"] div > p {
+
+aside[class="advert-component"] div>p {
    font-size: 1em;
    font-weight: normal;
    color: hsl(0, 0%, 10%);
    max-width: 40em;
 }
-aside[class="advert-component"] div > a {
+
+aside[class="advert-component"] div>a {
    min-height: 2em;
    width: 10em;
 }
-aside[class="advert-component"] div > a :where(button) {
+
+aside[class="advert-component"] div>a :where(button) {
    min-height: 3em;
    width: min(100%, 15em);
    border-radius: .2em;
@@ -189,6 +236,7 @@ section[class="subscription-page"] {
    gap: 1em;
    /* border: 1px solid red; */
 }
+
 section[class="subscription-page"] form {
    min-height: 60vh;
    width: min(90%, 60em);
@@ -203,26 +251,30 @@ section[class="subscription-page"] form {
    text-align: center;
    border: 1px solid hsl(0, 0%, 80%);
 }
-section[class="subscription-page"] form > h1 {
+
+section[class="subscription-page"] form>h1 {
    font-size: 2.5em;
    font-weight: bold;
    /* color: hsl(0, 0%, 10%); */
    max-width: fit-content;
    line-height: .7em;
 }
-section[class="subscription-page"] form > h2 {
+
+section[class="subscription-page"] form>h2 {
    font-size: 1.7em;
    font-weight: calc(300 + 220);
    /* color: hsl(0, 0%, 15%); */
 }
-section[class="subscription-page"] form > p {
+
+section[class="subscription-page"] form>p {
    font-size: 1em;
    font-weight: normal;
    /* color: hsl(0, 0%, 10%); */
    max-width: 30em;
    text-align: center;
 }
-section[class="subscription-page"] form > input {
+
+section[class="subscription-page"] form>input {
    height: 3em;
    width: min(90%, 60em);
    border: none;
@@ -230,10 +282,12 @@ section[class="subscription-page"] form > input {
    background-color: transparent;
    outline-style: none;
 }
-section[class="subscription-page"] form > input::placeholder {
+
+section[class="subscription-page"] form>input::placeholder {
    color: #101010;
 }
-section[class="subscription-page"] form > button {
+
+section[class="subscription-page"] form>button {
    height: 3.5em;
    width: min(100%, 20em);
    border: none;
@@ -243,15 +297,16 @@ section[class="subscription-page"] form > button {
    color: #fff;
    cursor: pointer;
 }
-section[class="subscription-page"] form > button:is(:hover, :focus) {
-   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+
+section[class="subscription-page"] form>button:is(:hover, :focus) {
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 /*  */
 aside[class="welcome-cookie-alert-message-component"] {
    min-height: 15em;
    width: min(100%, 100%);
-   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
    display: flex;
    align-items: center;
    /* border: 1px solid red; */
@@ -262,7 +317,8 @@ aside[class="welcome-cookie-alert-message-component"] {
    left: 0px;
    z-index: 2;
 }
-aside[class="welcome-cookie-alert-message-component"] > div {
+
+aside[class="welcome-cookie-alert-message-component"]>div {
    min-height: 10em;
    width: min(90%, 90%);
    display: flex;
@@ -272,25 +328,29 @@ aside[class="welcome-cookie-alert-message-component"] > div {
    /* border: 1px solid red; */
    gap: .3em
 }
-aside[class="welcome-cookie-alert-message-component"] > div h1 {
+
+aside[class="welcome-cookie-alert-message-component"]>div h1 {
    font-weight: normal;
    font-size: 1.3em;
    color: hsl(0, 0%, 20%);
 }
-aside[class="welcome-cookie-alert-message-component"] > div p {
+
+aside[class="welcome-cookie-alert-message-component"]>div p {
    font-weight: normal;
    font-size: .9em;
    color: hsl(0, 0%, 20%);
    max-width: 40em;
 }
-aside[class="welcome-cookie-alert-message-component"] > div article {
+
+aside[class="welcome-cookie-alert-message-component"]>div article {
    display: flex;
    align-items: center;
    justify-content: flex-start;
    gap: 1em;
    width: min(100%, 100%);
 }
-aside[class="welcome-cookie-alert-message-component"] > div article :where(button) {
+
+aside[class="welcome-cookie-alert-message-component"]>div article :where(button) {
    height: 3em;
    width: min(100%, 9em);
    border: none;
@@ -298,4 +358,75 @@ aside[class="welcome-cookie-alert-message-component"] > div article :where(butto
    border-radius: .3em;
    color: #fff;
    cursor: pointer;
+}
+
+/*  */
+/*  */
+aside[class="photos-categories-component"] {
+   min-height: 20em;
+   width: min(95%, 95%);
+   display: flex;
+   align-items: center;
+   /* border: 1px solid red; */
+   justify-content: center;
+   background-color: hsl(0, 0%, 0%);
+   border-radius: .7em;
+}
+
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] {
+   min-height: 15em;
+   width: min(90%, 90%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   /* border: 1px solid red; */
+   flex-flow: row wrap;
+}
+
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article {
+   min-height: 15em;
+   width: min(100%, 23em);
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-direction: column;
+   /* border: 1px solid red; */
+   flex-grow: 1;
+   color: #fff;
+   gap: 1em;
+}
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article :where(h3) {
+   font-size: 1.3em;
+   font-weight: calc(250 + 250);
+}
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article :where(a) {
+   font-size: .9em;
+   font-weight: calc(250 + 250);
+   text-decoration: none;
+   color: hsl(0, 0%, 85%);
+}
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article :where(a):is(:hover, :focus) {
+   color: hsl(0, 0%, 100%);
+   text-decoration: underline;
+}
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article :where(ul) {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   gap: 1em;
+   list-style-type: none;
+   list-style: none;
+}
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article :where(img) {
+   height: 15em;
+   width: 100%;
+   border-radius: .4em;
+}
+aside[class="photos-categories-component"]>div[class="photos-categories-component-content-wrapper"] > article :where(p) {
+   font-size: .9em;
+   font-weight: calc(250 + 250);
+   text-decoration: none;
+   color: hsl(0, 0%, 85%);
 }

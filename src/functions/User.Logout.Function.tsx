@@ -1,11 +1,11 @@
 type LogoutDuration = number;
 
-async function LogoutAdmin() {
+async function LogoutLoggedInUserAccount() {
   const logoutDuration: Readonly<Partial<LogoutDuration>> = 172800000 as number;
 
   window.setInterval(() => {
-    window.localStorage.removeItem("admin");
+    window.localStorage.removeItem("user");
   }, logoutDuration as number);
 }
 
-export default LogoutAdmin;
+export default LogoutLoggedInUserAccount;

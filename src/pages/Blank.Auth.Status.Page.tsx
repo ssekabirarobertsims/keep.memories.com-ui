@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlankAuthStatusPage: React.FC = () => {
+const BlankAuthStatusPage: React.FC = (): any => {
   return (
     <section className="email-verification-status-blank-page">
       <h1>You are already signed in</h1>

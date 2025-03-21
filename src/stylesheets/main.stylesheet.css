@@ -5,6 +5,7 @@
     transition: all 500ms;
     scroll-behavior: smooth;
 }
+
 *::after,
 *::before {
     padding: 0px 0px 0px 0px;
@@ -40,7 +41,7 @@ main {
 
 
 :root {
-    --primary-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --primary-font-family: "Work Sans", serif;
     --primary-darker-font-color: hsl(0, 0%, 20%);
     --primary-light-font-color: hsl(0, 0%, 50%);
     --primary-color: #0066ff;
@@ -61,6 +62,7 @@ main {
 ::-webkit-scrollbar {
     width: .4em;
 }
+
 ::-webkit-scrollbar-thumb {
     width: 1em;
     background-color: var(--primary-light-font-color);
@@ -70,6 +72,7 @@ main {
 button:active {
     scale: .8;
 }
+
 input {
     outline-style: none;
 }
@@ -90,7 +93,8 @@ nav {
     left: 0px;
     z-index: 5;
 }
-nav > div {
+
+nav>div {
     min-height: 5em;
     width: min(47%, 40em);
     display: flex;
@@ -102,15 +106,18 @@ nav > div {
     color: #000;
     /* border: 1px solid red; */
 }
-nav > div[class="logo"] {
+
+nav>div[class="logo"] {
     justify-content: flex-start;
 }
-nav > div :is(img) {
+
+nav>div :is(img) {
     height: 1.1em;
     width: 1.1em;
     border-radius: 100%;
 }
-nav > div :is(button) {
+
+nav>div :is(button) {
     height: 3em;
     width: 2em;
     border: none;
@@ -119,14 +126,16 @@ nav > div :is(button) {
     cursor: pointer;
     font-size: 1em;
 }
-nav > div :is(ul) {
+
+nav>div :is(ul) {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
     /* flex-grow: 1; */
 }
-nav > div :is(ul) > a {
+
+nav>div :is(ul)>a {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -134,11 +143,13 @@ nav > div :is(ul) > a {
     font-size: 1em;
     font-weight: calc(250 + 250);
 }
-nav > div :is(ul) > a :where(li) {
+
+nav>div :is(ul)>a :where(li) {
     list-style-type: none;
     list-style: none;
 }
-nav > div :is(a) {
+
+nav>div :is(a) {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -146,7 +157,8 @@ nav > div :is(a) {
     font-size: .9em;
     font-weight: normal;
 }
-nav > div :is(h1) > a {
+
+nav>div :is(h1)>a {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -159,11 +171,13 @@ nav > div :is(h1) > a {
     align-items: center;
     justify-content: center;
 }
-nav > div :is(h1) > a img {
+
+nav>div :is(h1)>a img {
     height: 1.5em;
     width: 1.5em;
 }
-nav > div :is(ul) {
+
+nav>div :is(ul) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,11 +185,13 @@ nav > div :is(ul) {
     flex-flow: row wrap;
     gap: 1em
 }
-nav > div :is(ul) > li {
+
+nav>div :is(ul)>li {
     list-style: none;
     list-style-type: none;
 }
-nav > div :is(ul) > li :where(a) {
+
+nav>div :is(ul)>li :where(a) {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -183,6 +199,7 @@ nav > div :is(ul) > li :where(a) {
     font-size: .9em;
     font-weight: normal;
 }
+
 .dd-menu {
     height: 3em;
     width: 2em;
@@ -193,9 +210,11 @@ nav > div :is(ul) > li :where(a) {
     align-items: center;
     justify-content: center;
 }
+
 .dd-menu:is(:hover, :focus) .dd-menu-content {
     display: flex;
 }
+
 .dd-menu-content {
     min-height: 17em;
     width: min(100%, 100%);
@@ -208,7 +227,8 @@ nav > div :is(ul) > li :where(a) {
     left: 0vh;
     z-index: 2;
 }
-.dd-menu-content > div {
+
+.dd-menu-content>div {
     min-height: 17em;
     width: min(95%, 95%);
     display: flex;
@@ -221,7 +241,8 @@ nav > div :is(ul) > li :where(a) {
     box-shadow: 0 2px 6px -2px hsl(0, 0%, 10%);
     background-color: #000;
 }
-.dd-menu-content > div article {
+
+.dd-menu-content>div article {
     min-height: 15em;
     width: min(90%, 90%);
     display: flex;
@@ -230,14 +251,16 @@ nav > div :is(ul) > li :where(a) {
     flex-direction: column;
     /* border: 1px solid red; */
 }
-.dd-menu-content > div article :where(ul) {
+
+.dd-menu-content>div article :where(ul) {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     gap: .8em;
 }
-.dd-menu-content > div article :where(ul) > a li {
+
+.dd-menu-content>div article :where(ul)>a li {
     color: hsl(0, 0%, 80%)
 }
 
@@ -251,12 +274,13 @@ header {
     position: relative;
     /* background:  linear-gradient(to bottom, rgb(0, 0, 0), #fff); */
     color: #fff;
-    background-image: url(../../public/photos/blue-light-portrait-background_23-2149594611.jpg);
+    background-image: url(/photos/man-portrait-with-blue-lights-visual-effects_23-2149419466.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     flex-direction: column;
 }
+
 header nav {
     min-height: 5em;
     width: min(100%, 100%);
@@ -270,7 +294,8 @@ header nav {
     background-color: rgba(0, 0, 0, .5);
     position: relative;
 }
-header nav > div {
+
+header nav>div {
     min-height: 5em;
     width: min(47%, 38em);
     display: flex;
@@ -282,15 +307,18 @@ header nav > div {
     color: #fff;
     /* border: 1px solid red; */
 }
-header nav > div[class="logo"] {
+
+header nav>div[class="logo"] {
     justify-content: flex-start;
 }
-header nav > div :is(img) {
+
+header nav>div :is(img) {
     height: 1.1em;
     width: 1.1em;
     border-radius: 100%;
 }
-header nav > div :is(button) {
+
+header nav>div :is(button) {
     height: 3em;
     width: 2em;
     border: none;
@@ -299,13 +327,15 @@ header nav > div :is(button) {
     cursor: pointer;
     font-size: 1em;
 }
-header nav > div :is(ul) {
+
+header nav>div :is(ul) {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
 }
-header nav > div :is(ul) > a {
+
+header nav>div :is(ul)>a {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -313,11 +343,13 @@ header nav > div :is(ul) > a {
     font-size: 1em;
     font-weight: calc(250 + 250);
 }
-header nav > div :is(ul) > a :where(li) {
+
+header nav>div :is(ul)>a :where(li) {
     list-style-type: none;
     list-style: none;
 }
-header nav > div :is(a) {
+
+header nav>div :is(a) {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -325,7 +357,8 @@ header nav > div :is(a) {
     font-size: .9em;
     font-weight: normal;
 }
-header nav > div :is(h1) > a {
+
+header nav>div :is(h1)>a {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -338,11 +371,13 @@ header nav > div :is(h1) > a {
     align-items: center;
     justify-content: center;
 }
-header nav > div :is(h1) > a img {
+
+header nav>div :is(h1)>a img {
     height: 1.5em;
     width: 1.5em;
 }
-header nav > div :is(ul) {
+
+header nav>div :is(ul) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -350,11 +385,13 @@ header nav > div :is(ul) {
     flex-flow: row wrap;
     gap: 1em
 }
-header nav > div :is(ul) > li {
+
+header nav>div :is(ul)>li {
     list-style: none;
     list-style-type: none;
 }
-header nav > div :is(ul) > li :where(a) {
+
+header nav>div :is(ul)>li :where(a) {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: none;
@@ -362,7 +399,8 @@ header nav > div :is(ul) > li :where(a) {
     font-size: .9em;
     font-weight: normal;
 }
-header > article {
+
+header>article {
     min-height: 30vh;
     width: min(100%, 100%);
     display: flex;
@@ -376,20 +414,23 @@ header > article {
     background-color: rgba(0, 0, 0, .5);
     flex-grow: 1;
 }
-header > article h1 {
+
+header>article h1 {
     font-size: 2.5em;
     font-weight: calc(280 + 280);
     color: hsl(0, 0%, 100%);
     text-align: center;
 }
-header > article p {
+
+header>article p {
     font-size: 1em;
     font-weight: calc(280 + 280);
     color: hsl(0, 0%, 100%);
     text-align: center;
     max-width: 60em;
 }
-header > article :is(div[class="search-input-wrapper"]) {
+
+header>article :is(div[class="search-input-wrapper"]) {
     height: 3.5em;
     width: min(90%, 50em);
     border-radius: .2em;
@@ -399,21 +440,25 @@ header > article :is(div[class="search-input-wrapper"]) {
     gap: .8em;
     background-color: hsl(0, 0%, 95%);
 }
-header > article :is(div[class="search-input-wrapper"]) > span {
-   font-size: 1em;
-   color: hsl(0, 0%, 10%);
+
+header>article :is(div[class="search-input-wrapper"])>span {
+    font-size: 1em;
+    color: hsl(0, 0%, 10%);
 }
-header > article :is(div[class="search-input-wrapper"]) > input {
+
+header>article :is(div[class="search-input-wrapper"])>input {
     height: 3em;
     width: min(90%, 57em);
     border: none;
     background-color: transparent;
     /* border: 1px solid red; */
 }
-header > article :is(a) {
+
+header>article :is(a) {
     width: min(100%, 15em);
 }
-header > article :is(a) > button {
+
+header>article :is(a)>button {
     height: 3.5em;
     width: min(100%, 12em);
     border: none;
@@ -427,7 +472,7 @@ header > article :is(a) > button {
 /*  */
 .search-list {
     height: 12em;
-    width: min(100%, 50em);
+    width: min(90%, 50em);
     display: none;
     align-items: center;
     justify-content: flex-start;
@@ -446,6 +491,7 @@ header > article :is(a) > button {
     border-radius: .5em;
     overflow: hidden;
 }
+
 .search-list a {
     height: 4em;
     width: min(100%, 100%);
@@ -456,6 +502,7 @@ header > article :is(a) > button {
     cursor: pointer;
     text-decoration: none;
 }
+
 .search-list a :is(li) {
     height: 4em;
     width: min(90%, 90%);
@@ -467,6 +514,7 @@ header > article :is(a) > button {
     font-size: .9em;
     font-weight: calc(300 + 200);
 }
+
 .search-list a:is(:hover, :focus) {
     background-color: hsl(0, 0%, 96%);
 }
@@ -478,7 +526,8 @@ article[class="categories"] {
     display: flex;
     border: 1px solid red;
 }
-article[class="categories"] > div {
+
+article[class="categories"]>div {
     min-height: 4em;
     display: flex;
     align-items: center;
@@ -488,7 +537,8 @@ article[class="categories"] > div {
     gap: 1em;
     border: 1px solid red
 }
-article[class="categories"] > div > a {
+
+article[class="categories"]>div>a {
     font-weight: normal;
     font-size: 1em;
     text-decoration-line: none;
@@ -496,13 +546,15 @@ article[class="categories"] > div > a {
     color: var(--primary-darker-font-color);
 }
 
-main > h1 {
-    font-size: 2em;
-    font-weight: bold;
+main>h1 {
+    font-size: 2.5em;
+    font-weight: calc(290 + 290);
     color: hsl(0, 0%, 20%);
     text-align: center;
+    max-width: 40em
 }
-main > a {
+
+main>a {
     font-size: .9em;
     font-weight: normal;
     color: hsl(0, 0%, 20%);
@@ -510,14 +562,16 @@ main > a {
     max-width: 60em;
     text-decoration-color: none;
 }
-main > p {
+
+main>p {
     font-size: .9em;
     font-weight: normal;
     color: hsl(0, 0%, 20%);
     text-align: center;
     max-width: 60em;
 }
-main > div {
+
+main>div {
     min-height: 5vh;
     width: min(90%, 90%);
     display: flex;
@@ -530,7 +584,8 @@ main > div {
     color: hsl(0, 0%, 30%);
     font-weight: bold;
 }
-main > section[class="photos-categories"] {
+
+main>section[class="photos-categories"] {
     min-height: 15vh;
     width: min(100%, 100%);
     display: flex;
@@ -546,13 +601,14 @@ main > section[class="photos-categories"] {
     /* border-top: 1px solid hsl(0, 0%, 90%); */
 }
 
-main > section[class="photos-categories"] > a {
+main>section[class="photos-categories"]>a {
     text-decoration: none;
     color: hsl(0, 0%, 10%);
     width: min(100%, 8em);
     font-size: .9em;
 }
-main > section[class="photos-categories"] > a :is(button) {
+
+main>section[class="photos-categories"]>a :is(button) {
     height: 3em;
     width: min(100%, 8em);
     border: 1px solid hsl(0, 0%, 80%);
@@ -564,13 +620,14 @@ main > section[class="photos-categories"] > a :is(button) {
     flex-grow: 1;
     max-width: 8em;
 }
-main > section[class="photos-categories"] > a :is(button):where(:hover, :focus) {
+
+main>section[class="photos-categories"]>a :is(button):where(:hover, :focus) {
     background-color: hsl(0, 0%, 90%);
 }
 
 /*  */
-main > aside[class="public-page-photo-collection"] {
-    min-height: 350vh;
+main>aside[class="public-page-photo-collection"] {
+    min-height: 200vh;
     width: min(95%, 95%);
     display: flex;
     align-items: flex-start;
@@ -581,7 +638,8 @@ main > aside[class="public-page-photo-collection"] {
     /* border: 1px solid red; */
     cursor: not-allowed
 }
-main > aside[class="public-page-photo-collection"] div {
+
+main>aside[class="public-page-photo-collection"] div {
     height: 25em;
     width: min(100%, 26em);
     display: flex;
@@ -599,17 +657,19 @@ main > aside[class="public-page-photo-collection"] div {
     flex-grow: 1;
     max-width: 27em;
 }
-main > aside[class="public-page-photo-collection"] :is(div[class="__even"]) {
+
+main>aside[class="public-page-photo-collection"] :is(div[class="__even"]) {
     /* border: 1px solid red; */
     height: 30em;
 }
 
-main > aside[class="public-page-photo-collection"] div > img {
+main>aside[class="public-page-photo-collection"] div>img {
     height: 100%;
     /* aspect-ratio: 1/1; */
     width: min(100%, 100%);
 }
-main > aside[class="public-page-photo-collection"] div > article {
+
+main>aside[class="public-page-photo-collection"] div>article {
     height: 100%;
     width: min(100%, 30em);
     display: none;
@@ -623,7 +683,8 @@ main > aside[class="public-page-photo-collection"] div > article {
     flex-flow: 1;
     /* border: 1px solid red; */
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="content"]) {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="content"]) {
     height: 20em;
     width: min(90%, 90%);
     display: flex;
@@ -631,17 +692,20 @@ main > aside[class="public-page-photo-collection"] div > article :is(aside[class
     justify-content: flex-end;
     flex-direction: column;
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="content"]) > h1 {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="content"])>h1 {
     font-size: 1.1em;
     color: #fff;
     font-weight: normal;
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="content"]) > p {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="content"])>p {
     font-size: .8em;
     color: #fff;
     font-weight: normal;
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="wrapper"]) {
     height: 5em;
     width: min(90%, 90%);
     display: flex;
@@ -651,7 +715,8 @@ main > aside[class="public-page-photo-collection"] div > article :is(aside[class
     gap: 1em;
     /* border: 1px solid red; */
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) a {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="wrapper"]) a {
     height: 4em;
     width: 2.7em;
     display: flex;
@@ -660,26 +725,29 @@ main > aside[class="public-page-photo-collection"] div > article :is(aside[class
     flex-direction: column;
     /* border: 1px solid red; */
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) a button {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="wrapper"]) a button {
     height: 3em;
     width: 3em;
     border-radius: .2em;
     border: none;
     background-color: hsl(0, 0%, 100%);
-    color:hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 20%);
     cursor: pointer;
 }
-main > aside[class="public-page-photo-collection"] div > article :is(aside[class="wrapper"]) button {
+
+main>aside[class="public-page-photo-collection"] div>article :is(aside[class="wrapper"]) button {
     height: 3em;
     width: 3em;
     border-radius: .2em;
     border: none;
     background-color: hsl(0, 0%, 100%);
-    color:hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 20%);
     cursor: pointer;
     font-weight: bold;
 }
-main > aside[class="public-page-photo-collection"] div:is(:hover, :focus) article {
+
+main>aside[class="public-page-photo-collection"] div:is(:hover, :focus) article {
     display: flex;
     transition: all 3000ms;
 }
@@ -703,15 +771,18 @@ article[class="photo_resource"] {
     /* border: 1px solid red; */
     flex-grow: 1
 }
-article[class="photo_resource"] > img {
+
+article[class="photo_resource"]>img {
     height: 100%;
     width: min(100%, 100%);
     flex-grow: 1;
 }
-article[class="photo_resource"] > img:is(:hover) {
+
+article[class="photo_resource"]>img:is(:hover) {
     scale: 1.2;
 }
-article[class="photo_resource"] > div[class="before_wrapper"] {
+
+article[class="photo_resource"]>div[class="before_wrapper"] {
     height: 4em;
     width: min(95%, 95%);
     display: flex;
@@ -722,11 +793,13 @@ article[class="photo_resource"] > div[class="before_wrapper"] {
     left: 0px;
     z-index: 1;
 }
-article[class="photo_resource"] > div[class="before_wrapper"] a {
+
+article[class="photo_resource"]>div[class="before_wrapper"] a {
     height: 3em;
     width: 3em;
 }
-article[class="photo_resource"] > div[class="before_wrapper"] a button {
+
+article[class="photo_resource"]>div[class="before_wrapper"] a button {
     height: 3em;
     width: 3em;
     border-radius: .3em;
@@ -748,7 +821,8 @@ section[class="public-section-page"] {
     flex-flow: column wrap;
     gap: 1em;
 }
-section[class="public-section-page"] > div[class="collection"] {
+
+section[class="public-section-page"]>div[class="collection"] {
     min-height: 100vh;
     width: min(90%, 90%);
     display: flex;
@@ -758,6 +832,28 @@ section[class="public-section-page"] > div[class="collection"] {
     flex-flow: column wrap;
     gap: 1em;
     /* border: 1px solid red; */
+}
+
+/*  */
+aside[class="offline-message-component"] {
+    height: 3em;
+    width: min(100%, 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    /* border: 1px solid red; */
+    background-color: #000;
+    z-index: 4;
+}
+
+aside[class="offline-message-component"]>p {
+    font-weight: normal;
+    font-size: .8em;
 }
 
 /*  */
@@ -774,12 +870,13 @@ section[class="logout-alert-box"] {
     position: fixed;
     top: 0px;
     left: 0px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: 10;
 }
-section[class="logout-alert-box"] > div {
+
+section[class="logout-alert-box"]>div {
     min-height: 13em;
     width: min(90%, 30em);
     display: flex;
@@ -796,17 +893,20 @@ section[class="logout-alert-box"] > div {
     /* border-top-left-radius: 0px; */
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .3);
 }
-section[class="logout-alert-box"] > div :is(h1) {
+
+section[class="logout-alert-box"]>div :is(h1) {
     font-weight: normal;
     font-size: 1.4em;
     text-align: center;
 }
-section[class="logout-alert-box"] > div :is(p) {
+
+section[class="logout-alert-box"]>div :is(p) {
     font-weight: normal;
     text-align: center;
     font-size: .9em;
 }
-section[class="logout-alert-box"] > div :is(div) {
+
+section[class="logout-alert-box"]>div :is(div) {
     height: 4em;
     width: min(100%, 100%);
     display: flex;
@@ -816,7 +916,8 @@ section[class="logout-alert-box"] > div :is(div) {
     flex-flow: row wrap;
     gap: 1em;
 }
-section[class="logout-alert-box"] > div :is(div) > button {
+
+section[class="logout-alert-box"]>div :is(div)>button {
     height: 3em;
     width: min(90%, 8em);
     cursor: pointer;
@@ -825,7 +926,8 @@ section[class="logout-alert-box"] > div :is(div) > button {
     border: none;
     color: #fff;
 }
-section[class="logout-alert-box"] > div :is(div) :last-child {
+
+section[class="logout-alert-box"]>div :is(div) :last-child {
     background-color: hsl(0, 0%, 10%);
 }
 
@@ -841,36 +943,37 @@ section[class="logout-alert-box"] > div :is(div) :last-child {
     justify-content: center;
     font-size: .8em;
 }
-.alert-message p > a {
+
+.alert-message p>a {
     text-decoration-color: none;
-    color:hsl(0, 0%, 10%)
+    color: hsl(0, 0%, 10%)
 }
 
 /*  */
-button[class="navigation-upper-scroll-button"] {
-    height: 3em;
-    width: 6em;
-    border: none;
-    border-top-left-radius: .2em;
-    border-bottom-left-radius: .2em;
-    color: #fff;
-    background-color: hsl(0, 0%, 15%);
-    position: fixed;
-    right: 0px;
-    bottom: 3em;
-    cursor: pointer;
-    /* -webkit-box-shadow: 0 5px 10px -2px #bdbdbd;
-    -moz-box-shadow: 0 5px 10px -2px #bdbdbd;
-    box-shadow: 0 5px 10px -2px #bdbdbd; */
+.explore-collections-button-anchor-wrapper {
+    min-height: 2em;
+    min-width: min(100%, 20em);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     font-weight: bolder;
-    font-size: 1em;
-    z-index: 2;
+    text-decoration: none;
+}
+.explore-collections-button-anchor-wrapper > button {
+   height: 3.5em;
+   width: min(90%, 15em);
+   border: none !important;
+   border-radius: .3em !important;
+   color: #fff;
+   background-color: #000;
+   font-weight: bolder;
+   cursor: pointer;
 }
 
 /*  */
 footer {
     min-height: 27em;
-    width: min(100%, 100%); 
+    width: min(100%, 100%);
     display: flex;
     align-items: center;
     /* border: 1px solid red; */
@@ -880,9 +983,10 @@ footer {
     background-color: hsl(0, 0%, 0%);
     gap: .0em;
 }
-footer > aside[class="__footer-wrapper"] {
+
+footer>aside[class="__footer-wrapper"] {
     min-height: 20em;
-    width: min(95%, 95%); 
+    width: min(95%, 95%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -892,103 +996,129 @@ footer > aside[class="__footer-wrapper"] {
     /* border: 1px solid red; */
     color: hsl(0, 0%, 70%);
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] {
     min-height: 15em;
-    width: min(95%, 23em); 
+    width: min(95%, 23em);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     gap: 1em;
     /* border: 1px solid red; */
-    color: hsl(0, 0%, 70%);
     flex-grow: 1;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] h1 {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] h1 {
     font-size: 1.6em;
+    color: hsl(0, 0%, 90%);
     font-weight: calc(250 + 250);
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] p {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] p {
     font-size: .9em;
     font-weight: normal;
     max-width: 23em;
+    color: hsl(0, 0%, 85%);
+    line-height: 1.4em;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] p :where(a) {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] p :where(a) {
     color: var(--primary-color)
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="socials"] {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul[class="socials"] {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: .6em;
+    gap: 1em;
     flex-direction: row;
     font-size: 1em;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="socials"] > li {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul[class="socials"]>li {
+    color: hsl(0, 0%, 85%);
     font-size: 1.2em;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: .4em;
+    gap: .7em;
     flex-direction: column;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul>li {
     font-size: .9em;
+    list-style: none;
+    color: hsl(0, 0%, 85%);
+    cursor: pointer;
+}
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul>li :where(span) {
+    font-size: .9em;
+    color: hsl(0, 0%, 85%);
     list-style: none;
     cursor: pointer;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li :where(span) {
-    font-size: .9em;
-    list-style: none;
-    cursor: pointer;
-}
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li :where(a) {
-    color: hsl(0, 0%, 70%);
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul>li :where(a) {
+    color: hsl(0, 0%, 85%);
     text-decoration-color: none;
     text-decoration-line: none;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul > li :where(a):is(:hover) {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul>li :where(a):is(:hover) {
     color: hsl(0, 0%, 100%);
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="outer-links"] {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul[class="outer-links"] {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: .4em;
+    gap: 1em;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="outer-links"] > a {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul[class="outer-links"]>a {
     font-size: .9em;
     text-decoration-color: none;
     text-decoration-line: none;
-    color:hsl(0, 0%, 70%)
+    color: hsl(0, 0%, 85%);
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="outer-links"] > a :where(li) {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul[class="outer-links"]>a :where(li) {
     list-style: none;
+    color: hsl(0, 0%, 85%);
     cursor: pointer;
 }
-footer > aside[class="__footer-wrapper"] > div[class="section"] ul[class="outer-links"] > li :where(a):is(:hover) {
+
+footer>aside[class="__footer-wrapper"]>div[class="section"] ul[class="outer-links"]>li :where(a):is(:hover) {
     color: hsl(0, 0%, 100%);
 }
-footer > div[class="copyright-wrapper"] {
+
+footer>div[class="copyright-wrapper"] {
     min-height: 4em;
-    width: min(100%, 100%); 
+    width: min(100%, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 1em;
-    color: hsl(0, 0%, 70%);
+    color: hsl(0, 0%, 85%);
     background-color: hsl(0, 0%, 2%);
     border-top: 1px solid hsl(0, 0%, 15%)
 }
-footer > div[class="copyright-wrapper"] span {
+
+footer>div[class="copyright-wrapper"] span {
     font-size: .8em;
-    font-weight: normal;
+    color: hsl(0, 0%, 85%);
+   font-weight: calc(250 + 250);
+   font-weight: normal;
     text-align: center;
 }
-footer > div[class="copyright-wrapper"] span :where(a) {
+
+footer>div[class="copyright-wrapper"] span :where(a) {
     font-weight: normal;
     text-decoration: none;
     color: var(--primary-color)

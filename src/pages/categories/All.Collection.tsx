@@ -1,52 +1,67 @@
 import NavigationBarComponent from "../../components/Navigation.Bar.Component";
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoViewComponent from "../../components/Photo.View.Component";
-import LoaderComponent from "../../components/Loader.Component";
 import FooterComponent from "../../components/Footer.Component";
 import ScrollGalleryComponent from "../../components/Scroll.Gallery.Component";
-import adminContext from "../../context/adminContext";
-import AdvertComponent from "../../components/Advert.Component";
+import AdvertComponent from "../../components/Subscription.Advert.Component";
 import WelcomeCookieAlertMessage from "../../components/Welcome.Cookie.Alert.Message.Component";
 import { LuDownload } from "react-icons/lu";
 
 interface Resource {
-  id: string;
+  id: string | number;
+  resource_id: string;
   resource: string;
   category: string;
-  resource_admin: string;
   resource_title: string;
-  resource_id: string;
-  upload_date: string | number;
 }
 
-interface AdminObject {
+import LoggedInUserInformationObjectContent from "../../context/UserContext";
+
+interface User {
   login_id: string;
-  username: string;
-  email: string;
-  token: string;
-  message: string;
-  status: string;
-  signedUp: boolean | string;
   date: string;
+  request_id: string;
+  error: any;
+  request_status: number;
+  data: {
+    username: string;
+    email: string;
+    token: string;
+    message: string;
+    status: string;
+    signedUp: boolean;
+  };
 }
 
-type Admin = string;
+type UserContextType = string;
+import OfflineMessageComponent from "../../components/Offline.Message.Component";
+import AccountAuthenticationAlertComponent from "../../components/Account.Authentication.Alert.Component";
 
-function All() {
-  const context: Admin = useContext(adminContext) as Admin;
-  const adminObject: AdminObject = JSON.parse(context);
+const All: React.FunctionComponent = (): any => {
+  const context: UserContextType = useContext(
+    LoggedInUserInformationObjectContent
+  ) as UserContextType;
+  const LoggedInUserInformationObject: User = JSON.parse(context) as User;
 
-  const [resources, setResources] = useState<Resource[]>([]);
+  const [resources, setResources] = useState<Resource[]>([
+    {
+      id: 1,
+      resource_id: "sss",
+      resource: "sample",
+      category: "animals",
+      resource_title: "hello world",
+    },
+  ]);
 
   async function FetchResources() {
     try {
       const request = await axios.get(
-        "https://keep-memories-com-api.onrender.com/resources",
+        "https://keep-memories-photo-gallery-api-service.onrender.com/api/photo/resources",
         // "https://api-jsonresources-restapi.onrender.com/resources/users",
         {
           headers: {
-            Authorization: `Bearer ${adminObject?.token}`,
+            Authorization: `Bearer ${LoggedInUserInformationObject.data?.token}`,
           },
         }
       );
@@ -55,7 +70,7 @@ function All() {
 
       window.setTimeout(async () => {
         (
-          window.document.querySelector(".loader-component") as HTMLElement
+          window.document.querySelector(".loader-component-2") as HTMLElement
         ).style.display = "none";
         await setResources(response);
       }, 6000 as number);
@@ -67,7 +82,7 @@ function All() {
 
       window.setTimeout(async () => {
         (
-          window.document.querySelector(".loader-component") as HTMLElement
+          window.document.querySelector(".loader-component-2") as HTMLElement
         ).style.display = "none";
       }, 6000 as number);
     }
@@ -94,8 +109,8 @@ function All() {
             {resources.map((resource: Resource) => (
               <article
                 className="photo_resource"
-                key={resource.id}
-                title={`photo uploaded by ${resource.resource_admin} on ${resource.upload_date}`}
+                key={resource.resource_id}
+                title={`${resource.resource_id}`}
               >
                 <div className="before_wrapper">
                   <a href={`/uploads/${resource.resource}`} download>
@@ -110,36 +125,21 @@ function All() {
                   onClick={(event) => {
                     event.stopPropagation();
 
-                    const photoView = document.querySelector(
+                    const photoViewComponent = document.querySelector(
                       ".photo-view"
                     ) as HTMLElement;
-                    const imgPlaceholder = document.querySelector(
+                    const photoPlaceholder = document.querySelector(
                       ".img-placeholder"
                     ) as HTMLImageElement;
-                    const resourceAdmin = document.querySelector(
-                      ".resource_admin"
-                    ) as HTMLElement;
-                    const uploadDate = document.querySelector(
-                      ".upload_date"
-                    ) as HTMLElement;
-                    const resourceCollectionUl = document.querySelector(
-                      ".resource_collection_ul"
+                    const selectedPhotoCollectionURL = document.querySelector(
+                      ".selected-photo-category-collection-link"
                     ) as HTMLAnchorElement;
 
-                    photoView.style.display = "flex";
-                    imgPlaceholder.src = (event.target as HTMLImageElement).src;
-
-                    const foundResource = resources.find(
-                      (res: Resource) =>
-                        res.resource === (event.target as HTMLImageElement).src
-                    );
-
-                    if (foundResource) {
-                      resourceAdmin.textContent = foundResource.resource_admin;
-                      uploadDate.textContent =
-                        foundResource.upload_date.toString();
-                      resourceCollectionUl.href = `/photos/categories/${foundResource.category}`;
-                    }
+                    photoViewComponent.style.display = "flex";
+                    photoPlaceholder.src = (
+                      event.target as HTMLImageElement
+                    ).src;
+                    selectedPhotoCollectionURL.href = `/photos/categories/${resource.category}`;
                   }}
                 />
               </article>
@@ -151,20 +151,25 @@ function All() {
           </span>
           <br />
           <br />
+          <aside className="loader-component-2">
+            <div className="spinner"></div>
+          </aside>
         </section>
+        <OfflineMessageComponent />
         <PhotoViewComponent />
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
         <FooterComponent />
+        <AccountAuthenticationAlertComponent />
       </>
     ) : (
       <>
         <NavigationBarComponent />
         <div className="no-results-found">
-          <strong>Sorry, no results found!</strong>
+          <strong>Opps, no photos found!</strong>
           <p>
-            Please check your searches wether they match correctly or try
-            reloading the page again to try to find your results again.
+            Looks like no photos were found or reloaded from the database, try
+            reloading the page to refetch the photos from our databases.
           </p>
           <button
             type="button"
@@ -175,10 +180,14 @@ function All() {
           >
             Try Again
           </button>
+          <aside className="loader-component-2">
+            <div className="spinner"></div>
+          </aside>
         </div>
         <ScrollGalleryComponent />
         <WelcomeCookieAlertMessage />
-        <LoaderComponent />
+        <AccountAuthenticationAlertComponent />
+        <OfflineMessageComponent />
         <AdvertComponent />
         <FooterComponent />
       </>
@@ -186,6 +195,6 @@ function All() {
   } catch (error) {
     console.error(error);
   }
-}
+};
 
 export default All;

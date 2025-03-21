@@ -1,5 +1,5 @@
 /*  */
-.login-section-page {
+.user-account-login-section-page {
   min-height: 100vh;
   width: min(100%, 100%);
   display: flex;
@@ -10,7 +10,8 @@
   flex-flow: row wrap;
   /* border: 1px solid red; */
 }
-.login-section-page aside[class="__wrapper"] {
+
+.user-account-login-section-page aside[class="__wrapper"] {
   min-height: 100vh;
   width: min(100%, 55em);
   display: flex;
@@ -24,13 +25,14 @@
   position: relative;
   /* border: 1px solid red; */
 }
-.login-section-page aside[class="__wrapper"] > div {
+
+.user-account-login-section-page aside[class="__wrapper"]>div {
   height: 100%;
   width: min(100%, 100%);
-  display: flex; 
+  display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(0, 255, 157); */
   flex-direction: column;
   position: absolute;
   top: 0px;
@@ -40,39 +42,45 @@
   cursor: not-allowed;
   flex-grow: 1;
 }
-.login-section-page aside[class="__wrapper"] > div :where(article) {
+
+.user-account-login-section-page aside[class="__wrapper"]>div :where(article) {
   height: 13em;
   width: min(97%, 97%);
-  display: flex; 
+  display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
   gap: .5em
 }
-.login-section-page aside[class="__wrapper"] > div :where(article) > h1 {
+
+.user-account-login-section-page aside[class="__wrapper"]>div :where(article)>h1 {
   font-size: 2em;
   color: #fff;
   font-weight: calc(250 + 240);
 }
-.login-section-page aside[class="__wrapper"] > div :where(article) > p {
+
+.user-account-login-section-page aside[class="__wrapper"]>div :where(article)>p {
   font-size: .9em;
   color: #fff;
   font-weight: calc(250 + 240);
   max-width: 40em;
 }
-.login-section-page aside[class="__wrapper"] > div :where(article) > span {
+
+.user-account-login-section-page aside[class="__wrapper"]>div :where(article)>span {
   font-size: .7em;
   color: #fff;
   font-weight: calc(250 + 240);
   max-width: 40em;
 }
-.login-section-page aside[class="__wrapper"] > img {
+
+.user-account-login-section-page aside[class="__wrapper"]>img {
   height: 100vh;
   width: 100%;
   flex-grow: 1;
 }
-.login-section-page > form {
+
+.user-account-login-section-page>form {
   min-height: 90vh;
   width: min(100%, 25em);
   display: flex;
@@ -82,21 +90,24 @@
   flex-direction: column;
   flex-grow: 1;
 }
-.login-section-page > form > article[class="login-form-wrapper"] {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] {
   min-height: 85vh;
-  width: min(95%, 95%);
+  width: min(90%, 90%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(h1) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(h1) {
   font-size: 1.7em;
   font-weight: calc(300 + 220);
   color: hsl(0, 0%, 15%);
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(span[class="login-alert-message"]) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(span[class="login-alert-message"]) {
   height: 3em;
   width: min(100%, 100%);
   border: 1px solid hsl(0, 0%, 80%);
@@ -109,13 +120,15 @@
   background-color: hsl(216, 100%, 95%);
   border-radius: .3em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(p) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(p) {
   font-size: .8em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   max-width: 29em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="text"]) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(input[type="text"]) {
   height: 4em;
   width: min(100%, 100%);
   border: none;
@@ -124,7 +137,8 @@
   color: #101010;
   /* flex-grow: 1; */
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="password"]) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(input[type="password"]) {
   height: 4em;
   width: min(100%, 100%);
   border: none;
@@ -133,7 +147,8 @@
   color: #101010;
   /* flex-grow: 1; */
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="email"]) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(input[type="email"]) {
   height: 4em;
   width: min(100%, 100%);
   border: none;
@@ -142,31 +157,39 @@
   color: #101010;
   /* flex-grow: 1; */
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="email"])::placeholder {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(input[type="email"])::placeholder {
   font-size: 1em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="text"])::placeholder {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(input[type="text"])::placeholder {
   font-size: 1em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(input[type="password"])::placeholder {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(input[type="password"])::placeholder {
   font-size: 1em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(span) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(span) {
   font-weight: normal;
   font-size: 0.9em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(p) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(p) {
   color: #101010;
   font-weight: normal;
   font-size: 0.9em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(span) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(span) {
   font-size: 0.9em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(span) > a {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(span)>a {
   color: #101010;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(article) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(article) {
   min-height: 1em;
   width: min(90%, 90%);
   display: flex;
@@ -175,19 +198,22 @@
   font-weight: normal;
   cursor: pointer;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(div) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(div) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(a) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(a) {
   width: 10em;
   flex-grow: 1;
 }
-.login-section-page > form > article[class="login-form-wrapper"] :is(button) {
+
+.user-account-login-section-page>form>article[class="login-form-wrapper"] :is(button) {
   height: 3em;
-  width: min(100%, 27em);
+  width: min(100%, 10em);
   border: none;
   background-color: var(--primary-color);
   border-radius: 0.3em;
@@ -197,7 +223,7 @@
 }
 
 /*  */
-.signup-section-page {
+.user-account-signup-section-page {
   min-height: 100vh;
   width: min(100%, 100%);
   display: flex;
@@ -208,7 +234,8 @@
   flex-flow: row wrap;
   /* border: 1px solid red; */
 }
-.signup-section-page aside[class="__wrapper"] {
+
+.user-account-signup-section-page aside[class="__wrapper"] {
   min-height: 100vh;
   width: min(100%, 55em);
   display: flex;
@@ -221,10 +248,11 @@
   flex-grow: 1;
   position: relative;
 }
-.signup-section-page aside[class="__wrapper"] > div {
+
+.user-account-signup-section-page aside[class="__wrapper"]>div {
   height: 100%;
   width: min(100%, 100%);
-  display: flex; 
+  display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   /* border: 1px solid red; */
@@ -236,39 +264,45 @@
   z-index: 4;
   cursor: not-allowed;
 }
-.signup-section-page aside[class="__wrapper"] > div :where(article) {
+
+.user-account-signup-section-page aside[class="__wrapper"]>div :where(article) {
   height: 13em;
   width: min(97%, 97%);
-  display: flex; 
+  display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
   gap: .5em
 }
-.signup-section-page aside[class="__wrapper"] > div :where(article) > h1 {
+
+.user-account-signup-section-page aside[class="__wrapper"]>div :where(article)>h1 {
   font-size: 2em;
   color: #fff;
   font-weight: calc(250 + 240);
 }
-.signup-section-page aside[class="__wrapper"] > div :where(article) > p {
+
+.user-account-signup-section-page aside[class="__wrapper"]>div :where(article)>p {
   font-size: .9em;
   color: #fff;
   font-weight: calc(250 + 240);
   max-width: 40em;
 }
-.signup-section-page aside[class="__wrapper"] > div :where(article) > span {
+
+.user-account-signup-section-page aside[class="__wrapper"]>div :where(article)>span {
   font-size: .7em;
   color: #fff;
   font-weight: calc(250 + 240);
   max-width: 40em;
 }
-.signup-section-page aside[class="__wrapper"] > img {
+
+.user-account-signup-section-page aside[class="__wrapper"]>img {
   height: 100vh;
   width: 100%;
   flex-grow: 1;
 }
-.signup-section-page > form {
+
+.user-account-signup-section-page>form {
   min-height: 90vh;
   width: min(100%, 25em);
   display: flex;
@@ -278,21 +312,24 @@
   flex-direction: column;
   flex-grow: 1;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] {
   min-height: 85vh;
-  width: min(95%, 95%);
+  width: min(90%, 90%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   /* border: 1px solid red; */
   flex-direction: column;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(h1) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(h1) {
   font-size: 1.7em;
   font-weight: calc(300 + 220);
   color: hsl(0, 0%, 15%);
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(span[class="signup-alert-message"]) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(span[class="signup-alert-message"]) {
   height: 3em;
   width: min(100%, 100%);
   border: 1px solid hsl(0, 0%, 80%);
@@ -305,13 +342,15 @@
   background-color: hsl(216, 100%, 95%);
   border-radius: .3em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(p) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(p) {
   font-size: .8em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   max-width: 29em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="text"]) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(input[type="text"]) {
   height: 4em;
   width: min(100%, 100%);
   border: none;
@@ -320,7 +359,8 @@
   color: #101010;
   /* flex-grow: 1; */
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="password"]) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(input[type="password"]) {
   height: 4em;
   width: min(100%, 100%);
   border: none;
@@ -329,7 +369,8 @@
   color: #101010;
   /* flex-grow: 1; */
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="email"]) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(input[type="email"]) {
   height: 4em;
   width: min(100%, 100%);
   border: none;
@@ -338,31 +379,39 @@
   color: #101010;
   /* flex-grow: 1; */
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="email"])::placeholder {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(input[type="email"])::placeholder {
   font-size: 1em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="text"])::placeholder {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(input[type="text"])::placeholder {
   font-size: 1em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(input[type="password"])::placeholder {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(input[type="password"])::placeholder {
   font-size: 1em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(span) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(span) {
   font-weight: normal;
   font-size: 0.9em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(p) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(p) {
   color: #101010;
   font-weight: normal;
   font-size: 0.9em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(span) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(span) {
   font-size: 0.9em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(span) > a {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(span)>a {
   color: #101010;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(article) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(article) {
   min-height: 1em;
   width: min(90%, 90%);
   display: flex;
@@ -371,19 +420,22 @@
   font-weight: normal;
   cursor: pointer;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(div) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(div) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(a) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(a) {
   width: 10em;
   flex-grow: 1;
 }
-.signup-section-page > form > article[class="signup-form-wrapper"] :is(button) {
+
+.user-account-signup-section-page>form>article[class="signup-form-wrapper"] :is(button) {
   height: 3em;
-  width: min(100%, 27em);
+  width: min(100%, 10em);
   border: none;
   background-color: var(--primary-color);
   border-radius: 0.3em;
@@ -408,27 +460,29 @@ aside[class="photo-view"] {
   top: 0px;
   left: 0px;
   z-index: 5;
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(0, 255, 98); */
   gap: 1em;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] {
-  height: 90vh;
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] {
+  height: 97vh;
   width: min(90%, 70em);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: .1em;
+  border-radius: .5em;
   flex-direction: column;
-  gap: 0em;
+  gap: .7em;
   background-color: #fff;
-  /* overflow: hidden; */
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(255, 230, 0); */
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside {
   min-height: 10vh;
   width: min(100%, 100%);
   display: flex;
   align-items: center;
+  /* border: 1px solid rgb(255, 0, 106); */
   justify-content: center;
   flex-direction: row;
   flex-flow: row wrap;
@@ -436,17 +490,19 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside {
   gap: 0em;
   /* position: relative; */
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"] {
   height: 10vh;
   width: min(95%, 95%);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(123, 255, 0); */
   flex-direction: row;
   gap: 0em;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -454,16 +510,19 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_
   gap: 1em;
   list-style: none;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li {
   font-weight: bold;
   font-size: 1.2em;
   cursor: pointer;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li a {
   text-decoration: none;
   color: hsl(0, 0%, 10%);
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_wrapper"] > ul li a :where(button) {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>div[class="_wrapper"]>ul li a :where(button) {
   height: 3em;
   width: 12em;
   border: none;
@@ -473,7 +532,8 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > div[class="_
   cursor: pointer;
   font-weight: bold;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class="close"] {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] aside>button[class="close"] {
   height: 10vh;
   width: min(100%, 5em);
   border: none;
@@ -487,159 +547,72 @@ aside[class="photo-view"] > div[class="photo-view-wrapper"] aside > button[class
   right: 0px;
   top: 0px;
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] {
-  height: 75vh;
-  width: min(100%, 100%);
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="photo"] {
+  height: 55vh;
+  width: min(80%, 80%);
   display: flex;
   align-items: center;
   justify-content: center;
   /* border: 1px solid red; */
 }
-aside[class="photo-view"] > div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
-  height: 26em;
-  width: min(98%, 27em);
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="photo"] :where(img) {
+  height: 100%;
+  /* border: 1px solid red; */
+  width: min(65%, 65%);
 }
 
-
-
-/*  */
-section[class="admin-dashboard-section-page"] {
-  min-height: 60vh;
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"] {
+  height: 25em;
   width: min(100%, 100%);
+  /* border: 1px solid rgb(4, 0, 255); */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: relative;
-}
-section[class="admin-dashboard-section-page"] > h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-  text-align: center;
-}
-section[class="admin-dashboard-section-page"] > p {
-  font-size: 0.9em;
-  font-weight: normal;
-  color: hsl(0, 0%, 20%);
-  max-width: 60em;
-  text-align: center;
-}
-section[class="admin-dashboard-section-page"] > button {
-  height: 3em;
-  width: 5em;
-  border-radius: 0.3em;
-  color: hsl(0, 0%, 50%);
-  background-color: hsl(0, 0%, 100%);
-  border: none;
-  cursor: pointer;
-  border: 1px solid hsl(0, 0%, 80%);
-  font-size: 2em;
-}
-section[class="admin-dashboard-section-page"] > div {
-  min-height: 40vh;
-  width: min(90%, 90%);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   flex-direction: row;
-  gap: 0.5em;
-  flex-flow: row wrap;
+  border-top: 1px solid hsl(0, 0%, 90%);
+  flex-flow: row nowrap;
+  gap: 1em;
 }
-section[class="admin-dashboard-section-page"] > div > .img-wrapper  {
-  min-height: 30vh;
-}
-section[class="admin-dashboard-section-page"] :is(article) {
-  height: 19em;
-  width: min(95%, 18em);
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"]>div {
+  height: 10em;
+  width: 15em;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #eee;
-  flex-direction: column;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 0.4em;
-  cursor: pointer;
-  position: relative;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  border-radius: .2em;
   overflow: hidden;
+  position: relative;
 }
-section[class="admin-dashboard-section-page"] :is(article) > img {
-  height: 19em;
-  width: min(100%, 100%);
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"]>div :where(img) {
+  height: 100%;
+  width: 100%;
 }
-section[class="admin-dashboard-section-page"] :is(article) > img:is(:hover) {
-  scale: 1.2;
-}
-section[class="admin-dashboard-section-page"] :is(article) > div {
-  height: 5em;
-  width: min(100%, 100%);
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"]>div :where(a) {
+  height: 3em;
+  width: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  background-color: transparent;
   position: absolute;
-  bottom: 0px;
-  left: 0px;
-  gap: 0em;
-  background-color: transparent;
+  right: 7px;
+  bottom: 7px;
 }
-section[class="admin-dashboard-section-page"]
-  :is(article)
-  > div
-  :where(section) {
-  height: 2em;
-  width: min(90%, 90%);
-  background-color: transparent;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  flex-direction: column;
-  color: #fff;
-}
-section[class="admin-dashboard-section-page"]
-  :is(article)
-  > div
-  :where(section)
-  > p {
-  font-size: 0.8em;
-  font-weight: normal;
-}
-section[class="admin-dashboard-section-page"]
-  :is(article)
-  > div
-  :where(section)
-  > aside {
-  height: 2em;
-}
-section[class="admin-dashboard-section-page"]
-  :is(article)
-  > div
-  :where(section)
-  > aside
-  :where(button) {
+
+aside[class="photo-view"]>div[class="photo-view-wrapper"] div[class="more-selected-content"]>div :where(a)>button {
   height: 3em;
-  width: 2em;
-  background-color: transparent;
-  border: none;
-  color: hsl(0, 0%, 80%);
+  width: 3em;
+  background-color: #fff;
+  border-radius: .1em !important;
+  border: none !important;
+  color: #101001;
   cursor: pointer;
-  font-size: 1em;
-}
-section[class="admin-dashboard-section-page"]
-  :is(article)
-  > div
-  :where(section)
-  > aside
-  :where(a)
-  > button {
-  height: 3em;
-  width: 2em;
-  background-color: transparent;
-  border: none;
-  color: hsl(0, 0%, 80%);
-  cursor: pointer;
-  font-size: 1em;
 }
 
 /*  */
@@ -660,7 +633,8 @@ section[class="upload-form"] {
   z-index: 5;
   /* background-color: var(--primary-color); */
 }
-section[class="upload-form"] > form {
+
+section[class="upload-form"]>form {
   height: 20em;
   width: min(90%, 30em);
   display: flex;
@@ -676,28 +650,33 @@ section[class="upload-form"] > form {
   position: relative;
   color: #000
 }
-section[class="upload-form"] > form :is(h1) {
+
+section[class="upload-form"]>form :is(h1) {
   font-size: 1.4em;
   font-weight: normal;
 }
-section[class="upload-form"] > form :is(input[type="text"]) {
+
+section[class="upload-form"]>form :is(input[type="text"]) {
   height: 3em;
   width: min(90%, 90%);
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: 0.2em;
   background-color: transparent;
 }
-section[class="upload-form"] > form :is(input[type="file"]) {
+
+section[class="upload-form"]>form :is(input[type="file"]) {
   height: 3em;
   width: min(90%, 90%);
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: 0.2em;
   background-color: transparent;
 }
-section[class="upload-form"] > form :is(input[type="text"])::placeholder {
+
+section[class="upload-form"]>form :is(input[type="text"])::placeholder {
   color: #000
 }
-section[class="upload-form"] > form :is(select) {
+
+section[class="upload-form"]>form :is(select) {
   height: 3em;
   width: min(90%, 90%);
   border: 1px solid hsl(0, 0%, 80%);
@@ -705,10 +684,12 @@ section[class="upload-form"] > form :is(select) {
   background-color: transparent;
   color: #000;
 }
-section[class="upload-form"] > form :is(select) > option {
+
+section[class="upload-form"]>form :is(select)>option {
   color: #000;
 }
-section[class="upload-form"] > form :is(button) {
+
+section[class="upload-form"]>form :is(button) {
   height: 3em;
   width: min(90%, 10em);
   border: none;
@@ -717,7 +698,8 @@ section[class="upload-form"] > form :is(button) {
   background-color: var(--primary-color);
   cursor: pointer;
 }
-section[class="upload-form"] > form :is(span) {
+
+section[class="upload-form"]>form :is(span) {
   font-weight: bold;
   position: absolute;
   top: 0.5em;
@@ -726,7 +708,8 @@ section[class="upload-form"] > form :is(span) {
   cursor: alias;
   color: #000;
 }
-section[class="upload-form"] > form :is(div) {
+
+section[class="upload-form"]>form :is(div) {
   min-height: 0.2em;
   width: min(90%, 90%);
   display: flex;
@@ -737,11 +720,13 @@ section[class="upload-form"] > form :is(div) {
   color: #000;
   font-size: 0.9em;
 }
+
 .warning {
   font-size: 0.8em;
   font-weight: normal;
   color: red;
 }
+
 .warning-div {
   height: 60vh;
   width: min(100%, 100%);
@@ -750,7 +735,8 @@ section[class="upload-form"] > form :is(div) {
   justify-content: center;
   flex-direction: row;
 }
-.warning-div > p {
+
+.warning-div>p {
   font-size: clamp(5vh, 3em, 4em);
   color: hsl(0, 0%, 85%);
   font-weight: bold;
@@ -767,7 +753,8 @@ section[class="upload-form"] > form :is(div) {
   flex-direction: row;
   background-color: hsl(0, 0%, 10%);
 }
-.secondary-navigation-bar > div {
+
+.secondary-navigation-bar>div {
   height: 3em;
   width: min(90%, 90%);
   display: flex;
@@ -777,7 +764,8 @@ section[class="upload-form"] > form :is(div) {
   background-color: hsl(0, 0%, 10%);
   color: #fff;
 }
-.secondary-navigation-bar > div :is(a) {
+
+.secondary-navigation-bar>div :is(a) {
   text-decoration: none;
   text-decoration-line: none;
   text-decoration-color: none;
@@ -785,7 +773,8 @@ section[class="upload-form"] > form :is(div) {
   font-size: 1.5em;
   font-weight: normal;
 }
-.secondary-navigation-bar > div :is(a) > h1 {
+
+.secondary-navigation-bar>div :is(a)>h1 {
   text-decoration: none;
   text-decoration-line: none;
   text-decoration-color: none;
@@ -803,32 +792,27 @@ section[class="upload-form"] > form :is(div) {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 1px solid red; */
+  border-top: 1px solid #eee;
   gap: 1em;
+  position: relative;
 }
-.no-results-found  {
-  min-height: 80vh;
-  width: min(100%, 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* border: 1px solid red; */
-  gap: 1em;
-}
-.no-results-found > strong {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
+
+.no-results-found>strong {
+  font-size: 2.5em;
+  font-weight: normal;
+  color: hsl(0, 0%, 30%);
   text-align: center;
 }
-.no-results-found > p {
+
+.no-results-found>p {
   font-size: .9em;
   font-weight: normal;
   color: hsl(0, 0%, 20%);
   text-align: center;
+  max-width: 40em;
 }
-.no-results-found > button {
+
+.no-results-found>button {
   height: 3em;
   width: 10em;
   border: none;

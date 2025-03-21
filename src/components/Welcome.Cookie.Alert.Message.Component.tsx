@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 // if button to allow cookie is clicked, then store state to storage
 // to prevent the msg appear again after each reload
 
-const WelcomeCookieAlertMessage: React.FC = () => {
+const WelcomeCookieAlertMessage: React.FC = (): any => {
   const buttonRef = useRef(null);
   const cookieState: boolean = true as boolean;
   const currentCookieState: string = window.localStorage.getItem(

@@ -1,73 +1,68 @@
-// import { MdAccountCircle } from "react-icons/md";
 import React from "react";
-import adminContext from "../context/adminContext";
+import LoggedInUserInformationObjectContent from "../context/UserContext";
 
-interface AdminObject {
-  email: string;
-  username: string;
-  userId: string | number;
-  login_id: string | number;
+interface User {
+  login_id: string;
+  date: string;
+  request_id: string;
+  error: any;
+  request_status: number;
+  data: {
+    username: string;
+    email: string;
+    token: string;
+    message: string;
+    status: string;
+    signedUp: boolean;
+  };
 }
 
-type Admin = string;
+type UserContextType = string;
 import { FiLogOut } from "react-icons/fi";
 
-const AccountViewComponent: React.FC = () => {
-  const context: Admin = React.useContext(adminContext) as Admin;
-  const adminObject: AdminObject = JSON.parse(context);
+const AccountViewComponent: React.FC = (): any => {
+  const context: UserContextType = React.useContext(
+    LoggedInUserInformationObjectContent
+  ) as UserContextType;
+  const LoggedInUserInformationObject: User = JSON.parse(context);
 
   return (
     <aside className="account-view-component">
       <div className="account-view-component-wrapper">
-        <article className="account-description">
+        <div className="account-description-content">
           <img src="/photos/placeholder.jpg" alt="" />
-          <br />
-          <span>
-            Login Id:{" "}
-            <strong>
-              {adminObject?.login_id ||
-              typeof adminObject?.login_id !== "undefined"
-                ? `login${adminObject?.login_id}`
-                : "login23927101"}
-            </strong>
-          </span>
-          <span>
-            Username:{" "}
-            <strong>
-              {adminObject?.username ||
-              typeof adminObject?.username !== "undefined"
-                ? adminObject?.username
-                : "no-username"}
-            </strong>
-          </span>
-          <span>
-            Email:{" "}
-            <strong>
-              {adminObject?.email || typeof adminObject?.email !== "undefined"
-                ? adminObject?.email
-                : "no-email"}
-            </strong>
-          </span>
-          <span>
-            Premium User: <strong>Not Premium</strong>
-          </span>
-          <br />
-          <aside>
-            <button
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                (
-                  window.document.querySelector(
-                    ".logout-alert-box"
-                  ) as HTMLElement
-                ).style.display = "flex";
-              }}
-            >
-              log out <FiLogOut />
-            </button>
-          </aside>
-        </article>
+          <div>
+            <span className={String("logged-in-username")}>
+              {LoggedInUserInformationObject?.data?.username ||
+              typeof LoggedInUserInformationObject?.data?.username !==
+                "undefined"
+                ? LoggedInUserInformationObject?.data?.username
+                : "username"}
+            </span>
+            <span className={String("logged-in-user-email")}>
+              {LoggedInUserInformationObject?.data?.email ||
+              typeof LoggedInUserInformationObject?.data?.email !== "undefined"
+                ? LoggedInUserInformationObject?.data?.email
+                : "example123@gmail.com"}
+            </span>
+          </div>
+        </div>
+
+        <br />
+        <aside>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              window.setTimeout(() => {
+                window.localStorage.removeItem("user");
+                window.location.href = "/account/login";
+              }, 1500 as unknown as number);
+            }}
+          >
+            log out <FiLogOut />
+          </button>
+        </aside>
       </div>
     </aside>
   );

@@ -3,96 +3,47 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import adminContext from "../context/adminContext";
+import LoggedInUserInformationObjectContent from "../context/UserContext";
 import { AiOutlineSearch } from "react-icons/ai";
-import LogoutAlertBox from "./Logout.Alert.Box.Component";
-type Admin = string;
 import AccountViewComponent from "./Account.View.Component";
+
 interface ListItem {
-  id: string;
+  id: string | number;
   value: string;
   link: string;
 }
+
 import { TiThMenu } from "react-icons/ti";
 
-const HeaderComponent: React.FC = () => {
-  const context: Admin = React.useContext(adminContext) as Admin;
-  const admin = JSON.parse(context);
+interface User {
+  login_id: string;
+  date: string;
+  request_id: string;
+  error: any;
+  request_status: number;
+  data: {
+    username: string;
+    email: string;
+    token: string;
+    message: string;
+    status: string;
+    signedUp: boolean;
+  };
+}
+
+type UserContextType = string;
+import { data } from "../json/Data.json";
+
+const HeaderComponent: React.FC = (): any => {
+  const context: UserContextType = React.useContext(
+    LoggedInUserInformationObjectContent
+  ) as UserContextType;
+  const user: User = JSON.parse(context) as User;
+
   const [value, setValue] = React.useState<string>("" as string);
   const [filteredList, setFilteredList] = React.useState([] as ListItem[]);
 
-  const [list, setList] = React.useState([
-    {
-      id: uuid() as string,
-      value: "Photos From Nature",
-      link: "/photos/categories/nature",
-    },
-    {
-      id: uuid() as string,
-      value: "Dark Photos & Wallpapers",
-      link: "/photos/categories/dark-photos",
-    },
-    {
-      id: uuid() as string,
-      value: "Photos From Different Animals",
-      link: "/photos/categories/animals",
-    },
-    {
-      id: uuid() as string,
-      value: "Photos From Technology",
-      link: "/photos/categories/technology",
-    },
-    {
-      id: uuid() as string,
-      value: "Photos From Beautiful Natural Sceneries",
-      link: "/photos/categories/nature",
-    },
-    {
-      id: uuid() as string,
-      value: "All Photos In Gallery",
-      link: "/photos/categories/all",
-    },
-    {
-      id: uuid() as string,
-      value: "Technology Photos Of Your Choice",
-      link: "/photos/categories/technology",
-    },
-    {
-      id: uuid() as string,
-      value: "Illustrations Photos",
-      link: "/photos/categories/Illustrations",
-    },
-    {
-      id: uuid() as string,
-      value: "Beautiful Photos From Different Animal Species",
-      link: "/photos/categories/animals",
-    },
-    {
-      id: uuid() as string,
-      value: "Inspiring Dark Photos & Wallpapers In Collection",
-      link: "/photos/categories/dark-photos",
-    },
-    {
-      id: uuid() as string,
-      value: "Photos From People",
-      link: "/photos/categories/people",
-    },
-    {
-      id: uuid() as string,
-      value: "Photo Collection From Our Gallery",
-      link: "/photos/categories/all",
-    },
-    {
-      id: uuid() as string,
-      value: "Photos From Groups Of People",
-      link: "/photos/categories/people",
-    },
-    {
-      id: uuid() as string,
-      value: "Photos From Illustrations And Art",
-      link: "/photos/categories/Illustrations",
-    },
-  ] as ListItem[]);
+  const [list, setList] = React.useState(data as unknown as ListItem[]);
 
   return (
     <>
@@ -122,10 +73,10 @@ const HeaderComponent: React.FC = () => {
               <Link to={{ pathname: "/newsletter/subscriptions" }}>
                 <li>subscribe</li>
               </Link>
-              <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+              <Link to={{ pathname: user?.data ? "/" : "/account/login" }}>
                 <li>login</li>
               </Link>
-              {admin ? (
+              {user?.data ? (
                 ""
               ) : (
                 <Link to={{ pathname: "/account/signup" }}>
@@ -133,7 +84,7 @@ const HeaderComponent: React.FC = () => {
                 </Link>
               )}
             </ul>
-            {admin ? (
+            {user?.data ? (
               <img
                 src="/photos/placeholder.jpg"
                 alt=""
@@ -181,13 +132,17 @@ const HeaderComponent: React.FC = () => {
                       <Link to={{ pathname: "/newsletter/subscriptions" }}>
                         <li>subscribe</li>
                       </Link>
-                      <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                      <Link
+                        to={{ pathname: user?.data ? "/" : "/account/login" }}
+                      >
                         <li>login</li>
                       </Link>
-                      <Link to={{ pathname: admin ? "/" : "/account/login" }}>
+                      <Link
+                        to={{ pathname: user?.data ? "/" : "/account/login" }}
+                      >
                         <li>Collection</li>
                       </Link>
-                      {admin ? (
+                      {user?.data ? (
                         ""
                       ) : (
                         <Link to={{ pathname: "/account/signup" }}>
@@ -202,7 +157,6 @@ const HeaderComponent: React.FC = () => {
           </div>
         </nav>
         <AccountViewComponent />
-        <LogoutAlertBox />
         <article>
           <h1>Inspiring Free Photo Gallery</h1>
           <p>

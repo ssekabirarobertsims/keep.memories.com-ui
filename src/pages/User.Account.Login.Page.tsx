@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import Login from "../functions/Login";
+import Login from "../functions/User.Login.Function";
 
 function LoginPage() {
   return (
     <>
-      <section className="login-section-page">
+      <section className="user-account-login-section-page">
         <aside className="__wrapper">
           <img
             src="/photos/blue-light-background-portrait_52683-91429.jpg"
@@ -12,11 +12,11 @@ function LoginPage() {
           />
           <div>
             <article>
-              <h1>Login</h1>
+              <h1>Log into an account</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                repellat molestias dolor quibusdam voluptatem. Quidem molestiae
-                impedit culpa minima praesentium!
+                Log into your account if you have registered account to continue
+                with the best experience for the sit quibusdam voluptatem.
+                Quidem molestiae impedit culpa minima.
               </p>
               <span>
                 keep memories photo gallery ©right 2024-2025 rights reserved
@@ -27,11 +27,11 @@ function LoginPage() {
 
         <form action="" method="post">
           <article className="login-form-wrapper">
-            <h1>Log into an account</h1>
+            <h1>Account Login</h1>
             <br />
             <p>
               Login to get access to our collection of photos and get inspired
-              by the beauty of nature and the world at large.
+              by the collection.
             </p>
             <br />
             <span className="login-alert-message"></span>

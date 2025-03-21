@@ -1,28 +1,18 @@
-import { useRef } from "react";
+import React from "react";
 import FooterComponent from "../components/Footer.Component";
 import HeaderComponent from "../components/Header.Component";
-import { BsArrowUp } from "react-icons/bs";
 import MainPageComponent from "../components/Main.Component";
+import OfflineMessageComponent from "../components/Offline.Message.Component";
 
-function PublicPage() {
-  const buttonRef = useRef(null);
-
+const PublicPage: React.FunctionComponent = (): any => {
   return (
     <>
       <HeaderComponent />
-      <a href="/#">
-        <button
-          type="button"
-          className="navigation-upper-scroll-button"
-          ref={buttonRef}
-        >
-          <BsArrowUp />
-        </button>
-      </a>
       <MainPageComponent />
+      <OfflineMessageComponent />
       <FooterComponent />
     </>
   );
-}
+};
 
 export default PublicPage;

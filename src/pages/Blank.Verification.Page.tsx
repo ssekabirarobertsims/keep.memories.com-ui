@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlankVerificationPage: React.FC = () => {
+const BlankVerificationPage: React.FC = (): any => {
   return (
     <section className="email-verification-status-blank-page">
       <h1>Account Verified</h1>
@@ -9,7 +9,7 @@ const BlankVerificationPage: React.FC = () => {
         You can now{" "}
         <Link
           to={{
-            pathname: "/login",
+            pathname: "/account/login",
           }}
         >
           click here
