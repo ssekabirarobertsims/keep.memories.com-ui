@@ -57,7 +57,7 @@ function Animals() {
         }
       );
 
-      const response = await request.data;
+      const response = await request.data?.data;
 
       window.setTimeout(async () => {
         (
@@ -85,7 +85,7 @@ function Animals() {
 
   useEffect(() => {
     FetchResources();
-  }, [resources]);
+  }, []);
 
   try {
     return resources.length > 0 ? (

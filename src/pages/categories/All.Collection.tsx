@@ -66,7 +66,7 @@ const All: React.FunctionComponent = (): any => {
         }
       );
 
-      const response = await request.data;
+      const response = await request.data?.data;
 
       window.setTimeout(async () => {
         (

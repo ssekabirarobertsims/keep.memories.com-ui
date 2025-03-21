@@ -57,7 +57,7 @@ function People() {
         }
       );
 
-      const response = request.data;
+      const response = request.data?.data;
 
       window.setTimeout(async () => {
         (
@@ -85,7 +85,7 @@ function People() {
 
   useEffect(() => {
     fetchResources();
-  }, [resources]);
+  }, []);
 
   return resources.length > 0 ? (
     <>

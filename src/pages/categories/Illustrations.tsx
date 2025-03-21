@@ -65,7 +65,7 @@ function Illustrations() {
         }
       );
 
-      const response = await request.data;
+      const response = await request.data?.data;
 
       window.setTimeout(async () => {
         (
@@ -93,7 +93,7 @@ function Illustrations() {
 
   useEffect(() => {
     FetchResources();
-  }, [resources]);
+  }, []);
 
   try {
     return resources.length > 0 ? (

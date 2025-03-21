@@ -65,7 +65,7 @@ function Nature() {
         }
       );
 
-      const response = await request.data;
+      const response = await request.data?.data;
 
       window.setTimeout(async () => {
         (
@@ -93,7 +93,7 @@ function Nature() {
 
   useEffect(() => {
     FetchResources();
-  }, [resources]);
+  }, []);
 
   return resources.length > 0 ? (
     <>

@@ -57,7 +57,7 @@ function Technology() {
         }
       );
 
-      const response = await request.data;
+      const response = await request.data?.data;
 
       window.setTimeout(async () => {
         (
@@ -85,7 +85,7 @@ function Technology() {
 
   useEffect(() => {
     FetchResources();
-  }, [resources]);
+  }, []);
 
   return resources.length > 0 ? ( // This is the conditional rendering
     <>
