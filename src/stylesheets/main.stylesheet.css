@@ -73,6 +73,10 @@ button:active {
     scale: .8;
 }
 
+button {
+    cursor: pointer;
+}
+
 input {
     outline-style: none;
 }

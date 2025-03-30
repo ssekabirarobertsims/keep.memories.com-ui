@@ -14,6 +14,10 @@ import LogoutLoggedInUserAccount from "./functions/User.Logout.Function";
 import SubscribingPage from "./pages/Subscription.Page";
 LogoutLoggedInUserAccount();
 
+// weaknesses for app
+/* 
+*/
+
 function App() {
   const context: string | null = React.useContext(
     LoggedInUserInformationObjectContent
@@ -74,7 +78,7 @@ function App() {
       <Route path="/filter/searches" element={<FilterBar />}></Route>
       <Route
         path="/newsletter/subscriptions"
-        element={!user ? <LoginPage /> : <SubscribingPage />}
+        element={!user ? <SubscribingPage /> : <SubscribingPage />}
       ></Route>
     </Routes>
   );

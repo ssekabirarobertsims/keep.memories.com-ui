@@ -48,3 +48,58 @@ export default tseslint.config({
   },
 })
 ```
+
+# Keep Memories Gallery UI Template
+
+This project is a **React + TypeScript** template built with **Vite**. It provides a foundation for creating modern, fast, and scalable user interfaces for gallery or memory-keeping applications. The template is designed to streamline development with a minimal setup, while offering flexibility for customization and expansion.
+
+## Features
+
+- **React 18**: Leverages the latest features of React for building dynamic and interactive UIs.
+- **TypeScript**: Ensures type safety and better developer experience.
+- **Vite**: A fast and modern build tool for blazing-fast development and optimized production builds.
+- **Hot Module Replacement (HMR)**: Instant updates during development without losing state.
+- **ESLint Integration**: Pre-configured linting rules for maintaining code quality and consistency.
+- **SWC or Babel Support**: Choose between SWC or Babel for fast refresh and transpilation.
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/keep-memories-gallery-ui-template.git
+   cd keep-memories-gallery-ui-template
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+5. Preview the production build:
+   ```bash
+   npm run preview
+   ```
+
+## Recommended Plugins
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react): Uses Babel for Fast Refresh.
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): Uses SWC for Fast Refresh.
+- [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react): Provides React-specific linting rules.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify it for your own projects.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.

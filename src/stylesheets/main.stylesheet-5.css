@@ -1,6 +1,6 @@
 aside[class="account-view-component"] {
    height: 17em;
-   width: min(90%, 20em);
+   width: min(90%, 25em);
    border-radius: .0em;
    background-color: #fff;
    -webkit-box-shadow: 0 5px 5px -1px hsl(0, 0%, 30%);
@@ -154,7 +154,7 @@ aside[class="account-view-component"] div[class="account-view-component-wrapper"
 
 /*  */
 .loader-component-2 {
-   min-height: 80vh;
+   min-height: 100%;
    width: min(100%, 100%);
    display: flex;
    align-items: center;
@@ -249,7 +249,6 @@ section[class="subscription-page"] form {
    background-color: #fff;
    color: hsl(0, 0%, 20%);
    text-align: center;
-   border: 1px solid hsl(0, 0%, 80%);
 }
 
 section[class="subscription-page"] form>h1 {
@@ -270,7 +269,7 @@ section[class="subscription-page"] form>p {
    font-size: 1em;
    font-weight: normal;
    /* color: hsl(0, 0%, 10%); */
-   max-width: 30em;
+   max-width: 80em;
    text-align: center;
 }
 
@@ -293,7 +292,7 @@ section[class="subscription-page"] form>button {
    border: none;
    background-color: #101010;
    outline-style: none;
-   border-radius: 20em;
+   border-radius: .3em;
    color: #fff;
    cursor: pointer;
 }

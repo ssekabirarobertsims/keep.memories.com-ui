@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import NavigationBarComponent from "../components/Navigation.Bar.Component";
 import FooterComponent from "../components/Footer.Component";
 import { MdOutlineUnsubscribe } from "react-icons/md";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 import OfflineMessageComponent from "../components/Offline.Message.Component";
 
-const SubscribingPage: React.FC = (): any => {
+interface User {
+  login_id: string;
+  date: string;
+  request_id: string;
+  error: any;
+  request_status: number;
+  data: {
+    username: string;
+    email: string;
+    token: string;
+    message: string;
+    status: string;
+    signedUp: boolean;
+  };
+}
+
+type UserContextType = string;
+import LoggedInUserInformationObjectContent from "../context/UserContext";
+
+const SubscribingPage: React.FC = (): any => { 
   const [email, setEmail] = React.useState<string>("");
+
+   const context: UserContextType = useContext(
+      LoggedInUserInformationObjectContent
+    ) as UserContextType;
+    const LoggedInUserInformationObject: User = JSON.parse(context);
+
+    useEffect(() => {
+      if (LoggedInUserInformationObject) {
+        setEmail(LoggedInUserInformationObject.data.email);
+      } else {
+        setEmail("Unknown User");
+      }
+    }, [LoggedInUserInformationObject]);
   
   return (
     <>
@@ -19,10 +51,19 @@ const SubscribingPage: React.FC = (): any => {
           <h1>
             <MdOutlineUnsubscribe />
           </h1>
-          <h2>Subscribe to our newsletter</h2>
+          <h2>
+            Newsletter Subscription
+          </h2>
           <p>
-            Subscribe to our newsletter to get the latest updates and news on
-            our latest uploads and updates.
+            Dear {
+              LoggedInUserInformationObject?.data?.username
+                ? LoggedInUserInformationObject?.data?.username
+                : "Unknown User"
+            } we are glad that you joined our community. We are
+            excited to have you here. We will be sending you newsletters and
+            updates about our services and products. You can subscribe at any
+            to this our newsletter. We are looking forward to having you here.
+
           </p>
           <input
             type="email"
@@ -31,11 +72,9 @@ const SubscribingPage: React.FC = (): any => {
             placeholder="Email"
             required
             aria-required
-            onInput={(event) => setEmail(event.currentTarget.value)}
             value={email}
           />
-          <br />
-          <button type="submit">Subscribe</button>
+          <button type="submit">Continue Subscription</button>
         </form>
       </section>
       <WelcomeCookieAlertMessage />

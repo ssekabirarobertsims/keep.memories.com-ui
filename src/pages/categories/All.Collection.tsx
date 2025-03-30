@@ -84,8 +84,6 @@ const All: React.FunctionComponent = (): any => {
     FetchResources();
   });
 
-  console.log(resources);
-
   try {
     return resources.length > 0 ? (
       <>
