@@ -3,7 +3,7 @@ import PublicPagePhotoCollection from "./Public.Photo.Collection.Component";
 import WelcomeCookieAlertMessage from "./Welcome.Cookie.Alert.Message.Component";
 import PhotosCategoriesComponent from "./Photos.Categories.Component";
 
-const MainPageComponent: React.FC = (): any => {
+const MainPageComponent: React.FC = () => {
   return (
     <>
       <main className={String("public-page")}>
@@ -27,6 +27,7 @@ const MainPageComponent: React.FC = (): any => {
         <Link
           to={{
             pathname: "/photos/categories/collection",
+            search: "page=collection&query=collection",
           }}
           className="explore-collections-button-anchor-wrapper"
         >

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AdvertComponent: React.FC = (): any => {
+const AdvertComponent: React.FC = () => {
   return (
     <aside className="advert-component">
       <div className="wrapper">

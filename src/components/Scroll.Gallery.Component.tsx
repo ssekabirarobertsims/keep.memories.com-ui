@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const ScrollGalleryComponent: React.FC = (): any => {
+const ScrollGalleryComponent: React.FC = () => {
   return (
     <aside className="scroll-gallery-component">
       <h1>Popular Photo Collection Reviews</h1>

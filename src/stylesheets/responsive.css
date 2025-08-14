@@ -8,7 +8,7 @@
   nav>div :is(ul) {
     display: none;
   }
-
+ 
   header nav>div :is(ul) {
     display: none;
   }
@@ -48,7 +48,7 @@
   }
 
   .search-list {
-    bottom: -3.5em;
+    bottom: .5em;
   }
 
   main>section[class="photos-categories"] {

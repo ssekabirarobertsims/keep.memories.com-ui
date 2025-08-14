@@ -5,7 +5,7 @@ interface Message {
   message: string;
 }
 
-const CodeValidationForm: React.FC = (): any => {
+const CodeValidationForm: React.FC = () => {
   const [code, setCode] = useState("" as number | string);
 
   async function sendCode() {
@@ -26,7 +26,7 @@ const CodeValidationForm: React.FC = (): any => {
       const response: Required<Pick<Message, "message">> =
         (await request.json()) as Required<Pick<Message, "message">>;
 
-      if (request.ok) { 
+      if (request.ok) {
         (
           window.document.querySelector(".request-response") as HTMLSpanElement
         ).textContent = response.message as string;

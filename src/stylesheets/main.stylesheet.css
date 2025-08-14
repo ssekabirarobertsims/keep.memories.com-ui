@@ -437,7 +437,7 @@ header>article p {
 header>article :is(div[class="search-input-wrapper"]) {
     height: 3.5em;
     width: min(90%, 50em);
-    border-radius: .2em;
+    border-radius: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,6 +448,7 @@ header>article :is(div[class="search-input-wrapper"]) {
 header>article :is(div[class="search-input-wrapper"])>span {
     font-size: 1em;
     color: hsl(0, 0%, 10%);
+    margin-left: .8em;
 }
 
 header>article :is(div[class="search-input-wrapper"])>input {
@@ -455,6 +456,7 @@ header>article :is(div[class="search-input-wrapper"])>input {
     width: min(90%, 57em);
     border: none;
     background-color: transparent;
+    padding: 10px;
     /* border: 1px solid red; */
 }
 

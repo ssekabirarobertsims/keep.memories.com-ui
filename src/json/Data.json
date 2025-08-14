@@ -26,6 +26,16 @@
       "link": "/photos/categories/nature"
     },
     {
+      "id": 5,
+      "value": "Beautiful Nature",
+      "link": "/photos/categories/nature"
+    },
+    {
+      "id": 5,
+      "value": "Beautiful Natural Sceneries",
+      "link": "/photos/categories/nature"
+    },
+    {
       "id": 6,
       "value": "All Photos In Gallery",
       "link": "/photos/categories/all"
@@ -33,6 +43,11 @@
     {
       "id": 7,
       "value": "Technology Photos Of Your Choice",
+      "link": "/photos/categories/technology"
+    },
+    {
+      "id": 7,
+      "value": "Technology Photos",
       "link": "/photos/categories/technology"
     },
     {
@@ -51,6 +66,11 @@
       "link": "/photos/categories/dark-photos"
     },
     {
+      "id": 10,
+      "value": "Dark Photos & Wallpapers",
+      "link": "/photos/categories/dark-photos"
+    },
+    {
       "id": 11,
       "value": "Photos From People",
       "link": "/photos/categories/people"
@@ -66,8 +86,28 @@
       "link": "/photos/categories/people"
     },
     {
+      "id": 13,
+      "value": "Groups Of People",
+      "link": "/photos/categories/people"
+    },
+    {
       "id": 14,
       "value": "Photos From Illustrations And Art",
+      "link": "/photos/categories/Illustrations"
+    },
+    {
+      "id": 15,
+      "value": "Illustrations And Art",
+      "link": "/photos/categories/Illustrations"
+    },
+    {
+      "id": 15,
+      "value": "Art",
+      "link": "/photos/categories/Illustrations"
+    },
+    {
+      "id": 15,
+      "value": "Illustrations",
       "link": "/photos/categories/Illustrations"
     }
   ]

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const FilterBarSimilarSearchesComponent: React.FC = (): any => {
+const FilterBarSimilarSearchesComponent: React.FC = () => {
   return (
     <aside className="filter-bar-similar-searches-component">
       <div>

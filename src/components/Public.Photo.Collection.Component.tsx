@@ -2,8 +2,9 @@ import { LuDownload } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import React from "react";
+// import { Link } from "react-router-dom";
 
-const PublicPagePhotoCollection: React.FunctionComponent = (): any => {
+const PublicPagePhotoCollection: React.FunctionComponent = () => {
   return (
     <>
       <aside className="public-page-photo-collection">

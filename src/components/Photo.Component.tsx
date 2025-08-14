@@ -2,7 +2,7 @@ import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 
-const Photo: React.FunctionComponent = (): any => {
+const Photo: React.FunctionComponent = () => {
   return (
     <article className={String("photo")}>
       <img

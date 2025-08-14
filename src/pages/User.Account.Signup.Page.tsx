@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import Signup from "../functions/User.Signup.Function";
-import React from "react";
+import React, { useEffect } from "react";
 
-const SignupPage: React.FunctionComponent = (): any => {
+const SignupPage: React.FunctionComponent = () => {
+   // set page title for current page
+    useEffect(() => {
+      window.document.title = "Page - Account | Signup"
+    });
+    
   return (
     <>
       <section className={String("user-account-signup-section-page")}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlankVerificationPage: React.FC = (): any => {
+const BlankVerificationPage: React.FC = () => {
   return (
     <section className="email-verification-status-blank-page">
       <h1>Account Verified</h1>

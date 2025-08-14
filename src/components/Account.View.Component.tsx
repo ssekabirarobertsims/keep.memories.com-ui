@@ -5,7 +5,7 @@ interface User {
   login_id: string;
   date: string;
   request_id: string;
-  error: any;
+  error: unknown;
   request_status: number;
   data: {
     username: string;
@@ -20,7 +20,7 @@ interface User {
 type UserContextType = string;
 import { FiLogOut } from "react-icons/fi";
 
-const AccountViewComponent: React.FC = (): any => {
+const AccountViewComponent: React.FC = () => {
   const context: UserContextType = React.useContext(
     LoggedInUserInformationObjectContent
   ) as UserContextType;

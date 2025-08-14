@@ -10,7 +10,7 @@ type Date = string;
 import { BiHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const FooterComponent: React.FC = (): any => {
+const FooterComponent: React.FC = () => {
   const date: Partial<Readonly<Date>> = React.useContext(
     dateContext
   ) as Partial<Readonly<Date>>;
@@ -28,7 +28,10 @@ const FooterComponent: React.FC = (): any => {
               for free and use them for anything you like without any
               restrictions, conditions or limitations. Site developed with{" "}
               <BiHeart /> by{" "}
-              <a href="https://robertsims.netlify.app/" target="_blank">
+              <a
+                href="https://ssekabirarobertsims.netlify.app/"
+                target="_blank"
+              >
                 ssekabira robert sims
               </a>{" "}
               and the team at{" "}
@@ -69,7 +72,10 @@ const FooterComponent: React.FC = (): any => {
               >
                 <li>subscribe</li>
               </Link>
-              <a href="https://robertsims.netlify.app/" target="_blank">
+              <a
+                href="https://ssekabirarobertsims.netlify.app/"
+                target="_blank"
+              >
                 <li>developer</li>
               </a>
               <a

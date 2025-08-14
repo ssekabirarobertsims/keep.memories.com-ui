@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import Login from "../functions/User.Login.Function";
+import { useEffect } from "react";
 
 function LoginPage() {
+   // set page title for current page
+      useEffect(() => {
+        window.document.title = "Page - Account | Login"
+      });
+
   return (
     <>
       <section className="user-account-login-section-page">

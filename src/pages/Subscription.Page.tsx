@@ -9,7 +9,7 @@ interface User {
   login_id: string;
   date: string;
   request_id: string;
-  error: any;
+  error: unknown;
   request_status: number;
   data: {
     username: string;
@@ -24,7 +24,7 @@ interface User {
 type UserContextType = string;
 import LoggedInUserInformationObjectContent from "../context/UserContext";
 
-const SubscribingPage: React.FC = (): any => { 
+const SubscribingPage: React.FC = () => { 
   const [email, setEmail] = React.useState<string>("");
 
    const context: UserContextType = useContext(
@@ -39,6 +39,11 @@ const SubscribingPage: React.FC = (): any => {
         setEmail("Unknown User");
       }
     }, [LoggedInUserInformationObject]);
+
+     // set page title for current page
+        useEffect(() => {
+          window.document.title = "Page - Account | Subscription"
+        });
   
   return (
     <>

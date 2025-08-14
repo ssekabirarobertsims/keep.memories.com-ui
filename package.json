@@ -39,7 +39,7 @@
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/testgithubrobert/keep.memories.com-ui.git"
+    "url": "git+https://github.com/ssekabirarobertsims/keep.memories.com-ui.git"
   },
   "keywords": [
     "react.js",
@@ -48,7 +48,7 @@
   "author": "robert sims",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/testgithubrobert/keep.memories.com-ui/issues"
+    "url": "https://github.com/ssekabirarobertsims/keep.memories.com-ui/issues"
   },
-  "homepage": "https://github.com/testgithubrobert/keep.memories.com-ui#readme"
+  "homepage": "https://github.com/ssekabirarobertsims/keep.memories.com-ui#readme"
 }

@@ -22,7 +22,7 @@ interface User {
   login_id: string;
   date: string;
   request_id: string;
-  error: any;
+  error: unknown;
   request_status: number;
   data: {
     username: string;
@@ -85,7 +85,12 @@ function People() {
 
   useEffect(() => {
     fetchResources();
-  }, []);
+  });
+
+   // set page title for current page
+    useEffect(() => {
+      window.document.title = "Page - Collection | People"
+    });
 
   return resources.length > 0 ? (
     <>

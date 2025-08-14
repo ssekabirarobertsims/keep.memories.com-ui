@@ -3,20 +3,16 @@ import LoginPage from "./pages/User.Account.Login.Page";
 import SignupPage from "./pages/User.Account.Signup.Page";
 import { Route, Routes } from "react-router-dom";
 import LoggedInUserInformationObjectContent from "./context/UserContext";
-import React from "react";
+import React, { useEffect } from "react";
 import FilterBar from "./pages/Filter.Bar.Page";
 import CodeValidationForm from "./components/Email.Verification.Code.Form.Component";
 import BlankVerificationPage from "./pages/Blank.Verification.Page";
 import BlankAuthStatusPage from "./pages/Blank.Auth.Status.Page";
 import Categories from "./pages/Categories.Page";
 import NewsLetterSubscriptionBlankPage from "./pages/Blank.Newsletter.Verification.Page";
-import LogoutLoggedInUserAccount from "./functions/User.Logout.Function";
 import SubscribingPage from "./pages/Subscription.Page";
-LogoutLoggedInUserAccount();
+import NotFoundPage from "./pages/404";
 
-// weaknesses for app
-/* 
-*/
 
 function App() {
   const context: string | null = React.useContext(
@@ -51,35 +47,54 @@ function App() {
     }
   );
 
+   // This effect runs when the component mounts or when the adminAuthentication changes
+  // Auto-logout effect (4 hour)
+  useEffect(() => {
+    // Set a timeout for auto-logout after 4 hours
+    // This is to ensure that the admin is logged out after a certain period of inactivity
+    const LOGOUT_TIMEOUT_MS = 4 * 60 * 60 * 1000; // 4 hour in milliseconds
+    
+    if(!user) return;
+
+    // Set a timer to log out the user after 4 hour
+    const logoutTimer = setTimeout(() => {
+      window.localStorage.removeItem("user");
+      window.location.href = "/account/login";
+    }, LOGOUT_TIMEOUT_MS);
+
+    return () => clearTimeout(logoutTimer);
+  }, [user]);
+
   return (
     <Routes>
-      <Route index element={<PublicPage />}></Route>
+      <Route index element={<PublicPage />} />
+      <Route path="*" element={<NotFoundPage />} />
       <Route
         path="/account/login"
         element={user ? <BlankAuthStatusPage /> : <LoginPage />}
-      ></Route>
+       />
       <Route
         path="/account/signup"
         element={user ? <BlankAuthStatusPage /> : <SignupPage />}
-      ></Route>
+       />
       <Route
         path="/signup/account/verification/code/form"
         element={user ? <PublicPage /> : <CodeValidationForm />}
-      ></Route>
+       />
       <Route
         path="/signup/account/verification/status"
         element={user ? <PublicPage /> : <BlankVerificationPage />}
-      ></Route>
+       />
       <Route
         path="/email/newsletter/subscription/verification"
         element={<NewsLetterSubscriptionBlankPage />}
-      ></Route>
-      <Route path="/photos/*" element={<Categories />}></Route>
-      <Route path="/filter/searches" element={<FilterBar />}></Route>
+       />
+      <Route path="/photos/*" element={<Categories />} />
+      <Route path="/filter/searches" element={<FilterBar />} />
       <Route
         path="/newsletter/subscriptions"
         element={!user ? <LoginPage /> : <SubscribingPage />}
-      ></Route>
+       />
     </Routes>
   );
 }

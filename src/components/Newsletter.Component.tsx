@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const NewsletterComponent: React.FunctionComponent = (): any => {
+const NewsletterComponent: React.FunctionComponent = () => {
   const [email, setEmail] = useState("" as string);
 
   async function HandleButtonClick() {
@@ -17,7 +17,7 @@ const NewsletterComponent: React.FunctionComponent = (): any => {
     try {
       if (request.status) {
         (
-          window.document.querySelector( 
+          window.document.querySelector(
             ".newsletter-response-message"
           ) as HTMLSpanElement
         ).textContent = response.message as string;

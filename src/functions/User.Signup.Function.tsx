@@ -36,7 +36,7 @@ async function Signup(username: string, email: string, password: string) {
 
         window.location.href = "/signup/account/verification/code/form";
       }, 3000 as number);
-    } else { 
+    } else {
       (
         window.document.querySelector(".signup-alert-message") as HTMLElement
       ).textContent = response.message;

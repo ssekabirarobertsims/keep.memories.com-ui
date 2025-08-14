@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoaderComponent: React.FC = (): any => {
+const LoaderComponent: React.FC = () => {
   return (
     <aside className="loader-component">
       <div className="spinner"></div>

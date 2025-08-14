@@ -19,7 +19,7 @@ interface User {
   login_id: string;
   date: string;
   request_id: string;
-  error: any;
+  error: unknown;
   request_status: number;
   data: {
     username: string;
@@ -34,7 +34,7 @@ interface User {
 type UserContextType = string;
 import { data } from "../json/Data.json";
 
-const HeaderComponent: React.FC = (): any => {
+const HeaderComponent: React.FC = () => {
   const context: UserContextType = React.useContext(
     LoggedInUserInformationObjectContent
   ) as UserContextType;
@@ -45,6 +45,11 @@ const HeaderComponent: React.FC = (): any => {
 
   const [list, setList] = React.useState(data as unknown as ListItem[]);
 
+  // cookies status
+  const CookiesStatus: boolean = window.document.cookie.includes(
+    "cookies-accepted"
+  ) as boolean;
+
   return (
     <>
       <header className="application-header">
@@ -54,6 +59,7 @@ const HeaderComponent: React.FC = (): any => {
               <Link
                 to={{
                   pathname: "/",
+                  search: `page=home&cookies=${CookiesStatus}`,
                 }}
               >
                 KeepMemories
@@ -62,24 +68,49 @@ const HeaderComponent: React.FC = (): any => {
           </div>
           <div className="xtz">
             <ul>
-              <Link to={{ pathname: "/filter/searches" }}>
+              <Link
+                to={{
+                  pathname: "/filter/searches",
+                  search: `page=filter&query=search&cookies=${CookiesStatus}`,
+                }}
+              >
                 <li>
                   <AiOutlineSearch />
                 </li>
               </Link>
-              <Link to={{ pathname: "/photos/categories/collection" }}>
+              <Link
+                to={{
+                  pathname: "/photos/categories/collection",
+                  search: `page=collection&query=collection&cookies=${CookiesStatus}`,
+                }}
+              >
                 <li>Explore</li>
               </Link>
-              <Link to={{ pathname: "/newsletter/subscriptions" }}>
+              <Link
+                to={{
+                  pathname: "/newsletter/subscriptions",
+                  search: `page=subscriptions&cookies=${CookiesStatus}`,
+                }}
+              >
                 <li>subscribe</li>
               </Link>
-              <Link to={{ pathname: user?.data ? "/" : "/account/login" }}>
+              <Link
+                to={{
+                  pathname: user?.data ? "/" : "/account/login",
+                  search: `page=login&cookies=${CookiesStatus}`,
+                }}
+              >
                 <li>login</li>
               </Link>
               {user?.data ? (
                 ""
               ) : (
-                <Link to={{ pathname: "/account/signup" }}>
+                <Link
+                  to={{
+                    pathname: "/account/signup",
+                    search: `page=signup&cookies=${CookiesStatus}`,
+                  }}
+                >
                   <li>signup</li>
                 </Link>
               )}
@@ -121,7 +152,7 @@ const HeaderComponent: React.FC = (): any => {
                 <div>
                   <article>
                     <ul>
-                      <Link to={{ pathname: "/filter/searches" }}>
+                      <Link to={{ pathname: "/filter/searches", search: `page=filter&query=search&cookies=${CookiesStatus}`, }}>
                         <li>
                           <AiOutlineSearch />
                         </li>
@@ -145,7 +176,12 @@ const HeaderComponent: React.FC = (): any => {
                       {user?.data ? (
                         ""
                       ) : (
-                        <Link to={{ pathname: "/account/signup" }}>
+                        <Link
+                          to={{
+                            pathname: "/account/signup",
+                            search: `page=signup&cookies=${CookiesStatus}`,
+                          }}
+                        >
                           <li>signup</li>
                         </Link>
                       )}
@@ -222,10 +258,11 @@ const HeaderComponent: React.FC = (): any => {
           <Link
             to={{
               pathname: "/filter/searches",
+               search: `page=filter&query=search&cookies=${CookiesStatus}`,
             }}
           >
             <button type="button">
-              <BiSearch /> Find In Searches
+             Find In Searches
             </button>
           </Link>
           <ul className="search-list">

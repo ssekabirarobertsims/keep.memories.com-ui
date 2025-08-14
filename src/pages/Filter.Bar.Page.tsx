@@ -1,6 +1,6 @@
 import NavigationBarComponent from "../components/Navigation.Bar.Component";
 import FooterComponent from "../components/Footer.Component";
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import axios from "axios";
 // import { FaDownload } from "react-icons/fa";
 // import { FaHeart } from "react-icons/fa";
@@ -23,7 +23,7 @@ interface User {
   login_id: string;
   date: string;
   request_id: string;
-  error: any;
+  error: unknown;
   request_status: number;
   data: {
     username: string;
@@ -43,7 +43,7 @@ import { v4 as uuid } from "uuid";
 import WelcomeCookieAlertMessage from "../components/Welcome.Cookie.Alert.Message.Component";
 import AccountAuthenticationAlertComponent from "../components/Account.Authentication.Alert.Component";
 
-const FilterBar: React.FunctionComponent = (): any => {
+const FilterBar: React.FunctionComponent = () => {
   const context: UserContextType = useContext(
     LoggedInUserInformationObjectContent
   ) as UserContextType;
@@ -75,6 +75,11 @@ const FilterBar: React.FunctionComponent = (): any => {
   const [inputValue, setInputValue] = useState("" as string);
   const searchInputRef = useRef(null);
   const buttonRef = useRef(null);
+
+   // set page title for current page
+      useEffect(() => {
+        window.document.title = "Page - Search | Filter"
+      });
 
   return (
     <>
